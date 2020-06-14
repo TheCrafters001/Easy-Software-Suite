@@ -1,6 +1,6 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class EasyHTML
-    Inherits MetroFramework.Forms.MetroForm
+    Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
     <System.Diagnostics.DebuggerNonUserCode()>
@@ -22,178 +22,125 @@ Partial Class EasyHTML
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
-        Me.EditorWindow = New MetroFramework.Controls.MetroTabControl()
-        Me.MainDetailsPage = New MetroFramework.Controls.MetroTabPage()
-        Me.Page_Title_Label = New MetroFramework.Controls.MetroLabel()
-        Me.Page_Title_TextBox = New MetroFramework.Controls.MetroTextBox()
-        Me.MetaTags_Show_Toggle = New MetroFramework.Controls.MetroToggle()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
-        Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
-        Me.MetroToolTip1 = New MetroFramework.Components.MetroToolTip()
-        Me.Settings_page = New MetroFramework.Controls.MetroTabPage()
-        Me.ThemeColor_Label = New MetroFramework.Controls.MetroLabel()
-        Me.Theme_Color_ComboBox = New MetroFramework.Controls.MetroComboBox()
-        Me.EditorWindow.SuspendLayout()
-        Me.MainDetailsPage.SuspendLayout()
-        CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Settings_page.SuspendLayout()
+        Me.Pgs_Main = New System.Windows.Forms.TabControl()
+        Me.MainPageDetails = New System.Windows.Forms.TabPage()
+        Me.Test_Page = New System.Windows.Forms.TabPage()
+        Me.Pg_Export = New System.Windows.Forms.TabPage()
+        Me.Pg_Preview = New System.Windows.Forms.TabPage()
+        Me.Code_Export_Code_Box = New System.Windows.Forms.RichTextBox()
+        Me.Btn_Export = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Pgs_Main.SuspendLayout()
+        Me.Test_Page.SuspendLayout()
+        Me.Pg_Export.SuspendLayout()
         Me.SuspendLayout()
         '
-        'EditorWindow
+        'Pgs_Main
         '
-        Me.EditorWindow.Controls.Add(Me.MainDetailsPage)
-        Me.EditorWindow.Controls.Add(Me.Settings_page)
-        Me.EditorWindow.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.EditorWindow.Location = New System.Drawing.Point(20, 60)
-        Me.EditorWindow.Name = "EditorWindow"
-        Me.EditorWindow.SelectedIndex = 1
-        Me.EditorWindow.Size = New System.Drawing.Size(1091, 589)
-        Me.EditorWindow.Style = MetroFramework.MetroColorStyle.Green
-        Me.EditorWindow.TabIndex = 0
-        Me.EditorWindow.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.EditorWindow.UseStyleColors = True
+        Me.Pgs_Main.Controls.Add(Me.MainPageDetails)
+        Me.Pgs_Main.Controls.Add(Me.Pg_Export)
+        Me.Pgs_Main.Controls.Add(Me.Pg_Preview)
+        Me.Pgs_Main.Controls.Add(Me.Test_Page)
+        Me.Pgs_Main.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Pgs_Main.Location = New System.Drawing.Point(0, 0)
+        Me.Pgs_Main.Name = "Pgs_Main"
+        Me.Pgs_Main.SelectedIndex = 0
+        Me.Pgs_Main.Size = New System.Drawing.Size(909, 626)
+        Me.Pgs_Main.TabIndex = 0
         '
-        'MainDetailsPage
+        'MainPageDetails
         '
-        Me.MainDetailsPage.Controls.Add(Me.MetroLabel1)
-        Me.MainDetailsPage.Controls.Add(Me.MetaTags_Show_Toggle)
-        Me.MainDetailsPage.Controls.Add(Me.Page_Title_TextBox)
-        Me.MainDetailsPage.Controls.Add(Me.Page_Title_Label)
-        Me.MainDetailsPage.HorizontalScrollbarBarColor = True
-        Me.MainDetailsPage.Location = New System.Drawing.Point(4, 35)
-        Me.MainDetailsPage.Name = "MainDetailsPage"
-        Me.MainDetailsPage.Size = New System.Drawing.Size(1083, 550)
-        Me.MainDetailsPage.Style = MetroFramework.MetroColorStyle.Green
-        Me.MainDetailsPage.TabIndex = 0
-        Me.MainDetailsPage.Text = "Main"
-        Me.MainDetailsPage.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MainDetailsPage.VerticalScrollbarBarColor = True
+        Me.MainPageDetails.BackColor = System.Drawing.Color.Gray
+        Me.MainPageDetails.Location = New System.Drawing.Point(4, 22)
+        Me.MainPageDetails.Name = "MainPageDetails"
+        Me.MainPageDetails.Padding = New System.Windows.Forms.Padding(3)
+        Me.MainPageDetails.Size = New System.Drawing.Size(901, 600)
+        Me.MainPageDetails.TabIndex = 0
+        Me.MainPageDetails.Text = "Main Details"
         '
-        'Page_Title_Label
+        'Test_Page
         '
-        Me.Page_Title_Label.AutoSize = True
-        Me.Page_Title_Label.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.Page_Title_Label.Location = New System.Drawing.Point(3, 0)
-        Me.Page_Title_Label.Name = "Page_Title_Label"
-        Me.Page_Title_Label.Size = New System.Drawing.Size(85, 25)
-        Me.Page_Title_Label.Style = MetroFramework.MetroColorStyle.Green
-        Me.Page_Title_Label.TabIndex = 2
-        Me.Page_Title_Label.Text = "Page Title"
-        Me.Page_Title_Label.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.Test_Page.BackColor = System.Drawing.Color.Gray
+        Me.Test_Page.Controls.Add(Me.Button1)
+        Me.Test_Page.Location = New System.Drawing.Point(4, 22)
+        Me.Test_Page.Name = "Test_Page"
+        Me.Test_Page.Padding = New System.Windows.Forms.Padding(3)
+        Me.Test_Page.Size = New System.Drawing.Size(901, 600)
+        Me.Test_Page.TabIndex = 1
+        Me.Test_Page.Text = "Test Page"
         '
-        'Page_Title_TextBox
+        'Pg_Export
         '
-        Me.Page_Title_TextBox.Location = New System.Drawing.Point(3, 28)
-        Me.Page_Title_TextBox.Name = "Page_Title_TextBox"
-        Me.Page_Title_TextBox.Size = New System.Drawing.Size(204, 23)
-        Me.Page_Title_TextBox.Style = MetroFramework.MetroColorStyle.Green
-        Me.Page_Title_TextBox.TabIndex = 3
-        Me.Page_Title_TextBox.Text = "Example Page"
-        Me.Page_Title_TextBox.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.Pg_Export.BackColor = System.Drawing.Color.Gray
+        Me.Pg_Export.Controls.Add(Me.Btn_Export)
+        Me.Pg_Export.Controls.Add(Me.Code_Export_Code_Box)
+        Me.Pg_Export.Location = New System.Drawing.Point(4, 22)
+        Me.Pg_Export.Name = "Pg_Export"
+        Me.Pg_Export.Size = New System.Drawing.Size(901, 600)
+        Me.Pg_Export.TabIndex = 2
+        Me.Pg_Export.Text = "Export"
         '
-        'MetaTags_Show_Toggle
+        'Pg_Preview
         '
-        Me.MetaTags_Show_Toggle.Checked = True
-        Me.MetaTags_Show_Toggle.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.MetaTags_Show_Toggle.Location = New System.Drawing.Point(226, 28)
-        Me.MetaTags_Show_Toggle.Name = "MetaTags_Show_Toggle"
-        Me.MetaTags_Show_Toggle.Size = New System.Drawing.Size(98, 23)
-        Me.MetaTags_Show_Toggle.Style = MetroFramework.MetroColorStyle.Green
-        Me.MetaTags_Show_Toggle.TabIndex = 4
-        Me.MetaTags_Show_Toggle.Text = "On"
-        Me.MetaTags_Show_Toggle.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetaTags_Show_Toggle.UseVisualStyleBackColor = True
+        Me.Pg_Preview.BackColor = System.Drawing.Color.Gray
+        Me.Pg_Preview.Location = New System.Drawing.Point(4, 22)
+        Me.Pg_Preview.Name = "Pg_Preview"
+        Me.Pg_Preview.Size = New System.Drawing.Size(901, 600)
+        Me.Pg_Preview.TabIndex = 3
+        Me.Pg_Preview.Text = "Preview"
         '
-        'MetroLabel1
+        'Code_Export_Code_Box
         '
-        Me.MetroLabel1.AutoSize = True
-        Me.MetroLabel1.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.MetroLabel1.Location = New System.Drawing.Point(215, 0)
-        Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(120, 25)
-        Me.MetroLabel1.Style = MetroFramework.MetroColorStyle.Green
-        Me.MetroLabel1.TabIndex = 5
-        Me.MetroLabel1.Text = "Add Meta Info"
-        Me.MetroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.Code_Export_Code_Box.Location = New System.Drawing.Point(0, 0)
+        Me.Code_Export_Code_Box.Name = "Code_Export_Code_Box"
+        Me.Code_Export_Code_Box.ReadOnly = True
+        Me.Code_Export_Code_Box.Size = New System.Drawing.Size(901, 563)
+        Me.Code_Export_Code_Box.TabIndex = 0
+        Me.Code_Export_Code_Box.Text = ""
         '
-        'MetroStyleManager1
+        'Btn_Export
         '
-        Me.MetroStyleManager1.Owner = Nothing
-        Me.MetroStyleManager1.Style = MetroFramework.MetroColorStyle.Green
-        Me.MetroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.Btn_Export.ForeColor = System.Drawing.Color.Black
+        Me.Btn_Export.Location = New System.Drawing.Point(818, 574)
+        Me.Btn_Export.Name = "Btn_Export"
+        Me.Btn_Export.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_Export.TabIndex = 1
+        Me.Btn_Export.Text = "Export"
+        Me.Btn_Export.UseVisualStyleBackColor = True
         '
-        'Settings_page
+        'Button1
         '
-        Me.Settings_page.Controls.Add(Me.Theme_Color_ComboBox)
-        Me.Settings_page.Controls.Add(Me.ThemeColor_Label)
-        Me.Settings_page.HorizontalScrollbarBarColor = True
-        Me.Settings_page.Location = New System.Drawing.Point(4, 35)
-        Me.Settings_page.Name = "Settings_page"
-        Me.Settings_page.Size = New System.Drawing.Size(1083, 550)
-        Me.Settings_page.Style = MetroFramework.MetroColorStyle.Green
-        Me.Settings_page.TabIndex = 1
-        Me.Settings_page.Text = "Settings"
-        Me.Settings_page.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.Settings_page.VerticalScrollbarBarColor = True
-        '
-        'ThemeColor_Label
-        '
-        Me.ThemeColor_Label.AutoSize = True
-        Me.ThemeColor_Label.FontSize = MetroFramework.MetroLabelSize.Tall
-        Me.ThemeColor_Label.Location = New System.Drawing.Point(3, 0)
-        Me.ThemeColor_Label.Name = "ThemeColor_Label"
-        Me.ThemeColor_Label.Size = New System.Drawing.Size(70, 25)
-        Me.ThemeColor_Label.Style = MetroFramework.MetroColorStyle.Green
-        Me.ThemeColor_Label.TabIndex = 2
-        Me.ThemeColor_Label.Text = "Theme"
-        Me.ThemeColor_Label.Theme = MetroFramework.MetroThemeStyle.Dark
-        '
-        'Theme_Color_ComboBox
-        '
-        Me.Theme_Color_ComboBox.FormattingEnabled = True
-        Me.Theme_Color_ComboBox.ItemHeight = 23
-        Me.Theme_Color_ComboBox.Items.AddRange(New Object() {"Dark", "Light"})
-        Me.Theme_Color_ComboBox.Location = New System.Drawing.Point(3, 28)
-        Me.Theme_Color_ComboBox.Name = "Theme_Color_ComboBox"
-        Me.Theme_Color_ComboBox.Size = New System.Drawing.Size(121, 29)
-        Me.Theme_Color_ComboBox.Style = MetroFramework.MetroColorStyle.Green
-        Me.Theme_Color_ComboBox.TabIndex = 3
-        Me.Theme_Color_ComboBox.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.Button1.Font = New System.Drawing.Font("Arial Narrow", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Location = New System.Drawing.Point(8, 6)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(202, 176)
+        Me.Button1.TabIndex = 0
+        Me.Button1.Text = "BugPageShow"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'EasyHTML
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BorderStyle = MetroFramework.Drawing.MetroBorderStyle.FixedSingle
-        Me.ClientSize = New System.Drawing.Size(1131, 669)
-        Me.Controls.Add(Me.EditorWindow)
+        Me.BackColor = System.Drawing.Color.Gray
+        Me.ClientSize = New System.Drawing.Size(909, 626)
+        Me.Controls.Add(Me.Pgs_Main)
+        Me.ForeColor = System.Drawing.Color.White
         Me.Name = "EasyHTML"
-        Me.Resizable = False
-        Me.Style = MetroFramework.MetroColorStyle.Green
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EasyHTML"
-        Me.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.EditorWindow.ResumeLayout(False)
-        Me.MainDetailsPage.ResumeLayout(False)
-        Me.MainDetailsPage.PerformLayout()
-        CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Settings_page.ResumeLayout(False)
-        Me.Settings_page.PerformLayout()
+        Me.Pgs_Main.ResumeLayout(False)
+        Me.Test_Page.ResumeLayout(False)
+        Me.Pg_Export.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
 
-    Friend WithEvents EditorWindow As MetroFramework.Controls.MetroTabControl
-    Friend WithEvents MainDetailsPage As MetroFramework.Controls.MetroTabPage
-    Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetaTags_Show_Toggle As MetroFramework.Controls.MetroToggle
-    Friend WithEvents Page_Title_TextBox As MetroFramework.Controls.MetroTextBox
-    Friend WithEvents Page_Title_Label As MetroFramework.Controls.MetroLabel
-    Friend WithEvents MetroStyleManager1 As MetroFramework.Components.MetroStyleManager
-    Friend WithEvents MetroStyleExtender1 As MetroFramework.Components.MetroStyleExtender
-    Friend WithEvents MetroToolTip1 As MetroFramework.Components.MetroToolTip
-    Friend WithEvents Settings_page As MetroFramework.Controls.MetroTabPage
-    Friend WithEvents Theme_Color_ComboBox As MetroFramework.Controls.MetroComboBox
-    Friend WithEvents ThemeColor_Label As MetroFramework.Controls.MetroLabel
+    Friend WithEvents Pgs_Main As TabControl
+    Friend WithEvents MainPageDetails As TabPage
+    Friend WithEvents Pg_Export As TabPage
+    Friend WithEvents Btn_Export As Button
+    Friend WithEvents Code_Export_Code_Box As RichTextBox
+    Friend WithEvents Pg_Preview As TabPage
+    Friend WithEvents Test_Page As TabPage
+    Friend WithEvents Button1 As Button
 End Class

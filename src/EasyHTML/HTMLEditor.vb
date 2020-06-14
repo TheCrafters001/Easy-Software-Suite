@@ -1,9 +1,15 @@
 ﻿Public Class EasyHTML
     Private Sub EasyHTML_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        If My.Settings.Theme = "Dark" Then
-            Theme_Color_ComboBox.SelectedIndex = 0
-        ElseIf My.Settings.Theme = "Light" Then
-            Theme_Color_ComboBox.SelectedIndex = 1
-        End If
+
+    End Sub
+
+    Private Sub Btn_Export_Click(sender As Object, e As EventArgs) Handles Btn_Export.Click
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        BugReport.Show()
+        BugReport.TextBox1.Text = "Test Report"
+        Me.Close()
     End Sub
 End Class
