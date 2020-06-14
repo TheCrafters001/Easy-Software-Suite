@@ -24,15 +24,17 @@ Partial Class EasyHTML
     Private Sub InitializeComponent()
         Me.Pgs_Main = New System.Windows.Forms.TabControl()
         Me.MainPageDetails = New System.Windows.Forms.TabPage()
-        Me.Test_Page = New System.Windows.Forms.TabPage()
         Me.Pg_Export = New System.Windows.Forms.TabPage()
-        Me.Pg_Preview = New System.Windows.Forms.TabPage()
-        Me.Code_Export_Code_Box = New System.Windows.Forms.RichTextBox()
         Me.Btn_Export = New System.Windows.Forms.Button()
+        Me.Code_Export_Code_Box = New System.Windows.Forms.RichTextBox()
+        Me.Pg_Preview = New System.Windows.Forms.TabPage()
+        Me.Test_Page = New System.Windows.Forms.TabPage()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.HTMLEditorError = New System.Windows.Forms.TextBox()
         Me.Pgs_Main.SuspendLayout()
-        Me.Test_Page.SuspendLayout()
+        Me.MainPageDetails.SuspendLayout()
         Me.Pg_Export.SuspendLayout()
+        Me.Test_Page.SuspendLayout()
         Me.SuspendLayout()
         '
         'Pgs_Main
@@ -51,23 +53,13 @@ Partial Class EasyHTML
         'MainPageDetails
         '
         Me.MainPageDetails.BackColor = System.Drawing.Color.Gray
+        Me.MainPageDetails.Controls.Add(Me.HTMLEditorError)
         Me.MainPageDetails.Location = New System.Drawing.Point(4, 22)
         Me.MainPageDetails.Name = "MainPageDetails"
         Me.MainPageDetails.Padding = New System.Windows.Forms.Padding(3)
         Me.MainPageDetails.Size = New System.Drawing.Size(901, 600)
         Me.MainPageDetails.TabIndex = 0
         Me.MainPageDetails.Text = "Main Details"
-        '
-        'Test_Page
-        '
-        Me.Test_Page.BackColor = System.Drawing.Color.Gray
-        Me.Test_Page.Controls.Add(Me.Button1)
-        Me.Test_Page.Location = New System.Drawing.Point(4, 22)
-        Me.Test_Page.Name = "Test_Page"
-        Me.Test_Page.Padding = New System.Windows.Forms.Padding(3)
-        Me.Test_Page.Size = New System.Drawing.Size(901, 600)
-        Me.Test_Page.TabIndex = 1
-        Me.Test_Page.Text = "Test Page"
         '
         'Pg_Export
         '
@@ -80,14 +72,15 @@ Partial Class EasyHTML
         Me.Pg_Export.TabIndex = 2
         Me.Pg_Export.Text = "Export"
         '
-        'Pg_Preview
+        'Btn_Export
         '
-        Me.Pg_Preview.BackColor = System.Drawing.Color.Gray
-        Me.Pg_Preview.Location = New System.Drawing.Point(4, 22)
-        Me.Pg_Preview.Name = "Pg_Preview"
-        Me.Pg_Preview.Size = New System.Drawing.Size(901, 600)
-        Me.Pg_Preview.TabIndex = 3
-        Me.Pg_Preview.Text = "Preview"
+        Me.Btn_Export.ForeColor = System.Drawing.Color.Black
+        Me.Btn_Export.Location = New System.Drawing.Point(818, 574)
+        Me.Btn_Export.Name = "Btn_Export"
+        Me.Btn_Export.Size = New System.Drawing.Size(75, 23)
+        Me.Btn_Export.TabIndex = 1
+        Me.Btn_Export.Text = "Export"
+        Me.Btn_Export.UseVisualStyleBackColor = True
         '
         'Code_Export_Code_Box
         '
@@ -98,15 +91,25 @@ Partial Class EasyHTML
         Me.Code_Export_Code_Box.TabIndex = 0
         Me.Code_Export_Code_Box.Text = ""
         '
-        'Btn_Export
+        'Pg_Preview
         '
-        Me.Btn_Export.ForeColor = System.Drawing.Color.Black
-        Me.Btn_Export.Location = New System.Drawing.Point(818, 574)
-        Me.Btn_Export.Name = "Btn_Export"
-        Me.Btn_Export.Size = New System.Drawing.Size(75, 23)
-        Me.Btn_Export.TabIndex = 1
-        Me.Btn_Export.Text = "Export"
-        Me.Btn_Export.UseVisualStyleBackColor = True
+        Me.Pg_Preview.BackColor = System.Drawing.Color.Gray
+        Me.Pg_Preview.Location = New System.Drawing.Point(4, 22)
+        Me.Pg_Preview.Name = "Pg_Preview"
+        Me.Pg_Preview.Size = New System.Drawing.Size(901, 600)
+        Me.Pg_Preview.TabIndex = 3
+        Me.Pg_Preview.Text = "Preview"
+        '
+        'Test_Page
+        '
+        Me.Test_Page.BackColor = System.Drawing.Color.Gray
+        Me.Test_Page.Controls.Add(Me.Button1)
+        Me.Test_Page.Location = New System.Drawing.Point(4, 22)
+        Me.Test_Page.Name = "Test_Page"
+        Me.Test_Page.Padding = New System.Windows.Forms.Padding(3)
+        Me.Test_Page.Size = New System.Drawing.Size(901, 600)
+        Me.Test_Page.TabIndex = 1
+        Me.Test_Page.Text = "Test Page"
         '
         'Button1
         '
@@ -119,6 +122,14 @@ Partial Class EasyHTML
         Me.Button1.Text = "BugPageShow"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'HTMLEditorError
+        '
+        Me.HTMLEditorError.Location = New System.Drawing.Point(888, 584)
+        Me.HTMLEditorError.Name = "HTMLEditorError"
+        Me.HTMLEditorError.Size = New System.Drawing.Size(17, 20)
+        Me.HTMLEditorError.TabIndex = 0
+        Me.HTMLEditorError.Visible = False
+        '
         'EasyHTML
         '
         Me.BackColor = System.Drawing.Color.Gray
@@ -129,8 +140,10 @@ Partial Class EasyHTML
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EasyHTML"
         Me.Pgs_Main.ResumeLayout(False)
-        Me.Test_Page.ResumeLayout(False)
+        Me.MainPageDetails.ResumeLayout(False)
+        Me.MainPageDetails.PerformLayout()
         Me.Pg_Export.ResumeLayout(False)
+        Me.Test_Page.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -143,4 +156,5 @@ Partial Class EasyHTML
     Friend WithEvents Pg_Preview As TabPage
     Friend WithEvents Test_Page As TabPage
     Friend WithEvents Button1 As Button
+    Friend WithEvents HTMLEditorError As TextBox
 End Class
