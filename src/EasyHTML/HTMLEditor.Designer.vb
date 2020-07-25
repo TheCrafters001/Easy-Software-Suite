@@ -28,6 +28,7 @@ Partial Class EasyHTML
         Me.mainEditor_grp = New System.Windows.Forms.GroupBox()
         Me.CodeEditorBox = New System.Windows.Forms.RichTextBox()
         Me.misc_grp = New System.Windows.Forms.GroupBox()
+        Me.credit_chkbox = New System.Windows.Forms.CheckBox()
         Me.mobileViewport_chkbox = New System.Windows.Forms.CheckBox()
         Me.jsImport_grp = New System.Windows.Forms.GroupBox()
         Me.jsImport_lst = New System.Windows.Forms.ListBox()
@@ -43,12 +44,16 @@ Partial Class EasyHTML
         Me.Btn_Export = New System.Windows.Forms.Button()
         Me.Code_Export_Code_Box = New System.Windows.Forms.RichTextBox()
         Me.Pg_Preview = New System.Windows.Forms.TabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.prvwarn_LBL = New System.Windows.Forms.Label()
+        Me.updatePreview_btn = New System.Windows.Forms.Button()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Test_Page = New System.Windows.Forms.TabPage()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.newProject_btn = New System.Windows.Forms.Button()
+        Me.loadCssLibs_btn = New System.Windows.Forms.Button()
+        Me.loadJsLibs_btn = New System.Windows.Forms.Button()
+        Me.loadEditorProj_btn = New System.Windows.Forms.Button()
         Me.Pgs_Main.SuspendLayout()
         Me.MainPageDetails.SuspendLayout()
         Me.mainEditor_grp.SuspendLayout()
@@ -76,6 +81,10 @@ Partial Class EasyHTML
         'MainPageDetails
         '
         Me.MainPageDetails.BackColor = System.Drawing.Color.Gray
+        Me.MainPageDetails.Controls.Add(Me.loadEditorProj_btn)
+        Me.MainPageDetails.Controls.Add(Me.loadJsLibs_btn)
+        Me.MainPageDetails.Controls.Add(Me.loadCssLibs_btn)
+        Me.MainPageDetails.Controls.Add(Me.newProject_btn)
         Me.MainPageDetails.Controls.Add(Me.mainEditor_grp)
         Me.MainPageDetails.Controls.Add(Me.misc_grp)
         Me.MainPageDetails.Controls.Add(Me.jsImport_grp)
@@ -115,6 +124,7 @@ Partial Class EasyHTML
         '
         'misc_grp
         '
+        Me.misc_grp.Controls.Add(Me.credit_chkbox)
         Me.misc_grp.Controls.Add(Me.mobileViewport_chkbox)
         Me.misc_grp.Location = New System.Drawing.Point(8, 48)
         Me.misc_grp.Name = "misc_grp"
@@ -122,6 +132,16 @@ Partial Class EasyHTML
         Me.misc_grp.TabIndex = 8
         Me.misc_grp.TabStop = False
         Me.misc_grp.Text = "Misc Items"
+        '
+        'credit_chkbox
+        '
+        Me.credit_chkbox.AutoSize = True
+        Me.credit_chkbox.Location = New System.Drawing.Point(6, 42)
+        Me.credit_chkbox.Name = "credit_chkbox"
+        Me.credit_chkbox.Size = New System.Drawing.Size(75, 17)
+        Me.credit_chkbox.TabIndex = 1
+        Me.credit_chkbox.Text = "Add Credit"
+        Me.credit_chkbox.UseVisualStyleBackColor = True
         '
         'mobileViewport_chkbox
         '
@@ -147,7 +167,6 @@ Partial Class EasyHTML
         'jsImport_lst
         '
         Me.jsImport_lst.FormattingEnabled = True
-        Me.jsImport_lst.Items.AddRange(New Object() {"js/script.js"})
         Me.jsImport_lst.Location = New System.Drawing.Point(6, 48)
         Me.jsImport_lst.Name = "jsImport_lst"
         Me.jsImport_lst.Size = New System.Drawing.Size(188, 95)
@@ -177,7 +196,6 @@ Partial Class EasyHTML
         'cssImport_lst
         '
         Me.cssImport_lst.FormattingEnabled = True
-        Me.cssImport_lst.Items.AddRange(New Object() {"css/style.css"})
         Me.cssImport_lst.Location = New System.Drawing.Point(6, 48)
         Me.cssImport_lst.Name = "cssImport_lst"
         Me.cssImport_lst.Size = New System.Drawing.Size(188, 95)
@@ -263,8 +281,8 @@ Partial Class EasyHTML
         'Pg_Preview
         '
         Me.Pg_Preview.BackColor = System.Drawing.Color.Gray
-        Me.Pg_Preview.Controls.Add(Me.Label1)
-        Me.Pg_Preview.Controls.Add(Me.Button2)
+        Me.Pg_Preview.Controls.Add(Me.prvwarn_LBL)
+        Me.Pg_Preview.Controls.Add(Me.updatePreview_btn)
         Me.Pg_Preview.Controls.Add(Me.WebBrowser1)
         Me.Pg_Preview.Location = New System.Drawing.Point(4, 22)
         Me.Pg_Preview.Name = "Pg_Preview"
@@ -272,25 +290,25 @@ Partial Class EasyHTML
         Me.Pg_Preview.TabIndex = 3
         Me.Pg_Preview.Text = "Preview"
         '
-        'Label1
+        'prvwarn_LBL
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(8, 582)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(382, 13)
-        Me.Label1.TabIndex = 2
-        Me.Label1.Text = "Preview may not be exactly what really displays, as the browser this uses is bad." &
+        Me.prvwarn_LBL.AutoSize = True
+        Me.prvwarn_LBL.Location = New System.Drawing.Point(8, 582)
+        Me.prvwarn_LBL.Name = "prvwarn_LBL"
+        Me.prvwarn_LBL.Size = New System.Drawing.Size(382, 13)
+        Me.prvwarn_LBL.TabIndex = 2
+        Me.prvwarn_LBL.Text = "Preview may not be exactly what really displays, as the browser this uses is bad." &
     ""
         '
-        'Button2
+        'updatePreview_btn
         '
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(796, 575)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(97, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Update Preview"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.updatePreview_btn.ForeColor = System.Drawing.Color.Black
+        Me.updatePreview_btn.Location = New System.Drawing.Point(796, 575)
+        Me.updatePreview_btn.Name = "updatePreview_btn"
+        Me.updatePreview_btn.Size = New System.Drawing.Size(97, 23)
+        Me.updatePreview_btn.TabIndex = 1
+        Me.updatePreview_btn.Text = "Update Preview"
+        Me.updatePreview_btn.UseVisualStyleBackColor = True
         '
         'WebBrowser1
         '
@@ -324,6 +342,46 @@ Partial Class EasyHTML
         '
         'Timer1
         '
+        '
+        'newProject_btn
+        '
+        Me.newProject_btn.ForeColor = System.Drawing.Color.Black
+        Me.newProject_btn.Location = New System.Drawing.Point(634, 6)
+        Me.newProject_btn.Name = "newProject_btn"
+        Me.newProject_btn.Size = New System.Drawing.Size(107, 23)
+        Me.newProject_btn.TabIndex = 10
+        Me.newProject_btn.Text = "New Project"
+        Me.newProject_btn.UseVisualStyleBackColor = True
+        '
+        'loadCssLibs_btn
+        '
+        Me.loadCssLibs_btn.ForeColor = System.Drawing.Color.Black
+        Me.loadCssLibs_btn.Location = New System.Drawing.Point(634, 35)
+        Me.loadCssLibs_btn.Name = "loadCssLibs_btn"
+        Me.loadCssLibs_btn.Size = New System.Drawing.Size(107, 23)
+        Me.loadCssLibs_btn.TabIndex = 11
+        Me.loadCssLibs_btn.Text = "Load CSS Libraries"
+        Me.loadCssLibs_btn.UseVisualStyleBackColor = True
+        '
+        'loadJsLibs_btn
+        '
+        Me.loadJsLibs_btn.ForeColor = System.Drawing.Color.Black
+        Me.loadJsLibs_btn.Location = New System.Drawing.Point(634, 64)
+        Me.loadJsLibs_btn.Name = "loadJsLibs_btn"
+        Me.loadJsLibs_btn.Size = New System.Drawing.Size(107, 23)
+        Me.loadJsLibs_btn.TabIndex = 12
+        Me.loadJsLibs_btn.Text = "Load JS Libraries"
+        Me.loadJsLibs_btn.UseVisualStyleBackColor = True
+        '
+        'loadEditorProj_btn
+        '
+        Me.loadEditorProj_btn.ForeColor = System.Drawing.Color.Black
+        Me.loadEditorProj_btn.Location = New System.Drawing.Point(634, 93)
+        Me.loadEditorProj_btn.Name = "loadEditorProj_btn"
+        Me.loadEditorProj_btn.Size = New System.Drawing.Size(107, 23)
+        Me.loadEditorProj_btn.TabIndex = 13
+        Me.loadEditorProj_btn.Text = "Load Editor Project"
+        Me.loadEditorProj_btn.UseVisualStyleBackColor = True
         '
         'EasyHTML
         '
@@ -360,8 +418,8 @@ Partial Class EasyHTML
     Friend WithEvents Button1 As Button
     Friend WithEvents HTMLEditorError As TextBox
     Friend WithEvents Component_Box As ListBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents Button2 As Button
+    Friend WithEvents prvwarn_LBL As Label
+    Friend WithEvents updatePreview_btn As Button
     Friend WithEvents WebBrowser1 As WebBrowser
     Friend WithEvents Timer1 As Timer
     Friend WithEvents pageTitle_lbl As Label
@@ -376,4 +434,9 @@ Partial Class EasyHTML
     Friend WithEvents mobileViewport_chkbox As CheckBox
     Friend WithEvents mainEditor_grp As GroupBox
     Friend WithEvents CodeEditorBox As RichTextBox
+    Friend WithEvents credit_chkbox As CheckBox
+    Friend WithEvents newProject_btn As Button
+    Friend WithEvents loadEditorProj_btn As Button
+    Friend WithEvents loadJsLibs_btn As Button
+    Friend WithEvents loadCssLibs_btn As Button
 End Class

@@ -26,9 +26,9 @@ Partial Class ThemeSelect
         Me.rad_Blank = New System.Windows.Forms.RadioButton()
         Me.rad_Template = New System.Windows.Forms.RadioButton()
         Me.grp_SelectTemplate = New System.Windows.Forms.GroupBox()
+        Me.cmb_Theme = New System.Windows.Forms.ComboBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.cmb_Theme = New System.Windows.Forms.ComboBox()
         Me.grp_SelectTemplate.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -64,6 +64,16 @@ Partial Class ThemeSelect
         Me.grp_SelectTemplate.TabStop = False
         Me.grp_SelectTemplate.Text = "Select a Template"
         '
+        'cmb_Theme
+        '
+        Me.cmb_Theme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_Theme.FormattingEnabled = True
+        Me.cmb_Theme.Items.AddRange(New Object() {"Bootstrap", "UI Kit", "Bulma", "W3.CSS"})
+        Me.cmb_Theme.Location = New System.Drawing.Point(6, 19)
+        Me.cmb_Theme.Name = "cmb_Theme"
+        Me.cmb_Theme.Size = New System.Drawing.Size(473, 21)
+        Me.cmb_Theme.TabIndex = 4
+        '
         'Timer1
         '
         '
@@ -76,16 +86,6 @@ Partial Class ThemeSelect
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "OK"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'cmb_Theme
-        '
-        Me.cmb_Theme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.cmb_Theme.FormattingEnabled = True
-        Me.cmb_Theme.Items.AddRange(New Object() {"Bootstrap", "UI Kit", "Bulma", "W3.CSS"})
-        Me.cmb_Theme.Location = New System.Drawing.Point(6, 19)
-        Me.cmb_Theme.Name = "cmb_Theme"
-        Me.cmb_Theme.Size = New System.Drawing.Size(473, 21)
-        Me.cmb_Theme.TabIndex = 4
         '
         'ThemeSelect
         '
