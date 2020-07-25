@@ -26,25 +26,48 @@ Partial Class EasyHTML
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EasyHTML))
         Me.Pgs_Main = New System.Windows.Forms.TabControl()
         Me.Pg_Main = New System.Windows.Forms.TabPage()
+        Me.lbl_Tip1 = New System.Windows.Forms.Label()
         Me.loadEditorProj_btn = New System.Windows.Forms.Button()
         Me.loadJsLibs_btn = New System.Windows.Forms.Button()
         Me.loadCssLibs_btn = New System.Windows.Forms.Button()
         Me.newProject_btn = New System.Windows.Forms.Button()
         Me.mainEditor_grp = New System.Windows.Forms.GroupBox()
         Me.CodeEditorBox = New System.Windows.Forms.RichTextBox()
+        Me.MainEditorContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.SaveEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.misc_grp = New System.Windows.Forms.GroupBox()
+        Me.metatags_chkbox = New System.Windows.Forms.CheckBox()
+        Me.UTF8_Set_chkbox = New System.Windows.Forms.CheckBox()
         Me.credit_chkbox = New System.Windows.Forms.CheckBox()
         Me.mobileViewport_chkbox = New System.Windows.Forms.CheckBox()
         Me.jsImport_grp = New System.Windows.Forms.GroupBox()
         Me.jsImport_lst = New System.Windows.Forms.ListBox()
+        Me.JSContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.SaveJSLibrariesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadJSLibrariesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.jsImport_btn = New System.Windows.Forms.Button()
         Me.cssImport_grp = New System.Windows.Forms.GroupBox()
         Me.cssImport_lst = New System.Windows.Forms.ListBox()
+        Me.CSSContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.SaveCSSLibrariesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadCSSLibrariesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.cssImport_btn = New System.Windows.Forms.Button()
         Me.pageTitle_lbl = New System.Windows.Forms.Label()
         Me.pageTitle_txtBox = New System.Windows.Forms.TextBox()
         Me.Component_Box = New System.Windows.Forms.ListBox()
         Me.HTMLEditorError = New System.Windows.Forms.TextBox()
+        Me.Pg_Meta = New System.Windows.Forms.TabPage()
+        Me.description_txtBox = New System.Windows.Forms.TextBox()
+        Me.description_lbl = New System.Windows.Forms.Label()
+        Me.title_txtBox = New System.Windows.Forms.TextBox()
+        Me.title_lbl = New System.Windows.Forms.Label()
+        Me.keywords_txtBox = New System.Windows.Forms.TextBox()
+        Me.keywords_lbl = New System.Windows.Forms.Label()
+        Me.revisit_txtBox = New System.Windows.Forms.TextBox()
+        Me.revisit_lbl = New System.Windows.Forms.Label()
+        Me.siteAuthor_txtbox = New System.Windows.Forms.TextBox()
+        Me.siteAuthor_lbl = New System.Windows.Forms.Label()
         Me.Pg_Export = New System.Windows.Forms.TabPage()
         Me.Btn_Export = New System.Windows.Forms.Button()
         Me.Code_Export_Code_Box = New System.Windows.Forms.RichTextBox()
@@ -52,49 +75,26 @@ Partial Class EasyHTML
         Me.prvwarn_LBL = New System.Windows.Forms.Label()
         Me.updatePreview_btn = New System.Windows.Forms.Button()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Me.Pg_About = New System.Windows.Forms.TabPage()
+        Me.Pg_Help = New System.Windows.Forms.TabPage()
         Me.Test_Page = New System.Windows.Forms.TabPage()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.lbl_Tip1 = New System.Windows.Forms.Label()
-        Me.MainEditorContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.JSContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.CSSContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.SaveEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoadEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
         Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.SaveJSLibrariesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoadJSLibrariesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.SaveCSSLibrariesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoadCSSLibrariesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Pg_About = New System.Windows.Forms.TabPage()
-        Me.Pg_Help = New System.Windows.Forms.TabPage()
-        Me.Pg_Meta = New System.Windows.Forms.TabPage()
-        Me.UTF8_Set_chkbox = New System.Windows.Forms.CheckBox()
-        Me.metatags_chkbox = New System.Windows.Forms.CheckBox()
-        Me.siteAuthor_lbl = New System.Windows.Forms.Label()
-        Me.siteAuthor_txtbox = New System.Windows.Forms.TextBox()
-        Me.revisit_txtBox = New System.Windows.Forms.TextBox()
-        Me.revisit_lbl = New System.Windows.Forms.Label()
-        Me.keywords_txtBox = New System.Windows.Forms.TextBox()
-        Me.keywords_lbl = New System.Windows.Forms.Label()
-        Me.title_txtBox = New System.Windows.Forms.TextBox()
-        Me.title_lbl = New System.Windows.Forms.Label()
-        Me.description_txtBox = New System.Windows.Forms.TextBox()
-        Me.description_lbl = New System.Windows.Forms.Label()
         Me.Pgs_Main.SuspendLayout()
         Me.Pg_Main.SuspendLayout()
         Me.mainEditor_grp.SuspendLayout()
+        Me.MainEditorContextMenu.SuspendLayout()
         Me.misc_grp.SuspendLayout()
         Me.jsImport_grp.SuspendLayout()
+        Me.JSContextMenu.SuspendLayout()
         Me.cssImport_grp.SuspendLayout()
+        Me.CSSContextMenu.SuspendLayout()
+        Me.Pg_Meta.SuspendLayout()
         Me.Pg_Export.SuspendLayout()
         Me.Pg_Preview.SuspendLayout()
         Me.Test_Page.SuspendLayout()
-        Me.MainEditorContextMenu.SuspendLayout()
-        Me.JSContextMenu.SuspendLayout()
-        Me.CSSContextMenu.SuspendLayout()
-        Me.Pg_Meta.SuspendLayout()
         Me.SuspendLayout()
         '
         'Pgs_Main
@@ -135,6 +135,15 @@ Partial Class EasyHTML
         Me.Pg_Main.Size = New System.Drawing.Size(901, 600)
         Me.Pg_Main.TabIndex = 0
         Me.Pg_Main.Text = "Main Details"
+        '
+        'lbl_Tip1
+        '
+        Me.lbl_Tip1.AutoSize = True
+        Me.lbl_Tip1.Location = New System.Drawing.Point(628, 119)
+        Me.lbl_Tip1.Name = "lbl_Tip1"
+        Me.lbl_Tip1.Size = New System.Drawing.Size(116, 39)
+        Me.lbl_Tip1.TabIndex = 14
+        Me.lbl_Tip1.Text = "Right click on an editor" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "to save that specific" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "part"
         '
         'loadEditorProj_btn
         '
@@ -199,6 +208,24 @@ Partial Class EasyHTML
         Me.CodeEditorBox.TabIndex = 0
         Me.CodeEditorBox.Text = ""
         '
+        'MainEditorContextMenu
+        '
+        Me.MainEditorContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveEditorProjectToolStripMenuItem, Me.LoadEditorProjectToolStripMenuItem})
+        Me.MainEditorContextMenu.Name = "MainEditorContextMenu"
+        Me.MainEditorContextMenu.Size = New System.Drawing.Size(175, 48)
+        '
+        'SaveEditorProjectToolStripMenuItem
+        '
+        Me.SaveEditorProjectToolStripMenuItem.Name = "SaveEditorProjectToolStripMenuItem"
+        Me.SaveEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.SaveEditorProjectToolStripMenuItem.Text = "Save Editor Project"
+        '
+        'LoadEditorProjectToolStripMenuItem
+        '
+        Me.LoadEditorProjectToolStripMenuItem.Name = "LoadEditorProjectToolStripMenuItem"
+        Me.LoadEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.LoadEditorProjectToolStripMenuItem.Text = "Load Editor Project"
+        '
         'misc_grp
         '
         Me.misc_grp.Controls.Add(Me.metatags_chkbox)
@@ -211,6 +238,26 @@ Partial Class EasyHTML
         Me.misc_grp.TabIndex = 8
         Me.misc_grp.TabStop = False
         Me.misc_grp.Text = "Misc Items"
+        '
+        'metatags_chkbox
+        '
+        Me.metatags_chkbox.AutoSize = True
+        Me.metatags_chkbox.Location = New System.Drawing.Point(6, 42)
+        Me.metatags_chkbox.Name = "metatags_chkbox"
+        Me.metatags_chkbox.Size = New System.Drawing.Size(150, 17)
+        Me.metatags_chkbox.TabIndex = 3
+        Me.metatags_chkbox.Text = "Meta Tags (Experamental)"
+        Me.metatags_chkbox.UseVisualStyleBackColor = True
+        '
+        'UTF8_Set_chkbox
+        '
+        Me.UTF8_Set_chkbox.AutoSize = True
+        Me.UTF8_Set_chkbox.Location = New System.Drawing.Point(6, 19)
+        Me.UTF8_Set_chkbox.Name = "UTF8_Set_chkbox"
+        Me.UTF8_Set_chkbox.Size = New System.Drawing.Size(95, 17)
+        Me.UTF8_Set_chkbox.TabIndex = 2
+        Me.UTF8_Set_chkbox.Text = "UTF-8 Charset"
+        Me.UTF8_Set_chkbox.UseVisualStyleBackColor = True
         '
         'credit_chkbox
         '
@@ -252,6 +299,24 @@ Partial Class EasyHTML
         Me.jsImport_lst.Size = New System.Drawing.Size(188, 95)
         Me.jsImport_lst.TabIndex = 9
         '
+        'JSContextMenu
+        '
+        Me.JSContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveJSLibrariesToolStripMenuItem, Me.LoadJSLibrariesToolStripMenuItem})
+        Me.JSContextMenu.Name = "JSContextMenu"
+        Me.JSContextMenu.Size = New System.Drawing.Size(161, 48)
+        '
+        'SaveJSLibrariesToolStripMenuItem
+        '
+        Me.SaveJSLibrariesToolStripMenuItem.Name = "SaveJSLibrariesToolStripMenuItem"
+        Me.SaveJSLibrariesToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.SaveJSLibrariesToolStripMenuItem.Text = "Save JS Libraries"
+        '
+        'LoadJSLibrariesToolStripMenuItem
+        '
+        Me.LoadJSLibrariesToolStripMenuItem.Name = "LoadJSLibrariesToolStripMenuItem"
+        Me.LoadJSLibrariesToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.LoadJSLibrariesToolStripMenuItem.Text = "Load JS Libraries"
+        '
         'jsImport_btn
         '
         Me.jsImport_btn.ForeColor = System.Drawing.Color.Black
@@ -281,6 +346,24 @@ Partial Class EasyHTML
         Me.cssImport_lst.Name = "cssImport_lst"
         Me.cssImport_lst.Size = New System.Drawing.Size(188, 95)
         Me.cssImport_lst.TabIndex = 8
+        '
+        'CSSContextMenu
+        '
+        Me.CSSContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveCSSLibrariesToolStripMenuItem1, Me.LoadCSSLibrariesToolStripMenuItem1})
+        Me.CSSContextMenu.Name = "CSSContextMenu"
+        Me.CSSContextMenu.Size = New System.Drawing.Size(171, 48)
+        '
+        'SaveCSSLibrariesToolStripMenuItem1
+        '
+        Me.SaveCSSLibrariesToolStripMenuItem1.Name = "SaveCSSLibrariesToolStripMenuItem1"
+        Me.SaveCSSLibrariesToolStripMenuItem1.Size = New System.Drawing.Size(170, 22)
+        Me.SaveCSSLibrariesToolStripMenuItem1.Text = "Save CSS Libraries"
+        '
+        'LoadCSSLibrariesToolStripMenuItem1
+        '
+        Me.LoadCSSLibrariesToolStripMenuItem1.Name = "LoadCSSLibrariesToolStripMenuItem1"
+        Me.LoadCSSLibrariesToolStripMenuItem1.Size = New System.Drawing.Size(170, 22)
+        Me.LoadCSSLibrariesToolStripMenuItem1.Text = "Load CSS Libraries"
         '
         'cssImport_btn
         '
@@ -328,6 +411,116 @@ Partial Class EasyHTML
         Me.HTMLEditorError.Size = New System.Drawing.Size(17, 20)
         Me.HTMLEditorError.TabIndex = 0
         Me.HTMLEditorError.Visible = False
+        '
+        'Pg_Meta
+        '
+        Me.Pg_Meta.BackColor = System.Drawing.Color.Gray
+        Me.Pg_Meta.Controls.Add(Me.description_txtBox)
+        Me.Pg_Meta.Controls.Add(Me.description_lbl)
+        Me.Pg_Meta.Controls.Add(Me.title_txtBox)
+        Me.Pg_Meta.Controls.Add(Me.title_lbl)
+        Me.Pg_Meta.Controls.Add(Me.keywords_txtBox)
+        Me.Pg_Meta.Controls.Add(Me.keywords_lbl)
+        Me.Pg_Meta.Controls.Add(Me.revisit_txtBox)
+        Me.Pg_Meta.Controls.Add(Me.revisit_lbl)
+        Me.Pg_Meta.Controls.Add(Me.siteAuthor_txtbox)
+        Me.Pg_Meta.Controls.Add(Me.siteAuthor_lbl)
+        Me.Pg_Meta.Location = New System.Drawing.Point(4, 22)
+        Me.Pg_Meta.Name = "Pg_Meta"
+        Me.Pg_Meta.Size = New System.Drawing.Size(901, 600)
+        Me.Pg_Meta.TabIndex = 6
+        Me.Pg_Meta.Text = "Meta Tags"
+        '
+        'description_txtBox
+        '
+        Me.description_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.description_txtBox.Location = New System.Drawing.Point(74, 81)
+        Me.description_txtBox.Name = "description_txtBox"
+        Me.description_txtBox.Size = New System.Drawing.Size(819, 20)
+        Me.description_txtBox.TabIndex = 9
+        '
+        'description_lbl
+        '
+        Me.description_lbl.AutoSize = True
+        Me.description_lbl.Location = New System.Drawing.Point(8, 84)
+        Me.description_lbl.Name = "description_lbl"
+        Me.description_lbl.Size = New System.Drawing.Size(60, 13)
+        Me.description_lbl.TabIndex = 8
+        Me.description_lbl.Text = "Description"
+        '
+        'title_txtBox
+        '
+        Me.title_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.title_txtBox.Location = New System.Drawing.Point(41, 107)
+        Me.title_txtBox.Name = "title_txtBox"
+        Me.title_txtBox.Size = New System.Drawing.Size(852, 20)
+        Me.title_txtBox.TabIndex = 7
+        '
+        'title_lbl
+        '
+        Me.title_lbl.AutoSize = True
+        Me.title_lbl.Location = New System.Drawing.Point(8, 110)
+        Me.title_lbl.Name = "title_lbl"
+        Me.title_lbl.Size = New System.Drawing.Size(27, 13)
+        Me.title_lbl.TabIndex = 6
+        Me.title_lbl.Text = "Title"
+        '
+        'keywords_txtBox
+        '
+        Me.keywords_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.keywords_txtBox.Location = New System.Drawing.Point(67, 55)
+        Me.keywords_txtBox.Name = "keywords_txtBox"
+        Me.keywords_txtBox.Size = New System.Drawing.Size(826, 20)
+        Me.keywords_txtBox.TabIndex = 5
+        '
+        'keywords_lbl
+        '
+        Me.keywords_lbl.AutoSize = True
+        Me.keywords_lbl.Location = New System.Drawing.Point(8, 58)
+        Me.keywords_lbl.Name = "keywords_lbl"
+        Me.keywords_lbl.Size = New System.Drawing.Size(53, 13)
+        Me.keywords_lbl.TabIndex = 4
+        Me.keywords_lbl.Text = "Keywords"
+        '
+        'revisit_txtBox
+        '
+        Me.revisit_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.revisit_txtBox.Location = New System.Drawing.Point(111, 29)
+        Me.revisit_txtBox.MaxLength = 1
+        Me.revisit_txtBox.Name = "revisit_txtBox"
+        Me.revisit_txtBox.Size = New System.Drawing.Size(782, 20)
+        Me.revisit_txtBox.TabIndex = 3
+        '
+        'revisit_lbl
+        '
+        Me.revisit_lbl.AutoSize = True
+        Me.revisit_lbl.Location = New System.Drawing.Point(8, 32)
+        Me.revisit_lbl.Name = "revisit_lbl"
+        Me.revisit_lbl.Size = New System.Drawing.Size(97, 13)
+        Me.revisit_lbl.TabIndex = 2
+        Me.revisit_lbl.Text = "Revisit After (Days)"
+        '
+        'siteAuthor_txtbox
+        '
+        Me.siteAuthor_txtbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.siteAuthor_txtbox.Location = New System.Drawing.Point(73, 3)
+        Me.siteAuthor_txtbox.Name = "siteAuthor_txtbox"
+        Me.siteAuthor_txtbox.Size = New System.Drawing.Size(820, 20)
+        Me.siteAuthor_txtbox.TabIndex = 1
+        '
+        'siteAuthor_lbl
+        '
+        Me.siteAuthor_lbl.AutoSize = True
+        Me.siteAuthor_lbl.Location = New System.Drawing.Point(8, 6)
+        Me.siteAuthor_lbl.Name = "siteAuthor_lbl"
+        Me.siteAuthor_lbl.Size = New System.Drawing.Size(59, 13)
+        Me.siteAuthor_lbl.TabIndex = 0
+        Me.siteAuthor_lbl.Text = "Site Author"
         '
         'Pg_Export
         '
@@ -400,6 +593,25 @@ Partial Class EasyHTML
         Me.WebBrowser1.Size = New System.Drawing.Size(895, 566)
         Me.WebBrowser1.TabIndex = 0
         '
+        'Pg_About
+        '
+        Me.Pg_About.BackColor = System.Drawing.Color.Gray
+        Me.Pg_About.Location = New System.Drawing.Point(4, 22)
+        Me.Pg_About.Name = "Pg_About"
+        Me.Pg_About.Padding = New System.Windows.Forms.Padding(3)
+        Me.Pg_About.Size = New System.Drawing.Size(901, 600)
+        Me.Pg_About.TabIndex = 4
+        Me.Pg_About.Text = "About"
+        '
+        'Pg_Help
+        '
+        Me.Pg_Help.BackColor = System.Drawing.Color.Gray
+        Me.Pg_Help.Location = New System.Drawing.Point(4, 22)
+        Me.Pg_Help.Name = "Pg_Help"
+        Me.Pg_Help.Size = New System.Drawing.Size(901, 600)
+        Me.Pg_Help.TabIndex = 5
+        Me.Pg_Help.Text = "Help"
+        '
         'Test_Page
         '
         Me.Test_Page.BackColor = System.Drawing.Color.Gray
@@ -425,218 +637,6 @@ Partial Class EasyHTML
         'Timer1
         '
         '
-        'lbl_Tip1
-        '
-        Me.lbl_Tip1.AutoSize = True
-        Me.lbl_Tip1.Location = New System.Drawing.Point(628, 119)
-        Me.lbl_Tip1.Name = "lbl_Tip1"
-        Me.lbl_Tip1.Size = New System.Drawing.Size(116, 39)
-        Me.lbl_Tip1.TabIndex = 14
-        Me.lbl_Tip1.Text = "Right click on an editor" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "to save that specific" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "part"
-        '
-        'MainEditorContextMenu
-        '
-        Me.MainEditorContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveEditorProjectToolStripMenuItem, Me.LoadEditorProjectToolStripMenuItem})
-        Me.MainEditorContextMenu.Name = "MainEditorContextMenu"
-        Me.MainEditorContextMenu.Size = New System.Drawing.Size(175, 48)
-        '
-        'JSContextMenu
-        '
-        Me.JSContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveJSLibrariesToolStripMenuItem, Me.LoadJSLibrariesToolStripMenuItem})
-        Me.JSContextMenu.Name = "JSContextMenu"
-        Me.JSContextMenu.Size = New System.Drawing.Size(161, 48)
-        '
-        'CSSContextMenu
-        '
-        Me.CSSContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveCSSLibrariesToolStripMenuItem1, Me.LoadCSSLibrariesToolStripMenuItem1})
-        Me.CSSContextMenu.Name = "CSSContextMenu"
-        Me.CSSContextMenu.Size = New System.Drawing.Size(171, 48)
-        '
-        'SaveEditorProjectToolStripMenuItem
-        '
-        Me.SaveEditorProjectToolStripMenuItem.Name = "SaveEditorProjectToolStripMenuItem"
-        Me.SaveEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
-        Me.SaveEditorProjectToolStripMenuItem.Text = "Save Editor Project"
-        '
-        'LoadEditorProjectToolStripMenuItem
-        '
-        Me.LoadEditorProjectToolStripMenuItem.Name = "LoadEditorProjectToolStripMenuItem"
-        Me.LoadEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
-        Me.LoadEditorProjectToolStripMenuItem.Text = "Load Editor Project"
-        '
-        'SaveJSLibrariesToolStripMenuItem
-        '
-        Me.SaveJSLibrariesToolStripMenuItem.Name = "SaveJSLibrariesToolStripMenuItem"
-        Me.SaveJSLibrariesToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.SaveJSLibrariesToolStripMenuItem.Text = "Save JS Libraries"
-        '
-        'LoadJSLibrariesToolStripMenuItem
-        '
-        Me.LoadJSLibrariesToolStripMenuItem.Name = "LoadJSLibrariesToolStripMenuItem"
-        Me.LoadJSLibrariesToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.LoadJSLibrariesToolStripMenuItem.Text = "Load JS Libraries"
-        '
-        'SaveCSSLibrariesToolStripMenuItem1
-        '
-        Me.SaveCSSLibrariesToolStripMenuItem1.Name = "SaveCSSLibrariesToolStripMenuItem1"
-        Me.SaveCSSLibrariesToolStripMenuItem1.Size = New System.Drawing.Size(170, 22)
-        Me.SaveCSSLibrariesToolStripMenuItem1.Text = "Save CSS Libraries"
-        '
-        'LoadCSSLibrariesToolStripMenuItem1
-        '
-        Me.LoadCSSLibrariesToolStripMenuItem1.Name = "LoadCSSLibrariesToolStripMenuItem1"
-        Me.LoadCSSLibrariesToolStripMenuItem1.Size = New System.Drawing.Size(170, 22)
-        Me.LoadCSSLibrariesToolStripMenuItem1.Text = "Load CSS Libraries"
-        '
-        'Pg_About
-        '
-        Me.Pg_About.BackColor = System.Drawing.Color.Gray
-        Me.Pg_About.Location = New System.Drawing.Point(4, 22)
-        Me.Pg_About.Name = "Pg_About"
-        Me.Pg_About.Padding = New System.Windows.Forms.Padding(3)
-        Me.Pg_About.Size = New System.Drawing.Size(901, 600)
-        Me.Pg_About.TabIndex = 4
-        Me.Pg_About.Text = "About"
-        '
-        'Pg_Help
-        '
-        Me.Pg_Help.BackColor = System.Drawing.Color.Gray
-        Me.Pg_Help.Location = New System.Drawing.Point(4, 22)
-        Me.Pg_Help.Name = "Pg_Help"
-        Me.Pg_Help.Size = New System.Drawing.Size(901, 600)
-        Me.Pg_Help.TabIndex = 5
-        Me.Pg_Help.Text = "Help"
-        '
-        'Pg_Meta
-        '
-        Me.Pg_Meta.BackColor = System.Drawing.Color.Gray
-        Me.Pg_Meta.Controls.Add(Me.description_txtBox)
-        Me.Pg_Meta.Controls.Add(Me.description_lbl)
-        Me.Pg_Meta.Controls.Add(Me.title_txtBox)
-        Me.Pg_Meta.Controls.Add(Me.title_lbl)
-        Me.Pg_Meta.Controls.Add(Me.keywords_txtBox)
-        Me.Pg_Meta.Controls.Add(Me.keywords_lbl)
-        Me.Pg_Meta.Controls.Add(Me.revisit_txtBox)
-        Me.Pg_Meta.Controls.Add(Me.revisit_lbl)
-        Me.Pg_Meta.Controls.Add(Me.siteAuthor_txtbox)
-        Me.Pg_Meta.Controls.Add(Me.siteAuthor_lbl)
-        Me.Pg_Meta.Location = New System.Drawing.Point(4, 22)
-        Me.Pg_Meta.Name = "Pg_Meta"
-        Me.Pg_Meta.Size = New System.Drawing.Size(901, 600)
-        Me.Pg_Meta.TabIndex = 6
-        Me.Pg_Meta.Text = "Meta Tags"
-        '
-        'UTF8_Set_chkbox
-        '
-        Me.UTF8_Set_chkbox.AutoSize = True
-        Me.UTF8_Set_chkbox.Location = New System.Drawing.Point(6, 19)
-        Me.UTF8_Set_chkbox.Name = "UTF8_Set_chkbox"
-        Me.UTF8_Set_chkbox.Size = New System.Drawing.Size(95, 17)
-        Me.UTF8_Set_chkbox.TabIndex = 2
-        Me.UTF8_Set_chkbox.Text = "UTF-8 Charset"
-        Me.UTF8_Set_chkbox.UseVisualStyleBackColor = True
-        '
-        'metatags_chkbox
-        '
-        Me.metatags_chkbox.AutoSize = True
-        Me.metatags_chkbox.Location = New System.Drawing.Point(6, 42)
-        Me.metatags_chkbox.Name = "metatags_chkbox"
-        Me.metatags_chkbox.Size = New System.Drawing.Size(150, 17)
-        Me.metatags_chkbox.TabIndex = 3
-        Me.metatags_chkbox.Text = "Meta Tags (Experamental)"
-        Me.metatags_chkbox.UseVisualStyleBackColor = True
-        '
-        'siteAuthor_lbl
-        '
-        Me.siteAuthor_lbl.AutoSize = True
-        Me.siteAuthor_lbl.Location = New System.Drawing.Point(8, 6)
-        Me.siteAuthor_lbl.Name = "siteAuthor_lbl"
-        Me.siteAuthor_lbl.Size = New System.Drawing.Size(59, 13)
-        Me.siteAuthor_lbl.TabIndex = 0
-        Me.siteAuthor_lbl.Text = "Site Author"
-        '
-        'siteAuthor_txtbox
-        '
-        Me.siteAuthor_txtbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.siteAuthor_txtbox.Location = New System.Drawing.Point(73, 3)
-        Me.siteAuthor_txtbox.Name = "siteAuthor_txtbox"
-        Me.siteAuthor_txtbox.Size = New System.Drawing.Size(820, 20)
-        Me.siteAuthor_txtbox.TabIndex = 1
-        '
-        'revisit_txtBox
-        '
-        Me.revisit_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.revisit_txtBox.Location = New System.Drawing.Point(111, 29)
-        Me.revisit_txtBox.MaxLength = 1
-        Me.revisit_txtBox.Name = "revisit_txtBox"
-        Me.revisit_txtBox.Size = New System.Drawing.Size(782, 20)
-        Me.revisit_txtBox.TabIndex = 3
-        '
-        'revisit_lbl
-        '
-        Me.revisit_lbl.AutoSize = True
-        Me.revisit_lbl.Location = New System.Drawing.Point(8, 32)
-        Me.revisit_lbl.Name = "revisit_lbl"
-        Me.revisit_lbl.Size = New System.Drawing.Size(97, 13)
-        Me.revisit_lbl.TabIndex = 2
-        Me.revisit_lbl.Text = "Revisit After (Days)"
-        '
-        'keywords_txtBox
-        '
-        Me.keywords_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.keywords_txtBox.Location = New System.Drawing.Point(67, 55)
-        Me.keywords_txtBox.Name = "keywords_txtBox"
-        Me.keywords_txtBox.Size = New System.Drawing.Size(826, 20)
-        Me.keywords_txtBox.TabIndex = 5
-        '
-        'keywords_lbl
-        '
-        Me.keywords_lbl.AutoSize = True
-        Me.keywords_lbl.Location = New System.Drawing.Point(8, 58)
-        Me.keywords_lbl.Name = "keywords_lbl"
-        Me.keywords_lbl.Size = New System.Drawing.Size(53, 13)
-        Me.keywords_lbl.TabIndex = 4
-        Me.keywords_lbl.Text = "Keywords"
-        '
-        'title_txtBox
-        '
-        Me.title_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.title_txtBox.Location = New System.Drawing.Point(41, 107)
-        Me.title_txtBox.Name = "title_txtBox"
-        Me.title_txtBox.Size = New System.Drawing.Size(852, 20)
-        Me.title_txtBox.TabIndex = 7
-        '
-        'title_lbl
-        '
-        Me.title_lbl.AutoSize = True
-        Me.title_lbl.Location = New System.Drawing.Point(8, 110)
-        Me.title_lbl.Name = "title_lbl"
-        Me.title_lbl.Size = New System.Drawing.Size(27, 13)
-        Me.title_lbl.TabIndex = 6
-        Me.title_lbl.Text = "Title"
-        '
-        'description_txtBox
-        '
-        Me.description_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.description_txtBox.Location = New System.Drawing.Point(74, 81)
-        Me.description_txtBox.Name = "description_txtBox"
-        Me.description_txtBox.Size = New System.Drawing.Size(819, 20)
-        Me.description_txtBox.TabIndex = 9
-        '
-        'description_lbl
-        '
-        Me.description_lbl.AutoSize = True
-        Me.description_lbl.Location = New System.Drawing.Point(8, 84)
-        Me.description_lbl.Name = "description_lbl"
-        Me.description_lbl.Size = New System.Drawing.Size(60, 13)
-        Me.description_lbl.TabIndex = 8
-        Me.description_lbl.Text = "Description"
-        '
         'EasyHTML
         '
         Me.BackColor = System.Drawing.Color.Gray
@@ -651,19 +651,19 @@ Partial Class EasyHTML
         Me.Pg_Main.ResumeLayout(False)
         Me.Pg_Main.PerformLayout()
         Me.mainEditor_grp.ResumeLayout(False)
+        Me.MainEditorContextMenu.ResumeLayout(False)
         Me.misc_grp.ResumeLayout(False)
         Me.misc_grp.PerformLayout()
         Me.jsImport_grp.ResumeLayout(False)
+        Me.JSContextMenu.ResumeLayout(False)
         Me.cssImport_grp.ResumeLayout(False)
+        Me.CSSContextMenu.ResumeLayout(False)
+        Me.Pg_Meta.ResumeLayout(False)
+        Me.Pg_Meta.PerformLayout()
         Me.Pg_Export.ResumeLayout(False)
         Me.Pg_Preview.ResumeLayout(False)
         Me.Pg_Preview.PerformLayout()
         Me.Test_Page.ResumeLayout(False)
-        Me.MainEditorContextMenu.ResumeLayout(False)
-        Me.JSContextMenu.ResumeLayout(False)
-        Me.CSSContextMenu.ResumeLayout(False)
-        Me.Pg_Meta.ResumeLayout(False)
-        Me.Pg_Meta.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
