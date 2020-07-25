@@ -76,9 +76,13 @@ Partial Class EasyHTML
         Me.updatePreview_btn = New System.Windows.Forms.Button()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Pg_About = New System.Windows.Forms.TabPage()
+        Me.gnuGpl_pic = New System.Windows.Forms.PictureBox()
+        Me.copyright_lbl = New System.Windows.Forms.Label()
+        Me.version_lbl = New System.Windows.Forms.Label()
+        Me.aboutText_lbl = New System.Windows.Forms.Label()
+        Me.aboutTitle_lbl = New System.Windows.Forms.Label()
+        Me.aboutImg_pic = New System.Windows.Forms.PictureBox()
         Me.Pg_Help = New System.Windows.Forms.TabPage()
-        Me.Test_Page = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
         Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
@@ -94,7 +98,9 @@ Partial Class EasyHTML
         Me.Pg_Meta.SuspendLayout()
         Me.Pg_Export.SuspendLayout()
         Me.Pg_Preview.SuspendLayout()
-        Me.Test_Page.SuspendLayout()
+        Me.Pg_About.SuspendLayout()
+        CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.aboutImg_pic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Pgs_Main
@@ -105,7 +111,6 @@ Partial Class EasyHTML
         Me.Pgs_Main.Controls.Add(Me.Pg_Preview)
         Me.Pgs_Main.Controls.Add(Me.Pg_About)
         Me.Pgs_Main.Controls.Add(Me.Pg_Help)
-        Me.Pgs_Main.Controls.Add(Me.Test_Page)
         Me.Pgs_Main.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Pgs_Main.Location = New System.Drawing.Point(0, 0)
         Me.Pgs_Main.Name = "Pgs_Main"
@@ -535,6 +540,7 @@ Partial Class EasyHTML
         '
         'Btn_Export
         '
+        Me.Btn_Export.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Btn_Export.ForeColor = System.Drawing.Color.Black
         Me.Btn_Export.Location = New System.Drawing.Point(818, 574)
         Me.Btn_Export.Name = "Btn_Export"
@@ -545,10 +551,13 @@ Partial Class EasyHTML
         '
         'Code_Export_Code_Box
         '
+        Me.Code_Export_Code_Box.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Code_Export_Code_Box.Location = New System.Drawing.Point(0, 0)
         Me.Code_Export_Code_Box.Name = "Code_Export_Code_Box"
         Me.Code_Export_Code_Box.ReadOnly = True
-        Me.Code_Export_Code_Box.Size = New System.Drawing.Size(901, 563)
+        Me.Code_Export_Code_Box.Size = New System.Drawing.Size(901, 568)
         Me.Code_Export_Code_Box.TabIndex = 0
         Me.Code_Export_Code_Box.Text = ""
         '
@@ -566,6 +575,7 @@ Partial Class EasyHTML
         '
         'prvwarn_LBL
         '
+        Me.prvwarn_LBL.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.prvwarn_LBL.AutoSize = True
         Me.prvwarn_LBL.Location = New System.Drawing.Point(8, 582)
         Me.prvwarn_LBL.Name = "prvwarn_LBL"
@@ -576,6 +586,7 @@ Partial Class EasyHTML
         '
         'updatePreview_btn
         '
+        Me.updatePreview_btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.updatePreview_btn.ForeColor = System.Drawing.Color.Black
         Me.updatePreview_btn.Location = New System.Drawing.Point(796, 575)
         Me.updatePreview_btn.Name = "updatePreview_btn"
@@ -586,6 +597,9 @@ Partial Class EasyHTML
         '
         'WebBrowser1
         '
+        Me.WebBrowser1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.WebBrowser1.Location = New System.Drawing.Point(3, 3)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
@@ -596,12 +610,76 @@ Partial Class EasyHTML
         'Pg_About
         '
         Me.Pg_About.BackColor = System.Drawing.Color.Gray
+        Me.Pg_About.Controls.Add(Me.gnuGpl_pic)
+        Me.Pg_About.Controls.Add(Me.copyright_lbl)
+        Me.Pg_About.Controls.Add(Me.version_lbl)
+        Me.Pg_About.Controls.Add(Me.aboutText_lbl)
+        Me.Pg_About.Controls.Add(Me.aboutTitle_lbl)
+        Me.Pg_About.Controls.Add(Me.aboutImg_pic)
         Me.Pg_About.Location = New System.Drawing.Point(4, 22)
         Me.Pg_About.Name = "Pg_About"
         Me.Pg_About.Padding = New System.Windows.Forms.Padding(3)
         Me.Pg_About.Size = New System.Drawing.Size(901, 600)
         Me.Pg_About.TabIndex = 4
         Me.Pg_About.Text = "About"
+        '
+        'gnuGpl_pic
+        '
+        Me.gnuGpl_pic.Image = Global.EasyHTML.My.Resources.Resources.GNUGPL3
+        Me.gnuGpl_pic.Location = New System.Drawing.Point(757, 524)
+        Me.gnuGpl_pic.Name = "gnuGpl_pic"
+        Me.gnuGpl_pic.Size = New System.Drawing.Size(136, 68)
+        Me.gnuGpl_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.gnuGpl_pic.TabIndex = 5
+        Me.gnuGpl_pic.TabStop = False
+        '
+        'copyright_lbl
+        '
+        Me.copyright_lbl.AutoSize = True
+        Me.copyright_lbl.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.copyright_lbl.Location = New System.Drawing.Point(168, 124)
+        Me.copyright_lbl.Name = "copyright_lbl"
+        Me.copyright_lbl.Size = New System.Drawing.Size(108, 21)
+        Me.copyright_lbl.TabIndex = 4
+        Me.copyright_lbl.Text = "Copyright LBL"
+        '
+        'version_lbl
+        '
+        Me.version_lbl.AutoSize = True
+        Me.version_lbl.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.version_lbl.Location = New System.Drawing.Point(168, 103)
+        Me.version_lbl.Name = "version_lbl"
+        Me.version_lbl.Size = New System.Drawing.Size(114, 21)
+        Me.version_lbl.TabIndex = 3
+        Me.version_lbl.Text = "Version: X.X.X.X"
+        '
+        'aboutText_lbl
+        '
+        Me.aboutText_lbl.Location = New System.Drawing.Point(168, 46)
+        Me.aboutText_lbl.Name = "aboutText_lbl"
+        Me.aboutText_lbl.Size = New System.Drawing.Size(727, 57)
+        Me.aboutText_lbl.TabIndex = 2
+        Me.aboutText_lbl.Text = resources.GetString("aboutText_lbl.Text")
+        '
+        'aboutTitle_lbl
+        '
+        Me.aboutTitle_lbl.AutoSize = True
+        Me.aboutTitle_lbl.Font = New System.Drawing.Font("Segoe UI", 21.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.aboutTitle_lbl.Location = New System.Drawing.Point(164, 6)
+        Me.aboutTitle_lbl.Name = "aboutTitle_lbl"
+        Me.aboutTitle_lbl.Size = New System.Drawing.Size(159, 40)
+        Me.aboutTitle_lbl.TabIndex = 1
+        Me.aboutTitle_lbl.Text = "EasyHTML"
+        '
+        'aboutImg_pic
+        '
+        Me.aboutImg_pic.Image = Global.EasyHTML.My.Resources.Resources.Side
+        Me.aboutImg_pic.Location = New System.Drawing.Point(8, 6)
+        Me.aboutImg_pic.Name = "aboutImg_pic"
+        Me.aboutImg_pic.Size = New System.Drawing.Size(150, 588)
+        Me.aboutImg_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.aboutImg_pic.TabIndex = 0
+        Me.aboutImg_pic.TabStop = False
         '
         'Pg_Help
         '
@@ -611,28 +689,6 @@ Partial Class EasyHTML
         Me.Pg_Help.Size = New System.Drawing.Size(901, 600)
         Me.Pg_Help.TabIndex = 5
         Me.Pg_Help.Text = "Help"
-        '
-        'Test_Page
-        '
-        Me.Test_Page.BackColor = System.Drawing.Color.Gray
-        Me.Test_Page.Controls.Add(Me.Button1)
-        Me.Test_Page.Location = New System.Drawing.Point(4, 22)
-        Me.Test_Page.Name = "Test_Page"
-        Me.Test_Page.Padding = New System.Windows.Forms.Padding(3)
-        Me.Test_Page.Size = New System.Drawing.Size(901, 600)
-        Me.Test_Page.TabIndex = 1
-        Me.Test_Page.Text = "Test Page"
-        '
-        'Button1
-        '
-        Me.Button1.Font = New System.Drawing.Font("Arial Narrow", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(8, 6)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(202, 176)
-        Me.Button1.TabIndex = 0
-        Me.Button1.Text = "BugPageShow"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'Timer1
         '
@@ -644,6 +700,7 @@ Partial Class EasyHTML
         Me.Controls.Add(Me.Pgs_Main)
         Me.ForeColor = System.Drawing.Color.White
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MinimumSize = New System.Drawing.Size(925, 665)
         Me.Name = "EasyHTML"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EasyHTML"
@@ -663,7 +720,10 @@ Partial Class EasyHTML
         Me.Pg_Export.ResumeLayout(False)
         Me.Pg_Preview.ResumeLayout(False)
         Me.Pg_Preview.PerformLayout()
-        Me.Test_Page.ResumeLayout(False)
+        Me.Pg_About.ResumeLayout(False)
+        Me.Pg_About.PerformLayout()
+        CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.aboutImg_pic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -674,8 +734,6 @@ Partial Class EasyHTML
     Friend WithEvents Btn_Export As Button
     Friend WithEvents Code_Export_Code_Box As RichTextBox
     Friend WithEvents Pg_Preview As TabPage
-    Friend WithEvents Test_Page As TabPage
-    Friend WithEvents Button1 As Button
     Friend WithEvents HTMLEditorError As TextBox
     Friend WithEvents Component_Box As ListBox
     Friend WithEvents prvwarn_LBL As Label
@@ -726,4 +784,10 @@ Partial Class EasyHTML
     Friend WithEvents description_lbl As Label
     Friend WithEvents title_txtBox As TextBox
     Friend WithEvents title_lbl As Label
+    Friend WithEvents aboutImg_pic As PictureBox
+    Friend WithEvents aboutText_lbl As Label
+    Friend WithEvents aboutTitle_lbl As Label
+    Friend WithEvents version_lbl As Label
+    Friend WithEvents copyright_lbl As Label
+    Friend WithEvents gnuGpl_pic As PictureBox
 End Class

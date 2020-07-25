@@ -163,6 +163,11 @@
   <ItemGroup>
     <None Include="Resources\EasyHTML_Icon.ico" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Side.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GNUGPL3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

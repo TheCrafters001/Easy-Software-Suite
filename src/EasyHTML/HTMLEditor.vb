@@ -14,13 +14,15 @@ Public Class EasyHTML
         ThemeSelect.Show()
         ThemeSelect.TopMost = True
         Timer1.Start()
+        version_lbl.Text = String.Format("Version {0}", My.Application.Info.Version.ToString)
+        copyright_lbl.Text = My.Application.Info.Copyright
     End Sub
 
     Private Sub Btn_Export_Click(sender As Object, e As EventArgs) Handles Btn_Export.Click
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         HTMLEditorError.Text = "Test"
         BugReport.Show()
     End Sub
@@ -220,6 +222,7 @@ Public Class EasyHTML
             revisit_txtBox.Text = ""
             description_txtBox.Text = ""
             keywords_txtBox.Text = ""
+            ThemeSelect.Show()
         End If
     End Sub
 #End Region
