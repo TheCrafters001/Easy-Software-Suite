@@ -47,6 +47,9 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\EasyHTML_Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoUpdater.NET, Version=1.6.0.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Autoupdater.NET.Official.1.6.0\lib\net40\AutoUpdater.NET.dll</HintPath>
@@ -76,6 +79,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extra\SplashScreen1.Designer.vb">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Extra\SplashScreen1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Extra\ThemeSelect.Designer.vb">
+      <DependentUpon>ThemeSelect.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Extra\ThemeSelect.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FallBack\BugReport.Designer.vb">
       <DependentUpon>BugReport.vb</DependentUpon>
     </Compile>
@@ -106,6 +121,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Extra\SplashScreen1.resx">
+      <DependentUpon>SplashScreen1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extra\ThemeSelect.resx">
+      <DependentUpon>ThemeSelect.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FallBack\BugReport.resx">
       <DependentUpon>BugReport.vb</DependentUpon>
     </EmbeddedResource>
@@ -132,5 +153,15 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EasyHTML_Icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EasyHTML_Splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\EasyHTML_Icon.ico" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
