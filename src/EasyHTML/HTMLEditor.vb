@@ -17,11 +17,6 @@ Public Class EasyHTML
         version_lbl.Text = String.Format("Version {0}", My.Application.Info.Version.ToString)
         copyright_lbl.Text = My.Application.Info.Copyright
     End Sub
-
-    Private Sub Btn_Export_Click(sender As Object, e As EventArgs) Handles Btn_Export.Click
-
-    End Sub
-
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         HTMLEditorError.Text = "Test"
         BugReport.Show()
@@ -101,6 +96,15 @@ Public Class EasyHTML
     End Sub
 #End Region
 #Region "Dialogs"
+    Private Sub Btn_Export_Click(sender As Object, e As EventArgs) Handles Btn_Export.Click
+        SaveDialog.Filter = "HTML File (*.html; *.htm; *.hta; *.shtml; *.shtm)|*.html; *.htm; *.hta; *.shtml; *.shtm"
+        SaveDialog.Title = "Save HTML File"
+        SaveDialog.FileName = "CoolWebsite.html"
+        If (SaveDialog.ShowDialog = DialogResult.OK) Then
+            My.Computer.FileSystem.WriteAllText(SaveDialog.FileName, Code_Export_Code_Box.Text, False)
+            MessageBox.Show("File Saved at: " & SaveDialog.FileName)
+        End If
+    End Sub
     Private Sub SaveEditorProjectToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SaveEditorProjectToolStripMenuItem.Click
         SaveDialog.Filter = "EasyHTML Project|*.ehtml"
         SaveDialog.Title = "Save EasyHTML Project"

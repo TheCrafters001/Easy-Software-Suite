@@ -82,7 +82,6 @@ Partial Class EasyHTML
         Me.aboutText_lbl = New System.Windows.Forms.Label()
         Me.aboutTitle_lbl = New System.Windows.Forms.Label()
         Me.aboutImg_pic = New System.Windows.Forms.PictureBox()
-        Me.Pg_Help = New System.Windows.Forms.TabPage()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
         Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
@@ -110,7 +109,6 @@ Partial Class EasyHTML
         Me.Pgs_Main.Controls.Add(Me.Pg_Export)
         Me.Pgs_Main.Controls.Add(Me.Pg_Preview)
         Me.Pgs_Main.Controls.Add(Me.Pg_About)
-        Me.Pgs_Main.Controls.Add(Me.Pg_Help)
         Me.Pgs_Main.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Pgs_Main.Location = New System.Drawing.Point(0, 0)
         Me.Pgs_Main.Name = "Pgs_Main"
@@ -681,15 +679,6 @@ Partial Class EasyHTML
         Me.aboutImg_pic.TabIndex = 0
         Me.aboutImg_pic.TabStop = False
         '
-        'Pg_Help
-        '
-        Me.Pg_Help.BackColor = System.Drawing.Color.Gray
-        Me.Pg_Help.Location = New System.Drawing.Point(4, 22)
-        Me.Pg_Help.Name = "Pg_Help"
-        Me.Pg_Help.Size = New System.Drawing.Size(901, 600)
-        Me.Pg_Help.TabIndex = 5
-        Me.Pg_Help.Text = "Help"
-        '
         'Timer1
         '
         '
@@ -769,7 +758,6 @@ Partial Class EasyHTML
     Friend WithEvents LoadCSSLibrariesToolStripMenuItem1 As ToolStripMenuItem
     Friend WithEvents Pg_Meta As TabPage
     Friend WithEvents Pg_About As TabPage
-    Friend WithEvents Pg_Help As TabPage
     Friend WithEvents SaveDialog As SaveFileDialog
     Friend WithEvents OpenDialog As OpenFileDialog
     Friend WithEvents metatags_chkbox As CheckBox
