@@ -32,7 +32,8 @@ Public Class EasyHTML
 #Region "Generator"
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         Dim viewport As String
-        Dim metatag As String = ""
+        Dim metatag As String
+        Dim utf8charset As String
         Dim pageBody As String
         Dim iecompat As String = ""
         Dim credit As String
@@ -63,10 +64,32 @@ Public Class EasyHTML
         Next
 
 #End Region
+#Region "UTF-8 Charset"
+        If UTF8_Set_chkbox.Checked = True Then
+            utf8charset = "<meta charset=""utf-8"">"
+        ElseIf UTF8_Set_chkbox.Checked = False Then
+            utf8charset = ""
+        End If
+#End Region
+#Region "Meta Tags"
+        If metatags_chkbox.Checked = True Then
+            metatag = "<meta name=""title"" content=""" & title_txtBox.Text & """>" &
+                "<meta name=""description"" content=""" & description_txtBox.Text & """>" &
+                "<meta name=""keywords"" content=""" & keywords_txtBox.Text & """>" &
+                "<meta name=""robots"" content=""index, follow"">" &
+                "<meta http-equiv=""Content-Type"" content=""text/html; charset=utf-8"">" &
+                "<meta name = ""language"" content=""English"">" &
+                "<meta name = ""revisit-after"" content=""" & revisit_txtBox.Text & " days"">" &
+                "<meta name = ""author"" content=""" & siteAuthor_txtbox.Text & """>"
+        ElseIf metatags_chkbox.Checked = False Then
+            metatag = ""
+        End If
+#End Region
         pageBody = CodeEditorBox.Text
         Code_Export_Code_Box.Text = "<!DOCTYPE html>" & vbCrLf & "<head>" & vbCrLf & "<title>" & pageTitle_txtBox.Text & "</title>" & vbCrLf &
-            viewport.ToString & vbCrLf & iecompat.ToString & vbCrLf & metatag.ToString & vbCrLf & cssImport.ToString() & vbCrLf &
-            "</head>" & vbCrLf & "<body>" & vbCrLf & pageBody & vbCrLf & jsImport.ToString() & vbCrLf & "</body>" & vbCrLf & "</html>"
+            utf8charset.ToString & vbCrLf & viewport.ToString & vbCrLf & iecompat.ToString & vbCrLf & metatag.ToString & vbCrLf &
+            cssImport.ToString() & vbCrLf & "</head>" & vbCrLf & "<body>" & vbCrLf & pageBody & vbCrLf & jsImport.ToString() & vbCrLf &
+            "</body>" & vbCrLf & "</html>"
 
     End Sub
 #End Region
