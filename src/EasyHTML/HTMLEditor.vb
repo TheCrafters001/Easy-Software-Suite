@@ -11,11 +11,11 @@ Imports AutoUpdaterDotNET
 Public Class EasyHTML
 #Region "Misc"
     Private Sub EasyHTML_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ThemeSelect.Show()
-        ThemeSelect.TopMost = True
         Timer1.Start()
         version_lbl.Text = String.Format("Version {0}", My.Application.Info.Version.ToString)
         copyright_lbl.Text = My.Application.Info.Copyright
+        ThemeSelect.Show()
+        ThemeSelect.TopMost = True
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs)
         HTMLEditorError.Text = "Test"
@@ -228,6 +228,17 @@ Public Class EasyHTML
             keywords_txtBox.Text = ""
             ThemeSelect.Show()
         End If
+    End Sub
+    Private Sub updateCheck_btn_Click(sender As Object, e As EventArgs) Handles updateCheck_btn.Click
+        AutoUpdater.ShowSkipButton = True
+        AutoUpdater.ShowRemindLaterButton = True
+        AutoUpdater.ReportErrors = True
+        AutoUpdater.RunUpdateAsAdmin = True
+        AutoUpdater.LetUserSelectRemindLater = True
+        AutoUpdater.RemindLaterTimeSpan = RemindLaterFormat.Hours
+        AutoUpdater.RemindLaterAt = 1
+        AutoUpdater.UpdateFormSize = New System.Drawing.Size(925, 665)
+        AutoUpdater.Start("https://api.thecrafters001.ga/updates/easyhtml.xml")
     End Sub
 #End Region
 End Class

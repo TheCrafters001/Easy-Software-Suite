@@ -85,6 +85,7 @@ Partial Class EasyHTML
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
         Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.updateCheck_btn = New System.Windows.Forms.Button()
         Me.Pgs_Main.SuspendLayout()
         Me.Pg_Main.SuspendLayout()
         Me.mainEditor_grp.SuspendLayout()
@@ -608,6 +609,7 @@ Partial Class EasyHTML
         'Pg_About
         '
         Me.Pg_About.BackColor = System.Drawing.Color.Gray
+        Me.Pg_About.Controls.Add(Me.updateCheck_btn)
         Me.Pg_About.Controls.Add(Me.gnuGpl_pic)
         Me.Pg_About.Controls.Add(Me.copyright_lbl)
         Me.Pg_About.Controls.Add(Me.version_lbl)
@@ -681,6 +683,16 @@ Partial Class EasyHTML
         '
         'Timer1
         '
+        '
+        'updateCheck_btn
+        '
+        Me.updateCheck_btn.ForeColor = System.Drawing.Color.Black
+        Me.updateCheck_btn.Location = New System.Drawing.Point(171, 148)
+        Me.updateCheck_btn.Name = "updateCheck_btn"
+        Me.updateCheck_btn.Size = New System.Drawing.Size(105, 23)
+        Me.updateCheck_btn.TabIndex = 6
+        Me.updateCheck_btn.Text = "Check for Updates"
+        Me.updateCheck_btn.UseVisualStyleBackColor = True
         '
         'EasyHTML
         '
@@ -778,4 +790,5 @@ Partial Class EasyHTML
     Friend WithEvents version_lbl As Label
     Friend WithEvents copyright_lbl As Label
     Friend WithEvents gnuGpl_pic As PictureBox
+    Friend WithEvents updateCheck_btn As Button
 End Class
