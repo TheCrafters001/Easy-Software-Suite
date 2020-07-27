@@ -75,7 +75,18 @@ Partial Class EasyHTML
         Me.prvwarn_LBL = New System.Windows.Forms.Label()
         Me.updatePreview_btn = New System.Windows.Forms.Button()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Me.Pg_RedirectMaker = New System.Windows.Forms.TabPage()
+        Me.redirectMakerInfo_lbl = New System.Windows.Forms.Label()
+        Me.redirectMakerCodeBox_rchTxtBox = New System.Windows.Forms.RichTextBox()
+        Me.redirectMakerContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.redirectMakerTools_grp = New System.Windows.Forms.GroupBox()
+        Me.redirectMakerGenerate_btn = New System.Windows.Forms.Button()
+        Me.redirectMakerUrl_txtBox = New System.Windows.Forms.TextBox()
+        Me.redirectMakerUrl_lbl = New System.Windows.Forms.Label()
+        Me.redirectMakerTitle_lbl = New System.Windows.Forms.Label()
         Me.Pg_About = New System.Windows.Forms.TabPage()
+        Me.updateCheck_btn = New System.Windows.Forms.Button()
         Me.gnuGpl_pic = New System.Windows.Forms.PictureBox()
         Me.copyright_lbl = New System.Windows.Forms.Label()
         Me.version_lbl = New System.Windows.Forms.Label()
@@ -85,7 +96,6 @@ Partial Class EasyHTML
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
         Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.updateCheck_btn = New System.Windows.Forms.Button()
         Me.Pgs_Main.SuspendLayout()
         Me.Pg_Main.SuspendLayout()
         Me.mainEditor_grp.SuspendLayout()
@@ -98,6 +108,9 @@ Partial Class EasyHTML
         Me.Pg_Meta.SuspendLayout()
         Me.Pg_Export.SuspendLayout()
         Me.Pg_Preview.SuspendLayout()
+        Me.Pg_RedirectMaker.SuspendLayout()
+        Me.redirectMakerContextMenu.SuspendLayout()
+        Me.redirectMakerTools_grp.SuspendLayout()
         Me.Pg_About.SuspendLayout()
         CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.aboutImg_pic, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -109,6 +122,7 @@ Partial Class EasyHTML
         Me.Pgs_Main.Controls.Add(Me.Pg_Meta)
         Me.Pgs_Main.Controls.Add(Me.Pg_Export)
         Me.Pgs_Main.Controls.Add(Me.Pg_Preview)
+        Me.Pgs_Main.Controls.Add(Me.Pg_RedirectMaker)
         Me.Pgs_Main.Controls.Add(Me.Pg_About)
         Me.Pgs_Main.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Pgs_Main.Location = New System.Drawing.Point(0, 0)
@@ -606,6 +620,105 @@ Partial Class EasyHTML
         Me.WebBrowser1.Size = New System.Drawing.Size(895, 566)
         Me.WebBrowser1.TabIndex = 0
         '
+        'Pg_RedirectMaker
+        '
+        Me.Pg_RedirectMaker.BackColor = System.Drawing.Color.Gray
+        Me.Pg_RedirectMaker.Controls.Add(Me.redirectMakerInfo_lbl)
+        Me.Pg_RedirectMaker.Controls.Add(Me.redirectMakerCodeBox_rchTxtBox)
+        Me.Pg_RedirectMaker.Controls.Add(Me.redirectMakerTools_grp)
+        Me.Pg_RedirectMaker.Controls.Add(Me.redirectMakerTitle_lbl)
+        Me.Pg_RedirectMaker.Location = New System.Drawing.Point(4, 22)
+        Me.Pg_RedirectMaker.Name = "Pg_RedirectMaker"
+        Me.Pg_RedirectMaker.Size = New System.Drawing.Size(901, 600)
+        Me.Pg_RedirectMaker.TabIndex = 7
+        Me.Pg_RedirectMaker.Text = "Redirect Maker"
+        '
+        'redirectMakerInfo_lbl
+        '
+        Me.redirectMakerInfo_lbl.Location = New System.Drawing.Point(8, 220)
+        Me.redirectMakerInfo_lbl.Name = "redirectMakerInfo_lbl"
+        Me.redirectMakerInfo_lbl.Size = New System.Drawing.Size(271, 372)
+        Me.redirectMakerInfo_lbl.TabIndex = 3
+        Me.redirectMakerInfo_lbl.Text = "To save the created redirect, right click the code box, and click save. Code gene" &
+    "rated with Redirect Maker is Minified by default."
+        '
+        'redirectMakerCodeBox_rchTxtBox
+        '
+        Me.redirectMakerCodeBox_rchTxtBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.redirectMakerCodeBox_rchTxtBox.ContextMenuStrip = Me.redirectMakerContextMenu
+        Me.redirectMakerCodeBox_rchTxtBox.DetectUrls = False
+        Me.redirectMakerCodeBox_rchTxtBox.Location = New System.Drawing.Point(285, 33)
+        Me.redirectMakerCodeBox_rchTxtBox.Name = "redirectMakerCodeBox_rchTxtBox"
+        Me.redirectMakerCodeBox_rchTxtBox.ReadOnly = True
+        Me.redirectMakerCodeBox_rchTxtBox.Size = New System.Drawing.Size(608, 559)
+        Me.redirectMakerCodeBox_rchTxtBox.TabIndex = 2
+        Me.redirectMakerCodeBox_rchTxtBox.Text = ""
+        '
+        'redirectMakerContextMenu
+        '
+        Me.redirectMakerContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1})
+        Me.redirectMakerContextMenu.Name = "redirectMakerContextMenu"
+        Me.redirectMakerContextMenu.Size = New System.Drawing.Size(68, 26)
+        '
+        'ToolStripMenuItem1
+        '
+        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(67, 22)
+        '
+        'redirectMakerTools_grp
+        '
+        Me.redirectMakerTools_grp.Controls.Add(Me.redirectMakerGenerate_btn)
+        Me.redirectMakerTools_grp.Controls.Add(Me.redirectMakerUrl_txtBox)
+        Me.redirectMakerTools_grp.Controls.Add(Me.redirectMakerUrl_lbl)
+        Me.redirectMakerTools_grp.Location = New System.Drawing.Point(8, 33)
+        Me.redirectMakerTools_grp.Name = "redirectMakerTools_grp"
+        Me.redirectMakerTools_grp.Size = New System.Drawing.Size(271, 184)
+        Me.redirectMakerTools_grp.TabIndex = 1
+        Me.redirectMakerTools_grp.TabStop = False
+        Me.redirectMakerTools_grp.Text = "Redirect Maker Tools"
+        '
+        'redirectMakerGenerate_btn
+        '
+        Me.redirectMakerGenerate_btn.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.redirectMakerGenerate_btn.ForeColor = System.Drawing.Color.Black
+        Me.redirectMakerGenerate_btn.Location = New System.Drawing.Point(6, 155)
+        Me.redirectMakerGenerate_btn.Name = "redirectMakerGenerate_btn"
+        Me.redirectMakerGenerate_btn.Size = New System.Drawing.Size(259, 23)
+        Me.redirectMakerGenerate_btn.TabIndex = 2
+        Me.redirectMakerGenerate_btn.Text = "Generate Redirect"
+        Me.redirectMakerGenerate_btn.UseVisualStyleBackColor = True
+        '
+        'redirectMakerUrl_txtBox
+        '
+        Me.redirectMakerUrl_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.redirectMakerUrl_txtBox.Location = New System.Drawing.Point(90, 19)
+        Me.redirectMakerUrl_txtBox.Name = "redirectMakerUrl_txtBox"
+        Me.redirectMakerUrl_txtBox.Size = New System.Drawing.Size(175, 20)
+        Me.redirectMakerUrl_txtBox.TabIndex = 1
+        '
+        'redirectMakerUrl_lbl
+        '
+        Me.redirectMakerUrl_lbl.AutoSize = True
+        Me.redirectMakerUrl_lbl.Location = New System.Drawing.Point(6, 22)
+        Me.redirectMakerUrl_lbl.Name = "redirectMakerUrl_lbl"
+        Me.redirectMakerUrl_lbl.Size = New System.Drawing.Size(78, 13)
+        Me.redirectMakerUrl_lbl.TabIndex = 0
+        Me.redirectMakerUrl_lbl.Text = "URL To Go To"
+        '
+        'redirectMakerTitle_lbl
+        '
+        Me.redirectMakerTitle_lbl.AutoSize = True
+        Me.redirectMakerTitle_lbl.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.redirectMakerTitle_lbl.Location = New System.Drawing.Point(8, 0)
+        Me.redirectMakerTitle_lbl.Name = "redirectMakerTitle_lbl"
+        Me.redirectMakerTitle_lbl.Size = New System.Drawing.Size(233, 30)
+        Me.redirectMakerTitle_lbl.TabIndex = 0
+        Me.redirectMakerTitle_lbl.Text = "Redirect Maker (BETA)"
+        '
         'Pg_About
         '
         Me.Pg_About.BackColor = System.Drawing.Color.Gray
@@ -623,8 +736,19 @@ Partial Class EasyHTML
         Me.Pg_About.TabIndex = 4
         Me.Pg_About.Text = "About"
         '
+        'updateCheck_btn
+        '
+        Me.updateCheck_btn.ForeColor = System.Drawing.Color.Black
+        Me.updateCheck_btn.Location = New System.Drawing.Point(171, 148)
+        Me.updateCheck_btn.Name = "updateCheck_btn"
+        Me.updateCheck_btn.Size = New System.Drawing.Size(105, 23)
+        Me.updateCheck_btn.TabIndex = 6
+        Me.updateCheck_btn.Text = "Check for Updates"
+        Me.updateCheck_btn.UseVisualStyleBackColor = True
+        '
         'gnuGpl_pic
         '
+        Me.gnuGpl_pic.Cursor = System.Windows.Forms.Cursors.Hand
         Me.gnuGpl_pic.Image = Global.EasyHTML.My.Resources.Resources.GNUGPL3
         Me.gnuGpl_pic.Location = New System.Drawing.Point(757, 524)
         Me.gnuGpl_pic.Name = "gnuGpl_pic"
@@ -684,16 +808,6 @@ Partial Class EasyHTML
         'Timer1
         '
         '
-        'updateCheck_btn
-        '
-        Me.updateCheck_btn.ForeColor = System.Drawing.Color.Black
-        Me.updateCheck_btn.Location = New System.Drawing.Point(171, 148)
-        Me.updateCheck_btn.Name = "updateCheck_btn"
-        Me.updateCheck_btn.Size = New System.Drawing.Size(105, 23)
-        Me.updateCheck_btn.TabIndex = 6
-        Me.updateCheck_btn.Text = "Check for Updates"
-        Me.updateCheck_btn.UseVisualStyleBackColor = True
-        '
         'EasyHTML
         '
         Me.BackColor = System.Drawing.Color.Gray
@@ -721,6 +835,11 @@ Partial Class EasyHTML
         Me.Pg_Export.ResumeLayout(False)
         Me.Pg_Preview.ResumeLayout(False)
         Me.Pg_Preview.PerformLayout()
+        Me.Pg_RedirectMaker.ResumeLayout(False)
+        Me.Pg_RedirectMaker.PerformLayout()
+        Me.redirectMakerContextMenu.ResumeLayout(False)
+        Me.redirectMakerTools_grp.ResumeLayout(False)
+        Me.redirectMakerTools_grp.PerformLayout()
         Me.Pg_About.ResumeLayout(False)
         Me.Pg_About.PerformLayout()
         CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).EndInit()
@@ -791,4 +910,14 @@ Partial Class EasyHTML
     Friend WithEvents copyright_lbl As Label
     Friend WithEvents gnuGpl_pic As PictureBox
     Friend WithEvents updateCheck_btn As Button
+    Friend WithEvents Pg_RedirectMaker As TabPage
+    Friend WithEvents redirectMakerTools_grp As GroupBox
+    Friend WithEvents redirectMakerUrl_txtBox As TextBox
+    Friend WithEvents redirectMakerUrl_lbl As Label
+    Friend WithEvents redirectMakerTitle_lbl As Label
+    Friend WithEvents redirectMakerInfo_lbl As Label
+    Friend WithEvents redirectMakerCodeBox_rchTxtBox As RichTextBox
+    Friend WithEvents redirectMakerContextMenu As ContextMenuStrip
+    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents redirectMakerGenerate_btn As Button
 End Class
