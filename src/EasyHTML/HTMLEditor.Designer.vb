@@ -79,8 +79,9 @@ Partial Class EasyHTML
         Me.redirectMakerInfo_lbl = New System.Windows.Forms.Label()
         Me.redirectMakerCodeBox_rchTxtBox = New System.Windows.Forms.RichTextBox()
         Me.redirectMakerContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.SaveRedirectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.redirectMakerTools_grp = New System.Windows.Forms.GroupBox()
+        Me.redirectMakerUrlPrefix_cmb = New System.Windows.Forms.ComboBox()
         Me.redirectMakerGenerate_btn = New System.Windows.Forms.Button()
         Me.redirectMakerUrl_txtBox = New System.Windows.Forms.TextBox()
         Me.redirectMakerUrl_lbl = New System.Windows.Forms.Label()
@@ -658,17 +659,19 @@ Partial Class EasyHTML
         '
         'redirectMakerContextMenu
         '
-        Me.redirectMakerContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripMenuItem1})
+        Me.redirectMakerContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveRedirectToolStripMenuItem})
         Me.redirectMakerContextMenu.Name = "redirectMakerContextMenu"
-        Me.redirectMakerContextMenu.Size = New System.Drawing.Size(68, 26)
+        Me.redirectMakerContextMenu.Size = New System.Drawing.Size(181, 48)
         '
-        'ToolStripMenuItem1
+        'SaveRedirectToolStripMenuItem
         '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(67, 22)
+        Me.SaveRedirectToolStripMenuItem.Name = "SaveRedirectToolStripMenuItem"
+        Me.SaveRedirectToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SaveRedirectToolStripMenuItem.Text = "Save Redirect"
         '
         'redirectMakerTools_grp
         '
+        Me.redirectMakerTools_grp.Controls.Add(Me.redirectMakerUrlPrefix_cmb)
         Me.redirectMakerTools_grp.Controls.Add(Me.redirectMakerGenerate_btn)
         Me.redirectMakerTools_grp.Controls.Add(Me.redirectMakerUrl_txtBox)
         Me.redirectMakerTools_grp.Controls.Add(Me.redirectMakerUrl_lbl)
@@ -678,6 +681,16 @@ Partial Class EasyHTML
         Me.redirectMakerTools_grp.TabIndex = 1
         Me.redirectMakerTools_grp.TabStop = False
         Me.redirectMakerTools_grp.Text = "Redirect Maker Tools"
+        '
+        'redirectMakerUrlPrefix_cmb
+        '
+        Me.redirectMakerUrlPrefix_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.redirectMakerUrlPrefix_cmb.FormattingEnabled = True
+        Me.redirectMakerUrlPrefix_cmb.Items.AddRange(New Object() {"http://", "https://", "ftp://", "file://"})
+        Me.redirectMakerUrlPrefix_cmb.Location = New System.Drawing.Point(90, 18)
+        Me.redirectMakerUrlPrefix_cmb.Name = "redirectMakerUrlPrefix_cmb"
+        Me.redirectMakerUrlPrefix_cmb.Size = New System.Drawing.Size(48, 21)
+        Me.redirectMakerUrlPrefix_cmb.TabIndex = 3
         '
         'redirectMakerGenerate_btn
         '
@@ -695,9 +708,9 @@ Partial Class EasyHTML
         '
         Me.redirectMakerUrl_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.redirectMakerUrl_txtBox.Location = New System.Drawing.Point(90, 19)
+        Me.redirectMakerUrl_txtBox.Location = New System.Drawing.Point(144, 19)
         Me.redirectMakerUrl_txtBox.Name = "redirectMakerUrl_txtBox"
-        Me.redirectMakerUrl_txtBox.Size = New System.Drawing.Size(175, 20)
+        Me.redirectMakerUrl_txtBox.Size = New System.Drawing.Size(121, 20)
         Me.redirectMakerUrl_txtBox.TabIndex = 1
         '
         'redirectMakerUrl_lbl
@@ -918,6 +931,7 @@ Partial Class EasyHTML
     Friend WithEvents redirectMakerInfo_lbl As Label
     Friend WithEvents redirectMakerCodeBox_rchTxtBox As RichTextBox
     Friend WithEvents redirectMakerContextMenu As ContextMenuStrip
-    Friend WithEvents ToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents SaveRedirectToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents redirectMakerGenerate_btn As Button
+    Friend WithEvents redirectMakerUrlPrefix_cmb As ComboBox
 End Class

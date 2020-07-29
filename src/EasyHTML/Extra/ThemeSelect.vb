@@ -8,13 +8,9 @@
 ''' Me.Close()
 ''' </summary>
 
-
-
-
-
-
 Public Class ThemeSelect
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        ' Check if rad_Template is checked or not.
         If rad_Template.Checked = True Then
             grp_SelectTemplate.Enabled = True
             'cmb_Theme.Enabled = True
@@ -25,9 +21,14 @@ Public Class ThemeSelect
     End Sub
 
     Private Sub ThemeSelect_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Set BackColor of main window
+        Me.BackColor = Color.FromArgb(124, 63, 255)
+        ' Set Default Theme to UI Kit
         cmb_Theme.SelectedIndex = 1
+        ' Make Blank by Default
         rad_Template.Checked = False
         rad_Blank.Checked = True
+        ' Start Timer
         Timer1.Start()
     End Sub
 
@@ -39,6 +40,7 @@ Public Class ThemeSelect
                 MessageBox.Show("Please select a template.", "No Template Selected", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ElseIf cmb_Theme.Text = "UI Kit" Then
 #Region "UI Kit"
+                ' Generate UI Kit Template
                 EasyHTML.mobileViewport_chkbox.Checked = True
                 EasyHTML.UTF8_Set_chkbox.Checked = True
                 EasyHTML.metatags_chkbox.Checked = True
@@ -56,6 +58,7 @@ Public Class ThemeSelect
 #End Region
             ElseIf cmb_Theme.Text = "Bootstrap" Then
 #Region "Bootstrap"
+                ' Generate Bootstrap Template
                 EasyHTML.mobileViewport_chkbox.Checked = True
                 EasyHTML.UTF8_Set_chkbox.Checked = True
                 EasyHTML.metatags_chkbox.Checked = True
@@ -74,6 +77,7 @@ Public Class ThemeSelect
 #End Region
             ElseIf cmb_Theme.Text = "W3.CSS" Then
 #Region "W3.CSS"
+                ' Generate W3.CSS Template
                 EasyHTML.mobileViewport_chkbox.Checked = True
                 EasyHTML.UTF8_Set_chkbox.Checked = True
                 EasyHTML.metatags_chkbox.Checked = True
@@ -89,6 +93,7 @@ Public Class ThemeSelect
 #End Region
             ElseIf cmb_Theme.Text = "Bulma" Then
 #Region "Bulma"
+                ' Generate Bulma Template
                 EasyHTML.mobileViewport_chkbox.Checked = True
                 EasyHTML.UTF8_Set_chkbox.Checked = True
                 EasyHTML.cssImport_lst.Items.Add("https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css")
@@ -97,6 +102,7 @@ Public Class ThemeSelect
 #End Region
             ElseIf cmb_Theme.Text = "Materialize" Then
 #Region "Materialize"
+                ' Generate Materialize Template
                 EasyHTML.mobileViewport_chkbox.Checked = True
                 EasyHTML.UTF8_Set_chkbox.Checked = True
                 EasyHTML.cssImport_lst.Items.Add("https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css")
@@ -107,6 +113,7 @@ Public Class ThemeSelect
 #End Region
             ElseIf cmb_Theme.Text = "Pure" Then
 #Region "Pure"
+                ' Generate Pure Template
                 EasyHTML.mobileViewport_chkbox.Checked = True
                 EasyHTML.UTF8_Set_chkbox.Checked = True
                 EasyHTML.cssImport_lst.Items.Add("https://unpkg.com/purecss@2.0.3/build/pure-min.css")
@@ -115,6 +122,7 @@ Public Class ThemeSelect
 #End Region
             ElseIf cmb_Theme.Text = "Foundation" Then
 #Region "Foundation"
+                ' Generate Foundation Template
                 EasyHTML.mobileViewport_chkbox.Checked = True
                 EasyHTML.UTF8_Set_chkbox.Checked = True
                 EasyHTML.cssImport_lst.Items.Add("https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css")
@@ -124,6 +132,7 @@ Public Class ThemeSelect
 #End Region
             ElseIf cmb_Theme.Text = "Semantic UI" Then
 #Region "Semantic UI"
+                ' Generate Semantic UI Template
                 EasyHTML.mobileViewport_chkbox.Checked = True
                 EasyHTML.UTF8_Set_chkbox.Checked = True
                 EasyHTML.cssImport_lst.Items.Add("https://github.com/Semantic-Org/Semantic-UI/raw/master/dist/semantic.min.css")
@@ -133,6 +142,7 @@ Public Class ThemeSelect
 #End Region
             ElseIf cmb_Theme.Text = "Milligram" Then
 #Region "Milligram"
+                ' Generate Milligram Template
                 EasyHTML.mobileViewport_chkbox.Checked = True
                 EasyHTML.UTF8_Set_chkbox.Checked = True
                 EasyHTML.cssImport_lst.Items.Add("https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic")
@@ -143,6 +153,7 @@ Public Class ThemeSelect
 #End Region
             ElseIf cmb_Theme.Text = "Skeleton" Then
 #Region "Skeleton"
+                ' Generate Skeleton Template
                 EasyHTML.mobileViewport_chkbox.Checked = True
                 EasyHTML.UTF8_Set_chkbox.Checked = True
                 EasyHTML.cssImport_lst.Items.Add("//fonts.googleapis.com/css?family=Raleway:400,300,600")
@@ -153,6 +164,7 @@ Public Class ThemeSelect
 #End Region
             ElseIf cmb_Theme.Text = "Tailwind" Then
 #Region "Tailwind"
+                ' Generate Tailwind Template
                 EasyHTML.mobileViewport_chkbox.Checked = True
                 EasyHTML.UTF8_Set_chkbox.Checked = True
                 EasyHTML.cssImport_lst.Items.Add("https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css")
@@ -161,6 +173,7 @@ Public Class ThemeSelect
 #End Region
             ElseIf cmb_Theme.Text = "SPECTRE" Then
 #Region "SPECTRE"
+                ' Generate Spectre Template
                 EasyHTML.mobileViewport_chkbox.Checked = True
                 EasyHTML.UTF8_Set_chkbox.Checked = True
                 EasyHTML.cssImport_lst.Items.Add("https://unpkg.com/spectre.css/dist/spectre.min.css")
@@ -171,6 +184,7 @@ Public Class ThemeSelect
 #End Region
             ElseIf cmb_Theme.Text = "Picnic" Then
 #Region "Picnic"
+                ' Generate Picnic Template
                 EasyHTML.mobileViewport_chkbox.Checked = True
                 EasyHTML.UTF8_Set_chkbox.Checked = True
                 EasyHTML.cssImport_lst.Items.Add("https://cdn.jsdelivr.net/npm/picnic")
@@ -179,6 +193,7 @@ Public Class ThemeSelect
 #End Region
             ElseIf cmb_Theme.Text = "Dead Simple Grid" Then
 #Region "Dead Simple Grid"
+                ' Generate Dead Simple Grid Template
                 EasyHTML.mobileViewport_chkbox.Checked = True
                 EasyHTML.UTF8_Set_chkbox.Checked = True
                 EasyHTML.cssImport_lst.Items.Add("https://github.com/mourner/dead-simple-grid/raw/gh-pages/css/grid.css")

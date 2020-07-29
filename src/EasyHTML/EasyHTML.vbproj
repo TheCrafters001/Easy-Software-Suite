@@ -79,6 +79,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extra\New_Splash.Designer.vb">
+      <DependentUpon>New_Splash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Extra\New_Splash.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Extra\SplashScreen1.Designer.vb">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </Compile>
@@ -122,6 +128,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Extra\New_Splash.resx">
+      <DependentUpon>New_Splash.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Extra\SplashScreen1.resx">
       <DependentUpon>SplashScreen1.vb</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +177,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\GNUGPL3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Thumbnail.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
