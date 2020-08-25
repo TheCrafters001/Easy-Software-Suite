@@ -92,7 +92,7 @@ Public Class EasyHTML
             Dim metatag As String
             Dim utf8charset As String
             Dim pageBody As String
-            Dim iecompat As String = ""
+            Dim iecompat As String
             Dim credit As String
             Dim cssImport As New System.Text.StringBuilder()
             Dim jsImport As New System.Text.StringBuilder()
@@ -111,6 +111,13 @@ Public Class EasyHTML
                 viewport = "<meta name=""viewport"" content=""width=device-width, initial-scale=1"">"
             ElseIf mobileViewport_chkbox.Checked = False Then
                 viewport = ""
+            End If
+#End Region
+#Region "IECompatability"
+            If internetExplorerCompatability_chk.Checked = True Then
+                iecompat = "<meta http-equiv=""X-UA-Compatible"" content=""IE=8"" />"
+            ElseIf internetExplorerCompatability_chk.Checked = False Then
+                iecompat = ""
             End If
 #End Region
 #Region "cssImport"
@@ -358,6 +365,11 @@ Public Class EasyHTML
         ThemeSelect.Show()
         ThemeSelect.TopMost = True
         ' Start Timer for Generator
+
+        ' Browser Finder
+        BrowserFinder.Finder()
+        BrowserListing_cmb.SelectedIndex = 0
+
         Timer1.Start()
     End Sub
     Private Sub EasyHTML_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
@@ -389,6 +401,10 @@ Public Class EasyHTML
     Private Sub gnuGpl_pic_Click(sender As Object, e As EventArgs) Handles gnuGpl_pic.Click
         ' Open GNU GPL Website
         Process.Start("https://www.gnu.org/licenses/gpl-3.0.en.html")
+    End Sub
+
+    Private Sub preview_btn_Click(sender As Object, e As EventArgs) Handles preview_btn.Click
+
     End Sub
 #End Region
 End Class

@@ -37,6 +37,7 @@ Partial Class EasyHTML
         Me.SaveEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoadEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.misc_grp = New System.Windows.Forms.GroupBox()
+        Me.internetExplorerCompatability_chk = New System.Windows.Forms.CheckBox()
         Me.metatags_chkbox = New System.Windows.Forms.CheckBox()
         Me.UTF8_Set_chkbox = New System.Windows.Forms.CheckBox()
         Me.credit_chkbox = New System.Windows.Forms.CheckBox()
@@ -75,6 +76,13 @@ Partial Class EasyHTML
         Me.prvwarn_LBL = New System.Windows.Forms.Label()
         Me.updatePreview_btn = New System.Windows.Forms.Button()
         Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
+        Me.Pg_PreviewNew = New System.Windows.Forms.TabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.preview_btn = New System.Windows.Forms.Button()
+        Me.previewNew_grp = New System.Windows.Forms.GroupBox()
+        Me.BrowserListing_cmb = New System.Windows.Forms.ComboBox()
+        Me.previewBrowser_lbl = New System.Windows.Forms.Label()
+        Me.preview_lbl = New System.Windows.Forms.Label()
         Me.Pg_RedirectMaker = New System.Windows.Forms.TabPage()
         Me.redirectMakerInfo_lbl = New System.Windows.Forms.Label()
         Me.redirectMakerCodeBox_rchTxtBox = New System.Windows.Forms.RichTextBox()
@@ -109,6 +117,8 @@ Partial Class EasyHTML
         Me.Pg_Meta.SuspendLayout()
         Me.Pg_Export.SuspendLayout()
         Me.Pg_Preview.SuspendLayout()
+        Me.Pg_PreviewNew.SuspendLayout()
+        Me.previewNew_grp.SuspendLayout()
         Me.Pg_RedirectMaker.SuspendLayout()
         Me.redirectMakerContextMenu.SuspendLayout()
         Me.redirectMakerTools_grp.SuspendLayout()
@@ -123,6 +133,7 @@ Partial Class EasyHTML
         Me.Pgs_Main.Controls.Add(Me.Pg_Meta)
         Me.Pgs_Main.Controls.Add(Me.Pg_Export)
         Me.Pgs_Main.Controls.Add(Me.Pg_Preview)
+        Me.Pgs_Main.Controls.Add(Me.Pg_PreviewNew)
         Me.Pgs_Main.Controls.Add(Me.Pg_RedirectMaker)
         Me.Pgs_Main.Controls.Add(Me.Pg_About)
         Me.Pgs_Main.Dock = System.Windows.Forms.DockStyle.Fill
@@ -157,12 +168,11 @@ Partial Class EasyHTML
         '
         'lbl_Tip1
         '
-        Me.lbl_Tip1.AutoSize = True
         Me.lbl_Tip1.Location = New System.Drawing.Point(628, 119)
         Me.lbl_Tip1.Name = "lbl_Tip1"
-        Me.lbl_Tip1.Size = New System.Drawing.Size(116, 39)
+        Me.lbl_Tip1.Size = New System.Drawing.Size(116, 47)
         Me.lbl_Tip1.TabIndex = 14
-        Me.lbl_Tip1.Text = "Right click on an editor" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "to save that specific" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "part"
+        Me.lbl_Tip1.Text = "Right click on an editor to save that specific part"
         '
         'loadEditorProj_btn
         '
@@ -210,9 +220,9 @@ Partial Class EasyHTML
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.mainEditor_grp.Controls.Add(Me.CodeEditorBox)
-        Me.mainEditor_grp.Location = New System.Drawing.Point(3, 162)
+        Me.mainEditor_grp.Location = New System.Drawing.Point(222, 162)
         Me.mainEditor_grp.Name = "mainEditor_grp"
-        Me.mainEditor_grp.Size = New System.Drawing.Size(738, 430)
+        Me.mainEditor_grp.Size = New System.Drawing.Size(519, 430)
         Me.mainEditor_grp.TabIndex = 9
         Me.mainEditor_grp.TabStop = False
         Me.mainEditor_grp.Text = "Main Editor"
@@ -221,9 +231,9 @@ Partial Class EasyHTML
         '
         Me.CodeEditorBox.ContextMenuStrip = Me.MainEditorContextMenu
         Me.CodeEditorBox.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.CodeEditorBox.Location = New System.Drawing.Point(3, 16)
+        Me.CodeEditorBox.Location = New System.Drawing.Point(3, 18)
         Me.CodeEditorBox.Name = "CodeEditorBox"
-        Me.CodeEditorBox.Size = New System.Drawing.Size(732, 411)
+        Me.CodeEditorBox.Size = New System.Drawing.Size(513, 409)
         Me.CodeEditorBox.TabIndex = 0
         Me.CodeEditorBox.Text = ""
         '
@@ -247,23 +257,34 @@ Partial Class EasyHTML
         '
         'misc_grp
         '
+        Me.misc_grp.Controls.Add(Me.internetExplorerCompatability_chk)
         Me.misc_grp.Controls.Add(Me.metatags_chkbox)
         Me.misc_grp.Controls.Add(Me.UTF8_Set_chkbox)
         Me.misc_grp.Controls.Add(Me.credit_chkbox)
         Me.misc_grp.Controls.Add(Me.mobileViewport_chkbox)
         Me.misc_grp.Location = New System.Drawing.Point(8, 48)
         Me.misc_grp.Name = "misc_grp"
-        Me.misc_grp.Size = New System.Drawing.Size(208, 108)
+        Me.misc_grp.Size = New System.Drawing.Size(208, 141)
         Me.misc_grp.TabIndex = 8
         Me.misc_grp.TabStop = False
         Me.misc_grp.Text = "Misc Items"
+        '
+        'internetExplorerCompatability_chk
+        '
+        Me.internetExplorerCompatability_chk.AutoSize = True
+        Me.internetExplorerCompatability_chk.Location = New System.Drawing.Point(6, 88)
+        Me.internetExplorerCompatability_chk.Name = "internetExplorerCompatability_chk"
+        Me.internetExplorerCompatability_chk.Size = New System.Drawing.Size(186, 17)
+        Me.internetExplorerCompatability_chk.TabIndex = 4
+        Me.internetExplorerCompatability_chk.Text = "Internet Explorer Compatability"
+        Me.internetExplorerCompatability_chk.UseVisualStyleBackColor = True
         '
         'metatags_chkbox
         '
         Me.metatags_chkbox.AutoSize = True
         Me.metatags_chkbox.Location = New System.Drawing.Point(6, 42)
         Me.metatags_chkbox.Name = "metatags_chkbox"
-        Me.metatags_chkbox.Size = New System.Drawing.Size(150, 17)
+        Me.metatags_chkbox.Size = New System.Drawing.Size(156, 17)
         Me.metatags_chkbox.TabIndex = 3
         Me.metatags_chkbox.Text = "Meta Tags (Experamental)"
         Me.metatags_chkbox.UseVisualStyleBackColor = True
@@ -273,7 +294,7 @@ Partial Class EasyHTML
         Me.UTF8_Set_chkbox.AutoSize = True
         Me.UTF8_Set_chkbox.Location = New System.Drawing.Point(6, 19)
         Me.UTF8_Set_chkbox.Name = "UTF8_Set_chkbox"
-        Me.UTF8_Set_chkbox.Size = New System.Drawing.Size(95, 17)
+        Me.UTF8_Set_chkbox.Size = New System.Drawing.Size(98, 17)
         Me.UTF8_Set_chkbox.TabIndex = 2
         Me.UTF8_Set_chkbox.Text = "UTF-8 Charset"
         Me.UTF8_Set_chkbox.UseVisualStyleBackColor = True
@@ -281,9 +302,9 @@ Partial Class EasyHTML
         'credit_chkbox
         '
         Me.credit_chkbox.AutoSize = True
-        Me.credit_chkbox.Location = New System.Drawing.Point(6, 84)
+        Me.credit_chkbox.Location = New System.Drawing.Point(6, 111)
         Me.credit_chkbox.Name = "credit_chkbox"
-        Me.credit_chkbox.Size = New System.Drawing.Size(75, 17)
+        Me.credit_chkbox.Size = New System.Drawing.Size(81, 17)
         Me.credit_chkbox.TabIndex = 1
         Me.credit_chkbox.Text = "Add Credit"
         Me.credit_chkbox.UseVisualStyleBackColor = True
@@ -293,7 +314,7 @@ Partial Class EasyHTML
         Me.mobileViewport_chkbox.AutoSize = True
         Me.mobileViewport_chkbox.Location = New System.Drawing.Point(6, 65)
         Me.mobileViewport_chkbox.Name = "mobileViewport_chkbox"
-        Me.mobileViewport_chkbox.Size = New System.Drawing.Size(123, 17)
+        Me.mobileViewport_chkbox.Size = New System.Drawing.Size(134, 17)
         Me.mobileViewport_chkbox.TabIndex = 0
         Me.mobileViewport_chkbox.Text = "Use Mobile Viewport"
         Me.mobileViewport_chkbox.UseVisualStyleBackColor = True
@@ -399,7 +420,7 @@ Partial Class EasyHTML
         Me.pageTitle_lbl.AutoSize = True
         Me.pageTitle_lbl.Location = New System.Drawing.Point(8, 6)
         Me.pageTitle_lbl.Name = "pageTitle_lbl"
-        Me.pageTitle_lbl.Size = New System.Drawing.Size(55, 13)
+        Me.pageTitle_lbl.Size = New System.Drawing.Size(57, 13)
         Me.pageTitle_lbl.TabIndex = 3
         Me.pageTitle_lbl.Text = "Page Title"
         '
@@ -408,7 +429,7 @@ Partial Class EasyHTML
         Me.pageTitle_txtBox.Location = New System.Drawing.Point(6, 22)
         Me.pageTitle_txtBox.MaxLength = 64
         Me.pageTitle_txtBox.Name = "pageTitle_txtBox"
-        Me.pageTitle_txtBox.Size = New System.Drawing.Size(210, 20)
+        Me.pageTitle_txtBox.Size = New System.Drawing.Size(210, 22)
         Me.pageTitle_txtBox.TabIndex = 2
         Me.pageTitle_txtBox.Text = "Cool Website"
         '
@@ -427,7 +448,7 @@ Partial Class EasyHTML
         '
         Me.HTMLEditorError.Location = New System.Drawing.Point(888, 584)
         Me.HTMLEditorError.Name = "HTMLEditorError"
-        Me.HTMLEditorError.Size = New System.Drawing.Size(17, 20)
+        Me.HTMLEditorError.Size = New System.Drawing.Size(17, 22)
         Me.HTMLEditorError.TabIndex = 0
         Me.HTMLEditorError.Visible = False
         '
@@ -456,7 +477,7 @@ Partial Class EasyHTML
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.description_txtBox.Location = New System.Drawing.Point(74, 81)
         Me.description_txtBox.Name = "description_txtBox"
-        Me.description_txtBox.Size = New System.Drawing.Size(819, 20)
+        Me.description_txtBox.Size = New System.Drawing.Size(819, 22)
         Me.description_txtBox.TabIndex = 9
         '
         'description_lbl
@@ -464,7 +485,7 @@ Partial Class EasyHTML
         Me.description_lbl.AutoSize = True
         Me.description_lbl.Location = New System.Drawing.Point(8, 84)
         Me.description_lbl.Name = "description_lbl"
-        Me.description_lbl.Size = New System.Drawing.Size(60, 13)
+        Me.description_lbl.Size = New System.Drawing.Size(66, 13)
         Me.description_lbl.TabIndex = 8
         Me.description_lbl.Text = "Description"
         '
@@ -474,7 +495,7 @@ Partial Class EasyHTML
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.title_txtBox.Location = New System.Drawing.Point(41, 107)
         Me.title_txtBox.Name = "title_txtBox"
-        Me.title_txtBox.Size = New System.Drawing.Size(852, 20)
+        Me.title_txtBox.Size = New System.Drawing.Size(852, 22)
         Me.title_txtBox.TabIndex = 7
         '
         'title_lbl
@@ -482,7 +503,7 @@ Partial Class EasyHTML
         Me.title_lbl.AutoSize = True
         Me.title_lbl.Location = New System.Drawing.Point(8, 110)
         Me.title_lbl.Name = "title_lbl"
-        Me.title_lbl.Size = New System.Drawing.Size(27, 13)
+        Me.title_lbl.Size = New System.Drawing.Size(29, 13)
         Me.title_lbl.TabIndex = 6
         Me.title_lbl.Text = "Title"
         '
@@ -492,7 +513,7 @@ Partial Class EasyHTML
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.keywords_txtBox.Location = New System.Drawing.Point(67, 55)
         Me.keywords_txtBox.Name = "keywords_txtBox"
-        Me.keywords_txtBox.Size = New System.Drawing.Size(826, 20)
+        Me.keywords_txtBox.Size = New System.Drawing.Size(826, 22)
         Me.keywords_txtBox.TabIndex = 5
         '
         'keywords_lbl
@@ -500,7 +521,7 @@ Partial Class EasyHTML
         Me.keywords_lbl.AutoSize = True
         Me.keywords_lbl.Location = New System.Drawing.Point(8, 58)
         Me.keywords_lbl.Name = "keywords_lbl"
-        Me.keywords_lbl.Size = New System.Drawing.Size(53, 13)
+        Me.keywords_lbl.Size = New System.Drawing.Size(56, 13)
         Me.keywords_lbl.TabIndex = 4
         Me.keywords_lbl.Text = "Keywords"
         '
@@ -511,7 +532,7 @@ Partial Class EasyHTML
         Me.revisit_txtBox.Location = New System.Drawing.Point(111, 29)
         Me.revisit_txtBox.MaxLength = 1
         Me.revisit_txtBox.Name = "revisit_txtBox"
-        Me.revisit_txtBox.Size = New System.Drawing.Size(782, 20)
+        Me.revisit_txtBox.Size = New System.Drawing.Size(782, 22)
         Me.revisit_txtBox.TabIndex = 3
         '
         'revisit_lbl
@@ -519,7 +540,7 @@ Partial Class EasyHTML
         Me.revisit_lbl.AutoSize = True
         Me.revisit_lbl.Location = New System.Drawing.Point(8, 32)
         Me.revisit_lbl.Name = "revisit_lbl"
-        Me.revisit_lbl.Size = New System.Drawing.Size(97, 13)
+        Me.revisit_lbl.Size = New System.Drawing.Size(101, 13)
         Me.revisit_lbl.TabIndex = 2
         Me.revisit_lbl.Text = "Revisit After (Days)"
         '
@@ -529,7 +550,7 @@ Partial Class EasyHTML
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.siteAuthor_txtbox.Location = New System.Drawing.Point(73, 3)
         Me.siteAuthor_txtbox.Name = "siteAuthor_txtbox"
-        Me.siteAuthor_txtbox.Size = New System.Drawing.Size(820, 20)
+        Me.siteAuthor_txtbox.Size = New System.Drawing.Size(820, 22)
         Me.siteAuthor_txtbox.TabIndex = 1
         '
         'siteAuthor_lbl
@@ -537,7 +558,7 @@ Partial Class EasyHTML
         Me.siteAuthor_lbl.AutoSize = True
         Me.siteAuthor_lbl.Location = New System.Drawing.Point(8, 6)
         Me.siteAuthor_lbl.Name = "siteAuthor_lbl"
-        Me.siteAuthor_lbl.Size = New System.Drawing.Size(59, 13)
+        Me.siteAuthor_lbl.Size = New System.Drawing.Size(65, 13)
         Me.siteAuthor_lbl.TabIndex = 0
         Me.siteAuthor_lbl.Text = "Site Author"
         '
@@ -593,7 +614,7 @@ Partial Class EasyHTML
         Me.prvwarn_LBL.AutoSize = True
         Me.prvwarn_LBL.Location = New System.Drawing.Point(8, 582)
         Me.prvwarn_LBL.Name = "prvwarn_LBL"
-        Me.prvwarn_LBL.Size = New System.Drawing.Size(382, 13)
+        Me.prvwarn_LBL.Size = New System.Drawing.Size(413, 13)
         Me.prvwarn_LBL.TabIndex = 2
         Me.prvwarn_LBL.Text = "Preview may not be exactly what really displays, as the browser this uses is bad." &
     ""
@@ -620,6 +641,80 @@ Partial Class EasyHTML
         Me.WebBrowser1.ScriptErrorsSuppressed = True
         Me.WebBrowser1.Size = New System.Drawing.Size(895, 566)
         Me.WebBrowser1.TabIndex = 0
+        '
+        'Pg_PreviewNew
+        '
+        Me.Pg_PreviewNew.BackColor = System.Drawing.Color.Gray
+        Me.Pg_PreviewNew.Controls.Add(Me.Label1)
+        Me.Pg_PreviewNew.Controls.Add(Me.preview_btn)
+        Me.Pg_PreviewNew.Controls.Add(Me.previewNew_grp)
+        Me.Pg_PreviewNew.Controls.Add(Me.preview_lbl)
+        Me.Pg_PreviewNew.ForeColor = System.Drawing.Color.White
+        Me.Pg_PreviewNew.Location = New System.Drawing.Point(4, 22)
+        Me.Pg_PreviewNew.Name = "Pg_PreviewNew"
+        Me.Pg_PreviewNew.Padding = New System.Windows.Forms.Padding(3)
+        Me.Pg_PreviewNew.Size = New System.Drawing.Size(901, 600)
+        Me.Pg_PreviewNew.TabIndex = 8
+        Me.Pg_PreviewNew.Text = "New Preview (Experimental)"
+        '
+        'Label1
+        '
+        Me.Label1.Location = New System.Drawing.Point(404, 36)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(489, 119)
+        Me.Label1.TabIndex = 3
+        Me.Label1.Text = "Preview Disabled. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "This is an experimental feature, and is heavly being worked o" &
+    "n." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "These options will unlocked as soon as they are ready to be tested."
+        '
+        'preview_btn
+        '
+        Me.preview_btn.ForeColor = System.Drawing.Color.Black
+        Me.preview_btn.Location = New System.Drawing.Point(248, 36)
+        Me.preview_btn.Name = "preview_btn"
+        Me.preview_btn.Size = New System.Drawing.Size(150, 119)
+        Me.preview_btn.TabIndex = 2
+        Me.preview_btn.Text = "Preview"
+        Me.preview_btn.UseVisualStyleBackColor = True
+        '
+        'previewNew_grp
+        '
+        Me.previewNew_grp.Controls.Add(Me.BrowserListing_cmb)
+        Me.previewNew_grp.Controls.Add(Me.previewBrowser_lbl)
+        Me.previewNew_grp.Enabled = False
+        Me.previewNew_grp.Location = New System.Drawing.Point(8, 36)
+        Me.previewNew_grp.Name = "previewNew_grp"
+        Me.previewNew_grp.Size = New System.Drawing.Size(234, 119)
+        Me.previewNew_grp.TabIndex = 1
+        Me.previewNew_grp.TabStop = False
+        Me.previewNew_grp.Text = "Preview Settings"
+        '
+        'BrowserListing_cmb
+        '
+        Me.BrowserListing_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.BrowserListing_cmb.FormattingEnabled = True
+        Me.BrowserListing_cmb.Location = New System.Drawing.Point(0, 34)
+        Me.BrowserListing_cmb.Name = "BrowserListing_cmb"
+        Me.BrowserListing_cmb.Size = New System.Drawing.Size(234, 21)
+        Me.BrowserListing_cmb.TabIndex = 1
+        '
+        'previewBrowser_lbl
+        '
+        Me.previewBrowser_lbl.AutoSize = True
+        Me.previewBrowser_lbl.Location = New System.Drawing.Point(6, 18)
+        Me.previewBrowser_lbl.Name = "previewBrowser_lbl"
+        Me.previewBrowser_lbl.Size = New System.Drawing.Size(48, 13)
+        Me.previewBrowser_lbl.TabIndex = 0
+        Me.previewBrowser_lbl.Text = "Browser"
+        '
+        'preview_lbl
+        '
+        Me.preview_lbl.AutoSize = True
+        Me.preview_lbl.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.preview_lbl.Location = New System.Drawing.Point(6, 3)
+        Me.preview_lbl.Name = "preview_lbl"
+        Me.preview_lbl.Size = New System.Drawing.Size(90, 30)
+        Me.preview_lbl.TabIndex = 0
+        Me.preview_lbl.Text = "Preview"
         '
         'Pg_RedirectMaker
         '
@@ -661,12 +756,12 @@ Partial Class EasyHTML
         '
         Me.redirectMakerContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveRedirectToolStripMenuItem})
         Me.redirectMakerContextMenu.Name = "redirectMakerContextMenu"
-        Me.redirectMakerContextMenu.Size = New System.Drawing.Size(181, 48)
+        Me.redirectMakerContextMenu.Size = New System.Drawing.Size(145, 26)
         '
         'SaveRedirectToolStripMenuItem
         '
         Me.SaveRedirectToolStripMenuItem.Name = "SaveRedirectToolStripMenuItem"
-        Me.SaveRedirectToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SaveRedirectToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
         Me.SaveRedirectToolStripMenuItem.Text = "Save Redirect"
         '
         'redirectMakerTools_grp
@@ -710,7 +805,7 @@ Partial Class EasyHTML
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.redirectMakerUrl_txtBox.Location = New System.Drawing.Point(144, 19)
         Me.redirectMakerUrl_txtBox.Name = "redirectMakerUrl_txtBox"
-        Me.redirectMakerUrl_txtBox.Size = New System.Drawing.Size(121, 20)
+        Me.redirectMakerUrl_txtBox.Size = New System.Drawing.Size(121, 22)
         Me.redirectMakerUrl_txtBox.TabIndex = 1
         '
         'redirectMakerUrl_lbl
@@ -718,7 +813,7 @@ Partial Class EasyHTML
         Me.redirectMakerUrl_lbl.AutoSize = True
         Me.redirectMakerUrl_lbl.Location = New System.Drawing.Point(6, 22)
         Me.redirectMakerUrl_lbl.Name = "redirectMakerUrl_lbl"
-        Me.redirectMakerUrl_lbl.Size = New System.Drawing.Size(78, 13)
+        Me.redirectMakerUrl_lbl.Size = New System.Drawing.Size(75, 13)
         Me.redirectMakerUrl_lbl.TabIndex = 0
         Me.redirectMakerUrl_lbl.Text = "URL To Go To"
         '
@@ -826,6 +921,7 @@ Partial Class EasyHTML
         Me.BackColor = System.Drawing.Color.Gray
         Me.ClientSize = New System.Drawing.Size(909, 626)
         Me.Controls.Add(Me.Pgs_Main)
+        Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.White
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MinimumSize = New System.Drawing.Size(925, 665)
@@ -848,6 +944,10 @@ Partial Class EasyHTML
         Me.Pg_Export.ResumeLayout(False)
         Me.Pg_Preview.ResumeLayout(False)
         Me.Pg_Preview.PerformLayout()
+        Me.Pg_PreviewNew.ResumeLayout(False)
+        Me.Pg_PreviewNew.PerformLayout()
+        Me.previewNew_grp.ResumeLayout(False)
+        Me.previewNew_grp.PerformLayout()
         Me.Pg_RedirectMaker.ResumeLayout(False)
         Me.Pg_RedirectMaker.PerformLayout()
         Me.redirectMakerContextMenu.ResumeLayout(False)
@@ -934,4 +1034,12 @@ Partial Class EasyHTML
     Friend WithEvents SaveRedirectToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents redirectMakerGenerate_btn As Button
     Friend WithEvents redirectMakerUrlPrefix_cmb As ComboBox
+    Friend WithEvents Pg_PreviewNew As TabPage
+    Friend WithEvents Label1 As Label
+    Friend WithEvents preview_btn As Button
+    Friend WithEvents previewNew_grp As GroupBox
+    Friend WithEvents BrowserListing_cmb As ComboBox
+    Friend WithEvents previewBrowser_lbl As Label
+    Friend WithEvents preview_lbl As Label
+    Friend WithEvents internetExplorerCompatability_chk As CheckBox
 End Class

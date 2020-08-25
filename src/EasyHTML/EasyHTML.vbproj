@@ -79,6 +79,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extra\BrowserFinder.vb" />
     <Compile Include="Extra\New_Splash.Designer.vb">
       <DependentUpon>New_Splash.vb</DependentUpon>
     </Compile>
