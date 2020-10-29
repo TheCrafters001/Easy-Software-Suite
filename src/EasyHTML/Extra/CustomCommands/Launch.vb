@@ -30,7 +30,7 @@ Public Class Launch
             pHelp.UseShellExecute = True
             pHelp.WindowStyle = ProcessWindowStyle.Normal
             Dim proc As Process = Process.Start(pHelp)
-            Logging.AddLogEntry(name & " added")
+            Logging.AddLogEntry(name & " Launched")
         End If
     End Sub
 End Class
