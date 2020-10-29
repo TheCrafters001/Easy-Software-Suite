@@ -160,7 +160,7 @@ Public Class EasyHTML
             ' Set pageBody equal to CodeEditorBox
             pageBody = CodeEditorBox.Text
             'Generate it!
-            Code_Export_Code_Box.Text = "<!DOCTYPE html>" & vbCrLf & "<head>" & vbCrLf & "<title>" & pageTitle_txtBox.Text & "</title>" & vbCrLf &
+            Code_Export_Code_Box.Text = "<!DOCTYPE html>" & vbCrLf & "<html>" & vbCrLf & "<head>" & vbCrLf & "<title>" & pageTitle_txtBox.Text & "</title>" & vbCrLf &
                 utf8charset.ToString & vbCrLf & viewport.ToString & vbCrLf & iecompat.ToString & vbCrLf & metatag.ToString & vbCrLf &
                 cssImport.ToString() & vbCrLf & "</head>" & vbCrLf & "<body>" & vbCrLf & pageBody & vbCrLf & credit & vbCrLf & jsImport.ToString() & vbCrLf &
                 "</body>" & vbCrLf & "</html>"
