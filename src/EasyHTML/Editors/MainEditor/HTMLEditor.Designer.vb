@@ -73,16 +73,15 @@ Partial Class EasyHTML
         Me.Btn_Export = New System.Windows.Forms.Button()
         Me.Code_Export_Code_Box = New System.Windows.Forms.RichTextBox()
         Me.Pg_Preview = New System.Windows.Forms.TabPage()
-        Me.prvwarn_LBL = New System.Windows.Forms.Label()
-        Me.updatePreview_btn = New System.Windows.Forms.Button()
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
-        Me.Pg_PreviewNew = New System.Windows.Forms.TabPage()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.preview_btn = New System.Windows.Forms.Button()
         Me.previewNew_grp = New System.Windows.Forms.GroupBox()
+        Me.preview_btn = New System.Windows.Forms.Button()
         Me.BrowserListing_cmb = New System.Windows.Forms.ComboBox()
         Me.previewBrowser_lbl = New System.Windows.Forms.Label()
         Me.preview_lbl = New System.Windows.Forms.Label()
+        Me.Pg_PreviewLegacy = New System.Windows.Forms.TabPage()
+        Me.prvwarn_LBL = New System.Windows.Forms.Label()
+        Me.updatePreview_btn = New System.Windows.Forms.Button()
+        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Pg_RedirectMaker = New System.Windows.Forms.TabPage()
         Me.redirectMakerInfo_lbl = New System.Windows.Forms.Label()
         Me.redirectMakerCodeBox_rchTxtBox = New System.Windows.Forms.RichTextBox()
@@ -102,11 +101,11 @@ Partial Class EasyHTML
         Me.aboutText_lbl = New System.Windows.Forms.Label()
         Me.aboutTitle_lbl = New System.Windows.Forms.Label()
         Me.aboutImg_pic = New System.Windows.Forms.PictureBox()
+        Me.Pg_Log = New System.Windows.Forms.TabPage()
+        Me.Log = New System.Windows.Forms.RichTextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
         Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.Pg_Log = New System.Windows.Forms.TabPage()
-        Me.Log = New System.Windows.Forms.RichTextBox()
         Me.Pgs_Main.SuspendLayout()
         Me.Pg_Main.SuspendLayout()
         Me.mainEditor_grp.SuspendLayout()
@@ -119,8 +118,8 @@ Partial Class EasyHTML
         Me.Pg_Meta.SuspendLayout()
         Me.Pg_Export.SuspendLayout()
         Me.Pg_Preview.SuspendLayout()
-        Me.Pg_PreviewNew.SuspendLayout()
         Me.previewNew_grp.SuspendLayout()
+        Me.Pg_PreviewLegacy.SuspendLayout()
         Me.Pg_RedirectMaker.SuspendLayout()
         Me.redirectMakerContextMenu.SuspendLayout()
         Me.redirectMakerTools_grp.SuspendLayout()
@@ -136,7 +135,7 @@ Partial Class EasyHTML
         Me.Pgs_Main.Controls.Add(Me.Pg_Meta)
         Me.Pgs_Main.Controls.Add(Me.Pg_Export)
         Me.Pgs_Main.Controls.Add(Me.Pg_Preview)
-        Me.Pgs_Main.Controls.Add(Me.Pg_PreviewNew)
+        Me.Pgs_Main.Controls.Add(Me.Pg_PreviewLegacy)
         Me.Pgs_Main.Controls.Add(Me.Pg_RedirectMaker)
         Me.Pgs_Main.Controls.Add(Me.Pg_About)
         Me.Pgs_Main.Controls.Add(Me.Pg_Log)
@@ -603,14 +602,77 @@ Partial Class EasyHTML
         'Pg_Preview
         '
         Me.Pg_Preview.BackColor = System.Drawing.Color.Gray
-        Me.Pg_Preview.Controls.Add(Me.prvwarn_LBL)
-        Me.Pg_Preview.Controls.Add(Me.updatePreview_btn)
-        Me.Pg_Preview.Controls.Add(Me.WebBrowser1)
+        Me.Pg_Preview.Controls.Add(Me.previewNew_grp)
+        Me.Pg_Preview.Controls.Add(Me.preview_lbl)
+        Me.Pg_Preview.ForeColor = System.Drawing.Color.White
         Me.Pg_Preview.Location = New System.Drawing.Point(4, 22)
         Me.Pg_Preview.Name = "Pg_Preview"
+        Me.Pg_Preview.Padding = New System.Windows.Forms.Padding(3)
         Me.Pg_Preview.Size = New System.Drawing.Size(901, 600)
-        Me.Pg_Preview.TabIndex = 3
+        Me.Pg_Preview.TabIndex = 8
         Me.Pg_Preview.Text = "Preview"
+        '
+        'previewNew_grp
+        '
+        Me.previewNew_grp.Controls.Add(Me.preview_btn)
+        Me.previewNew_grp.Controls.Add(Me.BrowserListing_cmb)
+        Me.previewNew_grp.Controls.Add(Me.previewBrowser_lbl)
+        Me.previewNew_grp.Location = New System.Drawing.Point(8, 36)
+        Me.previewNew_grp.Name = "previewNew_grp"
+        Me.previewNew_grp.Size = New System.Drawing.Size(885, 101)
+        Me.previewNew_grp.TabIndex = 1
+        Me.previewNew_grp.TabStop = False
+        Me.previewNew_grp.Text = "Preview Settings"
+        '
+        'preview_btn
+        '
+        Me.preview_btn.ForeColor = System.Drawing.Color.Black
+        Me.preview_btn.Location = New System.Drawing.Point(6, 61)
+        Me.preview_btn.Name = "preview_btn"
+        Me.preview_btn.Size = New System.Drawing.Size(71, 26)
+        Me.preview_btn.TabIndex = 2
+        Me.preview_btn.Text = "Preview"
+        Me.preview_btn.UseVisualStyleBackColor = True
+        '
+        'BrowserListing_cmb
+        '
+        Me.BrowserListing_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.BrowserListing_cmb.FormattingEnabled = True
+        Me.BrowserListing_cmb.Location = New System.Drawing.Point(6, 34)
+        Me.BrowserListing_cmb.Name = "BrowserListing_cmb"
+        Me.BrowserListing_cmb.Size = New System.Drawing.Size(873, 21)
+        Me.BrowserListing_cmb.TabIndex = 1
+        '
+        'previewBrowser_lbl
+        '
+        Me.previewBrowser_lbl.AutoSize = True
+        Me.previewBrowser_lbl.Location = New System.Drawing.Point(6, 18)
+        Me.previewBrowser_lbl.Name = "previewBrowser_lbl"
+        Me.previewBrowser_lbl.Size = New System.Drawing.Size(190, 13)
+        Me.previewBrowser_lbl.TabIndex = 0
+        Me.previewBrowser_lbl.Text = "Browser (Currently, IE isn't working)"
+        '
+        'preview_lbl
+        '
+        Me.preview_lbl.AutoSize = True
+        Me.preview_lbl.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.preview_lbl.Location = New System.Drawing.Point(6, 3)
+        Me.preview_lbl.Name = "preview_lbl"
+        Me.preview_lbl.Size = New System.Drawing.Size(90, 30)
+        Me.preview_lbl.TabIndex = 0
+        Me.preview_lbl.Text = "Preview"
+        '
+        'Pg_PreviewLegacy
+        '
+        Me.Pg_PreviewLegacy.BackColor = System.Drawing.Color.Gray
+        Me.Pg_PreviewLegacy.Controls.Add(Me.prvwarn_LBL)
+        Me.Pg_PreviewLegacy.Controls.Add(Me.updatePreview_btn)
+        Me.Pg_PreviewLegacy.Controls.Add(Me.WebBrowser1)
+        Me.Pg_PreviewLegacy.Location = New System.Drawing.Point(4, 22)
+        Me.Pg_PreviewLegacy.Name = "Pg_PreviewLegacy"
+        Me.Pg_PreviewLegacy.Size = New System.Drawing.Size(901, 600)
+        Me.Pg_PreviewLegacy.TabIndex = 3
+        Me.Pg_PreviewLegacy.Text = "Preview (Legacy)"
         '
         'prvwarn_LBL
         '
@@ -645,78 +707,6 @@ Partial Class EasyHTML
         Me.WebBrowser1.ScriptErrorsSuppressed = True
         Me.WebBrowser1.Size = New System.Drawing.Size(895, 566)
         Me.WebBrowser1.TabIndex = 0
-        '
-        'Pg_PreviewNew
-        '
-        Me.Pg_PreviewNew.BackColor = System.Drawing.Color.Gray
-        Me.Pg_PreviewNew.Controls.Add(Me.Label1)
-        Me.Pg_PreviewNew.Controls.Add(Me.preview_btn)
-        Me.Pg_PreviewNew.Controls.Add(Me.previewNew_grp)
-        Me.Pg_PreviewNew.Controls.Add(Me.preview_lbl)
-        Me.Pg_PreviewNew.ForeColor = System.Drawing.Color.White
-        Me.Pg_PreviewNew.Location = New System.Drawing.Point(4, 22)
-        Me.Pg_PreviewNew.Name = "Pg_PreviewNew"
-        Me.Pg_PreviewNew.Padding = New System.Windows.Forms.Padding(3)
-        Me.Pg_PreviewNew.Size = New System.Drawing.Size(901, 600)
-        Me.Pg_PreviewNew.TabIndex = 8
-        Me.Pg_PreviewNew.Text = "New Preview (Experimental)"
-        '
-        'Label1
-        '
-        Me.Label1.Location = New System.Drawing.Point(404, 36)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(489, 119)
-        Me.Label1.TabIndex = 3
-        Me.Label1.Text = "This is an experimental feature, and is heavly being worked on."
-        '
-        'preview_btn
-        '
-        Me.preview_btn.ForeColor = System.Drawing.Color.Black
-        Me.preview_btn.Location = New System.Drawing.Point(248, 36)
-        Me.preview_btn.Name = "preview_btn"
-        Me.preview_btn.Size = New System.Drawing.Size(150, 119)
-        Me.preview_btn.TabIndex = 2
-        Me.preview_btn.Text = "Preview"
-        Me.preview_btn.UseVisualStyleBackColor = True
-        '
-        'previewNew_grp
-        '
-        Me.previewNew_grp.Controls.Add(Me.BrowserListing_cmb)
-        Me.previewNew_grp.Controls.Add(Me.previewBrowser_lbl)
-        Me.previewNew_grp.Location = New System.Drawing.Point(8, 36)
-        Me.previewNew_grp.Name = "previewNew_grp"
-        Me.previewNew_grp.Size = New System.Drawing.Size(234, 119)
-        Me.previewNew_grp.TabIndex = 1
-        Me.previewNew_grp.TabStop = False
-        Me.previewNew_grp.Text = "Preview Settings"
-        '
-        'BrowserListing_cmb
-        '
-        Me.BrowserListing_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.BrowserListing_cmb.FormattingEnabled = True
-        Me.BrowserListing_cmb.Location = New System.Drawing.Point(0, 34)
-        Me.BrowserListing_cmb.Name = "BrowserListing_cmb"
-        Me.BrowserListing_cmb.Size = New System.Drawing.Size(234, 21)
-        Me.BrowserListing_cmb.TabIndex = 1
-        '
-        'previewBrowser_lbl
-        '
-        Me.previewBrowser_lbl.AutoSize = True
-        Me.previewBrowser_lbl.Location = New System.Drawing.Point(6, 18)
-        Me.previewBrowser_lbl.Name = "previewBrowser_lbl"
-        Me.previewBrowser_lbl.Size = New System.Drawing.Size(48, 13)
-        Me.previewBrowser_lbl.TabIndex = 0
-        Me.previewBrowser_lbl.Text = "Browser"
-        '
-        'preview_lbl
-        '
-        Me.preview_lbl.AutoSize = True
-        Me.preview_lbl.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.preview_lbl.Location = New System.Drawing.Point(6, 3)
-        Me.preview_lbl.Name = "preview_lbl"
-        Me.preview_lbl.Size = New System.Drawing.Size(90, 30)
-        Me.preview_lbl.TabIndex = 0
-        Me.preview_lbl.Text = "Preview"
         '
         'Pg_RedirectMaker
         '
@@ -851,7 +841,7 @@ Partial Class EasyHTML
         Me.updateCheck_btn.ForeColor = System.Drawing.Color.Black
         Me.updateCheck_btn.Location = New System.Drawing.Point(171, 148)
         Me.updateCheck_btn.Name = "updateCheck_btn"
-        Me.updateCheck_btn.Size = New System.Drawing.Size(105, 23)
+        Me.updateCheck_btn.Size = New System.Drawing.Size(111, 23)
         Me.updateCheck_btn.TabIndex = 6
         Me.updateCheck_btn.Text = "Check for Updates"
         Me.updateCheck_btn.UseVisualStyleBackColor = True
@@ -915,27 +905,27 @@ Partial Class EasyHTML
         Me.aboutImg_pic.TabIndex = 0
         Me.aboutImg_pic.TabStop = False
         '
-        'Timer1
-        '
-        '
         'Pg_Log
         '
+        Me.Pg_Log.BackColor = System.Drawing.Color.Gray
         Me.Pg_Log.Controls.Add(Me.Log)
         Me.Pg_Log.Location = New System.Drawing.Point(4, 22)
         Me.Pg_Log.Name = "Pg_Log"
         Me.Pg_Log.Size = New System.Drawing.Size(901, 600)
         Me.Pg_Log.TabIndex = 9
         Me.Pg_Log.Text = "Log"
-        Me.Pg_Log.UseVisualStyleBackColor = True
         '
         'Log
         '
-        Me.Log.Location = New System.Drawing.Point(3, 3)
+        Me.Log.Location = New System.Drawing.Point(8, 3)
         Me.Log.Name = "Log"
         Me.Log.ReadOnly = True
-        Me.Log.Size = New System.Drawing.Size(895, 594)
+        Me.Log.Size = New System.Drawing.Size(885, 589)
         Me.Log.TabIndex = 0
         Me.Log.Text = ""
+        '
+        'Timer1
+        '
         '
         'EasyHTML
         '
@@ -965,10 +955,10 @@ Partial Class EasyHTML
         Me.Pg_Export.ResumeLayout(False)
         Me.Pg_Preview.ResumeLayout(False)
         Me.Pg_Preview.PerformLayout()
-        Me.Pg_PreviewNew.ResumeLayout(False)
-        Me.Pg_PreviewNew.PerformLayout()
         Me.previewNew_grp.ResumeLayout(False)
         Me.previewNew_grp.PerformLayout()
+        Me.Pg_PreviewLegacy.ResumeLayout(False)
+        Me.Pg_PreviewLegacy.PerformLayout()
         Me.Pg_RedirectMaker.ResumeLayout(False)
         Me.Pg_RedirectMaker.PerformLayout()
         Me.redirectMakerContextMenu.ResumeLayout(False)
@@ -988,7 +978,7 @@ Partial Class EasyHTML
     Friend WithEvents Pg_Export As TabPage
     Friend WithEvents Btn_Export As Button
     Friend WithEvents Code_Export_Code_Box As RichTextBox
-    Friend WithEvents Pg_Preview As TabPage
+    Friend WithEvents Pg_PreviewLegacy As TabPage
     Friend WithEvents HTMLEditorError As TextBox
     Friend WithEvents Component_Box As ListBox
     Friend WithEvents prvwarn_LBL As Label
@@ -1056,8 +1046,7 @@ Partial Class EasyHTML
     Friend WithEvents SaveRedirectToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents redirectMakerGenerate_btn As Button
     Friend WithEvents redirectMakerUrlPrefix_cmb As ComboBox
-    Friend WithEvents Pg_PreviewNew As TabPage
-    Friend WithEvents Label1 As Label
+    Friend WithEvents Pg_Preview As TabPage
     Friend WithEvents preview_btn As Button
     Friend WithEvents previewNew_grp As GroupBox
     Friend WithEvents BrowserListing_cmb As ComboBox

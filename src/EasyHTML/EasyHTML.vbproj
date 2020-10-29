@@ -108,10 +108,10 @@
     <Compile Include="FallBack\BugReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="HTMLEditor.Designer.vb">
+    <Compile Include="Editors\MainEditor\HTMLEditor.Designer.vb">
       <DependentUpon>HTMLEditor.vb</DependentUpon>
     </Compile>
-    <Compile Include="HTMLEditor.vb">
+    <Compile Include="Editors\MainEditor\HTMLEditor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Extra\CodeExtension.vb" />
@@ -145,7 +145,7 @@
     <EmbeddedResource Include="FallBack\BugReport.resx">
       <DependentUpon>BugReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="HTMLEditor.resx">
+    <EmbeddedResource Include="Editors\MainEditor\HTMLEditor.resx">
       <DependentUpon>HTMLEditor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
@@ -185,6 +185,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Editors\Hexo\" />
+    <Folder Include="Editors\Jekyll\" />
+    <Folder Include="Editors\Vapid\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

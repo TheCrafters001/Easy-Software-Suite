@@ -414,23 +414,10 @@ Public Class EasyHTML
             IO.File.WriteAllText(IO.Path.Combine(path, "Preview.html"), Code_Export_Code_Box.Text) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
 
             'Launch Preview File
-            If BrowserListing_cmb.SelectedItem = "Google Chrome" Then
-                Launch.Launch("Google\Chrome\Application", "chrome", "Google Chrome")
-            ElseIf BrowserListing_cmb.SelectedItem = "Mozilla FireFox" Then
-                Launch.Launch("Mozilla Firefox", "firefox", "Mozilla FireFox")
-            ElseIf BrowserListing_cmb.SelectedItem = "Microsoft Edge" Then
-                Launch.Launch("Microsoft\Edge\Application", "msedge", "Microsoft Edge")
-            ElseIf BrowserListing_cmb.SelectedItem = "Internet Explorer" Then
-                Launch.Launch("Internet Explorer", "iexplore", "Internet Explorer")
-            ElseIf BrowserListing_cmb.SelectedItem = "Opera" Then
-                Launch.Launch("Opera", "Launcher", "Opera")
-            ElseIf BrowserListing_cmb.SelectedItem = "Opera Beta" Then
-                Launch.Launch("Opera Beta", "Launcher", "Opera Beta")
-            ElseIf BrowserListing_cmb.SelectedItem = "Opera Developer" Then
-                Launch.Launch("Opera Developer", "Launcher", "Opera Developer")
-            End If
+            Launch.LaunchBrowser(BrowserListing_cmb.SelectedItem, "google.com") ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
             Timer1.Start()
         Catch ex As Exception
+            Logging.AddLogEntry("Ran into error " & vbCrLf & ex.ToString)
             MessageBox.Show(ex.ToString, "Error")
             Timer1.Start()
         End Try
