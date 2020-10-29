@@ -30,6 +30,7 @@ Public Class ThemeSelect
         rad_Blank.Checked = True
         ' Start Timer
         Timer1.Start()
+        Logging.AddLogEntry("Template Menu Opened")
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click

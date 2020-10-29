@@ -80,6 +80,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Extra\BrowserFinder.vb" />
+    <Compile Include="Extra\CustomCommands\Find.vb" />
+    <Compile Include="Extra\CustomCommands\Launch.vb" />
+    <Compile Include="Extra\CustomCommands\Lists.vb" />
+    <Compile Include="Extra\CustomCommands\Logging.vb" />
     <Compile Include="Extra\New_Splash.Designer.vb">
       <DependentUpon>New_Splash.vb</DependentUpon>
     </Compile>

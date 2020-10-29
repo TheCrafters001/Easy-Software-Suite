@@ -105,6 +105,8 @@ Partial Class EasyHTML
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
         Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.Pg_Log = New System.Windows.Forms.TabPage()
+        Me.Log = New System.Windows.Forms.RichTextBox()
         Me.Pgs_Main.SuspendLayout()
         Me.Pg_Main.SuspendLayout()
         Me.mainEditor_grp.SuspendLayout()
@@ -125,6 +127,7 @@ Partial Class EasyHTML
         Me.Pg_About.SuspendLayout()
         CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.aboutImg_pic, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Pg_Log.SuspendLayout()
         Me.SuspendLayout()
         '
         'Pgs_Main
@@ -136,6 +139,7 @@ Partial Class EasyHTML
         Me.Pgs_Main.Controls.Add(Me.Pg_PreviewNew)
         Me.Pgs_Main.Controls.Add(Me.Pg_RedirectMaker)
         Me.Pgs_Main.Controls.Add(Me.Pg_About)
+        Me.Pgs_Main.Controls.Add(Me.Pg_Log)
         Me.Pgs_Main.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Pgs_Main.Location = New System.Drawing.Point(0, 0)
         Me.Pgs_Main.Name = "Pgs_Main"
@@ -663,8 +667,7 @@ Partial Class EasyHTML
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(489, 119)
         Me.Label1.TabIndex = 3
-        Me.Label1.Text = "Preview Disabled. " & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "This is an experimental feature, and is heavly being worked o" &
-    "n." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "These options will unlocked as soon as they are ready to be tested."
+        Me.Label1.Text = "This is an experimental feature, and is heavly being worked on."
         '
         'preview_btn
         '
@@ -680,7 +683,6 @@ Partial Class EasyHTML
         '
         Me.previewNew_grp.Controls.Add(Me.BrowserListing_cmb)
         Me.previewNew_grp.Controls.Add(Me.previewBrowser_lbl)
-        Me.previewNew_grp.Enabled = False
         Me.previewNew_grp.Location = New System.Drawing.Point(8, 36)
         Me.previewNew_grp.Name = "previewNew_grp"
         Me.previewNew_grp.Size = New System.Drawing.Size(234, 119)
@@ -916,6 +918,25 @@ Partial Class EasyHTML
         'Timer1
         '
         '
+        'Pg_Log
+        '
+        Me.Pg_Log.Controls.Add(Me.Log)
+        Me.Pg_Log.Location = New System.Drawing.Point(4, 22)
+        Me.Pg_Log.Name = "Pg_Log"
+        Me.Pg_Log.Size = New System.Drawing.Size(901, 600)
+        Me.Pg_Log.TabIndex = 9
+        Me.Pg_Log.Text = "Log"
+        Me.Pg_Log.UseVisualStyleBackColor = True
+        '
+        'Log
+        '
+        Me.Log.Location = New System.Drawing.Point(3, 3)
+        Me.Log.Name = "Log"
+        Me.Log.ReadOnly = True
+        Me.Log.Size = New System.Drawing.Size(895, 594)
+        Me.Log.TabIndex = 0
+        Me.Log.Text = ""
+        '
         'EasyHTML
         '
         Me.BackColor = System.Drawing.Color.Gray
@@ -957,6 +978,7 @@ Partial Class EasyHTML
         Me.Pg_About.PerformLayout()
         CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.aboutImg_pic, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Pg_Log.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1042,4 +1064,6 @@ Partial Class EasyHTML
     Friend WithEvents previewBrowser_lbl As Label
     Friend WithEvents preview_lbl As Label
     Friend WithEvents internetExplorerCompatability_chk As CheckBox
+    Friend WithEvents Pg_Log As TabPage
+    Friend WithEvents Log As RichTextBox
 End Class

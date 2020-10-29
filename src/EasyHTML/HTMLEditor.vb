@@ -404,7 +404,36 @@ Public Class EasyHTML
     End Sub
 
     Private Sub preview_btn_Click(sender As Object, e As EventArgs) Handles preview_btn.Click
+        Dim path As String = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
+        path = IO.Path.Combine(path, "Temp\EasyHTML") ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
+        Try
+            Timer1.Stop()
+            'Create Preview File
 
+            IO.Directory.CreateDirectory(path) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
+            IO.File.WriteAllText(IO.Path.Combine(path, "Preview.html"), Code_Export_Code_Box.Text) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
+
+            'Launch Preview File
+            If BrowserListing_cmb.SelectedItem = "Google Chrome" Then
+                Launch.Launch("Google\Chrome\Application", "chrome", "Google Chrome")
+            ElseIf BrowserListing_cmb.SelectedItem = "Mozilla FireFox" Then
+                Launch.Launch("Mozilla Firefox", "firefox", "Mozilla FireFox")
+            ElseIf BrowserListing_cmb.SelectedItem = "Microsoft Edge" Then
+                Launch.Launch("Microsoft\Edge\Application", "msedge", "Microsoft Edge")
+            ElseIf BrowserListing_cmb.SelectedItem = "Internet Explorer" Then
+                Launch.Launch("Internet Explorer", "iexplore", "Internet Explorer")
+            ElseIf BrowserListing_cmb.SelectedItem = "Opera" Then
+                Launch.Launch("Opera", "Launcher", "Opera")
+            ElseIf BrowserListing_cmb.SelectedItem = "Opera Beta" Then
+                Launch.Launch("Opera Beta", "Launcher", "Opera Beta")
+            ElseIf BrowserListing_cmb.SelectedItem = "Opera Developer" Then
+                Launch.Launch("Opera Developer", "Launcher", "Opera Developer")
+            End If
+            Timer1.Start()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString, "Error")
+            Timer1.Start()
+        End Try
     End Sub
 #End Region
 End Class
