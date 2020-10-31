@@ -414,13 +414,32 @@ Public Class EasyHTML
             IO.File.WriteAllText(IO.Path.Combine(path, "Preview.html"), Code_Export_Code_Box.Text) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
 
             'Launch Preview File
-            Launch.LaunchBrowser(BrowserListing_cmb.SelectedItem, "google.com") ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
+            Launch.LaunchBrowser(BrowserListing_cmb.SelectedItem) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
             Timer1.Start()
         Catch ex As Exception
             Logging.AddLogEntry("Ran into error " & vbCrLf & ex.ToString)
             MessageBox.Show(ex.ToString, "Error")
             Timer1.Start()
         End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        If My.Computer.FileSystem.FileExists(".\EasyNodeJS.exe") Then
+            Try
+                Dim pHelp As New ProcessStartInfo
+                pHelp.FileName = ".\EasyNodeJS.exe"
+                pHelp.Arguments = ""
+                pHelp.UseShellExecute = True
+                pHelp.WindowStyle = ProcessWindowStyle.Normal
+                Dim proc As Process = Process.Start(pHelp)
+                Logging.AddLogEntry("EasyNodeJS Launched")
+                Application.Exit()
+            Catch ex As Exception
+                MessageBox.Show(ex.ToString, "Error")
+            End Try
+        ElseIf Not My.Computer.FileSystem.FileExists(".\EasyNodeJS.exe") Then
+            MessageBox.Show("EasyNodeJS cannot be found. Is it installed?", "Cannot Open EasyNodeJS", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
     End Sub
 #End Region
 End Class

@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("EasyHTML")>
+<Assembly: AssemblyTitle("EasyNodeJS")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("EasyHTML")>
+<Assembly: AssemblyProduct("EasyNodeJS")>
 <Assembly: AssemblyCopyright("Copyright © TheCrafters001 2020")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("1c22c8b8-ef9f-4f6d-9048-d1feab79915a")>
+<Assembly: Guid("04376745-b1d9-4825-ac5f-95584d2ad07f")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("1.3.1.0")>
-<Assembly: AssemblyFileVersion("1.3.1.0")>
+<Assembly: AssemblyVersion("0.0.0.1")>
+<Assembly: AssemblyFileVersion("0.0.0.1")>

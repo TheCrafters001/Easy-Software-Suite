@@ -26,6 +26,7 @@ Partial Class EasyHTML
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EasyHTML))
         Me.Pgs_Main = New System.Windows.Forms.TabControl()
         Me.Pg_Main = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.lbl_Tip1 = New System.Windows.Forms.Label()
         Me.loadEditorProj_btn = New System.Windows.Forms.Button()
         Me.loadJsLibs_btn = New System.Windows.Forms.Button()
@@ -149,6 +150,7 @@ Partial Class EasyHTML
         'Pg_Main
         '
         Me.Pg_Main.BackColor = System.Drawing.Color.Gray
+        Me.Pg_Main.Controls.Add(Me.Button1)
         Me.Pg_Main.Controls.Add(Me.lbl_Tip1)
         Me.Pg_Main.Controls.Add(Me.loadEditorProj_btn)
         Me.Pg_Main.Controls.Add(Me.loadJsLibs_btn)
@@ -168,6 +170,17 @@ Partial Class EasyHTML
         Me.Pg_Main.Size = New System.Drawing.Size(901, 600)
         Me.Pg_Main.TabIndex = 0
         Me.Pg_Main.Text = "Main Details"
+        '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Location = New System.Drawing.Point(8, 562)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(208, 30)
+        Me.Button1.TabIndex = 15
+        Me.Button1.Text = "Node.JS Environment "
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'lbl_Tip1
         '
@@ -228,7 +241,7 @@ Partial Class EasyHTML
         Me.mainEditor_grp.Size = New System.Drawing.Size(519, 430)
         Me.mainEditor_grp.TabIndex = 9
         Me.mainEditor_grp.TabStop = False
-        Me.mainEditor_grp.Text = "Main Editor"
+        Me.mainEditor_grp.Text = "Body Editor"
         '
         'CodeEditorBox
         '
@@ -267,7 +280,7 @@ Partial Class EasyHTML
         Me.misc_grp.Controls.Add(Me.mobileViewport_chkbox)
         Me.misc_grp.Location = New System.Drawing.Point(8, 48)
         Me.misc_grp.Name = "misc_grp"
-        Me.misc_grp.Size = New System.Drawing.Size(208, 141)
+        Me.misc_grp.Size = New System.Drawing.Size(208, 138)
         Me.misc_grp.TabIndex = 8
         Me.misc_grp.TabStop = False
         Me.misc_grp.Text = "Misc Items"
@@ -614,6 +627,8 @@ Partial Class EasyHTML
         '
         'previewNew_grp
         '
+        Me.previewNew_grp.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.previewNew_grp.Controls.Add(Me.preview_btn)
         Me.previewNew_grp.Controls.Add(Me.BrowserListing_cmb)
         Me.previewNew_grp.Controls.Add(Me.previewBrowser_lbl)
@@ -627,7 +642,7 @@ Partial Class EasyHTML
         'preview_btn
         '
         Me.preview_btn.ForeColor = System.Drawing.Color.Black
-        Me.preview_btn.Location = New System.Drawing.Point(6, 61)
+        Me.preview_btn.Location = New System.Drawing.Point(6, 69)
         Me.preview_btn.Name = "preview_btn"
         Me.preview_btn.Size = New System.Drawing.Size(71, 26)
         Me.preview_btn.TabIndex = 2
@@ -636,6 +651,8 @@ Partial Class EasyHTML
         '
         'BrowserListing_cmb
         '
+        Me.BrowserListing_cmb.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BrowserListing_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.BrowserListing_cmb.FormattingEnabled = True
         Me.BrowserListing_cmb.Location = New System.Drawing.Point(6, 34)
@@ -678,12 +695,12 @@ Partial Class EasyHTML
         '
         Me.prvwarn_LBL.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.prvwarn_LBL.AutoSize = True
-        Me.prvwarn_LBL.Location = New System.Drawing.Point(8, 582)
+        Me.prvwarn_LBL.Location = New System.Drawing.Point(8, 572)
         Me.prvwarn_LBL.Name = "prvwarn_LBL"
-        Me.prvwarn_LBL.Size = New System.Drawing.Size(413, 13)
+        Me.prvwarn_LBL.Size = New System.Drawing.Size(413, 26)
         Me.prvwarn_LBL.TabIndex = 2
         Me.prvwarn_LBL.Text = "Preview may not be exactly what really displays, as the browser this uses is bad." &
-    ""
+    "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Note: This preview method will be going away soon!"
         '
         'updatePreview_btn
         '
@@ -774,7 +791,7 @@ Partial Class EasyHTML
         Me.redirectMakerUrlPrefix_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.redirectMakerUrlPrefix_cmb.FormattingEnabled = True
         Me.redirectMakerUrlPrefix_cmb.Items.AddRange(New Object() {"http://", "https://", "ftp://", "file://"})
-        Me.redirectMakerUrlPrefix_cmb.Location = New System.Drawing.Point(90, 18)
+        Me.redirectMakerUrlPrefix_cmb.Location = New System.Drawing.Point(78, 19)
         Me.redirectMakerUrlPrefix_cmb.Name = "redirectMakerUrlPrefix_cmb"
         Me.redirectMakerUrlPrefix_cmb.Size = New System.Drawing.Size(48, 21)
         Me.redirectMakerUrlPrefix_cmb.TabIndex = 3
@@ -795,9 +812,9 @@ Partial Class EasyHTML
         '
         Me.redirectMakerUrl_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.redirectMakerUrl_txtBox.Location = New System.Drawing.Point(144, 19)
+        Me.redirectMakerUrl_txtBox.Location = New System.Drawing.Point(132, 18)
         Me.redirectMakerUrl_txtBox.Name = "redirectMakerUrl_txtBox"
-        Me.redirectMakerUrl_txtBox.Size = New System.Drawing.Size(121, 22)
+        Me.redirectMakerUrl_txtBox.Size = New System.Drawing.Size(133, 22)
         Me.redirectMakerUrl_txtBox.TabIndex = 1
         '
         'redirectMakerUrl_lbl
@@ -815,9 +832,9 @@ Partial Class EasyHTML
         Me.redirectMakerTitle_lbl.Font = New System.Drawing.Font("Segoe UI", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.redirectMakerTitle_lbl.Location = New System.Drawing.Point(8, 0)
         Me.redirectMakerTitle_lbl.Name = "redirectMakerTitle_lbl"
-        Me.redirectMakerTitle_lbl.Size = New System.Drawing.Size(233, 30)
+        Me.redirectMakerTitle_lbl.Size = New System.Drawing.Size(161, 30)
         Me.redirectMakerTitle_lbl.TabIndex = 0
-        Me.redirectMakerTitle_lbl.Text = "Redirect Maker (BETA)"
+        Me.redirectMakerTitle_lbl.Text = "Redirect Maker"
         '
         'Pg_About
         '
@@ -839,7 +856,7 @@ Partial Class EasyHTML
         'updateCheck_btn
         '
         Me.updateCheck_btn.ForeColor = System.Drawing.Color.Black
-        Me.updateCheck_btn.Location = New System.Drawing.Point(171, 148)
+        Me.updateCheck_btn.Location = New System.Drawing.Point(171, 159)
         Me.updateCheck_btn.Name = "updateCheck_btn"
         Me.updateCheck_btn.Size = New System.Drawing.Size(111, 23)
         Me.updateCheck_btn.TabIndex = 6
@@ -848,6 +865,7 @@ Partial Class EasyHTML
         '
         'gnuGpl_pic
         '
+        Me.gnuGpl_pic.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.gnuGpl_pic.Cursor = System.Windows.Forms.Cursors.Hand
         Me.gnuGpl_pic.Image = Global.EasyHTML.My.Resources.Resources.GNUGPL3
         Me.gnuGpl_pic.Location = New System.Drawing.Point(757, 524)
@@ -861,7 +879,7 @@ Partial Class EasyHTML
         '
         Me.copyright_lbl.AutoSize = True
         Me.copyright_lbl.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.copyright_lbl.Location = New System.Drawing.Point(168, 124)
+        Me.copyright_lbl.Location = New System.Drawing.Point(168, 135)
         Me.copyright_lbl.Name = "copyright_lbl"
         Me.copyright_lbl.Size = New System.Drawing.Size(108, 21)
         Me.copyright_lbl.TabIndex = 4
@@ -871,7 +889,7 @@ Partial Class EasyHTML
         '
         Me.version_lbl.AutoSize = True
         Me.version_lbl.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.version_lbl.Location = New System.Drawing.Point(168, 103)
+        Me.version_lbl.Location = New System.Drawing.Point(168, 114)
         Me.version_lbl.Name = "version_lbl"
         Me.version_lbl.Size = New System.Drawing.Size(114, 21)
         Me.version_lbl.TabIndex = 3
@@ -879,9 +897,11 @@ Partial Class EasyHTML
         '
         'aboutText_lbl
         '
+        Me.aboutText_lbl.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.aboutText_lbl.Location = New System.Drawing.Point(168, 46)
         Me.aboutText_lbl.Name = "aboutText_lbl"
-        Me.aboutText_lbl.Size = New System.Drawing.Size(727, 57)
+        Me.aboutText_lbl.Size = New System.Drawing.Size(727, 68)
         Me.aboutText_lbl.TabIndex = 2
         Me.aboutText_lbl.Text = resources.GetString("aboutText_lbl.Text")
         '
@@ -897,6 +917,8 @@ Partial Class EasyHTML
         '
         'aboutImg_pic
         '
+        Me.aboutImg_pic.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.aboutImg_pic.Image = Global.EasyHTML.My.Resources.Resources.Side
         Me.aboutImg_pic.Location = New System.Drawing.Point(8, 6)
         Me.aboutImg_pic.Name = "aboutImg_pic"
@@ -917,6 +939,9 @@ Partial Class EasyHTML
         '
         'Log
         '
+        Me.Log.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Log.Location = New System.Drawing.Point(8, 3)
         Me.Log.Name = "Log"
         Me.Log.ReadOnly = True
@@ -1055,4 +1080,5 @@ Partial Class EasyHTML
     Friend WithEvents internetExplorerCompatability_chk As CheckBox
     Friend WithEvents Pg_Log As TabPage
     Friend WithEvents Log As RichTextBox
+    Friend WithEvents Button1 As Button
 End Class
