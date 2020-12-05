@@ -25,11 +25,6 @@ Public Class EasyHTML
         Me.jsImport_lst.Items.Remove(Me.jsImport_lst.SelectedItem)
     End Sub
 
-    Private Sub updatePreview_btn_Click(sender As Object, e As EventArgs) Handles updatePreview_btn.Click
-        ' Update Preview
-        WebBrowser1.DocumentText = Code_Export_Code_Box.Text
-    End Sub
-
     Private Sub cssImport_btn_Click(sender As Object, e As EventArgs) Handles cssImport_btn.Click
         Try
             ' Add an Item to CSS Imports
@@ -177,7 +172,7 @@ Public Class EasyHTML
             If redirectMakerUrl_txtBox.Text = "" Then
                 MessageBox.Show("Please enter a URL in the textbox")
             ElseIf Not redirectMakerUrl_txtBox.Text = "" Then
-                redirectMakerCodeBox_rchTxtBox.Text = "<!DOCTYPE html><html><head><meta http-equiv=""Refresh"" content=""3;URL=" & redirectMakerUrlPrefix_cmb.Text & redirectMakerUrl_txtBox.Text & """><meta charset=""UTF-8""><title>Redirecting...</title><meta name=""description"" content=""Redirecting Service"" ><!-- Mobile Specific Meta --><meta name=""viewport"" content=""width=device-width, initial-scale=1""><!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]--><link href='http://fonts.googleapis.com/css?family=Noto+Sans:400,700' rel='stylesheet' type='text/css'><style>body{font-family:'Noto Sans',Arial,serif;font-weight:400;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;line-height:1.618em;background:#464646 url(/Branding.png) center center no-repeat fixed;background-size:cover}h2{font-family:'Noto Sans',Arial,serif;font-weight:700;font-size:40px;line-height:1.618em}section{max-width:800px;margin:8% auto 1em auto;background-color:#222;opacity:.8;color:#fff;padding:1em 5%}a{color:#0c6}a:focus{outline:0;outline-offset:inherit}@media (max-device-width:1027px){body{text-align:center;font-size:larger}section{max-width:90%}}@media (max-device-width:640px){section{max-width:97%}}</style></head><body><section><h2>Redirecting to desired website...</h2><h3>I am redirecting you to <a href=""" & redirectMakerUrlPrefix_cmb.Text & redirectMakerUrl_txtBox.Text & """>" & redirectMakerUrlPrefix_cmb.Text & redirectMakerUrl_txtBox.Text & "</a></h3><h3>...You will be transferred to the new site in a moment...</h3><p>If you have waited more than a few seconds and you are still seeing this message, please click on the link above! Thank you.</p></section></body></html>"
+                redirectMakerCodeBox_rchTxtBox.Text = "<!DOCTYPE html><html><head><meta http-equiv=""Refresh"" content=""" & redirect_SecondsToWait_txtBox.Text & ";URL=" & redirectMakerUrlPrefix_cmb.Text & redirectMakerUrl_txtBox.Text & """><meta charset=""UTF-8""><title>Redirecting...</title><meta name=""description"" content=""Redirecting Service""><meta name=""viewport"" content=""width=device-width, initial-scale=1""> <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]--></head><body><h1>Redirecting...</h1><p>I am redirecting you to <a href=""" & redirectMakerUrlPrefix_cmb.Text & redirectMakerUrl_txtBox.Text & """>" & redirectMakerUrlPrefix_cmb.Text & redirectMakerUrl_txtBox.Text & "</a></p><p>...You will be transferred to the new site in a moment...</p><p>If you have waited more than a few seconds and you are still seeing this message, please click on the link above! Thank you.</p><br><br><p>Redirect made with EasyHTML</p></body></html>"
             End If
         Catch ex As Exception
             HTMLEditorError.Text = ex.ToString
@@ -417,7 +412,6 @@ Public Class EasyHTML
             Launch.LaunchBrowser(BrowserListing_cmb.SelectedItem) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
             Timer1.Start()
         Catch ex As Exception
-            Logging.AddLogEntry("Ran into error " & vbCrLf & ex.ToString)
             MessageBox.Show(ex.ToString, "Error")
             Timer1.Start()
         End Try
@@ -432,7 +426,6 @@ Public Class EasyHTML
                 pHelp.UseShellExecute = True
                 pHelp.WindowStyle = ProcessWindowStyle.Normal
                 Dim proc As Process = Process.Start(pHelp)
-                Logging.AddLogEntry("EasyNodeJS Launched")
                 Application.Exit()
             Catch ex As Exception
                 MessageBox.Show(ex.ToString, "Error")

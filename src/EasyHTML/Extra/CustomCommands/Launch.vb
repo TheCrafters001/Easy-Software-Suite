@@ -9,7 +9,7 @@ Public Class Launch
             pHelp.UseShellExecute = True
             pHelp.WindowStyle = ProcessWindowStyle.Normal
             Dim proc As Process = Process.Start(pHelp)
-            Logging.AddLogEntry(name & " Launched")
+
         ElseIf My.Computer.FileSystem.FileExists(Path.GetPathRoot(Environment.GetFolderPath(Environment.SpecialFolder.System)) & "Program Files\" & folderpath & "\" & exe & ".exe") Then
             Dim pHelp As New ProcessStartInfo
             pHelp.FileName = Path.GetPathRoot(Environment.GetFolderPath(Environment.SpecialFolder.System)) & "Program Files\" & folderpath & "\" & exe & ".exe"
@@ -17,7 +17,7 @@ Public Class Launch
             pHelp.UseShellExecute = True
             pHelp.WindowStyle = ProcessWindowStyle.Normal
             Dim proc As Process = Process.Start(pHelp)
-            Logging.AddLogEntry(name & " Launched")
+
         End If
     End Sub
     Public Shared Sub LaunchAppData(ByVal folderpath As String, ByVal exe As String, ByVal name As String)
@@ -28,7 +28,6 @@ Public Class Launch
             pHelp.UseShellExecute = True
             pHelp.WindowStyle = ProcessWindowStyle.Normal
             Dim proc As Process = Process.Start(pHelp)
-            Logging.AddLogEntry(name & " added")
         End If
     End Sub
 

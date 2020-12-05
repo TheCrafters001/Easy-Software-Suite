@@ -74,7 +74,7 @@ Public Class EasyNodeJS
 #Region "Misc"
     Private Sub EasyNodeJS_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ' Set BackColor of main window
-        Me.BackColor = Color.FromArgb(124, 63, 255)
+        Me.BackColor = Color.LightBlue
         ' Apply Version and Copyright Info
         version_lbl.Text = String.Format("Version {0}", My.Application.Info.Version.ToString)
         copyright_lbl.Text = My.Application.Info.Copyright

@@ -69,7 +69,7 @@ Partial Class ThemeSelect
         '
         Me.cmb_Theme.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.cmb_Theme.FormattingEnabled = True
-        Me.cmb_Theme.Items.AddRange(New Object() {"Bootstrap", "UI Kit", "Bulma", "W3.CSS", "Materialize", "Pure", "Foundation", "Semantic UI", "Milligram", "Skeleton", "Tailwind", "SPECTRE", "Picnic", "Dead Simple Grid"})
+        Me.cmb_Theme.Items.AddRange(New Object() {"HTML 5 Test Page", "Bootstrap", "UI Kit", "Bulma", "W3.CSS", "Materialize", "Pure", "Foundation", "Semantic UI", "Milligram", "Skeleton", "Tailwind", "SPECTRE", "Picnic", "Dead Simple Grid"})
         Me.cmb_Theme.Location = New System.Drawing.Point(6, 19)
         Me.cmb_Theme.Name = "cmb_Theme"
         Me.cmb_Theme.Size = New System.Drawing.Size(473, 21)

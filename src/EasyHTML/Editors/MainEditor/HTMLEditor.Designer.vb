@@ -79,16 +79,14 @@ Partial Class EasyHTML
         Me.BrowserListing_cmb = New System.Windows.Forms.ComboBox()
         Me.previewBrowser_lbl = New System.Windows.Forms.Label()
         Me.preview_lbl = New System.Windows.Forms.Label()
-        Me.Pg_PreviewLegacy = New System.Windows.Forms.TabPage()
-        Me.prvwarn_LBL = New System.Windows.Forms.Label()
-        Me.updatePreview_btn = New System.Windows.Forms.Button()
-        Me.WebBrowser1 = New System.Windows.Forms.WebBrowser()
         Me.Pg_RedirectMaker = New System.Windows.Forms.TabPage()
         Me.redirectMakerInfo_lbl = New System.Windows.Forms.Label()
         Me.redirectMakerCodeBox_rchTxtBox = New System.Windows.Forms.RichTextBox()
         Me.redirectMakerContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SaveRedirectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.redirectMakerTools_grp = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.redirect_SecondsToWait_txtBox = New System.Windows.Forms.TextBox()
         Me.redirectMakerUrlPrefix_cmb = New System.Windows.Forms.ComboBox()
         Me.redirectMakerGenerate_btn = New System.Windows.Forms.Button()
         Me.redirectMakerUrl_txtBox = New System.Windows.Forms.TextBox()
@@ -102,11 +100,10 @@ Partial Class EasyHTML
         Me.aboutText_lbl = New System.Windows.Forms.Label()
         Me.aboutTitle_lbl = New System.Windows.Forms.Label()
         Me.aboutImg_pic = New System.Windows.Forms.PictureBox()
-        Me.Pg_Log = New System.Windows.Forms.TabPage()
-        Me.Log = New System.Windows.Forms.RichTextBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
         Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.preview_Python = New System.Windows.Forms.GroupBox()
         Me.Pgs_Main.SuspendLayout()
         Me.Pg_Main.SuspendLayout()
         Me.mainEditor_grp.SuspendLayout()
@@ -120,14 +117,12 @@ Partial Class EasyHTML
         Me.Pg_Export.SuspendLayout()
         Me.Pg_Preview.SuspendLayout()
         Me.previewNew_grp.SuspendLayout()
-        Me.Pg_PreviewLegacy.SuspendLayout()
         Me.Pg_RedirectMaker.SuspendLayout()
         Me.redirectMakerContextMenu.SuspendLayout()
         Me.redirectMakerTools_grp.SuspendLayout()
         Me.Pg_About.SuspendLayout()
         CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.aboutImg_pic, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Pg_Log.SuspendLayout()
         Me.SuspendLayout()
         '
         'Pgs_Main
@@ -136,10 +131,8 @@ Partial Class EasyHTML
         Me.Pgs_Main.Controls.Add(Me.Pg_Meta)
         Me.Pgs_Main.Controls.Add(Me.Pg_Export)
         Me.Pgs_Main.Controls.Add(Me.Pg_Preview)
-        Me.Pgs_Main.Controls.Add(Me.Pg_PreviewLegacy)
         Me.Pgs_Main.Controls.Add(Me.Pg_RedirectMaker)
         Me.Pgs_Main.Controls.Add(Me.Pg_About)
-        Me.Pgs_Main.Controls.Add(Me.Pg_Log)
         Me.Pgs_Main.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Pgs_Main.Location = New System.Drawing.Point(0, 0)
         Me.Pgs_Main.Name = "Pgs_Main"
@@ -615,6 +608,7 @@ Partial Class EasyHTML
         'Pg_Preview
         '
         Me.Pg_Preview.BackColor = System.Drawing.Color.Gray
+        Me.Pg_Preview.Controls.Add(Me.preview_Python)
         Me.Pg_Preview.Controls.Add(Me.previewNew_grp)
         Me.Pg_Preview.Controls.Add(Me.preview_lbl)
         Me.Pg_Preview.ForeColor = System.Drawing.Color.White
@@ -679,52 +673,6 @@ Partial Class EasyHTML
         Me.preview_lbl.TabIndex = 0
         Me.preview_lbl.Text = "Preview"
         '
-        'Pg_PreviewLegacy
-        '
-        Me.Pg_PreviewLegacy.BackColor = System.Drawing.Color.Gray
-        Me.Pg_PreviewLegacy.Controls.Add(Me.prvwarn_LBL)
-        Me.Pg_PreviewLegacy.Controls.Add(Me.updatePreview_btn)
-        Me.Pg_PreviewLegacy.Controls.Add(Me.WebBrowser1)
-        Me.Pg_PreviewLegacy.Location = New System.Drawing.Point(4, 22)
-        Me.Pg_PreviewLegacy.Name = "Pg_PreviewLegacy"
-        Me.Pg_PreviewLegacy.Size = New System.Drawing.Size(901, 600)
-        Me.Pg_PreviewLegacy.TabIndex = 3
-        Me.Pg_PreviewLegacy.Text = "Preview (Legacy)"
-        '
-        'prvwarn_LBL
-        '
-        Me.prvwarn_LBL.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.prvwarn_LBL.AutoSize = True
-        Me.prvwarn_LBL.Location = New System.Drawing.Point(8, 572)
-        Me.prvwarn_LBL.Name = "prvwarn_LBL"
-        Me.prvwarn_LBL.Size = New System.Drawing.Size(413, 26)
-        Me.prvwarn_LBL.TabIndex = 2
-        Me.prvwarn_LBL.Text = "Preview may not be exactly what really displays, as the browser this uses is bad." &
-    "" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Note: This preview method will be going away soon!"
-        '
-        'updatePreview_btn
-        '
-        Me.updatePreview_btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.updatePreview_btn.ForeColor = System.Drawing.Color.Black
-        Me.updatePreview_btn.Location = New System.Drawing.Point(796, 575)
-        Me.updatePreview_btn.Name = "updatePreview_btn"
-        Me.updatePreview_btn.Size = New System.Drawing.Size(97, 23)
-        Me.updatePreview_btn.TabIndex = 1
-        Me.updatePreview_btn.Text = "Update Preview"
-        Me.updatePreview_btn.UseVisualStyleBackColor = True
-        '
-        'WebBrowser1
-        '
-        Me.WebBrowser1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.WebBrowser1.Location = New System.Drawing.Point(3, 3)
-        Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
-        Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.ScriptErrorsSuppressed = True
-        Me.WebBrowser1.Size = New System.Drawing.Size(895, 566)
-        Me.WebBrowser1.TabIndex = 0
-        '
         'Pg_RedirectMaker
         '
         Me.Pg_RedirectMaker.BackColor = System.Drawing.Color.Gray
@@ -775,6 +723,8 @@ Partial Class EasyHTML
         '
         'redirectMakerTools_grp
         '
+        Me.redirectMakerTools_grp.Controls.Add(Me.Label1)
+        Me.redirectMakerTools_grp.Controls.Add(Me.redirect_SecondsToWait_txtBox)
         Me.redirectMakerTools_grp.Controls.Add(Me.redirectMakerUrlPrefix_cmb)
         Me.redirectMakerTools_grp.Controls.Add(Me.redirectMakerGenerate_btn)
         Me.redirectMakerTools_grp.Controls.Add(Me.redirectMakerUrl_txtBox)
@@ -785,6 +735,23 @@ Partial Class EasyHTML
         Me.redirectMakerTools_grp.TabIndex = 1
         Me.redirectMakerTools_grp.TabStop = False
         Me.redirectMakerTools_grp.Text = "Redirect Maker Tools"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 49)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(89, 13)
+        Me.Label1.TabIndex = 5
+        Me.Label1.Text = "Seconds to wait"
+        '
+        'redirect_SecondsToWait_txtBox
+        '
+        Me.redirect_SecondsToWait_txtBox.Location = New System.Drawing.Point(101, 46)
+        Me.redirect_SecondsToWait_txtBox.Name = "redirect_SecondsToWait_txtBox"
+        Me.redirect_SecondsToWait_txtBox.Size = New System.Drawing.Size(164, 22)
+        Me.redirect_SecondsToWait_txtBox.TabIndex = 4
+        Me.redirect_SecondsToWait_txtBox.Text = "0"
         '
         'redirectMakerUrlPrefix_cmb
         '
@@ -927,30 +894,20 @@ Partial Class EasyHTML
         Me.aboutImg_pic.TabIndex = 0
         Me.aboutImg_pic.TabStop = False
         '
-        'Pg_Log
-        '
-        Me.Pg_Log.BackColor = System.Drawing.Color.Gray
-        Me.Pg_Log.Controls.Add(Me.Log)
-        Me.Pg_Log.Location = New System.Drawing.Point(4, 22)
-        Me.Pg_Log.Name = "Pg_Log"
-        Me.Pg_Log.Size = New System.Drawing.Size(901, 600)
-        Me.Pg_Log.TabIndex = 9
-        Me.Pg_Log.Text = "Log"
-        '
-        'Log
-        '
-        Me.Log.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Log.Location = New System.Drawing.Point(8, 3)
-        Me.Log.Name = "Log"
-        Me.Log.ReadOnly = True
-        Me.Log.Size = New System.Drawing.Size(885, 589)
-        Me.Log.TabIndex = 0
-        Me.Log.Text = ""
-        '
         'Timer1
         '
+        '
+        'preview_Python
+        '
+        Me.preview_Python.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.preview_Python.Enabled = False
+        Me.preview_Python.Location = New System.Drawing.Point(8, 143)
+        Me.preview_Python.Name = "preview_Python"
+        Me.preview_Python.Size = New System.Drawing.Size(885, 101)
+        Me.preview_Python.TabIndex = 3
+        Me.preview_Python.TabStop = False
+        Me.preview_Python.Text = "Python Preview Settings (Coming Soon)"
         '
         'EasyHTML
         '
@@ -982,8 +939,6 @@ Partial Class EasyHTML
         Me.Pg_Preview.PerformLayout()
         Me.previewNew_grp.ResumeLayout(False)
         Me.previewNew_grp.PerformLayout()
-        Me.Pg_PreviewLegacy.ResumeLayout(False)
-        Me.Pg_PreviewLegacy.PerformLayout()
         Me.Pg_RedirectMaker.ResumeLayout(False)
         Me.Pg_RedirectMaker.PerformLayout()
         Me.redirectMakerContextMenu.ResumeLayout(False)
@@ -993,7 +948,6 @@ Partial Class EasyHTML
         Me.Pg_About.PerformLayout()
         CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.aboutImg_pic, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Pg_Log.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -1003,12 +957,8 @@ Partial Class EasyHTML
     Friend WithEvents Pg_Export As TabPage
     Friend WithEvents Btn_Export As Button
     Friend WithEvents Code_Export_Code_Box As RichTextBox
-    Friend WithEvents Pg_PreviewLegacy As TabPage
     Friend WithEvents HTMLEditorError As TextBox
     Friend WithEvents Component_Box As ListBox
-    Friend WithEvents prvwarn_LBL As Label
-    Friend WithEvents updatePreview_btn As Button
-    Friend WithEvents WebBrowser1 As WebBrowser
     Friend WithEvents Timer1 As Timer
     Friend WithEvents pageTitle_lbl As Label
     Friend WithEvents pageTitle_txtBox As TextBox
@@ -1078,7 +1028,8 @@ Partial Class EasyHTML
     Friend WithEvents previewBrowser_lbl As Label
     Friend WithEvents preview_lbl As Label
     Friend WithEvents internetExplorerCompatability_chk As CheckBox
-    Friend WithEvents Pg_Log As TabPage
-    Friend WithEvents Log As RichTextBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents redirect_SecondsToWait_txtBox As TextBox
+    Friend WithEvents preview_Python As GroupBox
 End Class

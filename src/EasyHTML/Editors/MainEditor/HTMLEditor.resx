@@ -120,14 +120,14 @@
   <metadata name="MainEditorContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>106, 17</value>
   </metadata>
+  <metadata name="redirectMakerContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>802, 17</value>
+  </metadata>
   <metadata name="JSContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>291, 17</value>
   </metadata>
   <metadata name="CSSContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>427, 17</value>
-  </metadata>
-  <metadata name="redirectMakerContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>802, 17</value>
   </metadata>
   <data name="aboutText_lbl.Text" xml:space="preserve">
     <value>EasyHTML is a free to use, easy-to-understand HTML Editor. It has Live Code Preview, and Exporting. You can save, and load, all your projects with ease, and you can easily update existing websites created with it! The Live Code Preview allows you to see what the website code looks like as you update it, and you can export that code with one click! The best part about all of this, is that the project is FREE and OPEN-SOURCE! Some parts of this program (such as the Element Selector) are inspired by HTMaker, built by @SkyLight_Gaming on GameJolt.</value>

@@ -14,6 +14,21 @@
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -83,17 +98,10 @@
     <Compile Include="Extra\CustomCommands\Find.vb" />
     <Compile Include="Extra\CustomCommands\Launch.vb" />
     <Compile Include="Extra\CustomCommands\Lists.vb" />
-    <Compile Include="Extra\CustomCommands\Logging.vb" />
     <Compile Include="Extra\New_Splash.Designer.vb">
       <DependentUpon>New_Splash.vb</DependentUpon>
     </Compile>
     <Compile Include="Extra\New_Splash.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Extra\SplashScreen1.Designer.vb">
-      <DependentUpon>SplashScreen1.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Extra\SplashScreen1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Extra\ThemeSelect.Designer.vb">
@@ -135,9 +143,6 @@
   <ItemGroup>
     <EmbeddedResource Include="Extra\New_Splash.resx">
       <DependentUpon>New_Splash.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Extra\SplashScreen1.resx">
-      <DependentUpon>SplashScreen1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Extra\ThemeSelect.resx">
       <DependentUpon>ThemeSelect.vb</DependentUpon>
@@ -187,7 +192,16 @@
     <None Include="Resources\Thumbnail.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Editors\Vapid\" />
+    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
