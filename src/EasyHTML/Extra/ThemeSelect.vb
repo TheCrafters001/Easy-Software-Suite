@@ -1,12 +1,14 @@
 ﻿Public Class ThemeSelect
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        ' Check if rad_Template is checked or not.
         If rad_Template.Checked = True Then
             grp_SelectTemplate.Enabled = True
-            'cmb_Theme.Enabled = True
-        ElseIf rad_Template.Checked = False Then
+            grp_exampleLoad.Enabled = False
+        ElseIf rad_Blank.Checked = True Then
             grp_SelectTemplate.Enabled = False
-            'cmb_Theme.Enabled = False
+            grp_exampleLoad.Enabled = False
+        ElseIf rad_exampleLoad.Checked = True Then
+            grp_SelectTemplate.Enabled = False
+            grp_exampleLoad.Enabled = True
         End If
     End Sub
 
@@ -15,8 +17,10 @@
         Me.BackColor = Color.FromArgb(124, 63, 255)
         ' Set Default Theme to UI Kit
         cmb_Theme.SelectedIndex = 1
+        ' cmb_exampleLoad.SelectedIndex = 0
         ' Make Blank by Default
         rad_Template.Checked = False
+        rad_exampleLoad.Checked = False
         rad_Blank.Checked = True
         ' Start Timer
         Timer1.Start()

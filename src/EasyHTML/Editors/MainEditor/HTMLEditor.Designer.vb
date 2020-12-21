@@ -33,10 +33,7 @@ Partial Class EasyHTML
         Me.loadCssLibs_btn = New System.Windows.Forms.Button()
         Me.newProject_btn = New System.Windows.Forms.Button()
         Me.mainEditor_grp = New System.Windows.Forms.GroupBox()
-        Me.CodeEditorBox = New System.Windows.Forms.RichTextBox()
-        Me.MainEditorContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.SaveEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoadEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CodeEditorBox = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.misc_grp = New System.Windows.Forms.GroupBox()
         Me.internetExplorerCompatability_chk = New System.Windows.Forms.CheckBox()
         Me.metatags_chkbox = New System.Windows.Forms.CheckBox()
@@ -74,6 +71,7 @@ Partial Class EasyHTML
         Me.Btn_Export = New System.Windows.Forms.Button()
         Me.Code_Export_Code_Box = New System.Windows.Forms.RichTextBox()
         Me.Pg_Preview = New System.Windows.Forms.TabPage()
+        Me.preview_Python = New System.Windows.Forms.GroupBox()
         Me.previewNew_grp = New System.Windows.Forms.GroupBox()
         Me.preview_btn = New System.Windows.Forms.Button()
         Me.BrowserListing_cmb = New System.Windows.Forms.ComboBox()
@@ -81,7 +79,6 @@ Partial Class EasyHTML
         Me.preview_lbl = New System.Windows.Forms.Label()
         Me.Pg_RedirectMaker = New System.Windows.Forms.TabPage()
         Me.redirectMakerInfo_lbl = New System.Windows.Forms.Label()
-        Me.redirectMakerCodeBox_rchTxtBox = New System.Windows.Forms.RichTextBox()
         Me.redirectMakerContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SaveRedirectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.redirectMakerTools_grp = New System.Windows.Forms.GroupBox()
@@ -93,6 +90,7 @@ Partial Class EasyHTML
         Me.redirectMakerUrl_lbl = New System.Windows.Forms.Label()
         Me.redirectMakerTitle_lbl = New System.Windows.Forms.Label()
         Me.Pg_About = New System.Windows.Forms.TabPage()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.updateCheck_btn = New System.Windows.Forms.Button()
         Me.gnuGpl_pic = New System.Windows.Forms.PictureBox()
         Me.copyright_lbl = New System.Windows.Forms.Label()
@@ -100,14 +98,17 @@ Partial Class EasyHTML
         Me.aboutText_lbl = New System.Windows.Forms.Label()
         Me.aboutTitle_lbl = New System.Windows.Forms.Label()
         Me.aboutImg_pic = New System.Windows.Forms.PictureBox()
+        Me.MainEditorContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
+        Me.SaveEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
         Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.preview_Python = New System.Windows.Forms.GroupBox()
+        Me.redirectMakerCodeBox = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.Pgs_Main.SuspendLayout()
         Me.Pg_Main.SuspendLayout()
         Me.mainEditor_grp.SuspendLayout()
-        Me.MainEditorContextMenu.SuspendLayout()
+        CType(Me.CodeEditorBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.misc_grp.SuspendLayout()
         Me.jsImport_grp.SuspendLayout()
         Me.JSContextMenu.SuspendLayout()
@@ -123,6 +124,8 @@ Partial Class EasyHTML
         Me.Pg_About.SuspendLayout()
         CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.aboutImg_pic, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MainEditorContextMenu.SuspendLayout()
+        CType(Me.redirectMakerCodeBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Pgs_Main
@@ -238,31 +241,30 @@ Partial Class EasyHTML
         '
         'CodeEditorBox
         '
+        Me.CodeEditorBox.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
+        Me.CodeEditorBox.AutoIndentCharsPatterns = "^\s*[\w\.]+(\s\w+)?\s*(?<range>=)\s*(?<range>[^;=]+);" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "^\s*(case|default)\s*[^:]*" &
+    "(?<range>:)\s*(?<range>[^;]+);"
+        Me.CodeEditorBox.AutoScrollMinSize = New System.Drawing.Size(27, 14)
+        Me.CodeEditorBox.BackBrush = Nothing
+        Me.CodeEditorBox.CharHeight = 14
+        Me.CodeEditorBox.CharWidth = 8
         Me.CodeEditorBox.ContextMenuStrip = Me.MainEditorContextMenu
+        Me.CodeEditorBox.CurrentPenSize = 3
+        Me.CodeEditorBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.CodeEditorBox.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.CodeEditorBox.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.CodeEditorBox.DocumentPath = Nothing
+        Me.CodeEditorBox.ForeColor = System.Drawing.Color.Black
+        Me.CodeEditorBox.IsReplaceMode = False
         Me.CodeEditorBox.Location = New System.Drawing.Point(3, 18)
         Me.CodeEditorBox.Name = "CodeEditorBox"
+        Me.CodeEditorBox.Paddings = New System.Windows.Forms.Padding(0)
+        Me.CodeEditorBox.SelectionChangedDelayedEnabled = False
+        Me.CodeEditorBox.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CodeEditorBox.ServiceColors = CType(resources.GetObject("CodeEditorBox.ServiceColors"), FastColoredTextBoxNS.ServiceColors)
         Me.CodeEditorBox.Size = New System.Drawing.Size(513, 409)
         Me.CodeEditorBox.TabIndex = 0
-        Me.CodeEditorBox.Text = ""
-        '
-        'MainEditorContextMenu
-        '
-        Me.MainEditorContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveEditorProjectToolStripMenuItem, Me.LoadEditorProjectToolStripMenuItem})
-        Me.MainEditorContextMenu.Name = "MainEditorContextMenu"
-        Me.MainEditorContextMenu.Size = New System.Drawing.Size(175, 48)
-        '
-        'SaveEditorProjectToolStripMenuItem
-        '
-        Me.SaveEditorProjectToolStripMenuItem.Name = "SaveEditorProjectToolStripMenuItem"
-        Me.SaveEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
-        Me.SaveEditorProjectToolStripMenuItem.Text = "Save Editor Project"
-        '
-        'LoadEditorProjectToolStripMenuItem
-        '
-        Me.LoadEditorProjectToolStripMenuItem.Name = "LoadEditorProjectToolStripMenuItem"
-        Me.LoadEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
-        Me.LoadEditorProjectToolStripMenuItem.Text = "Load Editor Project"
+        Me.CodeEditorBox.Zoom = 100
         '
         'misc_grp
         '
@@ -619,6 +621,18 @@ Partial Class EasyHTML
         Me.Pg_Preview.TabIndex = 8
         Me.Pg_Preview.Text = "Preview"
         '
+        'preview_Python
+        '
+        Me.preview_Python.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.preview_Python.Enabled = False
+        Me.preview_Python.Location = New System.Drawing.Point(8, 143)
+        Me.preview_Python.Name = "preview_Python"
+        Me.preview_Python.Size = New System.Drawing.Size(885, 101)
+        Me.preview_Python.TabIndex = 3
+        Me.preview_Python.TabStop = False
+        Me.preview_Python.Text = "Python Preview Settings (Coming Soon)"
+        '
         'previewNew_grp
         '
         Me.previewNew_grp.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
@@ -676,8 +690,8 @@ Partial Class EasyHTML
         'Pg_RedirectMaker
         '
         Me.Pg_RedirectMaker.BackColor = System.Drawing.Color.Gray
+        Me.Pg_RedirectMaker.Controls.Add(Me.redirectMakerCodeBox)
         Me.Pg_RedirectMaker.Controls.Add(Me.redirectMakerInfo_lbl)
-        Me.Pg_RedirectMaker.Controls.Add(Me.redirectMakerCodeBox_rchTxtBox)
         Me.Pg_RedirectMaker.Controls.Add(Me.redirectMakerTools_grp)
         Me.Pg_RedirectMaker.Controls.Add(Me.redirectMakerTitle_lbl)
         Me.Pg_RedirectMaker.Location = New System.Drawing.Point(4, 22)
@@ -694,20 +708,6 @@ Partial Class EasyHTML
         Me.redirectMakerInfo_lbl.TabIndex = 3
         Me.redirectMakerInfo_lbl.Text = "To save the created redirect, right click the code box, and click save. Code gene" &
     "rated with Redirect Maker is Minified by default."
-        '
-        'redirectMakerCodeBox_rchTxtBox
-        '
-        Me.redirectMakerCodeBox_rchTxtBox.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.redirectMakerCodeBox_rchTxtBox.ContextMenuStrip = Me.redirectMakerContextMenu
-        Me.redirectMakerCodeBox_rchTxtBox.DetectUrls = False
-        Me.redirectMakerCodeBox_rchTxtBox.Location = New System.Drawing.Point(285, 33)
-        Me.redirectMakerCodeBox_rchTxtBox.Name = "redirectMakerCodeBox_rchTxtBox"
-        Me.redirectMakerCodeBox_rchTxtBox.ReadOnly = True
-        Me.redirectMakerCodeBox_rchTxtBox.Size = New System.Drawing.Size(608, 559)
-        Me.redirectMakerCodeBox_rchTxtBox.TabIndex = 2
-        Me.redirectMakerCodeBox_rchTxtBox.Text = ""
         '
         'redirectMakerContextMenu
         '
@@ -806,6 +806,7 @@ Partial Class EasyHTML
         'Pg_About
         '
         Me.Pg_About.BackColor = System.Drawing.Color.Gray
+        Me.Pg_About.Controls.Add(Me.Button2)
         Me.Pg_About.Controls.Add(Me.updateCheck_btn)
         Me.Pg_About.Controls.Add(Me.gnuGpl_pic)
         Me.Pg_About.Controls.Add(Me.copyright_lbl)
@@ -820,10 +821,20 @@ Partial Class EasyHTML
         Me.Pg_About.TabIndex = 4
         Me.Pg_About.Text = "About"
         '
+        'Button2
+        '
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Location = New System.Drawing.Point(164, 569)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(159, 23)
+        Me.Button2.TabIndex = 7
+        Me.Button2.Text = "Third Party Licenses"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
         'updateCheck_btn
         '
         Me.updateCheck_btn.ForeColor = System.Drawing.Color.Black
-        Me.updateCheck_btn.Location = New System.Drawing.Point(171, 159)
+        Me.updateCheck_btn.Location = New System.Drawing.Point(170, 172)
         Me.updateCheck_btn.Name = "updateCheck_btn"
         Me.updateCheck_btn.Size = New System.Drawing.Size(111, 23)
         Me.updateCheck_btn.TabIndex = 6
@@ -846,7 +857,7 @@ Partial Class EasyHTML
         '
         Me.copyright_lbl.AutoSize = True
         Me.copyright_lbl.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.copyright_lbl.Location = New System.Drawing.Point(168, 135)
+        Me.copyright_lbl.Location = New System.Drawing.Point(167, 148)
         Me.copyright_lbl.Name = "copyright_lbl"
         Me.copyright_lbl.Size = New System.Drawing.Size(108, 21)
         Me.copyright_lbl.TabIndex = 4
@@ -856,7 +867,7 @@ Partial Class EasyHTML
         '
         Me.version_lbl.AutoSize = True
         Me.version_lbl.Font = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.version_lbl.Location = New System.Drawing.Point(168, 114)
+        Me.version_lbl.Location = New System.Drawing.Point(167, 127)
         Me.version_lbl.Name = "version_lbl"
         Me.version_lbl.Size = New System.Drawing.Size(114, 21)
         Me.version_lbl.TabIndex = 3
@@ -868,7 +879,7 @@ Partial Class EasyHTML
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.aboutText_lbl.Location = New System.Drawing.Point(168, 46)
         Me.aboutText_lbl.Name = "aboutText_lbl"
-        Me.aboutText_lbl.Size = New System.Drawing.Size(727, 68)
+        Me.aboutText_lbl.Size = New System.Drawing.Size(727, 81)
         Me.aboutText_lbl.TabIndex = 2
         Me.aboutText_lbl.Text = resources.GetString("aboutText_lbl.Text")
         '
@@ -894,20 +905,51 @@ Partial Class EasyHTML
         Me.aboutImg_pic.TabIndex = 0
         Me.aboutImg_pic.TabStop = False
         '
+        'MainEditorContextMenu
+        '
+        Me.MainEditorContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveEditorProjectToolStripMenuItem, Me.LoadEditorProjectToolStripMenuItem})
+        Me.MainEditorContextMenu.Name = "MainEditorContextMenu"
+        Me.MainEditorContextMenu.Size = New System.Drawing.Size(175, 48)
+        '
+        'SaveEditorProjectToolStripMenuItem
+        '
+        Me.SaveEditorProjectToolStripMenuItem.Name = "SaveEditorProjectToolStripMenuItem"
+        Me.SaveEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.SaveEditorProjectToolStripMenuItem.Text = "Save Editor Project"
+        '
+        'LoadEditorProjectToolStripMenuItem
+        '
+        Me.LoadEditorProjectToolStripMenuItem.Name = "LoadEditorProjectToolStripMenuItem"
+        Me.LoadEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.LoadEditorProjectToolStripMenuItem.Text = "Load Editor Project"
+        '
         'Timer1
         '
         '
-        'preview_Python
+        'redirectMakerCodeBox
         '
-        Me.preview_Python.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.preview_Python.Enabled = False
-        Me.preview_Python.Location = New System.Drawing.Point(8, 143)
-        Me.preview_Python.Name = "preview_Python"
-        Me.preview_Python.Size = New System.Drawing.Size(885, 101)
-        Me.preview_Python.TabIndex = 3
-        Me.preview_Python.TabStop = False
-        Me.preview_Python.Text = "Python Preview Settings (Coming Soon)"
+        Me.redirectMakerCodeBox.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
+        Me.redirectMakerCodeBox.AutoIndentCharsPatterns = "^\s*[\w\.]+(\s\w+)?\s*(?<range>=)\s*(?<range>[^;=]+);" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "^\s*(case|default)\s*[^:]*" &
+    "(?<range>:)\s*(?<range>[^;]+);"
+        Me.redirectMakerCodeBox.AutoScrollMinSize = New System.Drawing.Size(27, 14)
+        Me.redirectMakerCodeBox.BackBrush = Nothing
+        Me.redirectMakerCodeBox.CharHeight = 14
+        Me.redirectMakerCodeBox.CharWidth = 8
+        Me.redirectMakerCodeBox.CurrentPenSize = 3
+        Me.redirectMakerCodeBox.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.redirectMakerCodeBox.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.redirectMakerCodeBox.DocumentPath = Nothing
+        Me.redirectMakerCodeBox.ForeColor = System.Drawing.Color.Black
+        Me.redirectMakerCodeBox.IsReplaceMode = False
+        Me.redirectMakerCodeBox.Location = New System.Drawing.Point(285, 33)
+        Me.redirectMakerCodeBox.Name = "redirectMakerCodeBox"
+        Me.redirectMakerCodeBox.Paddings = New System.Windows.Forms.Padding(0)
+        Me.redirectMakerCodeBox.SelectionChangedDelayedEnabled = False
+        Me.redirectMakerCodeBox.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.redirectMakerCodeBox.ServiceColors = CType(resources.GetObject("redirectMakerCodeBox.ServiceColors"), FastColoredTextBoxNS.ServiceColors)
+        Me.redirectMakerCodeBox.Size = New System.Drawing.Size(608, 559)
+        Me.redirectMakerCodeBox.TabIndex = 4
+        Me.redirectMakerCodeBox.Zoom = 100
         '
         'EasyHTML
         '
@@ -925,7 +967,7 @@ Partial Class EasyHTML
         Me.Pg_Main.ResumeLayout(False)
         Me.Pg_Main.PerformLayout()
         Me.mainEditor_grp.ResumeLayout(False)
-        Me.MainEditorContextMenu.ResumeLayout(False)
+        CType(Me.CodeEditorBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.misc_grp.ResumeLayout(False)
         Me.misc_grp.PerformLayout()
         Me.jsImport_grp.ResumeLayout(False)
@@ -948,6 +990,8 @@ Partial Class EasyHTML
         Me.Pg_About.PerformLayout()
         CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.aboutImg_pic, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MainEditorContextMenu.ResumeLayout(False)
+        CType(Me.redirectMakerCodeBox, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -971,7 +1015,6 @@ Partial Class EasyHTML
     Friend WithEvents misc_grp As GroupBox
     Friend WithEvents mobileViewport_chkbox As CheckBox
     Friend WithEvents mainEditor_grp As GroupBox
-    Friend WithEvents CodeEditorBox As RichTextBox
     Friend WithEvents credit_chkbox As CheckBox
     Friend WithEvents newProject_btn As Button
     Friend WithEvents loadEditorProj_btn As Button
@@ -1016,7 +1059,6 @@ Partial Class EasyHTML
     Friend WithEvents redirectMakerUrl_lbl As Label
     Friend WithEvents redirectMakerTitle_lbl As Label
     Friend WithEvents redirectMakerInfo_lbl As Label
-    Friend WithEvents redirectMakerCodeBox_rchTxtBox As RichTextBox
     Friend WithEvents redirectMakerContextMenu As ContextMenuStrip
     Friend WithEvents SaveRedirectToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents redirectMakerGenerate_btn As Button
@@ -1032,4 +1074,7 @@ Partial Class EasyHTML
     Friend WithEvents Label1 As Label
     Friend WithEvents redirect_SecondsToWait_txtBox As TextBox
     Friend WithEvents preview_Python As GroupBox
+    Friend WithEvents CodeEditorBox As FastColoredTextBoxNS.FastColoredTextBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents redirectMakerCodeBox As FastColoredTextBoxNS.FastColoredTextBox
 End Class

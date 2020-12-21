@@ -30,7 +30,11 @@ Partial Class ThemeSelect
         Me.cmb_Theme = New System.Windows.Forms.ComboBox()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.rad_exampleLoad = New System.Windows.Forms.RadioButton()
+        Me.grp_exampleLoad = New System.Windows.Forms.GroupBox()
+        Me.cmb_exampleLoad = New System.Windows.Forms.ComboBox()
         Me.grp_SelectTemplate.SuspendLayout()
+        Me.grp_exampleLoad.SuspendLayout()
         Me.SuspendLayout()
         '
         'rad_Blank
@@ -81,19 +85,51 @@ Partial Class ThemeSelect
         'Button1
         '
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(422, 128)
+        Me.Button1.Location = New System.Drawing.Point(422, 221)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(75, 23)
         Me.Button1.TabIndex = 3
         Me.Button1.Text = "OK"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'rad_exampleLoad
+        '
+        Me.rad_exampleLoad.AutoSize = True
+        Me.rad_exampleLoad.Location = New System.Drawing.Point(12, 128)
+        Me.rad_exampleLoad.Name = "rad_exampleLoad"
+        Me.rad_exampleLoad.Size = New System.Drawing.Size(106, 17)
+        Me.rad_exampleLoad.TabIndex = 4
+        Me.rad_exampleLoad.TabStop = True
+        Me.rad_exampleLoad.Text = "Load an example"
+        Me.rad_exampleLoad.UseVisualStyleBackColor = True
+        '
+        'grp_exampleLoad
+        '
+        Me.grp_exampleLoad.Controls.Add(Me.cmb_exampleLoad)
+        Me.grp_exampleLoad.Location = New System.Drawing.Point(12, 151)
+        Me.grp_exampleLoad.Name = "grp_exampleLoad"
+        Me.grp_exampleLoad.Size = New System.Drawing.Size(485, 64)
+        Me.grp_exampleLoad.TabIndex = 5
+        Me.grp_exampleLoad.TabStop = False
+        Me.grp_exampleLoad.Text = "Select a Template"
+        '
+        'cmb_exampleLoad
+        '
+        Me.cmb_exampleLoad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.cmb_exampleLoad.FormattingEnabled = True
+        Me.cmb_exampleLoad.Location = New System.Drawing.Point(6, 19)
+        Me.cmb_exampleLoad.Name = "cmb_exampleLoad"
+        Me.cmb_exampleLoad.Size = New System.Drawing.Size(473, 21)
+        Me.cmb_exampleLoad.TabIndex = 4
+        '
         'ThemeSelect
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Gray
-        Me.ClientSize = New System.Drawing.Size(509, 163)
+        Me.ClientSize = New System.Drawing.Size(509, 253)
+        Me.Controls.Add(Me.grp_exampleLoad)
+        Me.Controls.Add(Me.rad_exampleLoad)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.grp_SelectTemplate)
         Me.Controls.Add(Me.rad_Template)
@@ -108,6 +144,7 @@ Partial Class ThemeSelect
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Select a Template"
         Me.grp_SelectTemplate.ResumeLayout(False)
+        Me.grp_exampleLoad.ResumeLayout(False)
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -119,4 +156,7 @@ Partial Class ThemeSelect
     Friend WithEvents Timer1 As Timer
     Friend WithEvents cmb_Theme As ComboBox
     Friend WithEvents Button1 As Button
+    Friend WithEvents rad_exampleLoad As RadioButton
+    Friend WithEvents grp_exampleLoad As GroupBox
+    Friend WithEvents cmb_exampleLoad As ComboBox
 End Class

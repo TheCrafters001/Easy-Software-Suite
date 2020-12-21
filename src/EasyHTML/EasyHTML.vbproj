@@ -66,14 +66,20 @@
     <ApplicationIcon>Resources\EasyHTML_Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AutoUpdater.NET, Version=1.6.0.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
-      <HintPath>..\packages\Autoupdater.NET.Official.1.6.0\lib\net40\AutoUpdater.NET.dll</HintPath>
+    <Reference Include="AutoUpdater.NET, Version=1.6.4.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autoupdater.NET.Official.1.6.4\lib\net45\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="FastColoredTextBox, Version=2.16.26.100, Culture=neutral, PublicKeyToken=fb8aa12b994ef61b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Sara-FCTB.2.16.26.105\lib\net35\FastColoredTextBox.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -98,6 +104,12 @@
     <Compile Include="Extra\CustomCommands\Find.vb" />
     <Compile Include="Extra\CustomCommands\Launch.vb" />
     <Compile Include="Extra\CustomCommands\Lists.vb" />
+    <Compile Include="Extra\Licenses.Designer.vb">
+      <DependentUpon>Licenses.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Extra\Licenses.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Extra\New_Splash.Designer.vb">
       <DependentUpon>New_Splash.vb</DependentUpon>
     </Compile>
@@ -141,6 +153,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Extra\Licenses.resx">
+      <DependentUpon>Licenses.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Extra\New_Splash.resx">
       <DependentUpon>New_Splash.vb</DependentUpon>
     </EmbeddedResource>
@@ -171,9 +186,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="packages.config" />
     <None Include="Resources\EasyHTML_Icon.png" />
   </ItemGroup>
   <ItemGroup>

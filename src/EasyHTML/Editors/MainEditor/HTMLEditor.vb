@@ -7,8 +7,25 @@ Imports System.Linq
 Imports System.Text
 Imports System.Threading.Tasks
 Imports System.Windows.Forms
+Imports System.Drawing.Drawing2D
+Imports System.Threading
+Imports System.Diagnostics
+Imports System.Text.RegularExpressions
+Imports System.IO
+Imports System.Runtime.Serialization.Formatters.Binary
 Imports AutoUpdaterDotNET
+Imports FastColoredTextBoxNS
+
 Public Class EasyHTML
+    ' Set colors for HTML Editor
+    Dim BlueStyle As TextStyle = New TextStyle(Brushes.Blue, Nothing, FontStyle.Regular)
+    Dim BoldStyle As TextStyle = New TextStyle(Nothing, Nothing, FontStyle.Bold Or FontStyle.Underline)
+    Dim GrayStyle As TextStyle = New TextStyle(Brushes.Gray, Nothing, FontStyle.Regular)
+    Dim MagentaStyle As TextStyle = New TextStyle(Brushes.Magenta, Nothing, FontStyle.Regular)
+    Dim GreenStyle As TextStyle = New TextStyle(Brushes.Green, Nothing, FontStyle.Italic)
+    Dim BrownStyle As TextStyle = New TextStyle(Brushes.Brown, Nothing, FontStyle.Italic)
+    Dim MaroonStyle As TextStyle = New TextStyle(Brushes.Maroon, Nothing, FontStyle.Regular)
+    Dim SameWordsStyle As MarkerStyle = New MarkerStyle(New SolidBrush(Color.FromArgb(40, Color.Gray)))
 #Region "Editor"
     Private Sub Component_Box_DoubleClick(sender As Object, e As EventArgs) Handles Component_Box.DoubleClick
         ' Copy over item from Element Selector
@@ -172,7 +189,7 @@ Public Class EasyHTML
             If redirectMakerUrl_txtBox.Text = "" Then
                 MessageBox.Show("Please enter a URL in the textbox")
             ElseIf Not redirectMakerUrl_txtBox.Text = "" Then
-                redirectMakerCodeBox_rchTxtBox.Text = "<!DOCTYPE html><html><head><meta http-equiv=""Refresh"" content=""" & redirect_SecondsToWait_txtBox.Text & ";URL=" & redirectMakerUrlPrefix_cmb.Text & redirectMakerUrl_txtBox.Text & """><meta charset=""UTF-8""><title>Redirecting...</title><meta name=""description"" content=""Redirecting Service""><meta name=""viewport"" content=""width=device-width, initial-scale=1""> <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]--></head><body><h1>Redirecting...</h1><p>I am redirecting you to <a href=""" & redirectMakerUrlPrefix_cmb.Text & redirectMakerUrl_txtBox.Text & """>" & redirectMakerUrlPrefix_cmb.Text & redirectMakerUrl_txtBox.Text & "</a></p><p>...You will be transferred to the new site in a moment...</p><p>If you have waited more than a few seconds and you are still seeing this message, please click on the link above! Thank you.</p><br><br><p>Redirect made with EasyHTML</p></body></html>"
+                redirectMakerCodeBox.Text = "<!DOCTYPE html><html><head><meta http-equiv=""Refresh"" content=""" & redirect_SecondsToWait_txtBox.Text & ";URL=" & redirectMakerUrlPrefix_cmb.Text & redirectMakerUrl_txtBox.Text & """><meta charset=""UTF-8""><title>Redirecting...</title><meta name=""description"" content=""Redirecting Service""><meta name=""viewport"" content=""width=device-width, initial-scale=1""> <!--[if IE]><meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'><![endif]--></head><body><h1>Redirecting...</h1><p>I am redirecting you to <a href=""" & redirectMakerUrlPrefix_cmb.Text & redirectMakerUrl_txtBox.Text & """>" & redirectMakerUrlPrefix_cmb.Text & redirectMakerUrl_txtBox.Text & "</a></p><p>...You will be transferred to the new site in a moment...</p><p>If you have waited more than a few seconds and you are still seeing this message, please click on the link above! Thank you.</p><br><br><p>Redirect made with EasyHTML</p></body></html>"
             End If
         Catch ex As Exception
             HTMLEditorError.Text = ex.ToString
@@ -337,7 +354,7 @@ Public Class EasyHTML
             SaveDialog.Title = "Save HTML File"
             SaveDialog.FileName = "CoolRedirect.html"
             If (SaveDialog.ShowDialog = DialogResult.OK) Then
-                My.Computer.FileSystem.WriteAllText(SaveDialog.FileName, redirectMakerCodeBox_rchTxtBox.Text, False)
+                My.Computer.FileSystem.WriteAllText(SaveDialog.FileName, redirectMakerCodeBox.Text, False)
                 MessageBox.Show("Redirect File Saved at: " & SaveDialog.FileName)
             End If
         Catch ex As Exception
@@ -364,7 +381,10 @@ Public Class EasyHTML
         ' Browser Finder
         BrowserFinder.Finder()
         BrowserListing_cmb.SelectedIndex = 0
-
+        ' Set language Syntax for coloring
+        CodeEditorBox.Language = Language.HTML
+        redirectMakerCodeBox.Language = Language.HTML
+        'Start Timer
         Timer1.Start()
     End Sub
     Private Sub EasyHTML_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
@@ -434,5 +454,10 @@ Public Class EasyHTML
             MessageBox.Show("EasyNodeJS cannot be found. Is it installed?", "Cannot Open EasyNodeJS", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Licenses.Show()
+    End Sub
 #End Region
 End Class
+
