@@ -13,11 +13,17 @@
     End Sub
 
     Private Sub ThemeSelect_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' Set BackColor of main window
-        Me.BackColor = Color.FromArgb(124, 63, 255)
+        ' List example Files
+        Try
+
+        Catch Ex As Exception
+            cmb_exampleLoad.Items.Add("None")
+        End Try
         ' Set Default Theme to UI Kit
         cmb_Theme.SelectedIndex = 1
         ' cmb_exampleLoad.SelectedIndex = 0
+        ' Set BackColor of main window
+        Me.BackColor = Color.FromArgb(124, 63, 255)
         ' Make Blank by Default
         rad_Template.Checked = False
         rad_exampleLoad.Checked = False
@@ -27,9 +33,9 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If rad_Blank.Checked = True And rad_Template.Checked = False Then
+        If rad_Blank.Checked = True Then
             Me.Close()
-        ElseIf rad_Blank.Checked = False And rad_Template.Checked = True Then
+        ElseIf rad_Template.Checked = True Then
             If cmb_Theme.Text = "" Then
                 MessageBox.Show("Please select a template.", "No Template Selected", MessageBoxButtons.OK, MessageBoxIcon.Error)
             ElseIf cmb_Theme.Text = "UI Kit" Then
@@ -203,6 +209,12 @@
 #End Region
             Else
                 MessageBox.Show("So. Ye found a secret. This really doesn't happen all that often. Sometimes it is just a error I made while coding, sometimes it just happens on its own. If you think this is a coding mistake then please report it to me.")
+            End If
+        ElseIf rad_exampleLoad.Checked = True Then
+            If cmb_exampleLoad.SelectedItem = "None" Then
+                MessageBox.Show("There are no example projects. Please try a different method.")
+            Else
+                EasyHTML.CodeEditorBox.Text = My.Computer.FileSystem.ReadAllText(Environment.SpecialFolder.MyDocuments + "\EasyHTML\Examples" + cmb_exampleLoad.SelectedItem + ".ehtml")
             End If
         End If
     End Sub

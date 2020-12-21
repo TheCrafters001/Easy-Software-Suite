@@ -95,12 +95,13 @@ Partial Class ThemeSelect
         'rad_exampleLoad
         '
         Me.rad_exampleLoad.AutoSize = True
+        Me.rad_exampleLoad.Enabled = False
         Me.rad_exampleLoad.Location = New System.Drawing.Point(12, 128)
         Me.rad_exampleLoad.Name = "rad_exampleLoad"
-        Me.rad_exampleLoad.Size = New System.Drawing.Size(106, 17)
+        Me.rad_exampleLoad.Size = New System.Drawing.Size(175, 17)
         Me.rad_exampleLoad.TabIndex = 4
         Me.rad_exampleLoad.TabStop = True
-        Me.rad_exampleLoad.Text = "Load an example"
+        Me.rad_exampleLoad.Text = "Load an example (coming soon)"
         Me.rad_exampleLoad.UseVisualStyleBackColor = True
         '
         'grp_exampleLoad

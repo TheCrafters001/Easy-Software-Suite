@@ -140,7 +140,7 @@ Partial Class EasyHTML
         Me.Pgs_Main.Location = New System.Drawing.Point(0, 0)
         Me.Pgs_Main.Name = "Pgs_Main"
         Me.Pgs_Main.SelectedIndex = 0
-        Me.Pgs_Main.Size = New System.Drawing.Size(909, 626)
+        Me.Pgs_Main.Size = New System.Drawing.Size(952, 626)
         Me.Pgs_Main.TabIndex = 0
         '
         'Pg_Main
@@ -163,7 +163,7 @@ Partial Class EasyHTML
         Me.Pg_Main.Location = New System.Drawing.Point(4, 22)
         Me.Pg_Main.Name = "Pg_Main"
         Me.Pg_Main.Padding = New System.Windows.Forms.Padding(3)
-        Me.Pg_Main.Size = New System.Drawing.Size(901, 600)
+        Me.Pg_Main.Size = New System.Drawing.Size(944, 600)
         Me.Pg_Main.TabIndex = 0
         Me.Pg_Main.Text = "Main Details"
         '
@@ -182,7 +182,7 @@ Partial Class EasyHTML
         '
         Me.lbl_Tip1.Location = New System.Drawing.Point(628, 119)
         Me.lbl_Tip1.Name = "lbl_Tip1"
-        Me.lbl_Tip1.Size = New System.Drawing.Size(116, 47)
+        Me.lbl_Tip1.Size = New System.Drawing.Size(156, 37)
         Me.lbl_Tip1.TabIndex = 14
         Me.lbl_Tip1.Text = "Right click on an editor to save that specific part"
         '
@@ -191,7 +191,7 @@ Partial Class EasyHTML
         Me.loadEditorProj_btn.ForeColor = System.Drawing.Color.Black
         Me.loadEditorProj_btn.Location = New System.Drawing.Point(634, 93)
         Me.loadEditorProj_btn.Name = "loadEditorProj_btn"
-        Me.loadEditorProj_btn.Size = New System.Drawing.Size(107, 23)
+        Me.loadEditorProj_btn.Size = New System.Drawing.Size(150, 23)
         Me.loadEditorProj_btn.TabIndex = 13
         Me.loadEditorProj_btn.Text = "Load Editor Project"
         Me.loadEditorProj_btn.UseVisualStyleBackColor = True
@@ -201,7 +201,7 @@ Partial Class EasyHTML
         Me.loadJsLibs_btn.ForeColor = System.Drawing.Color.Black
         Me.loadJsLibs_btn.Location = New System.Drawing.Point(634, 64)
         Me.loadJsLibs_btn.Name = "loadJsLibs_btn"
-        Me.loadJsLibs_btn.Size = New System.Drawing.Size(107, 23)
+        Me.loadJsLibs_btn.Size = New System.Drawing.Size(150, 23)
         Me.loadJsLibs_btn.TabIndex = 12
         Me.loadJsLibs_btn.Text = "Load JS Libraries"
         Me.loadJsLibs_btn.UseVisualStyleBackColor = True
@@ -211,7 +211,7 @@ Partial Class EasyHTML
         Me.loadCssLibs_btn.ForeColor = System.Drawing.Color.Black
         Me.loadCssLibs_btn.Location = New System.Drawing.Point(634, 35)
         Me.loadCssLibs_btn.Name = "loadCssLibs_btn"
-        Me.loadCssLibs_btn.Size = New System.Drawing.Size(107, 23)
+        Me.loadCssLibs_btn.Size = New System.Drawing.Size(150, 23)
         Me.loadCssLibs_btn.TabIndex = 11
         Me.loadCssLibs_btn.Text = "Load CSS Libraries"
         Me.loadCssLibs_btn.UseVisualStyleBackColor = True
@@ -221,7 +221,7 @@ Partial Class EasyHTML
         Me.newProject_btn.ForeColor = System.Drawing.Color.Black
         Me.newProject_btn.Location = New System.Drawing.Point(634, 6)
         Me.newProject_btn.Name = "newProject_btn"
-        Me.newProject_btn.Size = New System.Drawing.Size(107, 23)
+        Me.newProject_btn.Size = New System.Drawing.Size(150, 23)
         Me.newProject_btn.TabIndex = 10
         Me.newProject_btn.Text = "New Project"
         Me.newProject_btn.UseVisualStyleBackColor = True
@@ -234,7 +234,7 @@ Partial Class EasyHTML
         Me.mainEditor_grp.Controls.Add(Me.CodeEditorBox)
         Me.mainEditor_grp.Location = New System.Drawing.Point(222, 162)
         Me.mainEditor_grp.Name = "mainEditor_grp"
-        Me.mainEditor_grp.Size = New System.Drawing.Size(519, 430)
+        Me.mainEditor_grp.Size = New System.Drawing.Size(562, 430)
         Me.mainEditor_grp.TabIndex = 9
         Me.mainEditor_grp.TabStop = False
         Me.mainEditor_grp.Text = "Body Editor"
@@ -262,7 +262,7 @@ Partial Class EasyHTML
         Me.CodeEditorBox.SelectionChangedDelayedEnabled = False
         Me.CodeEditorBox.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.CodeEditorBox.ServiceColors = CType(resources.GetObject("CodeEditorBox.ServiceColors"), FastColoredTextBoxNS.ServiceColors)
-        Me.CodeEditorBox.Size = New System.Drawing.Size(513, 409)
+        Me.CodeEditorBox.Size = New System.Drawing.Size(556, 409)
         Me.CodeEditorBox.TabIndex = 0
         Me.CodeEditorBox.Zoom = 100
         '
@@ -450,7 +450,7 @@ Partial Class EasyHTML
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Component_Box.FormattingEnabled = True
         Me.Component_Box.Items.AddRange(New Object() {"<!-- Comment -->", "<a href=""""></a>", "<abbr></abbr>", "<address></address>", "<area>", "<article></article>", "<aside></aside>", "<audio></audio>", "<b></b>", "<base>", "<bdi></bdi>", "<bdo></bdo>", "<blockquote></blockquote>", "<body></body>", "<br>", "<button></button>", "<canvas></canvas>", "<caption></caption>", "<cite></cite>", "<code></code>", "<col>", "<colgroup></colgroup>", "<command></command>", "<datalist>", "<dd></dd>", "<del></del>", "<details></details>", "<dfn></dfn>", "<div class=""""></div>", "<dl></dl>", "<dt></dt>", "<em></em>", "<embed></datalist>", "<fieldset></fieldset>", "<figcaption></figcaption>", "<figure></figure>", "<footer></footer>", "<form></form>", "<h1></h1>", "<h2></h2>", "<h3></h3>", "<h4></h4>", "<h5></h5>", "<h6></h6>", "<head></head>", "<header></header>", "<hgroup></hgroup>", "<hr>", "<html></html>", "<i></i>", "<iframe src=""""></iframe>", "<img>", "<input>", "<ins></ins>", "<kbd></kbd>", "<label></label>", "<legend></legend>", "<li></li>", "<link>", "<map></map>", "<mark></mark>", "<menu></menu>", "<meta>", "<meter></meter>", "<nav></nav>", "<noscript></noscript>", "<object></object>", "<ol></ol>", "<optgroup></optgroup>", "<option></option>", "<output></output>", "<p></p>", "<param>", "<pre></pre>", "<progress></progress>", "<q></q>", "<rp></rp>", "<rt></rt>", "<ruby></ruby>", "<s></s>", "<samp></samp>", "<script></script>", "<section></section>", "<select></select>", "<small></small>", "<source>", "<span></span>", "<strong></strong>", "<style></style>", "<sub></sub>", "<summary></summary>", "<sup></sup>", "<table></table>", "<tbody></tbody>", "<td></td>", "<textarea></textarea>", "<tfoot></tfoot>", "<th></th>", "<thead></thead>", "<time></time>", "<title></title>", "<tr></tr>", "<track>", "<u></u>", "<ul></ul>", "<var></var>", "<video></video>", "<wbr>"})
-        Me.Component_Box.Location = New System.Drawing.Point(747, 6)
+        Me.Component_Box.Location = New System.Drawing.Point(790, 6)
         Me.Component_Box.Name = "Component_Box"
         Me.Component_Box.Size = New System.Drawing.Size(146, 589)
         Me.Component_Box.TabIndex = 1
@@ -954,7 +954,7 @@ Partial Class EasyHTML
         'EasyHTML
         '
         Me.BackColor = System.Drawing.Color.Gray
-        Me.ClientSize = New System.Drawing.Size(909, 626)
+        Me.ClientSize = New System.Drawing.Size(952, 626)
         Me.Controls.Add(Me.Pgs_Main)
         Me.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.ForeColor = System.Drawing.Color.White
