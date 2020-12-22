@@ -144,22 +144,6 @@
   <metadata name="CSSContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>427, 17</value>
   </metadata>
-  <metadata name="redirectMakerContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>802, 17</value>
-  </metadata>
-  <data name="aboutText_lbl.Text" xml:space="preserve">
-    <value>EasyHTML is a free to use, easy-to-understand HTML Editor. It has Live Code Preview, and Exporting. You can save, and load, all your projects with ease, and you can easily update existing websites created with it! The Live Code Preview allows you to see what the website code looks like as you update it, and you can export that code with one click! The best part about all of this, is that the project is FREE and OPEN-SOURCE! Some parts of this program (such as the Element Selector) are inspired by HTMaker, built by @SkyLight_Gaming on GameJolt.
-This software uses a fork of FastColoredTextBox for the HTML Editor. Forked Version by Sara LaFleur, original version by Pavel Torgashov.</value>
-  </data>
-  <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="SaveDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>573, 17</value>
-  </metadata>
-  <metadata name="OpenDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>685, 17</value>
-  </metadata>
   <data name="redirectMakerCodeBox.ServiceColors" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFlGYXN0Q29sb3JlZFRleHRCb3gsIFZlcnNpb249Mi4xNi4yNi4x
@@ -178,8 +162,24 @@ This software uses a fork of FastColoredTextBox for the HTML Editor. Forked Vers
         //8KAAAAAAAAAACNAAEAAfj////8////CgAAAAAAAAAApAABAAH3/////P///woAAAAAAAAAAJYAAQAL
 </value>
   </data>
+  <data name="aboutText_lbl.Text" xml:space="preserve">
+    <value>EasyHTML is a free to use, easy-to-understand HTML Editor. It has Live Code Preview, and Exporting. You can save, and load, all your projects with ease, and you can easily update existing websites created with it! The Live Code Preview allows you to see what the website code looks like as you update it, and you can export that code with one click! The best part about all of this, is that the project is FREE and OPEN-SOURCE! Some parts of this program (such as the Element Selector) are inspired by HTMaker, built by @SkyLight_Gaming on GameJolt.
+This software uses a fork of FastColoredTextBox for the HTML Editor. Forked Version by Sara LaFleur, original version by Pavel Torgashov.</value>
+  </data>
+  <metadata name="redirectMakerContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>802, 17</value>
+  </metadata>
+  <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="SaveDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>573, 17</value>
+  </metadata>
+  <metadata name="OpenDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>685, 17</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
+    <value>78</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

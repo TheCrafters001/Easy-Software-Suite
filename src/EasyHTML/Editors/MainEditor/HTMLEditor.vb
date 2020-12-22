@@ -400,7 +400,7 @@ Public Class EasyHTML
         AutoUpdater.LetUserSelectRemindLater = True
         AutoUpdater.RemindLaterTimeSpan = RemindLaterFormat.Hours
         AutoUpdater.RemindLaterAt = 1
-        AutoUpdater.UpdateFormSize = New System.Drawing.Size(925, 665)
+        AutoUpdater.UpdateFormSize = New System.Drawing.Size(968, 665)
         AutoUpdater.Start("https://api.thecrafters001.ga/updates/easyhtml.xml")
     End Sub
     Private Sub gnuGpl_pic_MouseHover(sender As Object, e As EventArgs) Handles gnuGpl_pic.MouseHover
