@@ -117,38 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="aboutText_lbl.Text" xml:space="preserve">
-    <value>EasyChangelog allows you to make changelogs for your programs! Quick and easy!
-This software uses a fork of FastColoredTextBox for the HTML Editor. Forked Version by Sara LaFleur, original version by Pavel Torgashov.</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="EasyChangelog_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EasyChangelog_Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <metadata name="Timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="SaveDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>106, 17</value>
-  </metadata>
-  <metadata name="OpenDialog.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>218, 17</value>
-  </metadata>
-  <data name="export_html.ServiceColors" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFlGYXN0Q29sb3JlZFRleHRCb3gsIFZlcnNpb249Mi4xNi4yNi4x
-        MDAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49ZmI4YWExMmI5OTRlZjYxYgwDAAAAUVN5
-        c3RlbS5EcmF3aW5nLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9r
-        ZW49YjAzZjVmN2YxMWQ1MGEzYQUBAAAAIkZhc3RDb2xvcmVkVGV4dEJveE5TLlNlcnZpY2VDb2xvcnMG
-        AAAAKDxDb2xsYXBzZU1hcmtlckZvcmVDb2xvcj5rX19CYWNraW5nRmllbGQoPENvbGxhcHNlTWFya2Vy
-        QmFja0NvbG9yPmtfX0JhY2tpbmdGaWVsZCo8Q29sbGFwc2VNYXJrZXJCb3JkZXJDb2xvcj5rX19CYWNr
-        aW5nRmllbGQmPEV4cGFuZE1hcmtlckZvcmVDb2xvcj5rX19CYWNraW5nRmllbGQmPEV4cGFuZE1hcmtl
-        ckJhY2tDb2xvcj5rX19CYWNraW5nRmllbGQoPEV4cGFuZE1hcmtlckJvcmRlckNvbG9yPmtfX0JhY2tp
-        bmdGaWVsZAQEBAQEBBRTeXN0ZW0uRHJhd2luZy5Db2xvcgMAAAAUU3lzdGVtLkRyYXdpbmcuQ29sb3ID
-        AAAAFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAABRTeXN0ZW0uRHJhd2luZy5Db2xvcgMAAAAUU3lzdGVt
-        LkRyYXdpbmcuQ29sb3IDAAAAFFN5c3RlbS5EcmF3aW5nLkNvbG9yAwAAAAIAAAAF/P///xRTeXN0ZW0u
-        RHJhd2luZy5Db2xvcgQAAAAEbmFtZQV2YWx1ZQprbm93bkNvbG9yBXN0YXRlAQAAAAkHBwMAAAAKAAAA
-        AAAAAACWAAEAAfv////8////CgAAAAAAAAAApAABAAH6/////P///woAAAAAAAAAAJYAAQAB+f////z/
-        //8KAAAAAAAAAACNAAEAAfj////8////CgAAAAAAAAAApAABAAH3/////P///woAAAAAAAAAAJYAAQAL
-</value>
+  <data name="EasyChangelog_Logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EasyChangelog_Logo.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>25</value>
-  </metadata>
+  <data name="EasyHTML_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EasyHTML_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EasyHTML_Icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EasyHTML_Icon.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EasyNodeJS_Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EasyNodeJS_Logo.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EasyNodeJS_Logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EasyNodeJS_Logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

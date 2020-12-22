@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("EasyHTML")>
+<Assembly: AssemblyTitle("Easy Software Suite Launcher")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("EasyHTML")>
+<Assembly: AssemblyProduct("Easy Software Suite Launcher")>
 <Assembly: AssemblyCopyright("Copyright © TheCrafters001 2020")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("1c22c8b8-ef9f-4f6d-9048-d1feab79915a")>
+<Assembly: Guid("7abf5e18-2a2f-4d95-8470-882485da6332")>
 
 ' Version information for an assembly consists of the following four values:
 '

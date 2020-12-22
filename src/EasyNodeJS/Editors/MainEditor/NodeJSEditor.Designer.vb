@@ -26,10 +26,15 @@ Partial Class EasyNodeJS
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EasyNodeJS))
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.Pg_Main = New System.Windows.Forms.TabPage()
-        Me.lvFiles = New System.Windows.Forms.ListView()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.run_btn = New System.Windows.Forms.Button()
+        Me.save_btn = New System.Windows.Forms.Button()
+        Me.editorCodeBox_rchtxt = New System.Windows.Forms.RichTextBox()
+        Me.folderManagment_grp = New System.Windows.Forms.GroupBox()
         Me.trvFolders = New System.Windows.Forms.TreeView()
+        Me.lvFiles = New System.Windows.Forms.ListView()
+        Me.Pg_Commands = New System.Windows.Forms.TabPage()
         Me.Pg_About = New System.Windows.Forms.TabPage()
-        Me.updateCheck_btn = New System.Windows.Forms.Button()
         Me.gnuGpl_pic = New System.Windows.Forms.PictureBox()
         Me.copyright_lbl = New System.Windows.Forms.Label()
         Me.version_lbl = New System.Windows.Forms.Label()
@@ -37,26 +42,20 @@ Partial Class EasyNodeJS
         Me.aboutTitle_lbl = New System.Windows.Forms.Label()
         Me.aboutImg_pic = New System.Windows.Forms.PictureBox()
         Me.Pg_Log = New System.Windows.Forms.TabPage()
+        Me.Log = New System.Windows.Forms.RichTextBox()
         Me.iIconList = New System.Windows.Forms.ImageList(Me.components)
         Me.cmClipboardOp = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.CopyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PasteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Log = New System.Windows.Forms.RichTextBox()
-        Me.folderManagment_grp = New System.Windows.Forms.GroupBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Pg_Commands = New System.Windows.Forms.TabPage()
-        Me.editorCodeBox_rchtxt = New System.Windows.Forms.RichTextBox()
-        Me.save_btn = New System.Windows.Forms.Button()
-        Me.run_btn = New System.Windows.Forms.Button()
         Me.TabControl1.SuspendLayout()
         Me.Pg_Main.SuspendLayout()
+        Me.GroupBox1.SuspendLayout()
+        Me.folderManagment_grp.SuspendLayout()
         Me.Pg_About.SuspendLayout()
         CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.aboutImg_pic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Pg_Log.SuspendLayout()
         Me.cmClipboardOp.SuspendLayout()
-        Me.folderManagment_grp.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'TabControl1
@@ -84,6 +83,62 @@ Partial Class EasyNodeJS
         Me.Pg_Main.TabIndex = 0
         Me.Pg_Main.Text = "Main Details"
         '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.run_btn)
+        Me.GroupBox1.Controls.Add(Me.save_btn)
+        Me.GroupBox1.Controls.Add(Me.editorCodeBox_rchtxt)
+        Me.GroupBox1.Location = New System.Drawing.Point(251, 6)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(642, 586)
+        Me.GroupBox1.TabIndex = 8
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Editor"
+        '
+        'run_btn
+        '
+        Me.run_btn.Location = New System.Drawing.Point(6, 557)
+        Me.run_btn.Name = "run_btn"
+        Me.run_btn.Size = New System.Drawing.Size(75, 23)
+        Me.run_btn.TabIndex = 2
+        Me.run_btn.Text = "Run App"
+        Me.run_btn.UseVisualStyleBackColor = True
+        '
+        'save_btn
+        '
+        Me.save_btn.Location = New System.Drawing.Point(561, 557)
+        Me.save_btn.Name = "save_btn"
+        Me.save_btn.Size = New System.Drawing.Size(75, 23)
+        Me.save_btn.TabIndex = 1
+        Me.save_btn.Text = "Save"
+        Me.save_btn.UseVisualStyleBackColor = True
+        '
+        'editorCodeBox_rchtxt
+        '
+        Me.editorCodeBox_rchtxt.Location = New System.Drawing.Point(6, 21)
+        Me.editorCodeBox_rchtxt.Name = "editorCodeBox_rchtxt"
+        Me.editorCodeBox_rchtxt.Size = New System.Drawing.Size(630, 530)
+        Me.editorCodeBox_rchtxt.TabIndex = 0
+        Me.editorCodeBox_rchtxt.Text = ""
+        '
+        'folderManagment_grp
+        '
+        Me.folderManagment_grp.Controls.Add(Me.trvFolders)
+        Me.folderManagment_grp.Controls.Add(Me.lvFiles)
+        Me.folderManagment_grp.Location = New System.Drawing.Point(8, 6)
+        Me.folderManagment_grp.Name = "folderManagment_grp"
+        Me.folderManagment_grp.Size = New System.Drawing.Size(237, 586)
+        Me.folderManagment_grp.TabIndex = 7
+        Me.folderManagment_grp.TabStop = False
+        Me.folderManagment_grp.Text = "Folder Managment"
+        '
+        'trvFolders
+        '
+        Me.trvFolders.Location = New System.Drawing.Point(6, 21)
+        Me.trvFolders.Name = "trvFolders"
+        Me.trvFolders.Size = New System.Drawing.Size(219, 305)
+        Me.trvFolders.TabIndex = 5
+        '
         'lvFiles
         '
         Me.lvFiles.HideSelection = False
@@ -93,17 +148,18 @@ Partial Class EasyNodeJS
         Me.lvFiles.TabIndex = 6
         Me.lvFiles.UseCompatibleStateImageBehavior = False
         '
-        'trvFolders
+        'Pg_Commands
         '
-        Me.trvFolders.Location = New System.Drawing.Point(6, 21)
-        Me.trvFolders.Name = "trvFolders"
-        Me.trvFolders.Size = New System.Drawing.Size(219, 305)
-        Me.trvFolders.TabIndex = 5
+        Me.Pg_Commands.Location = New System.Drawing.Point(4, 22)
+        Me.Pg_Commands.Name = "Pg_Commands"
+        Me.Pg_Commands.Size = New System.Drawing.Size(901, 600)
+        Me.Pg_Commands.TabIndex = 3
+        Me.Pg_Commands.Text = "Commands"
+        Me.Pg_Commands.UseVisualStyleBackColor = True
         '
         'Pg_About
         '
         Me.Pg_About.BackColor = System.Drawing.Color.Gray
-        Me.Pg_About.Controls.Add(Me.updateCheck_btn)
         Me.Pg_About.Controls.Add(Me.gnuGpl_pic)
         Me.Pg_About.Controls.Add(Me.copyright_lbl)
         Me.Pg_About.Controls.Add(Me.version_lbl)
@@ -116,16 +172,6 @@ Partial Class EasyNodeJS
         Me.Pg_About.Size = New System.Drawing.Size(901, 600)
         Me.Pg_About.TabIndex = 1
         Me.Pg_About.Text = "About"
-        '
-        'updateCheck_btn
-        '
-        Me.updateCheck_btn.ForeColor = System.Drawing.Color.Black
-        Me.updateCheck_btn.Location = New System.Drawing.Point(8, 384)
-        Me.updateCheck_btn.Name = "updateCheck_btn"
-        Me.updateCheck_btn.Size = New System.Drawing.Size(111, 23)
-        Me.updateCheck_btn.TabIndex = 13
-        Me.updateCheck_btn.Text = "Check for Updates"
-        Me.updateCheck_btn.UseVisualStyleBackColor = True
         '
         'gnuGpl_pic
         '
@@ -201,6 +247,15 @@ Partial Class EasyNodeJS
         Me.Pg_Log.TabIndex = 2
         Me.Pg_Log.Text = "Log"
         '
+        'Log
+        '
+        Me.Log.Location = New System.Drawing.Point(8, 6)
+        Me.Log.Name = "Log"
+        Me.Log.ReadOnly = True
+        Me.Log.Size = New System.Drawing.Size(885, 589)
+        Me.Log.TabIndex = 1
+        Me.Log.Text = ""
+        '
         'iIconList
         '
         Me.iIconList.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit
@@ -225,73 +280,6 @@ Partial Class EasyNodeJS
         Me.PasteToolStripMenuItem.Size = New System.Drawing.Size(102, 22)
         Me.PasteToolStripMenuItem.Text = "Paste"
         '
-        'Log
-        '
-        Me.Log.Location = New System.Drawing.Point(8, 6)
-        Me.Log.Name = "Log"
-        Me.Log.ReadOnly = True
-        Me.Log.Size = New System.Drawing.Size(885, 589)
-        Me.Log.TabIndex = 1
-        Me.Log.Text = ""
-        '
-        'folderManagment_grp
-        '
-        Me.folderManagment_grp.Controls.Add(Me.trvFolders)
-        Me.folderManagment_grp.Controls.Add(Me.lvFiles)
-        Me.folderManagment_grp.Location = New System.Drawing.Point(8, 6)
-        Me.folderManagment_grp.Name = "folderManagment_grp"
-        Me.folderManagment_grp.Size = New System.Drawing.Size(237, 586)
-        Me.folderManagment_grp.TabIndex = 7
-        Me.folderManagment_grp.TabStop = False
-        Me.folderManagment_grp.Text = "Folder Managment"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.run_btn)
-        Me.GroupBox1.Controls.Add(Me.save_btn)
-        Me.GroupBox1.Controls.Add(Me.editorCodeBox_rchtxt)
-        Me.GroupBox1.Location = New System.Drawing.Point(251, 6)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(642, 586)
-        Me.GroupBox1.TabIndex = 8
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Editor"
-        '
-        'Pg_Commands
-        '
-        Me.Pg_Commands.Location = New System.Drawing.Point(4, 22)
-        Me.Pg_Commands.Name = "Pg_Commands"
-        Me.Pg_Commands.Size = New System.Drawing.Size(901, 600)
-        Me.Pg_Commands.TabIndex = 3
-        Me.Pg_Commands.Text = "Commands"
-        Me.Pg_Commands.UseVisualStyleBackColor = True
-        '
-        'editorCodeBox_rchtxt
-        '
-        Me.editorCodeBox_rchtxt.Location = New System.Drawing.Point(6, 21)
-        Me.editorCodeBox_rchtxt.Name = "editorCodeBox_rchtxt"
-        Me.editorCodeBox_rchtxt.Size = New System.Drawing.Size(630, 530)
-        Me.editorCodeBox_rchtxt.TabIndex = 0
-        Me.editorCodeBox_rchtxt.Text = ""
-        '
-        'save_btn
-        '
-        Me.save_btn.Location = New System.Drawing.Point(561, 557)
-        Me.save_btn.Name = "save_btn"
-        Me.save_btn.Size = New System.Drawing.Size(75, 23)
-        Me.save_btn.TabIndex = 1
-        Me.save_btn.Text = "Save"
-        Me.save_btn.UseVisualStyleBackColor = True
-        '
-        'run_btn
-        '
-        Me.run_btn.Location = New System.Drawing.Point(6, 557)
-        Me.run_btn.Name = "run_btn"
-        Me.run_btn.Size = New System.Drawing.Size(75, 23)
-        Me.run_btn.TabIndex = 2
-        Me.run_btn.Text = "Run App"
-        Me.run_btn.UseVisualStyleBackColor = True
-        '
         'EasyNodeJS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -306,14 +294,14 @@ Partial Class EasyNodeJS
         Me.Text = "EasyNodeJS"
         Me.TabControl1.ResumeLayout(False)
         Me.Pg_Main.ResumeLayout(False)
+        Me.GroupBox1.ResumeLayout(False)
+        Me.folderManagment_grp.ResumeLayout(False)
         Me.Pg_About.ResumeLayout(False)
         Me.Pg_About.PerformLayout()
         CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.aboutImg_pic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Pg_Log.ResumeLayout(False)
         Me.cmClipboardOp.ResumeLayout(False)
-        Me.folderManagment_grp.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -322,7 +310,6 @@ Partial Class EasyNodeJS
     Friend WithEvents Pg_Main As TabPage
     Friend WithEvents Pg_About As TabPage
     Friend WithEvents Pg_Log As TabPage
-    Friend WithEvents updateCheck_btn As Button
     Friend WithEvents gnuGpl_pic As PictureBox
     Friend WithEvents copyright_lbl As Label
     Friend WithEvents version_lbl As Label

@@ -4,31 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7AB32BAA-FB70-418C-A491-98146EC88376}</ProjectGuid>
+    <ProjectGuid>{19C4FD2D-2C36-4C5E-99E2-145008843AAC}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>EasyHTML.My.MyApplication</StartupObject>
-    <RootNamespace>EasyHTML</RootNamespace>
-    <AssemblyName>EasyHTML</AssemblyName>
+    <StartupObject>Easy_Software_Suite_Launcher.My.MyApplication</StartupObject>
+    <RootNamespace>Easy_Software_Suite_Launcher</RootNamespace>
+    <AssemblyName>Easy Software Suite Launcher</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <PublishUrl>publish\</PublishUrl>
-    <Install>true</Install>
-    <InstallFrom>Disk</InstallFrom>
-    <UpdateEnabled>false</UpdateEnabled>
-    <UpdateMode>Foreground</UpdateMode>
-    <UpdateInterval>7</UpdateInterval>
-    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
-    <UpdatePeriodically>false</UpdatePeriodically>
-    <UpdateRequired>false</UpdateRequired>
-    <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>0</ApplicationRevision>
-    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
-    <UseApplicationTrust>false</UseApplicationTrust>
-    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>EasyHTML.xml</DocumentationFile>
+    <DocumentationFile>Easy Software Suite Launcher.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -47,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>EasyHTML.xml</DocumentationFile>
+    <DocumentationFile>Easy Software Suite Launcher.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -66,13 +51,12 @@
     <ApplicationIcon>Resources\EasyHTML_Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FastColoredTextBox, Version=2.16.26.100, Culture=neutral, PublicKeyToken=fb8aa12b994ef61b, processorArchitecture=MSIL">
-      <HintPath>..\packages\Sara-FCTB.2.16.26.105\lib\net35\FastColoredTextBox.dll</HintPath>
+    <Reference Include="AutoUpdater.NET, Version=1.6.4.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autoupdater.NET.Official.1.6.4\lib\net45\AutoUpdater.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
-    <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms" />
@@ -97,46 +81,23 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extra\BrowserFinder.vb" />
-    <Compile Include="Extra\CustomCommands\Find.vb" />
-    <Compile Include="Extra\CustomCommands\Launch.vb" />
-    <Compile Include="Extra\CustomCommands\Lists.vb" />
-    <Compile Include="Extra\Licenses.Designer.vb">
+    <Compile Include="Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Licenses.Designer.vb">
       <DependentUpon>Licenses.vb</DependentUpon>
     </Compile>
-    <Compile Include="Extra\Licenses.vb">
+    <Compile Include="Licenses.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Extra\New_Splash.Designer.vb">
-      <DependentUpon>New_Splash.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Extra\New_Splash.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Extra\ThemeSelect.Designer.vb">
-      <DependentUpon>ThemeSelect.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Extra\ThemeSelect.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FallBack\BugReport.Designer.vb">
-      <DependentUpon>BugReport.vb</DependentUpon>
-    </Compile>
-    <Compile Include="FallBack\BugReport.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Editors\MainEditor\HTMLEditor.Designer.vb">
-      <DependentUpon>HTMLEditor.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Editors\MainEditor\HTMLEditor.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Extra\CodeExtension.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
-      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -150,20 +111,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Extra\Licenses.resx">
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Licenses.resx">
       <DependentUpon>Licenses.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Extra\New_Splash.resx">
-      <DependentUpon>New_Splash.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Extra\ThemeSelect.resx">
-      <DependentUpon>ThemeSelect.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FallBack\BugReport.resx">
-      <DependentUpon>BugReport.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Editors\MainEditor\HTMLEditor.resx">
-      <DependentUpon>HTMLEditor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -183,37 +135,25 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
-    <None Include="Resources\EasyHTML_Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\EasyHTML_Splash.png" />
+    <None Include="Resources\EasyHTML_Icon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\EasyHTML_Icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Side.png" />
+    <None Include="Resources\EasyNodeJS_Logo.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\GNUGPL3.png" />
+    <None Include="Resources\EasyNodeJS_Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Thumbnail.png" />
+    <None Include="Resources\EasyChangelog_Logo.png" />
   </ItemGroup>
   <ItemGroup>
-    <BootstrapperPackage Include=".NETFramework,Version=v4.8">
-      <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.8 %28x86 and x64%29</ProductName>
-      <Install>true</Install>
-    </BootstrapperPackage>
-    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
-      <Visible>False</Visible>
-      <ProductName>.NET Framework 3.5 SP1</ProductName>
-      <Install>false</Install>
-    </BootstrapperPackage>
+    <None Include="Resources\EasyChangelog_Logo.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>

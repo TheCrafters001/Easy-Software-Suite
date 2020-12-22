@@ -63,7 +63,7 @@ Partial Class Editor
         Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
         Me.grp_HTMLExport = New System.Windows.Forms.GroupBox()
         Me.btn_Export = New System.Windows.Forms.Button()
-        Me.export_html = New System.Windows.Forms.RichTextBox()
+        Me.export_html = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.Pgs_Main.SuspendLayout()
         Me.Pg_Main.SuspendLayout()
         Me.grp_MainEditor.SuspendLayout()
@@ -73,6 +73,7 @@ Partial Class Editor
         CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.aboutImg_pic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.grp_HTMLExport.SuspendLayout()
+        CType(Me.export_html, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Pgs_Main
@@ -331,7 +332,7 @@ Partial Class Editor
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(208, 30)
         Me.Button1.TabIndex = 15
-        Me.Button1.Text = "EasyHTML"
+        Me.Button1.Text = "Back to Launcher"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'HTMLEditorError
@@ -469,13 +470,33 @@ Partial Class Editor
         '
         'export_html
         '
+        Me.export_html.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
+        Me.export_html.AutoIndentCharsPatterns = "^\s*[\w\.]+(\s\w+)?\s*(?<range>=)\s*(?<range>[^;=]+);" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "^\s*(case|default)\s*[^:]*" &
+    "(?<range>:)\s*(?<range>[^;]+);"
+        Me.export_html.AutoScrollMinSize = New System.Drawing.Size(0, 14)
+        Me.export_html.BackBrush = Nothing
+        Me.export_html.CharHeight = 14
+        Me.export_html.CharWidth = 8
+        Me.export_html.CurrentPenSize = 3
+        Me.export_html.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.export_html.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.export_html.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.export_html.DocumentPath = Nothing
+        Me.export_html.Font = New System.Drawing.Font("Courier New", 9.75!)
+        Me.export_html.ForeColor = System.Drawing.Color.Black
+        Me.export_html.IsReplaceMode = False
+        Me.export_html.Language = FastColoredTextBoxNS.Language.HTML
         Me.export_html.Location = New System.Drawing.Point(3, 16)
         Me.export_html.Name = "export_html"
-        Me.export_html.ReadOnly = True
+        Me.export_html.Paddings = New System.Windows.Forms.Padding(0)
+        Me.export_html.SelectionChangedDelayedEnabled = False
+        Me.export_html.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.export_html.ServiceColors = CType(resources.GetObject("export_html.ServiceColors"), FastColoredTextBoxNS.ServiceColors)
         Me.export_html.Size = New System.Drawing.Size(1219, 541)
         Me.export_html.TabIndex = 0
-        Me.export_html.Text = ""
+        Me.export_html.Text = "FastColoredTextBox1"
+        Me.export_html.WordWrap = True
+        Me.export_html.Zoom = 100
         '
         'Editor
         '
@@ -500,6 +521,7 @@ Partial Class Editor
         CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.aboutImg_pic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.grp_HTMLExport.ResumeLayout(False)
+        CType(Me.export_html, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -543,5 +565,5 @@ Partial Class Editor
     Friend WithEvents btn_changed As Button
     Friend WithEvents grp_HTMLExport As GroupBox
     Friend WithEvents btn_Export As Button
-    Friend WithEvents export_html As RichTextBox
+    Friend WithEvents export_html As FastColoredTextBoxNS.FastColoredTextBox
 End Class

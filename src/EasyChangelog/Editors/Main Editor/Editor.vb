@@ -1,48 +1,6 @@
-﻿Imports AutoUpdaterDotNET
-Imports FastColoredTextBoxNS
+﻿Imports FastColoredTextBoxNS
 
 Public Class Editor
-#Region "Generator"
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Try
-            Dim added As New System.Text.StringBuilder()
-            Dim changed As New System.Text.StringBuilder()
-            Dim deprecated As New System.Text.StringBuilder()
-            Dim removed As New System.Text.StringBuilder()
-            Dim fixed As New System.Text.StringBuilder()
-            Dim security As New System.Text.StringBuilder()
-#Region "Changelog"
-            For Each a As Object In lst_added.Items
-                added.AppendLine("<li>Added " + a + "</li>")
-            Next
-            For Each c As Object In lst_changed.Items
-                changed.AppendLine("<li>Changed " + c + "</li>")
-            Next
-            For Each d As Object In lst_Deprecated.Items
-                deprecated.AppendLine("<li>Deprecated " + d + "</li>")
-            Next
-            For Each r As Object In lst_removed.Items
-                removed.AppendLine("<li>Removed " + r + "</li>")
-            Next
-            For Each f As Object In lst_fixed.Items
-                fixed.AppendLine("<li>Fixed " + f + "</li>")
-            Next
-            For Each s As Object In lst_security.Items
-                security.AppendLine("<li>Security " + s + "</li>")
-            Next
-#End Region
-            export_html.Text = "<h1>Table of Contents</h1> <ul><li><a href=""#added"">Added</a></li><li><a href=""#changed"">Changed</a></li><li><a href=""#deprecated"">Deprecated</a></li><li><a href=""#removed"">Removed</a></li><li><a href=""#fixed"">Fixed</a></li><li><a href=""#security"">Security</a></li></ul> <section id=""added""><br><br><h1>Added</h1><hr><ul>" + added.ToString _
-                + "</ul></section><br><section id=""changed""><h1>Changed</h1><ul>" + changed.ToString + "</ul></section><br>" +
-                "<section id=""deprecated""><h1>Deprecated</h1><ul>" + deprecated.ToString + "</ul></section><br>" +
-                "<section id=""removed""><h1>Removed</h1><ul>" + removed.ToString + "</ul></section><br>" +
-                "<section id=""fixed""><h1>Fixed</h1><ul>" + fixed.ToString + "</ul></section><br>" +
-                "<section id=""security""><h1>Security</h1><ul>" + security.ToString + "</ul></section><br>"
-        Catch ex As Exception
-            HTMLEditorError.Text = ex.ToString
-            BugReport.Show()
-        End Try
-    End Sub
-#End Region
 #Region "Editor"
     Private Sub btn_added_Click(sender As Object, e As EventArgs) Handles btn_added.Click
         Try
@@ -126,7 +84,7 @@ Public Class Editor
             If input = "" Then
                 MessageBox.Show("Cannot add item, nothing in input box.", "Oops.")
             ElseIf Not input = "" Then
-                lst_changed.Items.Add(input)
+                lst_security.Items.Add(input)
             End If
         Catch ex As Exception
             HTMLEditorError.Text = ex.ToString
@@ -150,7 +108,48 @@ Public Class Editor
         Me.lst_fixed.Items.Remove(Me.lst_fixed.SelectedItem)
     End Sub
     Private Sub lst_security_DoubleClick(sender As Object, e As EventArgs) Handles lst_security.DoubleClick
-        Me.lst_fixed.Items.Remove(Me.lst_added.SelectedItem)
+        Me.lst_security.Items.Remove(Me.lst_added.SelectedItem)
+    End Sub
+#End Region
+#Region "Generator"
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        Try
+            Dim added As New System.Text.StringBuilder()
+            Dim changed As New System.Text.StringBuilder()
+            Dim deprecated As New System.Text.StringBuilder()
+            Dim removed As New System.Text.StringBuilder()
+            Dim fixed As New System.Text.StringBuilder()
+            Dim security As New System.Text.StringBuilder()
+#Region "Changelog"
+            For Each a As Object In lst_added.Items
+                added.AppendLine("<li>Added " + a + "</li>")
+            Next
+            For Each c As Object In lst_changed.Items
+                changed.AppendLine("<li>Changed " + c + "</li>")
+            Next
+            For Each d As Object In lst_Deprecated.Items
+                deprecated.AppendLine("<li>Deprecated " + d + "</li>")
+            Next
+            For Each r As Object In lst_removed.Items
+                removed.AppendLine("<li>Removed " + r + "</li>")
+            Next
+            For Each f As Object In lst_fixed.Items
+                fixed.AppendLine("<li>Fixed " + f + "</li>")
+            Next
+            For Each s As Object In lst_security.Items
+                security.AppendLine("<li>Security " + s + "</li>")
+            Next
+#End Region
+            export_html.Text = "<h1>Table of Contents</h1> <ul><li><a href=""#added"">Added</a></li><li><a href=""#changed"">Changed</a></li><li><a href=""#deprecated"">Deprecated</a></li><li><a href=""#removed"">Removed</a></li><li><a href=""#fixed"">Fixed</a></li><li><a href=""#security"">Security</a></li></ul> <section id=""added""><br><br><h1>Added</h1><hr><ul>" + added.ToString _
+                + "</ul></section><br><section id=""changed""><h1>Changed</h1><hr><ul>" + changed.ToString + "</ul></section><br>" +
+                "<section id=""deprecated""><h1>Deprecated</h1><hr><ul>" + deprecated.ToString + "</ul></section><br>" +
+                "<section id=""removed""><h1>Removed</h1><hr><ul>" + removed.ToString + "</ul></section><br>" +
+                "<section id=""fixed""><h1>Fixed</h1><hr><ul>" + fixed.ToString + "</ul></section><br>" +
+                "<section id=""security""><h1>Security</h1><hr><ul>" + security.ToString + "</ul></section><br>"
+        Catch ex As Exception
+            HTMLEditorError.Text = ex.ToString
+            BugReport.Show()
+        End Try
     End Sub
 #End Region
 #Region "Misc"
@@ -178,6 +177,38 @@ Public Class Editor
     End Sub
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Licenses.Show()
+    End Sub
+
+    Private Sub btn_Export_Click(sender As Object, e As EventArgs) Handles btn_Export.Click
+        Try
+            ' Set Filter for HTML Files
+            SaveDialog.Filter = "HTML File (*.html; *.htm; *.hta; *.shtml; *.shtm)|*.html; *.htm; *.hta; *.shtml; *.shtm"
+            SaveDialog.Title = "Save HTML File"
+            SaveDialog.FileName = "Changelog-version-.html"
+            ' Show Dialog. If the result is OK, save file to FileName.
+            If (SaveDialog.ShowDialog = DialogResult.OK) Then
+                My.Computer.FileSystem.WriteAllText(SaveDialog.FileName, export_html.Text, False)
+                MessageBox.Show("File Saved at: " & SaveDialog.FileName)
+            End If
+        Catch ex As Exception
+            ' Show Error Window
+            HTMLEditorError.Text = ex.ToString
+            BugReport.Show()
+        End Try
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Try
+            Dim pHelp As New ProcessStartInfo
+            pHelp.FileName = ".\Easy Software Suite Launcher.exe"
+            pHelp.Arguments = ""
+            pHelp.UseShellExecute = True
+            pHelp.WindowStyle = ProcessWindowStyle.Normal
+            Dim proc As Process = Process.Start(pHelp)
+            Application.Exit()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString, "Error")
+        End Try
     End Sub
 #End Region
 End Class

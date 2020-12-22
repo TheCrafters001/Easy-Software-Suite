@@ -93,7 +93,6 @@ Partial Class EasyHTML
         Me.redirectMakerTitle_lbl = New System.Windows.Forms.Label()
         Me.Pg_About = New System.Windows.Forms.TabPage()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.updateCheck_btn = New System.Windows.Forms.Button()
         Me.gnuGpl_pic = New System.Windows.Forms.PictureBox()
         Me.copyright_lbl = New System.Windows.Forms.Label()
         Me.version_lbl = New System.Windows.Forms.Label()
@@ -175,7 +174,7 @@ Partial Class EasyHTML
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(208, 30)
         Me.Button1.TabIndex = 15
-        Me.Button1.Text = "Node.JS Environment "
+        Me.Button1.Text = "Back to Launcher"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'lbl_Tip1
@@ -254,6 +253,7 @@ Partial Class EasyHTML
         Me.CodeEditorBox.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.CodeEditorBox.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CodeEditorBox.DocumentPath = Nothing
+        Me.CodeEditorBox.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.CodeEditorBox.ForeColor = System.Drawing.Color.Black
         Me.CodeEditorBox.IsReplaceMode = False
         Me.CodeEditorBox.Location = New System.Drawing.Point(3, 18)
@@ -732,6 +732,7 @@ Partial Class EasyHTML
         Me.redirectMakerCodeBox.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.redirectMakerCodeBox.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.redirectMakerCodeBox.DocumentPath = Nothing
+        Me.redirectMakerCodeBox.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.redirectMakerCodeBox.ForeColor = System.Drawing.Color.Black
         Me.redirectMakerCodeBox.IsReplaceMode = False
         Me.redirectMakerCodeBox.Location = New System.Drawing.Point(285, 33)
@@ -839,7 +840,6 @@ Partial Class EasyHTML
         '
         Me.Pg_About.BackColor = System.Drawing.Color.Gray
         Me.Pg_About.Controls.Add(Me.Button2)
-        Me.Pg_About.Controls.Add(Me.updateCheck_btn)
         Me.Pg_About.Controls.Add(Me.gnuGpl_pic)
         Me.Pg_About.Controls.Add(Me.copyright_lbl)
         Me.Pg_About.Controls.Add(Me.version_lbl)
@@ -862,16 +862,6 @@ Partial Class EasyHTML
         Me.Button2.TabIndex = 7
         Me.Button2.Text = "Third Party Licenses"
         Me.Button2.UseVisualStyleBackColor = True
-        '
-        'updateCheck_btn
-        '
-        Me.updateCheck_btn.ForeColor = System.Drawing.Color.Black
-        Me.updateCheck_btn.Location = New System.Drawing.Point(170, 172)
-        Me.updateCheck_btn.Name = "updateCheck_btn"
-        Me.updateCheck_btn.Size = New System.Drawing.Size(111, 23)
-        Me.updateCheck_btn.TabIndex = 6
-        Me.updateCheck_btn.Text = "Check for Updates"
-        Me.updateCheck_btn.UseVisualStyleBackColor = True
         '
         'gnuGpl_pic
         '
@@ -1053,7 +1043,6 @@ Partial Class EasyHTML
     Friend WithEvents version_lbl As Label
     Friend WithEvents copyright_lbl As Label
     Friend WithEvents gnuGpl_pic As PictureBox
-    Friend WithEvents updateCheck_btn As Button
     Friend WithEvents Pg_RedirectMaker As TabPage
     Friend WithEvents redirectMakerTools_grp As GroupBox
     Friend WithEvents redirectMakerUrl_txtBox As TextBox

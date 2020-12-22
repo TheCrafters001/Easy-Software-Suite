@@ -391,18 +391,6 @@ Public Class EasyHTML
         ' Closes Theme Selector if Editor Closes
         ThemeSelect.Close()
     End Sub
-    Private Sub updateCheck_btn_Click(sender As Object, e As EventArgs) Handles updateCheck_btn.Click
-        ' Check For Updates
-        AutoUpdater.ShowSkipButton = True
-        AutoUpdater.ShowRemindLaterButton = True
-        AutoUpdater.ReportErrors = True
-        AutoUpdater.RunUpdateAsAdmin = True
-        AutoUpdater.LetUserSelectRemindLater = True
-        AutoUpdater.RemindLaterTimeSpan = RemindLaterFormat.Hours
-        AutoUpdater.RemindLaterAt = 1
-        AutoUpdater.UpdateFormSize = New System.Drawing.Size(968, 665)
-        AutoUpdater.Start("https://api.thecrafters001.ga/updates/easyhtml.xml")
-    End Sub
     Private Sub gnuGpl_pic_MouseHover(sender As Object, e As EventArgs) Handles gnuGpl_pic.MouseHover
         ' Set Color to Dark Gray if hover over
         gnuGpl_pic.BackColor = Color.DarkGray
@@ -438,21 +426,17 @@ Public Class EasyHTML
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        If My.Computer.FileSystem.FileExists(".\EasyNodeJS.exe") Then
-            Try
-                Dim pHelp As New ProcessStartInfo
-                pHelp.FileName = ".\EasyNodeJS.exe"
-                pHelp.Arguments = ""
-                pHelp.UseShellExecute = True
-                pHelp.WindowStyle = ProcessWindowStyle.Normal
-                Dim proc As Process = Process.Start(pHelp)
-                Application.Exit()
-            Catch ex As Exception
-                MessageBox.Show(ex.ToString, "Error")
-            End Try
-        ElseIf Not My.Computer.FileSystem.FileExists(".\EasyNodeJS.exe") Then
-            MessageBox.Show("EasyNodeJS cannot be found. Is it installed?", "Cannot Open EasyNodeJS", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        End If
+        Try
+            Dim pHelp As New ProcessStartInfo
+            pHelp.FileName = ".\Easy Software Suite Launcher.exe"
+            pHelp.Arguments = ""
+            pHelp.UseShellExecute = True
+            pHelp.WindowStyle = ProcessWindowStyle.Normal
+            Dim proc As Process = Process.Start(pHelp)
+            Application.Exit()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString, "Error")
+        End Try
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
