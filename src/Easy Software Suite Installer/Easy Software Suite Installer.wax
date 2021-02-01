@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-16"?>
+<Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <DeployedProjects>
+    <string>Easy Software Suite Launcher\Easy Software Suite Launcher.vbproj</string>
+    <string>EasyChangelog\EasyChangelog.vbproj</string>
+    <string>EasyHTML\EasyHTML.vbproj</string>
+    <string>EasyNodeJS\EasyNodeJS.vbproj</string>
+    <string>EasyPresskit\EasyPresskit.vbproj</string>
+  </DeployedProjects>
+  <DirectoryMappings>
+    <Item Key="" Value="INSTALLFOLDER" />
+  </DirectoryMappings>
+  <FileMappings />
+  <DeploySymbols>false</DeploySymbols>
+  <DeployLocalizations>true</DeployLocalizations>
+  <DeployExternalLocalizations>false</DeployExternalLocalizations>
+  <ExcludedProjectItems>-</ExcludedProjectItems>
+</Configuration>
