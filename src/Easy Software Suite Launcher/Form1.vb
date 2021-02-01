@@ -58,20 +58,6 @@ Public Class Form1
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         Application.Exit()
     End Sub
-
-    Private Sub LinkLabel1_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel1.LinkClicked
-        ' Check For Updates
-        AutoUpdater.ShowSkipButton = True
-        AutoUpdater.ShowRemindLaterButton = True
-        AutoUpdater.ReportErrors = True
-        AutoUpdater.RunUpdateAsAdmin = True
-        AutoUpdater.LetUserSelectRemindLater = True
-        AutoUpdater.RemindLaterTimeSpan = RemindLaterFormat.Hours
-        AutoUpdater.RemindLaterAt = 1
-        AutoUpdater.UpdateFormSize = New System.Drawing.Size(968, 665)
-        AutoUpdater.Start("https://api.thecrafters001.ga/updates/easyhtml.xml")
-    End Sub
-
     Private Sub LinkLabel2_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles LinkLabel2.LinkClicked
         Licenses.Show()
     End Sub
