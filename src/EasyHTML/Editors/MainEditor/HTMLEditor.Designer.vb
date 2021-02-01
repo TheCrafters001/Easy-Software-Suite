@@ -75,6 +75,9 @@ Partial Class EasyHTML
         Me.Code_Export_Code_Box = New System.Windows.Forms.RichTextBox()
         Me.Pg_Preview = New System.Windows.Forms.TabPage()
         Me.preview_Python = New System.Windows.Forms.GroupBox()
+        Me.pythonPreview_btn = New System.Windows.Forms.Button()
+        Me.pythonPreviewBrowser_cmb = New System.Windows.Forms.ComboBox()
+        Me.pythonPreview_lbl = New System.Windows.Forms.Label()
         Me.previewNew_grp = New System.Windows.Forms.GroupBox()
         Me.preview_btn = New System.Windows.Forms.Button()
         Me.BrowserListing_cmb = New System.Windows.Forms.ComboBox()
@@ -117,6 +120,7 @@ Partial Class EasyHTML
         Me.Pg_Meta.SuspendLayout()
         Me.Pg_Export.SuspendLayout()
         Me.Pg_Preview.SuspendLayout()
+        Me.preview_Python.SuspendLayout()
         Me.previewNew_grp.SuspendLayout()
         Me.Pg_RedirectMaker.SuspendLayout()
         CType(Me.redirectMakerCodeBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -253,6 +257,7 @@ Partial Class EasyHTML
         Me.CodeEditorBox.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.CodeEditorBox.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CodeEditorBox.DocumentPath = Nothing
+        Me.CodeEditorBox.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.CodeEditorBox.ForeColor = System.Drawing.Color.Black
         Me.CodeEditorBox.IsReplaceMode = False
         Me.CodeEditorBox.Location = New System.Drawing.Point(3, 18)
@@ -642,13 +647,45 @@ Partial Class EasyHTML
         '
         Me.preview_Python.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.preview_Python.Enabled = False
+        Me.preview_Python.Controls.Add(Me.pythonPreview_btn)
+        Me.preview_Python.Controls.Add(Me.pythonPreviewBrowser_cmb)
+        Me.preview_Python.Controls.Add(Me.pythonPreview_lbl)
         Me.preview_Python.Location = New System.Drawing.Point(8, 143)
         Me.preview_Python.Name = "preview_Python"
-        Me.preview_Python.Size = New System.Drawing.Size(928, 101)
+        Me.preview_Python.Size = New System.Drawing.Size(928, 103)
         Me.preview_Python.TabIndex = 3
         Me.preview_Python.TabStop = False
-        Me.preview_Python.Text = "Python Preview Settings (Coming Soon)"
+        Me.preview_Python.Text = "Python Preview Settings (Beta)"
+        '
+        'pythonPreview_btn
+        '
+        Me.pythonPreview_btn.ForeColor = System.Drawing.Color.Black
+        Me.pythonPreview_btn.Location = New System.Drawing.Point(6, 69)
+        Me.pythonPreview_btn.Name = "pythonPreview_btn"
+        Me.pythonPreview_btn.Size = New System.Drawing.Size(71, 26)
+        Me.pythonPreview_btn.TabIndex = 5
+        Me.pythonPreview_btn.Text = "Preview"
+        Me.pythonPreview_btn.UseVisualStyleBackColor = True
+        '
+        'pythonPreviewBrowser_cmb
+        '
+        Me.pythonPreviewBrowser_cmb.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.pythonPreviewBrowser_cmb.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.pythonPreviewBrowser_cmb.FormattingEnabled = True
+        Me.pythonPreviewBrowser_cmb.Location = New System.Drawing.Point(6, 34)
+        Me.pythonPreviewBrowser_cmb.Name = "pythonPreviewBrowser_cmb"
+        Me.pythonPreviewBrowser_cmb.Size = New System.Drawing.Size(916, 21)
+        Me.pythonPreviewBrowser_cmb.TabIndex = 4
+        '
+        'pythonPreview_lbl
+        '
+        Me.pythonPreview_lbl.AutoSize = True
+        Me.pythonPreview_lbl.Location = New System.Drawing.Point(6, 18)
+        Me.pythonPreview_lbl.Name = "pythonPreview_lbl"
+        Me.pythonPreview_lbl.Size = New System.Drawing.Size(48, 13)
+        Me.pythonPreview_lbl.TabIndex = 3
+        Me.pythonPreview_lbl.Text = "Browser"
         '
         'previewNew_grp
         '
@@ -690,9 +727,9 @@ Partial Class EasyHTML
         Me.previewBrowser_lbl.AutoSize = True
         Me.previewBrowser_lbl.Location = New System.Drawing.Point(6, 18)
         Me.previewBrowser_lbl.Name = "previewBrowser_lbl"
-        Me.previewBrowser_lbl.Size = New System.Drawing.Size(190, 13)
+        Me.previewBrowser_lbl.Size = New System.Drawing.Size(48, 13)
         Me.previewBrowser_lbl.TabIndex = 0
-        Me.previewBrowser_lbl.Text = "Browser (Currently, IE isn't working)"
+        Me.previewBrowser_lbl.Text = "Browser"
         '
         'preview_lbl
         '
@@ -723,7 +760,7 @@ Partial Class EasyHTML
         Me.redirectMakerCodeBox.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
         Me.redirectMakerCodeBox.AutoIndentCharsPatterns = "^\s*[\w\.]+(\s\w+)?\s*(?<range>=)\s*(?<range>[^;=]+);" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "^\s*(case|default)\s*[^:]*" &
     "(?<range>:)\s*(?<range>[^;]+);"
-        Me.redirectMakerCodeBox.AutoScrollMinSize = New System.Drawing.Size(2, 14)
+        Me.redirectMakerCodeBox.AutoScrollMinSize = New System.Drawing.Size(0, 14)
         Me.redirectMakerCodeBox.BackBrush = Nothing
         Me.redirectMakerCodeBox.CharHeight = 14
         Me.redirectMakerCodeBox.CharWidth = 8
@@ -731,6 +768,7 @@ Partial Class EasyHTML
         Me.redirectMakerCodeBox.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.redirectMakerCodeBox.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.redirectMakerCodeBox.DocumentPath = Nothing
+        Me.redirectMakerCodeBox.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.redirectMakerCodeBox.ForeColor = System.Drawing.Color.Black
         Me.redirectMakerCodeBox.IsReplaceMode = False
         Me.redirectMakerCodeBox.Location = New System.Drawing.Point(285, 33)
@@ -741,6 +779,7 @@ Partial Class EasyHTML
         Me.redirectMakerCodeBox.ServiceColors = CType(resources.GetObject("redirectMakerCodeBox.ServiceColors"), FastColoredTextBoxNS.ServiceColors)
         Me.redirectMakerCodeBox.Size = New System.Drawing.Size(651, 559)
         Me.redirectMakerCodeBox.TabIndex = 4
+        Me.redirectMakerCodeBox.WordWrap = True
         Me.redirectMakerCodeBox.Zoom = 100
         '
         'redirectMakerInfo_lbl
@@ -969,6 +1008,8 @@ Partial Class EasyHTML
         Me.Pg_Export.ResumeLayout(False)
         Me.Pg_Preview.ResumeLayout(False)
         Me.Pg_Preview.PerformLayout()
+        Me.preview_Python.ResumeLayout(False)
+        Me.preview_Python.PerformLayout()
         Me.previewNew_grp.ResumeLayout(False)
         Me.previewNew_grp.PerformLayout()
         Me.Pg_RedirectMaker.ResumeLayout(False)
@@ -1065,4 +1106,7 @@ Partial Class EasyHTML
     Friend WithEvents CodeEditorBox As FastColoredTextBoxNS.FastColoredTextBox
     Friend WithEvents Button2 As Button
     Friend WithEvents redirectMakerCodeBox As FastColoredTextBoxNS.FastColoredTextBox
+    Friend WithEvents pythonPreview_btn As Button
+    Friend WithEvents pythonPreviewBrowser_cmb As ComboBox
+    Friend WithEvents pythonPreview_lbl As Label
 End Class

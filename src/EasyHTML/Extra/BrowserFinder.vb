@@ -5,7 +5,6 @@ Public Class BrowserFinder
         Find.Find("Google\Chrome\Application", "chrome", "Google Chrome")
         Find.Find("Mozilla Firefox", "firefox", "Mozilla FireFox")
         Find.Find("Microsoft\Edge\Application", "msedge", "Microsoft Edge")
-        Find.Find("Internet Explorer", "iexplore", "Internet Explorer")
         Find.Find("Opera", "Launcher", "Opera")
         Find.Find("Opera Beta", "Launcher", "Opera Beta")
         Find.Find("Opera Developer", "Launcher", "Opera Developer")

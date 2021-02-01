@@ -13,7 +13,6 @@ Imports System.Diagnostics
 Imports System.Text.RegularExpressions
 Imports System.IO
 Imports System.Runtime.Serialization.Formatters.Binary
-Imports AutoUpdaterDotNET
 Imports FastColoredTextBoxNS
 
 Public Class EasyHTML
@@ -381,16 +380,19 @@ Public Class EasyHTML
         ' Browser Finder
         BrowserFinder.Finder()
         BrowserListing_cmb.SelectedIndex = 0
+        pythonPreviewBrowser_cmb.SelectedIndex = 0
         ' Set language Syntax for coloring
         CodeEditorBox.Language = Language.HTML
         redirectMakerCodeBox.Language = Language.HTML
         'Start Timer
         Timer1.Start()
     End Sub
+
     Private Sub EasyHTML_Closing(sender As Object, e As CancelEventArgs) Handles Me.Closing
         ' Closes Theme Selector if Editor Closes
         ThemeSelect.Close()
     End Sub
+
     Private Sub gnuGpl_pic_MouseHover(sender As Object, e As EventArgs) Handles gnuGpl_pic.MouseHover
         ' Set Color to Dark Gray if hover over
         gnuGpl_pic.BackColor = Color.DarkGray
@@ -418,6 +420,27 @@ Public Class EasyHTML
 
             'Launch Preview File
             Launch.LaunchBrowser(BrowserListing_cmb.SelectedItem) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
+            Timer1.Start()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString, "Error")
+            Timer1.Start()
+        End Try
+    End Sub
+
+    Private Sub pythonPreview_btn_Click(sender As Object, e As EventArgs) Handles pythonPreview_btn.Click
+        Dim path As String = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
+        path = IO.Path.Combine(path, "Temp\EasyHTML") ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
+        Try
+            Timer1.Stop()
+            'Create Preview File
+
+            IO.Directory.CreateDirectory(path) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
+            IO.File.WriteAllText(IO.Path.Combine(path, "Preview.html"), Code_Export_Code_Box.Text) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
+
+            Console.WriteLine()
+
+            'Launch Preview File
+            Launch.PythonLaunchBrowser(pythonPreviewBrowser_cmb.SelectedItem) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
             Timer1.Start()
         Catch ex As Exception
             MessageBox.Show(ex.ToString, "Error")

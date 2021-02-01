@@ -1,6 +1,4 @@
-﻿Imports AutoUpdaterDotNET
-
-Public Class Form1
+﻿Public Class Form1
     Private Sub PictureBox1_Click(sender As Object, e As EventArgs) Handles PictureBox1.Click
         If My.Computer.FileSystem.FileExists(".\EasyHTML.exe") Then
             Try

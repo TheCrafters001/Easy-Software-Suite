@@ -1,131 +1,149 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-	<?define EasyChangelog_TargetDir=$(var.EasyChangelog.TargetDir)?><?define EasyHTML_TargetDir=$(var.EasyHTML.TargetDir)?><?define EasyNodeJS_TargetDir=$(var.EasyNodeJS.TargetDir)?><?define EasyPresskit_TargetDir=$(var.EasyPresskit.TargetDir)?><?define Easy Software Suite Launcher_TargetDir=$(var.Easy Software Suite Launcher.TargetDir)?>
-	<Product Id="f177928a-bd0e-4d7d-bbe1-53c62e0c0a97" Name="Easy Software Suite" Language="1033" Version="1.0.0.0" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
-		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
-
-		<!-- Define UI -->
-		<UIRef Id="WixUI_Mondo" />
-
-		<!-- Define icons -->
-		<Icon Id="easyhtml_icon.ico" SourceFile="$(var.ProjectDir)img\EasyHTML_Icon.ico" />
-		<Property Id="ARPPRODUCTICON" Value="easyhtml_icon.ico" />
+    <?define EasyChangelog_TargetDir=$(var.EasyChangelog.TargetDir)?>
+    <?define EasyHTML_TargetDir=$(var.EasyHTML.TargetDir)?>
+    <?define EasyNodeJS_TargetDir=$(var.EasyNodeJS.TargetDir)?>
+    <?define EasyPresskit_TargetDir=$(var.EasyPresskit.TargetDir)?>
+    <?define Easy Software Suite Launcher_TargetDir=$(var.Easy Software Suite Launcher.TargetDir)?>
+    <Product Id="f177928a-bd0e-4d7d-bbe1-53c62e0c0a97" Name="Easy Software Suite" Language="1033" Version="2.2.0.0" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
+        <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 		
-		<WixVariable Id="WixUIExclamationIco" Value="ico\exclamation.ico" />
-		<WixVariable Id="WixUIInfoIco" Value="ico\information.ico" />
-		<WixVariable Id="WixUINewIco" Value="ico\new.ico" />
-		<WixVariable Id="WixUIUpIco" Value="ico\parent.ico" />
-
-		<!-- Define Images -->
-		<WixVariable Id="WixUIBannerBmp" Value="img\banner_top.bmp" />
-		<WixVariable Id="WixUIDialogBmp" Value="img\banner_welcome.bmp" />
-
-		<!-- Define License -->
-		<WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\gpl-3.0.rtf" />
-
-		<!-- Define Downgrade message & EmbedCab -->
-		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-		<MediaTemplate EmbedCab="yes"/>
-
-		<!-- Define Features & Subfeatures -->
-		<Feature Id="Launcher_Feat" Title="Easy Software Suite Launcher" Level="1" Absent="disallow" Display="expand" Description="This is a required feature. This is the launcher for each component of the software suite.">
-			<ComponentGroupRef Id="LauncherComponents" />
-			<ComponentRef Id="ApplicationShortcut" />
-
-			<Feature Id="EasyHTML_Feat" Title="EasyHTML" Level="3" Absent='allow' Description='EasyHTML is a free to use, open-source HTML editor.'>
-				<ComponentGroupRef Id="EasyHTML" />
-			</Feature>
-
-			<Feature Id="EasyNodeJS_Feat" Title="EasyNodeJS" Level="1000" Absent='allow' Description='[Experimental] EasyNodeJS is a free to use, open-source Node.JS Editor'>
-				<ComponentGroupRef Id="EasyNodeJS" />
-			</Feature>
-
-			<Feature Id="EasyChangelog_Feat" Title="EasyChangelog" Level="3" Absent='allow' Description='EasyChangelog allows you to create changelogs, fast, easy, and free!'>
-				<ComponentGroupRef Id="EasyChangelog" />
-			</Feature>
-
-			<Feature Id="EasyPresskit_Feat" Title="EasyPresskit" Level="3" Absent='allow' Description='[Experimental] EasyPresskit is a free to use, open-source, fast way to create a static presskit page.'>
-				<ComponentGroupRef Id="EasyPresskit" />
-			</Feature>
-		</Feature>
-
-	</Product>
-
-	<!-- Folder & Icons -->
-	<Fragment>
-		<Directory Id="TARGETDIR" Name="SourceDir">
-			<Directory Id="ProgramFilesFolder">
-				<Directory Id="TheCrafters001Folder" Name="TheCrafters001">
-					<Directory Id="INSTALLFOLDER" Name="Easy Software Suite" />
-				</Directory>
-			</Directory>
-			<Directory Id="ProgramMenuFolder">
-				<Directory Id="ApplicationProgramsFolder" Name="Easy Software Suite" />
-			</Directory>
-		</Directory>
-	</Fragment>
-
-	<!-- Shortcut & Registry -->
-	<Fragment>
-		<DirectoryRef Id="ApplicationProgramsFolder">
-			<Component Id="ApplicationShortcut" Guid="f177928a-bd0e-4d7d-bbe1-53c62e0c0a97">
-				<Shortcut Id="ApplicationStartMenuShortcut" Name="Easy Software Suite" Description="Easy Software Suite Launcher" Target="[INSTALLFOLDER]Easy Software Suite Launcher.exe" WorkingDirectory="INSTALLFOLDER" />
-				<RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall" />
-				<RegistryValue Root="HKCU" Key="Software\TheCrafters001\Easy Software Suite" Name="installed" Type="integer" Value="1" KeyPath="yes" />
-			</Component>
-		</DirectoryRef>
-	</Fragment>
-
-	<!-- Components & Files -->
-	<Fragment>
-		<ComponentGroup Id="LauncherComponents" Directory="INSTALLFOLDER">
-			<!-- This contains the launcher components -->
-			<Component Id="FastColoredTextBox.dll" Guid="1e837474-1462-44aa-bcc5-22b3d69b7f01">
-				<File Id="FastColoredTextBox.dll" Name="FastColoredTextBox.dll" Source="$(var.EasyChangelog_TargetDir)FastColoredTextBox.dll" />
-			</Component>
-			<Component Id="Easy_Software_Suite_Launcher.exe" Guid="95795256-9b80-4251-83cf-cbc5b55d24af">
-				<File Id="Easy_Software_Suite_Launcher.exe" Name="Easy Software Suite Launcher.exe" Source="$(var.Easy Software Suite Launcher_TargetDir)Easy Software Suite Launcher.exe" />
-			</Component>
-			<Component Id="Easy_Software_Suite_Launcher.exe.config" Guid="f6a75e23-fb36-43a6-b592-562542035b87">
-				<File Id="Easy_Software_Suite_Launcher.exe.config" Name="Easy Software Suite Launcher.exe.config" Source="$(var.Easy Software Suite Launcher_TargetDir)Easy Software Suite Launcher.exe.config" />
-			</Component>
-		</ComponentGroup>
-
-		<ComponentGroup Id="EasyHTML" Directory="INSTALLFOLDER">
-			<Component Id="EasyHTML.exe" Guid="02d4cce8-adcf-4181-9878-0f7014c12020">
-				<File Id="EasyHTML.exe" Name="EasyHTML.exe" Source="$(var.EasyHTML_TargetDir)EasyHTML.exe" />
-			</Component>
-			<Component Id="EasyHTML.exe.config" Guid="d182202a-654e-48c2-86df-39512f95eee8">
-				<File Id="EasyHTML.exe.config" Name="EasyHTML.exe.config" Source="$(var.EasyHTML_TargetDir)EasyHTML.exe.config" />
-			</Component>
-		</ComponentGroup>
-
-		<ComponentGroup Id="EasyNodeJS" Directory="INSTALLFOLDER">
-			<Component Id="EasyNodeJS.exe" Guid="17af8058-59b3-431c-863b-f40a36f8ae16">
-				<File Id="EasyNodeJS.exe" Name="EasyNodeJS.exe" Source="$(var.EasyNodeJS_TargetDir)EasyNodeJS.exe" />
-			</Component>
-			<Component Id="EasyNodeJS.exe.config" Guid="17badb3e-ae66-4fd2-8588-0e7588591709">
-				<File Id="EasyNodeJS.exe.config" Name="EasyNodeJS.exe.config" Source="$(var.EasyNodeJS_TargetDir)EasyNodeJS.exe.config" />
-			</Component>
-		</ComponentGroup>
-
-		<ComponentGroup Id="EasyChangelog" Directory="INSTALLFOLDER">
-			<Component Id="EasyChangelog.exe" Guid="611481d9-e193-4a2b-8931-2dc472287dfe">
-				<File Id="EasyChangelog.exe" Name="EasyChangelog.exe" Source="$(var.EasyChangelog_TargetDir)EasyChangelog.exe" />
-			</Component>
-			<Component Id="EasyChangelog.exe.config" Guid="ed2ff094-64e7-416e-9652-150488405f61">
-				<File Id="EasyChangelog.exe.config" Name="EasyChangelog.exe.config" Source="$(var.EasyChangelog_TargetDir)EasyChangelog.exe.config" />
-			</Component>
-		</ComponentGroup>
-
-		<ComponentGroup Id="EasyPresskit" Directory="INSTALLFOLDER">
-			<Component Id="EasyPresskit.exe" Guid="7ea3da29-9a13-4f04-81ad-9f4dc2224ebf">
-				<File Id="EasyPresskit.exe" Name="EasyPresskit.exe" Source="$(var.EasyPresskit_TargetDir)EasyPresskit.exe" />
-			</Component>
-			<Component Id="EasyPresskit.exe.config" Guid="34806621-eb92-4be6-a30b-30ff23e71a4b">
-				<File Id="EasyPresskit.exe.config" Name="EasyPresskit.exe.config" Source="$(var.EasyPresskit_TargetDir)EasyPresskit.exe.config" />
+        <!-- Define icons -->
+        <Icon Id="easyhtml_icon.ico" SourceFile="$(var.ProjectDir)img\EasyHTML_Icon.ico" />
+        <Property Id="ARPPRODUCTICON" Value="easyhtml_icon.ico" />
+        <WixVariable Id="WixUIExclamationIco" Value="ico\exclamation.ico" />
+        <WixVariable Id="WixUIInfoIco" Value="ico\information.ico" />
+        <WixVariable Id="WixUINewIco" Value="ico\new.ico" />
+        <WixVariable Id="WixUIUpIco" Value="ico\parent.ico" />
+		
+        <!-- Define Images -->
+        <WixVariable Id="WixUIBannerBmp" Value="img\banner_top.bmp" />
+        <WixVariable Id="WixUIDialogBmp" Value="img\banner_welcome.bmp" />
+		
+        <!-- Define License -->
+        <WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\gpl-3.0.rtf" />
+		
+        <!-- Define Downgrade message & EmbedCab -->
+        <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+        <MediaTemplate EmbedCab="yes" />
+		
+		<!-- UI Customization -->
+		<UI>
+			<!-- Define UI -->
+            <UIRef Id="WixUI_Mondo" />
+		    <Publish Dialog="ExitDialog"
+					 Control="Finish"
+					 Event="DoAction"
+					 Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+		</UI>
+		<Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch Easy Software Suite" />
+		
+		<Property Id="WixShellExecTarget" Value="[#Easy_Software_Suite_Launcher.exe]" />
+        <CustomAction Id="LaunchApplication" 
+            BinaryKey="WixCA" 
+            DllEntry="WixShellExec"
+            Impersonate="yes" />
+		
+        <!-- Define Features & Subfeatures -->
+        <Feature Id="Launcher_Feat" Title="Easy Software Suite Launcher" Level="1" Absent="disallow" Display="expand" Description="This is a required feature. This is the launcher for each component of the software suite.">
+            <ComponentGroupRef Id="LauncherComponents" />
+            <ComponentRef Id="ApplicationShortcut" />
+            <Feature Id="EasyHTML_Feat" Title="EasyHTML" Level="3" Absent="allow" Description="EasyHTML is a free to use, open-source HTML editor.">
+                <ComponentGroupRef Id="EasyHTML" />
+				<ComponentGroupRef Id="extraScripts" />
+            </Feature>
+            <Feature Id="EasyNodeJS_Feat" Title="EasyNodeJS" Level="1000" Absent="allow" Description="[Experimental] EasyNodeJS is a free to use, open-source Node.JS Editor">
+                <ComponentGroupRef Id="EasyNodeJS" />
+            </Feature>
+            <Feature Id="EasyChangelog_Feat" Title="EasyChangelog" Level="3" Absent="allow" Description="EasyChangelog allows you to create changelogs, fast, easy, and free!">
+                <ComponentGroupRef Id="EasyChangelog" />
+            </Feature>
+            <Feature Id="EasyPresskit_Feat" Title="EasyPresskit" Level="1000" Absent="allow" Description="[Experimental] EasyPresskit is a free to use, open-source, fast way to create a static presskit page.">
+                <ComponentGroupRef Id="EasyPresskit" />
+            </Feature>
+        </Feature>
+	
+    </Product>
+	
+    <!-- Folders & Icons -->
+    <Fragment>
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFilesFolder">
+                <Directory Id="TheCrafters001Folder" Name="TheCrafters001">
+					<Directory Id="INSTALLFOLDER" Name="Easy Software Suite">
+						<Directory Id="ExtrasFolder" Name="Extras">
+							<Directory Id="ScriptsFolder" Name="Scripts" />
+						</Directory>
+					</Directory>
+                </Directory>
+            </Directory>
+            <Directory Id="ProgramMenuFolder">
+                <Directory Id="ApplicationProgramsFolder" Name="Easy Software Suite" />
+            </Directory>
+        </Directory>
+    </Fragment>
+	
+    <!-- Shortcut & Registry -->
+    <Fragment>
+        <DirectoryRef Id="ApplicationProgramsFolder">
+            <Component Id="ApplicationShortcut" Guid="f177928a-bd0e-4d7d-bbe1-53c62e0c0a97">
+                <Shortcut Id="ApplicationStartMenuShortcut" Name="Easy Software Suite" Description="Easy Software Suite Launcher" Target="[INSTALLFOLDER]Easy Software Suite Launcher.exe" WorkingDirectory="INSTALLFOLDER" />
+                <RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall" />
+                <RegistryValue Root="HKCU" Key="Software\TheCrafters001\Easy Software Suite" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+	
+    <!-- Components & Files -->
+    <Fragment>
+        <ComponentGroup Id="LauncherComponents" Directory="INSTALLFOLDER">
+            <!-- This contains the launcher components -->
+            <Component Id="FastColoredTextBox.dll" Guid="1e837474-1462-44aa-bcc5-22b3d69b7f01">
+                <File Id="FastColoredTextBox.dll" Name="FastColoredTextBox.dll" Source="$(var.EasyChangelog_TargetDir)FastColoredTextBox.dll" />
+            </Component>
+            <Component Id="Easy_Software_Suite_Launcher.exe" Guid="95795256-9b80-4251-83cf-cbc5b55d24af">
+                <File Id="Easy_Software_Suite_Launcher.exe" Name="Easy Software Suite Launcher.exe" Source="$(var.Easy Software Suite Launcher_TargetDir)Easy Software Suite Launcher.exe" />
+            </Component>
+            <Component Id="Easy_Software_Suite_Launcher.exe.config" Guid="f6a75e23-fb36-43a6-b592-562542035b87">
+                <File Id="Easy_Software_Suite_Launcher.exe.config" Name="Easy Software Suite Launcher.exe.config" Source="$(var.Easy Software Suite Launcher_TargetDir)Easy Software Suite Launcher.exe.config" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="EasyHTML" Directory="INSTALLFOLDER">
+            <Component Id="EasyHTML.exe" Guid="02d4cce8-adcf-4181-9878-0f7014c12020">
+                <File Id="EasyHTML.exe" Name="EasyHTML.exe" Source="$(var.EasyHTML_TargetDir)EasyHTML.exe" />
+            </Component>
+            <Component Id="EasyHTML.exe.config" Guid="d182202a-654e-48c2-86df-39512f95eee8">
+                <File Id="EasyHTML.exe.config" Name="EasyHTML.exe.config" Source="$(var.EasyHTML_TargetDir)EasyHTML.exe.config" />
+            </Component>
+        </ComponentGroup>
+		<ComponentGroup Id="extraScripts" Directory="ScriptsFolder">
+			<Component Id="pythonPreviewScript.bat" Guid="5ede20d3-739d-4742-9625-e822a63b2139">
+				<File Id="pythonPreviewScript.bat" Name="pythonPreviewScript.bat" Source="$(var.EasyHTML_TargetDir)Extra\Scripts\pythonPreviewScript.bat" />
 			</Component>
 		</ComponentGroup>
-
-	</Fragment>
+        <ComponentGroup Id="EasyNodeJS" Directory="INSTALLFOLDER">
+            <Component Id="EasyNodeJS.exe" Guid="17af8058-59b3-431c-863b-f40a36f8ae16">
+                <File Id="EasyNodeJS.exe" Name="EasyNodeJS.exe" Source="$(var.EasyNodeJS_TargetDir)EasyNodeJS.exe" />
+            </Component>
+            <Component Id="EasyNodeJS.exe.config" Guid="17badb3e-ae66-4fd2-8588-0e7588591709">
+                <File Id="EasyNodeJS.exe.config" Name="EasyNodeJS.exe.config" Source="$(var.EasyNodeJS_TargetDir)EasyNodeJS.exe.config" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="EasyChangelog" Directory="INSTALLFOLDER">
+            <Component Id="EasyChangelog.exe" Guid="611481d9-e193-4a2b-8931-2dc472287dfe">
+                <File Id="EasyChangelog.exe" Name="EasyChangelog.exe" Source="$(var.EasyChangelog_TargetDir)EasyChangelog.exe" />
+            </Component>
+            <Component Id="EasyChangelog.exe.config" Guid="ed2ff094-64e7-416e-9652-150488405f61">
+                <File Id="EasyChangelog.exe.config" Name="EasyChangelog.exe.config" Source="$(var.EasyChangelog_TargetDir)EasyChangelog.exe.config" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="EasyPresskit" Directory="INSTALLFOLDER">
+            <Component Id="EasyPresskit.exe" Guid="7ea3da29-9a13-4f04-81ad-9f4dc2224ebf">
+                <File Id="EasyPresskit.exe" Name="EasyPresskit.exe" Source="$(var.EasyPresskit_TargetDir)EasyPresskit.exe" />
+            </Component>
+            <Component Id="EasyPresskit.exe.config" Guid="34806621-eb92-4be6-a30b-30ff23e71a4b">
+                <File Id="EasyPresskit.exe.config" Name="EasyPresskit.exe.config" Source="$(var.EasyPresskit_TargetDir)EasyPresskit.exe.config" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
 </Wix>
