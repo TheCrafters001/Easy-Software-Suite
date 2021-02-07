@@ -29,6 +29,8 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -69,6 +71,15 @@
     <Reference Include="FastColoredTextBox, Version=2.16.26.100, Culture=neutral, PublicKeyToken=fb8aa12b994ef61b, processorArchitecture=MSIL">
       <HintPath>..\packages\Sara-FCTB.2.16.26.105\lib\net35\FastColoredTextBox.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.705.50, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.705.50\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.705.50, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.705.50\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.705.50, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.705.50\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -97,6 +108,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Editors\MainEditor\NewUI.Designer.vb">
+      <DependentUpon>NewUI.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\MainEditor\NewUI.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Extra\BrowserFinder.vb" />
     <Compile Include="Extra\CustomCommands\Find.vb" />
     <Compile Include="Extra\CustomCommands\Launch.vb" />
@@ -113,6 +130,12 @@
     <Compile Include="Extra\New_Splash.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Extra\Preview\previewWindow.Designer.vb">
+      <DependentUpon>previewWindow.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Extra\Preview\previewWindow.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Extra\ThemeSelect.Designer.vb">
       <DependentUpon>ThemeSelect.vb</DependentUpon>
     </Compile>
@@ -125,10 +148,10 @@
     <Compile Include="FallBack\BugReport.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Editors\MainEditor\HTMLEditor.Designer.vb">
-      <DependentUpon>HTMLEditor.vb</DependentUpon>
+    <Compile Include="Editors\MainEditor\EasyHTML.Designer.vb">
+      <DependentUpon>EasyHTML.vb</DependentUpon>
     </Compile>
-    <Compile Include="Editors\MainEditor\HTMLEditor.vb">
+    <Compile Include="Editors\MainEditor\EasyHTML.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Extra\CodeExtension.vb" />
@@ -150,11 +173,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Editors\MainEditor\NewUI.resx">
+      <DependentUpon>NewUI.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Extra\Licenses.resx">
       <DependentUpon>Licenses.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Extra\New_Splash.resx">
       <DependentUpon>New_Splash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extra\Preview\previewWindow.resx">
+      <DependentUpon>previewWindow.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Extra\ThemeSelect.resx">
       <DependentUpon>ThemeSelect.vb</DependentUpon>
@@ -162,8 +191,8 @@
     <EmbeddedResource Include="FallBack\BugReport.resx">
       <DependentUpon>BugReport.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Editors\MainEditor\HTMLEditor.resx">
-      <DependentUpon>HTMLEditor.vb</DependentUpon>
+    <EmbeddedResource Include="Editors\MainEditor\EasyHTML.resx">
+      <DependentUpon>EasyHTML.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -220,4 +249,11 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.705.50\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.705.50\build\Microsoft.Web.WebView2.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.705.50\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.705.50\build\Microsoft.Web.WebView2.targets'))" />
+  </Target>
 </Project>

@@ -8,17 +8,17 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Easy Software Suite Launcher")>
+<Assembly: AssemblyTitle("EasyGit")>
 <Assembly: AssemblyDescription("")>
 <Assembly: AssemblyCompany("")>
-<Assembly: AssemblyProduct("Easy Software Suite Launcher")>
-<Assembly: AssemblyCopyright("Copyright © TheCrafters001 2020")>
+<Assembly: AssemblyProduct("EasyGit")>
+<Assembly: AssemblyCopyright("Copyright ©  2021")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(False)>
 
 'The following GUID is for the ID of the typelib if this project is exposed to COM
-<Assembly: Guid("7abf5e18-2a2f-4d95-8470-882485da6332")>
+<Assembly: Guid("6e3e45ff-b983-4ed0-bdec-966dce239683")>
 
 ' Version information for an assembly consists of the following four values:
 '
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' by using the '*' as shown below:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("3.0.0.0")>
-<Assembly: AssemblyFileVersion("3.0.0.0")>
+<Assembly: AssemblyVersion("1.0.0.0")>
+<Assembly: AssemblyFileVersion("1.0.0.0")>

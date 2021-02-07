@@ -26,7 +26,7 @@ Public Class EasyHTML
     Dim MaroonStyle As TextStyle = New TextStyle(Brushes.Maroon, Nothing, FontStyle.Regular)
     Dim SameWordsStyle As MarkerStyle = New MarkerStyle(New SolidBrush(Color.FromArgb(40, Color.Gray)))
 #Region "Editor"
-    Private Sub Component_Box_DoubleClick(sender As Object, e As EventArgs) Handles Component_Box.DoubleClick
+    Private Sub Component_Box_DoubleClick(sender As Object, e As EventArgs)
         ' Copy over item from Element Selector
         CodeEditorBox.Text &= vbCrLf & Me.Component_Box.SelectedItem()
     End Sub
@@ -111,7 +111,7 @@ Public Class EasyHTML
             ' If credit_chkbox is checked, generate code.
             ' If not, don't generate code.
             If credit_chkbox.Checked = True Then
-                credit = "<hr><iframe style=""width: 100%; height: 250px; overflow: hidden;"" src=""https://api.thecrafters001.ga/credit/Easy.HTML"" width=""100%"" height=""50px"" scrolling=""no"" frameborder=""0"">Iframes not supported</iframe>"
+                credit = "<hr><div align=""center""><h3>Built with EasyHTML</h3><P>You can get EasyHTML, a free, open-source HTML editor, today at no cost! EasyHTML is a part of the Easy Software Suite, made by TheCrafters001<br><br><form action=""https://github.com/TheCrafters001/Easy-Software-Suite/releases/latest""><input type=""submit"" value=""Get EasyHTML Now!"" /></form></P></div>"
             ElseIf credit_chkbox.Checked = False Then
                 credit = ""
             End If
@@ -448,7 +448,7 @@ Public Class EasyHTML
         End Try
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles launcher_btn.Click
         Try
             Dim pHelp As New ProcessStartInfo
             pHelp.FileName = ".\Easy Software Suite Launcher.exe"
@@ -462,8 +462,38 @@ Public Class EasyHTML
         End Try
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub licenses_btn_Click(sender As Object, e As EventArgs) Handles licenses_btn.Click
         Licenses.Show()
+    End Sub
+
+    Private Sub builtInPreview_btn_Click(sender As Object, e As EventArgs) Handles builtInPreview_btn.Click
+        Dim path As String = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
+        path = IO.Path.Combine(path, "Temp\EasyHTML") ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
+        Try
+            Timer1.Stop()
+            'Create Preview File
+
+            IO.Directory.CreateDirectory(path) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
+            IO.File.WriteAllText(IO.Path.Combine(path, "Preview.html"), Code_Export_Code_Box.Text) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
+
+            'Launch Preview File
+            previewWindow.Show()
+            Timer1.Start()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString, "Error")
+            Timer1.Start()
+        End Try
+    End Sub
+
+    Private Sub newUI_btn_Click(sender As Object, e As EventArgs) Handles newUI_btn.Click
+        Dim results As DialogResult
+        results = MessageBox.Show("Do you want to try the New UI? This new user interface is aimed to help make editing with EasyHTML easier. Do know that this New UI (called NewUI) is not finished, and parts of it may be non-functional.", "Try the New UI", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
+        If results = DialogResult.Yes Then
+            NewUI.Show()
+            Me.Close()
+        ElseIf results = DialogResult.No Then
+            'Do nothing
+        End If
     End Sub
 #End Region
 End Class
