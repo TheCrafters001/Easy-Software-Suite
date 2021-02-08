@@ -28,13 +28,13 @@ Partial Class Form1
         Me.PictureBox3 = New System.Windows.Forms.PictureBox()
         Me.btn_cancel = New System.Windows.Forms.Button()
         Me.LinkLabel2 = New System.Windows.Forms.LinkLabel()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.easyPresskit_pic = New System.Windows.Forms.PictureBox()
+        Me.easyGit_pic = New System.Windows.Forms.PictureBox()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.easyPresskit_pic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.easyGit_pic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'PictureBox1
@@ -93,27 +93,27 @@ Partial Class Form1
         Me.LinkLabel2.TabStop = True
         Me.LinkLabel2.Text = "Third Pary Licenses"
         '
-        'PictureBox4
+        'easyPresskit_pic
         '
-        Me.PictureBox4.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox4.Image = Global.Easy_Software_Suite_Launcher.My.Resources.Resources.EasyPresskit_logo
-        Me.PictureBox4.Location = New System.Drawing.Point(12, 134)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(111, 116)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox4.TabIndex = 6
-        Me.PictureBox4.TabStop = False
+        Me.easyPresskit_pic.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.easyPresskit_pic.Image = Global.Easy_Software_Suite_Launcher.My.Resources.Resources.EasyPresskit_logo
+        Me.easyPresskit_pic.Location = New System.Drawing.Point(12, 134)
+        Me.easyPresskit_pic.Name = "easyPresskit_pic"
+        Me.easyPresskit_pic.Size = New System.Drawing.Size(111, 116)
+        Me.easyPresskit_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.easyPresskit_pic.TabIndex = 6
+        Me.easyPresskit_pic.TabStop = False
         '
-        'PictureBox5
+        'easyGit_pic
         '
-        Me.PictureBox5.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.PictureBox5.Image = Global.Easy_Software_Suite_Launcher.My.Resources.Resources.EasyGit_logo
-        Me.PictureBox5.Location = New System.Drawing.Point(129, 134)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(111, 116)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox5.TabIndex = 7
-        Me.PictureBox5.TabStop = False
+        Me.easyGit_pic.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.easyGit_pic.Image = Global.Easy_Software_Suite_Launcher.My.Resources.Resources.EasyGit_logo
+        Me.easyGit_pic.Location = New System.Drawing.Point(129, 134)
+        Me.easyGit_pic.Name = "easyGit_pic"
+        Me.easyGit_pic.Size = New System.Drawing.Size(111, 116)
+        Me.easyGit_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.easyGit_pic.TabIndex = 7
+        Me.easyGit_pic.TabStop = False
         '
         'Form1
         '
@@ -122,8 +122,8 @@ Partial Class Form1
         Me.BackColor = System.Drawing.Color.Gray
         Me.CancelButton = Me.btn_cancel
         Me.ClientSize = New System.Drawing.Size(369, 296)
-        Me.Controls.Add(Me.PictureBox5)
-        Me.Controls.Add(Me.PictureBox4)
+        Me.Controls.Add(Me.easyGit_pic)
+        Me.Controls.Add(Me.easyPresskit_pic)
         Me.Controls.Add(Me.LinkLabel2)
         Me.Controls.Add(Me.btn_cancel)
         Me.Controls.Add(Me.PictureBox3)
@@ -141,8 +141,8 @@ Partial Class Form1
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.easyPresskit_pic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.easyGit_pic, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -153,6 +153,6 @@ Partial Class Form1
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents btn_cancel As Button
     Friend WithEvents LinkLabel2 As LinkLabel
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents easyPresskit_pic As PictureBox
+    Friend WithEvents easyGit_pic As PictureBox
 End Class

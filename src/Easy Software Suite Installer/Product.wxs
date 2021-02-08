@@ -5,12 +5,12 @@
     <?define EasyNodeJS_TargetDir=$(var.EasyNodeJS.TargetDir)?>
     <?define EasyPresskit_TargetDir=$(var.EasyPresskit.TargetDir)?>
     <?define Easy Software Suite Launcher_TargetDir=$(var.Easy Software Suite Launcher.TargetDir)?><?define EasyGit_TargetDir=$(var.EasyGit.TargetDir)?>
-    <Product Id="f177928a-bd0e-4d7d-bbe1-53c62e0c0a97" Name="Easy Software Suite" Language="1033" Version="3.0.0.0" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
+    <Product Id="*" Name="Easy Software Suite" Language="1033" Version="3.0.0.0" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
         <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 		
         <!-- Define icons -->
-        <Icon Id="easyhtml_icon.ico" SourceFile="$(var.ProjectDir)img\EasyHTML_Icon.ico" />
-        <Property Id="ARPPRODUCTICON" Value="easyhtml_icon.ico" />
+        <Icon Id="EasySoftwareSuite.ico" SourceFile="$(var.ProjectDir)img\EasySoftwareSuite.ico" />
+        <Property Id="ARPPRODUCTICON" Value="EasySoftwareSuite.ico" />
         <WixVariable Id="WixUIExclamationIco" Value="ico\exclamation.ico" />
         <WixVariable Id="WixUIInfoIco" Value="ico\information.ico" />
         <WixVariable Id="WixUINewIco" Value="ico\new.ico" />
@@ -41,22 +41,30 @@
         <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
 		
         <!-- Define Features & Subfeatures -->
-        <Feature Id="Launcher_Feat" Title="Easy Software Suite Launcher" Level="1" Absent="disallow" Display="expand" Description="This is a required feature. This is the launcher for each component of the software suite.">
+        <Feature Id="Launcher" Title="Easy Software Suite Launcher" Level="1" Absent="disallow" Display="expand" Description="This is a required feature. This is the launcher for each component of the software suite.">
             <ComponentGroupRef Id="LauncherComponents" />
             <ComponentRef Id="ApplicationShortcut" />
-            <Feature Id="EasyHTML_Feat" Title="EasyHTML" Level="3" Absent="allow" Description="EasyHTML is a free to use, open-source HTML editor.">
+			
+            <Feature Id="EasyHTML" Title="EasyHTML" Level="3" Absent="allow" Description="EasyHTML is a free to use, open-source HTML editor.">
                 <ComponentGroupRef Id="EasyHTML" />
 				<ComponentGroupRef Id="extraScripts" />
             </Feature>
-            <Feature Id="EasyNodeJS_Feat" Title="EasyNodeJS" Level="1000" Absent="allow" Description="[Experimental] EasyNodeJS is a free to use, open-source Node.JS Editor">
+			
+            <Feature Id="EasyNodeJS" Title="EasyNodeJS" Level="1000" Absent="allow" Description="[Experimental] EasyNodeJS is a free to use, open-source Node.JS Editor">
                 <ComponentGroupRef Id="EasyNodeJS" />
             </Feature>
-            <Feature Id="EasyChangelog_Feat" Title="EasyChangelog" Level="3" Absent="allow" Description="EasyChangelog allows you to create changelogs, fast, easy, and free!">
+			
+            <Feature Id="EasyChangelog" Title="EasyChangelog" Level="3" Absent="allow" Description="EasyChangelog allows you to create changelogs, fast, easy, and free!">
                 <ComponentGroupRef Id="EasyChangelog" />
             </Feature>
-            <Feature Id="EasyPresskit_Feat" Title="EasyPresskit" Level="1000" Absent="allow" Description="[Experimental] EasyPresskit is a free to use, open-source, fast way to create a static presskit page.">
+			
+            <Feature Id="EasyPresskit" Title="EasyPresskit" Level="1000" Absent="allow" Description="[Experimental] EasyPresskit is a free to use, open-source, fast way to create a static presskit page.">
                 <ComponentGroupRef Id="EasyPresskit" />
             </Feature>
+			
+			<Feature Id="EasyGit" Title="EasyGit" Level="1000" Absent="allow" Description="[Experimental] EasyGit is a free to use, open-source, fast way to manage Git projects.">
+				<ComponentGroupRef Id="EasyGit" />
+			</Feature>
             <ComponentGroupRef Id="_x86_files" />
             <ComponentGroupRef Id="_x64_files" />
             <ComponentGroupRef Id="arm64_files" />
