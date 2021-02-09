@@ -5,7 +5,7 @@
     <?define EasyNodeJS_TargetDir=$(var.EasyNodeJS.TargetDir)?>
     <?define EasyPresskit_TargetDir=$(var.EasyPresskit.TargetDir)?>
     <?define Easy Software Suite Launcher_TargetDir=$(var.Easy Software Suite Launcher.TargetDir)?><?define EasyGit_TargetDir=$(var.EasyGit.TargetDir)?>
-    <Product Id="*" Name="Easy Software Suite" Language="1033" Version="3.0.0.0" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
+    <Product Id="*" Name="Easy Software Suite" Language="1033" Version="3.0.2.0" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
         <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 		
         <!-- Define icons -->
@@ -62,8 +62,9 @@
                 <ComponentGroupRef Id="EasyPresskit" />
             </Feature>
 			
-			<Feature Id="EasyGit" Title="EasyGit" Level="1000" Absent="allow" Description="[Experimental] EasyGit is a free to use, open-source, fast way to manage Git projects.">
+			<Feature Id="EasyGit" Title="EasyGit" Level="1000" Absent="allow" Description="EasyGit allows you to push, and pull, changes to your GitHub repo">
 				<ComponentGroupRef Id="EasyGit" />
+			    <ComponentGroupRef Id="extraScripts" />
 			</Feature>
             <ComponentGroupRef Id="_x86_files" />
             <ComponentGroupRef Id="_x64_files" />
@@ -141,6 +142,7 @@
 		<ComponentGroup Id="extraScripts" Directory="ScriptsFolder">
 			<Component Id="pythonPreviewScript.bat" Guid="5ede20d3-739d-4742-9625-e822a63b2139">
 				<File Id="pythonPreviewScript.bat" Name="pythonPreviewScript.bat" Source="$(var.EasyHTML_TargetDir)Extra\Scripts\pythonPreviewScript.bat" />
+				<File Id="gitCommit.bat" Name="gitCommit.bat" Source="$(var.EasyGit_TargetDir)Extra\Scripts\gitCommit.bat" />
 			</Component>
 		</ComponentGroup>
 		

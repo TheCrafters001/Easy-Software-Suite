@@ -73,6 +73,12 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extra\firstTime.Designer.vb">
+      <DependentUpon>firstTime.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Extra\firstTime.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Extra\New_Splash.Designer.vb">
       <DependentUpon>New_Splash.vb</DependentUpon>
     </Compile>
@@ -90,6 +96,7 @@
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
       <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="My Project\Resources.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -103,6 +110,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Extra\firstTime.resx">
+      <DependentUpon>firstTime.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Extra\New_Splash.resx">
       <DependentUpon>New_Splash.vb</DependentUpon>
     </EmbeddedResource>
@@ -117,7 +127,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Extra\Scripts\gitCommit.bat" />
+    <None Include="Extra\Scripts\gitCommit.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
