@@ -6,8 +6,8 @@
   <?define EasyPresskit_TargetDir=$(var.EasyPresskit.TargetDir)?>
   <?define Easy Software Suite Launcher_TargetDir=$(var.Easy Software Suite Launcher.TargetDir)?>
   <?define EasyGit_TargetDir=$(var.EasyGit.TargetDir)?>
-  <Product Id="*" Name="Easy Software Suite" Language="1033" Version="3.0.2.1" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
-    <Package InstallerVersion="302" Compressed="yes" InstallScope="perMachine" />
+  <Product Id="*" Name="Easy Software Suite" Language="1033" Version="3.0.3.0" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
+    <Package InstallerVersion="303" Compressed="yes" InstallScope="perMachine" />
     <!-- Define icons -->
     <Icon Id="EasySoftwareSuite.ico" SourceFile="$(var.ProjectDir)img\EasySoftwareSuite.ico" />
     <Property Id="ARPPRODUCTICON" Value="EasySoftwareSuite.ico" />
