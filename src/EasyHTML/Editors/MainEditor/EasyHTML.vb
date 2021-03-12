@@ -486,14 +486,7 @@ Public Class EasyHTML
     End Sub
 
     Private Sub newUI_btn_Click(sender As Object, e As EventArgs) Handles newUI_btn.Click
-        Dim results As DialogResult
-        results = MessageBox.Show("Do you want to try the New UI? This new user interface is aimed to help make editing with EasyHTML easier. Do know that this New UI (called NewUI) is not finished, and parts of it may be non-functional.", "Try the New UI", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
-        If results = DialogResult.Yes Then
-            NewUI.Show()
-            Me.Close()
-        ElseIf results = DialogResult.No Then
-            'Do nothing
-        End If
+
     End Sub
 #End Region
 End Class

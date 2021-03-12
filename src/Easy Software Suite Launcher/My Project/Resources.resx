@@ -127,6 +127,9 @@
   <data name="EasyGit_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EasyGit_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="EasyHTML2_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EasyHTML2_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="EasyHTML_Icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EasyHTML_Icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -141,5 +144,11 @@
   </data>
   <data name="EasyPresskit_logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EasyPresskit_logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EasySoftwareSuite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EasySoftwareSuite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="EasySoftwareSuite1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EasySoftwareSuite.ico;System.Drawing.Icon, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

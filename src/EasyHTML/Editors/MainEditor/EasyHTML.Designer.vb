@@ -26,6 +26,7 @@ Partial Class EasyHTML
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EasyHTML))
         Me.Pgs_Main = New System.Windows.Forms.TabControl()
         Me.Pg_Main = New System.Windows.Forms.TabPage()
+        Me.newUI_btn = New System.Windows.Forms.Button()
         Me.editorControls_grp = New System.Windows.Forms.GroupBox()
         Me.newProject_btn = New System.Windows.Forms.Button()
         Me.loadCssLibs_btn = New System.Windows.Forms.Button()
@@ -111,7 +112,6 @@ Partial Class EasyHTML
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
         Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.newUI_btn = New System.Windows.Forms.Button()
         Me.Pgs_Main.SuspendLayout()
         Me.Pg_Main.SuspendLayout()
         Me.editorControls_grp.SuspendLayout()
@@ -173,6 +173,17 @@ Partial Class EasyHTML
         Me.Pg_Main.Size = New System.Drawing.Size(944, 600)
         Me.Pg_Main.TabIndex = 0
         Me.Pg_Main.Text = "Details"
+        '
+        'newUI_btn
+        '
+        Me.newUI_btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.newUI_btn.ForeColor = System.Drawing.Color.Black
+        Me.newUI_btn.Location = New System.Drawing.Point(8, 526)
+        Me.newUI_btn.Name = "newUI_btn"
+        Me.newUI_btn.Size = New System.Drawing.Size(208, 30)
+        Me.newUI_btn.TabIndex = 17
+        Me.newUI_btn.Text = "Try EasyHTML 2!"
+        Me.newUI_btn.UseVisualStyleBackColor = True
         '
         'editorControls_grp
         '
@@ -482,7 +493,7 @@ Partial Class EasyHTML
         Me.CodeEditorBox.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
         Me.CodeEditorBox.AutoIndentCharsPatterns = "^\s*[\w\.]+(\s\w+)?\s*(?<range>=)\s*(?<range>[^;=]+);" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "^\s*(case|default)\s*[^:]*" &
     "(?<range>:)\s*(?<range>[^;]+);"
-        Me.CodeEditorBox.AutoScrollMinSize = New System.Drawing.Size(27, 14)
+        Me.CodeEditorBox.AutoScrollMinSize = New System.Drawing.Size(2, 14)
         Me.CodeEditorBox.BackBrush = Nothing
         Me.CodeEditorBox.CharHeight = 14
         Me.CodeEditorBox.CharWidth = 8
@@ -492,7 +503,6 @@ Partial Class EasyHTML
         Me.CodeEditorBox.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.CodeEditorBox.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CodeEditorBox.DocumentPath = Nothing
-        Me.CodeEditorBox.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.CodeEditorBox.ForeColor = System.Drawing.Color.Black
         Me.CodeEditorBox.IsReplaceMode = False
         Me.CodeEditorBox.Location = New System.Drawing.Point(3, 18)
@@ -839,7 +849,6 @@ Partial Class EasyHTML
         Me.redirectMakerCodeBox.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.redirectMakerCodeBox.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.redirectMakerCodeBox.DocumentPath = Nothing
-        Me.redirectMakerCodeBox.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.redirectMakerCodeBox.ForeColor = System.Drawing.Color.Black
         Me.redirectMakerCodeBox.IsReplaceMode = False
         Me.redirectMakerCodeBox.Location = New System.Drawing.Point(285, 33)
@@ -1049,17 +1058,6 @@ Partial Class EasyHTML
         '
         'Timer1
         '
-        '
-        'newUI_btn
-        '
-        Me.newUI_btn.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.newUI_btn.ForeColor = System.Drawing.Color.Black
-        Me.newUI_btn.Location = New System.Drawing.Point(8, 526)
-        Me.newUI_btn.Name = "newUI_btn"
-        Me.newUI_btn.Size = New System.Drawing.Size(208, 30)
-        Me.newUI_btn.TabIndex = 17
-        Me.newUI_btn.Text = "Try the New UI"
-        Me.newUI_btn.UseVisualStyleBackColor = True
         '
         'EasyHTML
         '
