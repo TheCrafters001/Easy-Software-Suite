@@ -1,183 +1,216 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-  <?define EasyChangelog_TargetDir=$(var.EasyChangelog.TargetDir)?>
-  <?define EasyHTML_TargetDir=$(var.EasyHTML.TargetDir)?>
-  <?define EasyNodeJS_TargetDir=$(var.EasyNodeJS.TargetDir)?>
-  <?define EasyPresskit_TargetDir=$(var.EasyPresskit.TargetDir)?>
-  <?define Easy Software Suite Launcher_TargetDir=$(var.Easy Software Suite Launcher.TargetDir)?>
-  <?define EasyGit_TargetDir=$(var.EasyGit.TargetDir)?>
-  <Product Id="*" Name="Easy Software Suite" Language="1033" Version="3.0.3.0" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
-    <Package InstallerVersion="303" Compressed="yes" InstallScope="perMachine" />
-    <!-- Define icons -->
-    <Icon Id="EasySoftwareSuite.ico" SourceFile="$(var.ProjectDir)img\EasySoftwareSuite.ico" />
-    <Property Id="ARPPRODUCTICON" Value="EasySoftwareSuite.ico" />
-    <WixVariable Id="WixUIExclamationIco" Value="ico\exclamation.ico" />
-    <WixVariable Id="WixUIInfoIco" Value="ico\information.ico" />
-    <WixVariable Id="WixUINewIco" Value="ico\new.ico" />
-    <WixVariable Id="WixUIUpIco" Value="ico\parent.ico" />
-    <!-- Define Images -->
-    <WixVariable Id="WixUIBannerBmp" Value="img\banner_top.bmp" />
-    <WixVariable Id="WixUIDialogBmp" Value="img\banner_welcome.bmp" />
-    <!-- Define License -->
-    <WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\gpl-3.0.rtf" />
-    <!-- Define Downgrade message & EmbedCab -->
-    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-    <MediaTemplate EmbedCab="yes" />
-    <!-- UI Customization -->
-    <UI>
-      <!-- Define UI -->
-      <UIRef Id="WixUI_Mondo" />
-      <UIRef Id="WixUI_ErrorProgressText" />
-      <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
-      <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
-    </UI>
-    <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch Easy Software Suite" />
-    <Property Id="WixShellExecTarget" Value="[#Easy_Software_Suite_Launcher.exe]" />
-    <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
-    <!-- Define Features & Subfeatures -->
-    <Feature Id="Launcher" Title="Easy Software Suite Launcher" Level="1" Absent="disallow" Display="expand" Description="This is a required feature. This is the launcher for each component of the software suite." ConfigurableDirectory="INSTALLFOLDER">
-      <ComponentGroupRef Id="LauncherComponents" />
-      <ComponentRef Id="ApplicationShortcut" />
-      <Feature Id="EasyHTML" Title="EasyHTML" Level="3" Absent="allow" Description="EasyHTML is a free to use, open-source HTML editor.">
-        <ComponentGroupRef Id="EasyHTML" />
-        <ComponentGroupRef Id="extraScripts" />
-      </Feature>
-      <Feature Id="EasyNodeJS" Title="EasyNodeJS" Level="1000" Absent="allow" Description="[Experimental] EasyNodeJS is a free to use, open-source Node.JS Editor">
-        <ComponentGroupRef Id="EasyNodeJS" />
-      </Feature>
-      <Feature Id="EasyChangelog" Title="EasyChangelog" Level="3" Absent="allow" Description="EasyChangelog allows you to create changelogs, fast, easy, and free!">
-        <ComponentGroupRef Id="EasyChangelog" />
-      </Feature>
-      <Feature Id="EasyPresskit" Title="EasyPresskit" Level="1000" Absent="allow" Description="[Experimental] EasyPresskit is a free to use, open-source, fast way to create a static presskit page.">
-        <ComponentGroupRef Id="EasyPresskit" />
-      </Feature>
-      <Feature Id="EasyGit" Title="EasyGit" Level="1" Absent="allow" Description="EasyGit allows you to push, and pull, changes to your GitHub repo">
-        <ComponentGroupRef Id="EasyGit" />
-        <ComponentGroupRef Id="extraScripts" />
-      </Feature>
-      <ComponentGroupRef Id="_x86_files" />
-      <ComponentGroupRef Id="_x64_files" />
-      <ComponentGroupRef Id="arm64_files" />
-    </Feature>
-  </Product>
-  <!-- Folders & Icons -->
-  <Fragment>
-    <Directory Id="TARGETDIR" Name="SourceDir">
-      <Directory Id="ProgramFilesFolder">
-        <Directory Id="TheCrafters001Folder" Name="TheCrafters001">
-          <Directory Id="INSTALLFOLDER" Name="Easy Software Suite">
-            <Directory Id="ExtrasFolder" Name="Extra">
-              <Directory Id="ScriptsFolder" Name="Scripts" />
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi" xmlns:util="http://schemas.microsoft.com/wix/UtilExtension">
+    <?define EasyChangelog_TargetDir=$(var.EasyChangelog.TargetDir)?>
+    <?define EasyHTML_TargetDir=$(var.EasyHTML.TargetDir)?>
+    <?define EasyNodeJS_TargetDir=$(var.EasyNodeJS.TargetDir)?>
+    <?define EasyPresskit_TargetDir=$(var.EasyPresskit.TargetDir)?>
+    <?define Easy Software Suite Launcher_TargetDir=$(var.Easy Software Suite Launcher.TargetDir)?>
+    <?define EasyGit_TargetDir=$(var.EasyGit.TargetDir)?>
+    <?define EasyButler_TargetDir=$(var.EasyButler.TargetDir)?><?define EasyHTML 2_TargetDir=$(var.EasyHTML 2.TargetDir)?>
+    <Product Id="*" Name="Easy Software Suite" Language="1033" Version="3.0.5.0" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
+        <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+        <!-- Define icons -->
+        <Icon Id="EasySoftwareSuite.ico" SourceFile="$(var.ProjectDir)img\EasySoftwareSuite.ico" />
+        <Property Id="ARPPRODUCTICON" Value="EasySoftwareSuite.ico" />
+        <WixVariable Id="WixUIExclamationIco" Value="ico\exclamation.ico" />
+        <WixVariable Id="WixUIInfoIco" Value="ico\information.ico" />
+        <WixVariable Id="WixUINewIco" Value="ico\new.ico" />
+        <WixVariable Id="WixUIUpIco" Value="ico\parent.ico" />
+        <!-- Define Images -->
+        <WixVariable Id="WixUIBannerBmp" Value="img\banner_top.bmp" />
+        <WixVariable Id="WixUIDialogBmp" Value="img\banner_welcome.bmp" />
+        <!-- Define License -->
+        <WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\gpl-3.0.rtf" />
+        <!-- Define Downgrade message & EmbedCab -->
+        <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+        <MediaTemplate EmbedCab="yes" />
+        <!-- UI Customization -->
+        <UI>
+            <!-- Define UI -->
+            <UIRef Id="WixUI_Mondo" />
+            <UIRef Id="WixUI_ErrorProgressText" />
+            <Property Id="WIXUI_INSTALLDIR" Value="INSTALLFOLDER" />
+            <Publish Dialog="ExitDialog" Control="Finish" Event="DoAction" Value="LaunchApplication">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+        </UI>
+        <Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch Easy Software Suite" />
+        <Property Id="WixShellExecTarget" Value="[#Easy_Software_Suite_Launcher.exe]" />
+        <CustomAction Id="LaunchApplication" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" />
+        <!-- Define Features & Subfeatures -->
+        <Feature Id="Launcher" Title="Easy Software Suite Launcher" Level="1" Absent="disallow" Display="expand" Description="This is a required feature. This is the launcher for each component of the software suite." ConfigurableDirectory="INSTALLFOLDER">
+            <ComponentGroupRef Id="LauncherComponents" />
+            <ComponentRef Id="ApplicationShortcut" />
+            <Feature Id="EasyHTML" Title="EasyHTML" Level="3" Absent="allow" Description="EasyHTML is a free to use, easy-to-understand HTML Editor. It has Live Code Preview, and Exporting. You can save, and load, all your projects with ease, and you can easily update existing websites created with it! The Live Code Preview allows you to see what the website code looks like as you update it, and you can export that code with one click!">
+                <ComponentGroupRef Id="EasyHTML" />
+                <ComponentGroupRef Id="extraScripts" />
+            </Feature>
+			<Feature Id="EasyHTML_Two" Title="EasyHTML 2" Level="3" Absent="allow" Description="EasyHTML 2 is a free to use, easy-to-understand HTML Editor. It has Live Code Preview, and Exporting. You can save, and load, all your projects with ease, and you can easily update existing websites created with it! The Live Code Preview allows you to see what the website code looks like as you update it, and you can export that code with one click!">
+                <ComponentGroupRef Id="EasyHTML_Two" />
+            </Feature>
+            <Feature Id="EasyNodeJS" Title="EasyNodeJS" Level="1000" Absent="allow" Description="[Experimental] EasyNodeJS is a free to use, open-source Node.JS Editor">
+                <ComponentGroupRef Id="EasyNodeJS" />
+            </Feature>
+            <Feature Id="EasyChangelog" Title="EasyChangelog" Level="3" Absent="allow" Description="EasyChangelog allows you to create changelogs, fast, easy, and free!">
+                <ComponentGroupRef Id="EasyChangelog" />
+            </Feature>
+            <Feature Id="EasyPresskit" Title="EasyPresskit" Level="1000" Absent="allow" Description="[Experimental] EasyPresskit is a free to use, open-source, fast way to create a static presskit page.">
+                <ComponentGroupRef Id="EasyPresskit" />
+            </Feature>
+            <Feature Id="EasyGit" Title="EasyGit" Level="3" Absent="allow" Description="EasyGit allows you to push, and pull, changes to your GitHub repo">
+                <ComponentGroupRef Id="EasyGit" />
+                <ComponentGroupRef Id="extraScripts" />
+            </Feature>
+            <Feature Id="EasyButler" Title="EasyButler" Level="3" Absent="allow" Description="Easy Butler; updating your games just got easier! This allows you to update your games on Itch.IO with ease!">
+                <ComponentGroupRef Id="EasyButler" />
+                <ComponentGroupRef Id="extraScripts" />
+            </Feature>
+            <ComponentGroupRef Id="_x86_files" />
+            <ComponentGroupRef Id="_x64_files" />
+            <ComponentGroupRef Id="arm64_files" />
+        </Feature>
+    </Product>
+    <!-- Folders & Icons -->
+    <Fragment>
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFilesFolder">
+                <Directory Id="TheCrafters001Folder" Name="TheCrafters001">
+                    <Directory Id="INSTALLFOLDER" Name="Easy Software Suite">
+                        <Directory Id="ExtrasFolder" Name="Extra">
+                            <Directory Id="ScriptsFolder" Name="Scripts" />
+                        </Directory>
+                        <Directory Id="runtimes" Name="runtimes">
+                          <Directory Id="runtimes_win_arm64" Name="win-arm64">
+                            <Directory Id="runtimes_win_arm64_native" Name="native" />
+                          </Directory>
+                          <Directory Id="runtimes_win_x64" Name="win-x64">
+                            <Directory Id="runtimes_win_x64_native" Name="native" />
+                          </Directory>
+                          <Directory Id="runtimes_win_x86" Name="win-x86">
+                            <Directory Id="runtimes_win_x86_native" Name="native" />
+                          </Directory>
+                        </Directory>
+                    </Directory>
+                </Directory>
             </Directory>
-            <Directory Id="arm64" Name="arm64" />
-            <Directory Id="_x64" Name="x64" />
-            <Directory Id="_x86" Name="x86" />
-          </Directory>
+            <Directory Id="ProgramMenuFolder">
+                <Directory Id="ApplicationProgramsFolder" Name="Easy Software Suite" />
+            </Directory>
         </Directory>
-      </Directory>
-      <Directory Id="ProgramMenuFolder">
-        <Directory Id="ApplicationProgramsFolder" Name="Easy Software Suite" />
-      </Directory>
-    </Directory>
-  </Fragment>
-  <!-- Shortcut & Registry -->
-  <Fragment>
-    <DirectoryRef Id="ApplicationProgramsFolder">
-      <Component Id="ApplicationShortcut" Guid="f177928a-bd0e-4d7d-bbe1-53c62e0c0a97">
-        <Shortcut Id="ApplicationStartMenuShortcut" Name="Easy Software Suite" Description="Easy Software Suite Launcher" Target="[INSTALLFOLDER]Easy Software Suite Launcher.exe" WorkingDirectory="INSTALLFOLDER" />
-        <RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall" />
-        <RegistryValue Root="HKCU" Key="Software\TheCrafters001\Easy Software Suite" Name="installed" Type="integer" Value="1" KeyPath="yes" />
-      </Component>
-    </DirectoryRef>
-  </Fragment>
-  <!-- Components & Files -->
-  <Fragment>
-    <ComponentGroup Id="LauncherComponents" Directory="INSTALLFOLDER">
-      <!-- This contains the launcher components -->
-      <Component Id="FastColoredTextBox.dll" Guid="1e837474-1462-44aa-bcc5-22b3d69b7f01">
-        <File Id="FastColoredTextBox.dll" Name="FastColoredTextBox.dll" Source="$(var.EasyChangelog_TargetDir)FastColoredTextBox.dll" />
-      </Component>
-      <Component Id="Microsoft.Web.WebView2.Core.dll" Guid="2c3fb89c-ccc5-4673-9fd0-96f2d740e18e">
-        <File Id="Microsoft.Web.WebView2.Core.dll" Name="Microsoft.Web.WebView2.Core.dll" Source="$(var.Easy Software Suite Launcher_TargetDir)Microsoft.Web.WebView2.Core.dll" />
-      </Component>
-      <Component Id="Microsoft.Web.WebView2.WinForms.dll" Guid="c13ec61f-a043-4814-ba36-95cd75eee9cb">
-        <File Id="Microsoft.Web.WebView2.WinForms.dll" Name="Microsoft.Web.WebView2.WinForms.dll" Source="$(var.Easy Software Suite Launcher_TargetDir)Microsoft.Web.WebView2.WinForms.dll" />
-      </Component>
-      <!-- Include the launcher itself -->
-      <Component Id="Easy_Software_Suite_Launcher.exe" Guid="95795256-9b80-4251-83cf-cbc5b55d24af">
-        <File Id="Easy_Software_Suite_Launcher.exe" Name="Easy Software Suite Launcher.exe" Source="$(var.Easy Software Suite Launcher_TargetDir)Easy Software Suite Launcher.exe" />
-      </Component>
-      <Component Id="Easy_Software_Suite_Launcher.exe.config" Guid="f6a75e23-fb36-43a6-b592-562542035b87">
-        <File Id="Easy_Software_Suite_Launcher.exe.config" Name="Easy Software Suite Launcher.exe.config" Source="$(var.Easy Software Suite Launcher_TargetDir)Easy Software Suite Launcher.exe.config" />
-      </Component>
-    </ComponentGroup>
-    <!-- EasyHTML -->
-    <ComponentGroup Id="EasyHTML" Directory="INSTALLFOLDER">
-      <Component Id="EasyHTML.exe" Guid="02d4cce8-adcf-4181-9878-0f7014c12020">
-        <File Id="EasyHTML.exe" Name="EasyHTML.exe" Source="$(var.EasyHTML_TargetDir)EasyHTML.exe" />
-      </Component>
-      <Component Id="EasyHTML.exe.config" Guid="d182202a-654e-48c2-86df-39512f95eee8">
-        <File Id="EasyHTML.exe.config" Name="EasyHTML.exe.config" Source="$(var.EasyHTML_TargetDir)EasyHTML.exe.config" />
-      </Component>
-    </ComponentGroup>
-    <!-- Scripts -->
-    <ComponentGroup Id="extraScripts" Directory="ScriptsFolder">
-      <Component Id="pythonPreviewScript.bat" Guid="5ede20d3-739d-4742-9625-e822a63b2139">
-        <File Id="pythonPreviewScript.bat" Name="pythonPreviewScript.bat" Source="$(var.EasyHTML_TargetDir)Extra\Scripts\pythonPreviewScript.bat" />
-        <File Id="gitCommit.bat" Name="gitCommit.bat" Source="$(var.EasyGit_TargetDir)Extra\Scripts\gitCommit.bat" />
-      </Component>
-    </ComponentGroup>
-    <!-- EasyNodeJS -->
-    <ComponentGroup Id="EasyNodeJS" Directory="INSTALLFOLDER">
-      <Component Id="EasyNodeJS.exe" Guid="17af8058-59b3-431c-863b-f40a36f8ae16">
-        <File Id="EasyNodeJS.exe" Name="EasyNodeJS.exe" Source="$(var.EasyNodeJS_TargetDir)EasyNodeJS.exe" />
-      </Component>
-      <Component Id="EasyNodeJS.exe.config" Guid="17badb3e-ae66-4fd2-8588-0e7588591709">
-        <File Id="EasyNodeJS.exe.config" Name="EasyNodeJS.exe.config" Source="$(var.EasyNodeJS_TargetDir)EasyNodeJS.exe.config" />
-      </Component>
-    </ComponentGroup>
-    <!-- EasyChangelog -->
-    <ComponentGroup Id="EasyChangelog" Directory="INSTALLFOLDER">
-      <Component Id="EasyChangelog.exe" Guid="611481d9-e193-4a2b-8931-2dc472287dfe">
-        <File Id="EasyChangelog.exe" Name="EasyChangelog.exe" Source="$(var.EasyChangelog_TargetDir)EasyChangelog.exe" />
-      </Component>
-      <Component Id="EasyChangelog.exe.config" Guid="ed2ff094-64e7-416e-9652-150488405f61">
-        <File Id="EasyChangelog.exe.config" Name="EasyChangelog.exe.config" Source="$(var.EasyChangelog_TargetDir)EasyChangelog.exe.config" />
-      </Component>
-    </ComponentGroup>
-    <!-- EasyPresskit -->
-    <ComponentGroup Id="EasyPresskit" Directory="INSTALLFOLDER">
-      <Component Id="EasyPresskit.exe" Guid="7ea3da29-9a13-4f04-81ad-9f4dc2224ebf">
-        <File Id="EasyPresskit.exe" Name="EasyPresskit.exe" Source="$(var.EasyPresskit_TargetDir)EasyPresskit.exe" />
-      </Component>
-      <Component Id="EasyPresskit.exe.config" Guid="34806621-eb92-4be6-a30b-30ff23e71a4b">
-        <File Id="EasyPresskit.exe.config" Name="EasyPresskit.exe.config" Source="$(var.EasyPresskit_TargetDir)EasyPresskit.exe.config" />
-      </Component>
-    </ComponentGroup>
-    <!-- EasyGit -->
-    <ComponentGroup Id="EasyGit" Directory="INSTALLFOLDER">
-      <Component Id="EasyGit.exe.config" Guid="dc9d8c5f-1baf-4186-aa5f-6cf17bcea34d">
-        <File Id="EasyGit.exe.config" Name="EasyGit.exe.config" Source="$(var.EasyGit_TargetDir)EasyGit.exe.config" />
-      </Component>
-      <Component Id="EasyGit.exe" Guid="99f5d81c-bf1e-4a86-82a2-fa3458e78a2c">
-        <File Id="EasyGit.exe" Name="EasyGit.exe" Source="$(var.EasyGit_TargetDir)EasyGit.exe" />
-      </Component>
-    </ComponentGroup>
-    <!-- WebViewLoader Files -->
-    <ComponentGroup Id="arm64_files" Directory="arm64">
-      <Component Id="arm64_WebView2Loader.dll" Guid="60414e19-b66a-4a89-9d63-ef431875f8e4">
-        <File Id="arm64_WebView2Loader.dll" Name="WebView2Loader.dll" Source="$(var.EasyChangelog_TargetDir)arm64\WebView2Loader.dll" />
-      </Component>
-    </ComponentGroup>
-    <ComponentGroup Id="_x64_files" Directory="_x64">
-      <Component Id="x64_WebView2Loader.dll" Guid="422f05f9-ad2e-4cd2-bab2-d4e9b6d411c7">
-        <File Id="x64_WebView2Loader.dll" Name="WebView2Loader.dll" Source="$(var.EasyChangelog_TargetDir)x64\WebView2Loader.dll" />
-      </Component>
-    </ComponentGroup>
-    <ComponentGroup Id="_x86_files" Directory="_x86">
-      <Component Id="x86_WebView2Loader.dll" Guid="2fbfa95e-7293-4d13-99cb-323fdef808d9">
-        <File Id="x86_WebView2Loader.dll" Name="WebView2Loader.dll" Source="$(var.EasyChangelog_TargetDir)x86\WebView2Loader.dll" />
-      </Component>
-    </ComponentGroup>
-  </Fragment>
+    </Fragment>
+    <!-- Shortcut & Registry -->
+    <Fragment>
+        <DirectoryRef Id="ApplicationProgramsFolder">
+            <Component Id="ApplicationShortcut" Guid="f177928a-bd0e-4d7d-bbe1-53c62e0c0a97">
+                <Shortcut Id="ApplicationStartMenuShortcut" Name="Easy Software Suite" Description="Easy Software Suite Launcher" Target="[INSTALLFOLDER]Easy Software Suite Launcher.exe" WorkingDirectory="INSTALLFOLDER" />
+                <RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall" />
+                <RegistryValue Root="HKCU" Key="Software\TheCrafters001\Easy Software Suite" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+            </Component>
+        </DirectoryRef>
+    </Fragment>
+    <!-- Components & Files -->
+    <Fragment>
+        <ComponentGroup Id="LauncherComponents" Directory="INSTALLFOLDER">
+            <!-- This contains the launcher components -->
+            <Component Id="FastColoredTextBox.dll" Guid="1e837474-1462-44aa-bcc5-22b3d69b7f01">
+                <File Id="FastColoredTextBox.dll" Name="FastColoredTextBox.dll" Source="$(var.EasyChangelog_TargetDir)FastColoredTextBox.dll" />
+            </Component>
+            <Component Id="Microsoft.Web.WebView2.Core.dll" Guid="2c3fb89c-ccc5-4673-9fd0-96f2d740e18e">
+                <File Id="Microsoft.Web.WebView2.Core.dll" Name="Microsoft.Web.WebView2.Core.dll" Source="$(var.Easy Software Suite Launcher_TargetDir)Microsoft.Web.WebView2.Core.dll" />
+            </Component>
+            <Component Id="Microsoft.Web.WebView2.WinForms.dll" Guid="c13ec61f-a043-4814-ba36-95cd75eee9cb">
+                <File Id="Microsoft.Web.WebView2.WinForms.dll" Name="Microsoft.Web.WebView2.WinForms.dll" Source="$(var.Easy Software Suite Launcher_TargetDir)Microsoft.Web.WebView2.WinForms.dll" />
+            </Component>
+            <!-- Include the launcher itself -->
+            <Component Id="Easy_Software_Suite_Launcher.exe" Guid="95795256-9b80-4251-83cf-cbc5b55d24af">
+                <File Id="Easy_Software_Suite_Launcher.exe" Name="Easy Software Suite Launcher.exe" Source="$(var.Easy Software Suite Launcher_TargetDir)Easy Software Suite Launcher.exe" />
+            </Component>
+            <Component Id="Easy_Software_Suite_Launcher.exe.config" Guid="f6a75e23-fb36-43a6-b592-562542035b87">
+                <File Id="Easy_Software_Suite_Launcher.exe.config" Name="Easy Software Suite Launcher.exe.config" Source="$(var.Easy Software Suite Launcher_TargetDir)Easy Software Suite Launcher.exe.config" />
+            </Component>
+        </ComponentGroup>
+        <!-- EasyHTML -->
+        <ComponentGroup Id="EasyHTML" Directory="INSTALLFOLDER">
+            <Component Id="EasyHTML.exe" Guid="02d4cce8-adcf-4181-9878-0f7014c12020">
+                <File Id="EasyHTML.exe" Name="EasyHTML.exe" Source="$(var.EasyHTML_TargetDir)EasyHTML.exe" />
+            </Component>
+            <Component Id="EasyHTML.exe.config" Guid="d182202a-654e-48c2-86df-39512f95eee8">
+                <File Id="EasyHTML.exe.config" Name="EasyHTML.exe.config" Source="$(var.EasyHTML_TargetDir)EasyHTML.exe.config" />
+            </Component>
+        </ComponentGroup>
+		<ComponentGroup Id="EasyHTML_Two" Directory="INSTALLFOLDER">
+		    <Component Id="EasyHTML_2.exe.config" Guid="b97717b8-4949-47bc-95ca-84df479e61c1">
+              <File Id="EasyHTML_2.exe.config" Name="EasyHTML 2.exe.config" Source="$(var.EasyHTML 2_TargetDir)EasyHTML 2.exe.config" />
+            </Component>
+            <Component Id="EasyHTML_2.exe" Guid="c44db836-bd0f-4945-b282-d862f5371a81">
+              <File Id="EasyHTML_2.exe" Name="EasyHTML 2.exe" Source="$(var.EasyHTML 2_TargetDir)EasyHTML 2.exe" />
+            </Component>
+		</ComponentGroup>
+        <!-- Scripts -->
+        <ComponentGroup Id="extraScripts" Directory="ScriptsFolder">
+            <Component Id="pythonPreviewScript.bat" Guid="5ede20d3-739d-4742-9625-e822a63b2139">
+                <File Id="pythonPreviewScript.bat" Name="pythonPreviewScript.bat" Source="$(var.EasyHTML_TargetDir)Extra\Scripts\pythonPreviewScript.bat" />
+                <File Id="gitCommit.bat" Name="gitCommit.bat" Source="$(var.EasyGit_TargetDir)Extra\Scripts\gitCommit.bat" />
+            </Component>
+        </ComponentGroup>
+        <!-- EasyNodeJS -->
+        <ComponentGroup Id="EasyNodeJS" Directory="INSTALLFOLDER">
+            <Component Id="EasyNodeJS.exe" Guid="17af8058-59b3-431c-863b-f40a36f8ae16">
+                <File Id="EasyNodeJS.exe" Name="EasyNodeJS.exe" Source="$(var.EasyNodeJS_TargetDir)EasyNodeJS.exe" />
+            </Component>
+            <Component Id="EasyNodeJS.exe.config" Guid="17badb3e-ae66-4fd2-8588-0e7588591709">
+                <File Id="EasyNodeJS.exe.config" Name="EasyNodeJS.exe.config" Source="$(var.EasyNodeJS_TargetDir)EasyNodeJS.exe.config" />
+            </Component>
+        </ComponentGroup>
+        <!-- EasyChangelog -->
+        <ComponentGroup Id="EasyChangelog" Directory="INSTALLFOLDER">
+            <Component Id="EasyChangelog.exe" Guid="611481d9-e193-4a2b-8931-2dc472287dfe">
+                <File Id="EasyChangelog.exe" Name="EasyChangelog.exe" Source="$(var.EasyChangelog_TargetDir)EasyChangelog.exe" />
+            </Component>
+            <Component Id="EasyChangelog.exe.config" Guid="ed2ff094-64e7-416e-9652-150488405f61">
+                <File Id="EasyChangelog.exe.config" Name="EasyChangelog.exe.config" Source="$(var.EasyChangelog_TargetDir)EasyChangelog.exe.config" />
+            </Component>
+        </ComponentGroup>
+        <!-- EasyPresskit -->
+        <ComponentGroup Id="EasyPresskit" Directory="INSTALLFOLDER">
+            <Component Id="EasyPresskit.exe" Guid="7ea3da29-9a13-4f04-81ad-9f4dc2224ebf">
+                <File Id="EasyPresskit.exe" Name="EasyPresskit.exe" Source="$(var.EasyPresskit_TargetDir)EasyPresskit.exe" />
+            </Component>
+            <Component Id="EasyPresskit.exe.config" Guid="34806621-eb92-4be6-a30b-30ff23e71a4b">
+                <File Id="EasyPresskit.exe.config" Name="EasyPresskit.exe.config" Source="$(var.EasyPresskit_TargetDir)EasyPresskit.exe.config" />
+            </Component>
+        </ComponentGroup>
+        <!-- EasyGit -->
+        <ComponentGroup Id="EasyGit" Directory="INSTALLFOLDER">
+            <Component Id="EasyGit.exe.config" Guid="dc9d8c5f-1baf-4186-aa5f-6cf17bcea34d">
+                <File Id="EasyGit.exe.config" Name="EasyGit.exe.config" Source="$(var.EasyGit_TargetDir)EasyGit.exe.config" />
+            </Component>
+            <Component Id="EasyGit.exe" Guid="99f5d81c-bf1e-4a86-82a2-fa3458e78a2c">
+                <File Id="EasyGit.exe" Name="EasyGit.exe" Source="$(var.EasyGit_TargetDir)EasyGit.exe" />
+            </Component>
+        </ComponentGroup>
+        <!-- EasyButler -->
+        <ComponentGroup Id="EasyButler" Directory="INSTALLFOLDER">
+            <Component Id="EasyButler.exe.config" Guid="72cfec09-1acf-4661-a595-a08bc3f8a5bc">
+                <File Id="EasyButler.exe.config" Name="EasyButler.exe.config" Source="$(var.EasyButler_TargetDir)EasyButler.exe.config" />
+            </Component>
+            <Component Id="EasyButler.exe" Guid="9c1d6353-b76d-4dae-a50f-e697b06fa335">
+                <File Id="EasyButler.exe" Name="EasyButler.exe" Source="$(var.EasyButler_TargetDir)EasyButler.exe" />
+            </Component>
+        </ComponentGroup>
+        <!-- WebViewLoader Files -->
+        <ComponentGroup Id="arm64_files" Directory="runtimes_win_arm64_native">
+            <Component Id="arm64_WebView2Loader.dll" Guid="60414e19-b66a-4a89-9d63-ef431875f8e4">
+                <File Id="arm64_WebView2Loader.dll" Name="WebView2Loader.dll" Source="$(var.EasyHTML_TargetDir)runtimes\win-arm64\native\WebView2Loader.dll" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="_x64_files" Directory="runtimes_win_x64_native">
+            <Component Id="x64_WebView2Loader.dll" Guid="422f05f9-ad2e-4cd2-bab2-d4e9b6d411c7">
+                <File Id="x64_WebView2Loader.dll" Name="WebView2Loader.dll" Source="$(var.EasyHTML_TargetDir)runtimes\win-x64\native\WebView2Loader.dll" />
+            </Component>
+        </ComponentGroup>
+        <ComponentGroup Id="_x86_files" Directory="runtimes_win_x86_native">
+            <Component Id="x86_WebView2Loader.dll" Guid="2fbfa95e-7293-4d13-99cb-323fdef808d9">
+                <File Id="x86_WebView2Loader.dll" Name="WebView2Loader.dll" Source="$(var.EasyHTML_TargetDir)runtimes\win-x64\native\WebView2Loader.dll" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
 </Wix>

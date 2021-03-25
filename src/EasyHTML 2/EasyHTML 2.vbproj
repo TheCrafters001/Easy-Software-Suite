@@ -4,18 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{195C1C3D-A173-438C-91D5-C1B90A468A62}</ProjectGuid>
+    <ProjectGuid>{0C7FAF01-02CA-44BF-BB64-C0442D587713}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>EasyChangelog.My.MyApplication</StartupObject>
-    <RootNamespace>EasyChangelog</RootNamespace>
-    <AssemblyName>EasyChangelog</AssemblyName>
+    <StartupObject>EasyHTML_2.My.MyApplication</StartupObject>
+    <RootNamespace>EasyHTML_2</RootNamespace>
+    <AssemblyName>EasyHTML 2</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -24,7 +22,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>EasyChangelog.xml</DocumentationFile>
+    <DocumentationFile>EasyHTML 2.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -34,7 +32,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>EasyChangelog.xml</DocumentationFile>
+    <DocumentationFile>EasyHTML 2.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>
@@ -49,30 +47,16 @@
   <PropertyGroup>
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>Resources\Logo.ico</ApplicationIcon>
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="FastColoredTextBox, Version=2.16.26.100, Culture=neutral, PublicKeyToken=fb8aa12b994ef61b, processorArchitecture=MSIL">
       <HintPath>..\packages\Sara-FCTB.2.16.26.105\lib\net35\FastColoredTextBox.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.WebView2.Core, Version=1.0.774.44, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.774.44\lib\net45\Microsoft.Web.WebView2.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.WebView2.WinForms, Version=1.0.774.44, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.774.44\lib\net45\Microsoft.Web.WebView2.WinForms.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Web.WebView2.Wpf, Version=1.0.774.44, Culture=neutral, PublicKeyToken=2a8ab48044d2601e, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Web.WebView2.1.0.774.44\lib\net45\Microsoft.Web.WebView2.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms" />
-    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -93,32 +77,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Editors\Main Editor\Editor.vb">
+    <Compile Include="Editors\MainEditor\EasyHTML_Two.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Editors\Main Editor\Editor.Designer.vb">
-      <DependentUpon>Editor.vb</DependentUpon>
+    <Compile Include="Editors\MainEditor\EasyHTML_Two.Designer.vb">
+      <DependentUpon>EasyHTML_Two.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Extra\CodeExtension.vb" />
-    <Compile Include="Extra\FallBack\BugReport.Designer.vb">
-      <DependentUpon>BugReport.vb</DependentUpon>
+    <Compile Include="Extra\Themes\Bonfire Theme.vb">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Extra\FallBack\BugReport.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Extra\Licenses.Designer.vb">
-      <DependentUpon>Licenses.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Extra\Licenses.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Extra\New_Splash.Designer.vb">
-      <DependentUpon>New_Splash.vb</DependentUpon>
-    </Compile>
-    <Compile Include="Extra\New_Splash.vb">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Extra\Themes\Pro Controls.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -137,17 +106,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Editors\Main Editor\Editor.resx">
-      <DependentUpon>Editor.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Extra\FallBack\BugReport.resx">
-      <DependentUpon>BugReport.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Extra\Licenses.resx">
-      <DependentUpon>Licenses.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Extra\New_Splash.resx">
-      <DependentUpon>New_Splash.vb</DependentUpon>
+    <EmbeddedResource Include="Editors\MainEditor\EasyHTML_Two.resx">
+      <DependentUpon>EasyHTML_Two.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -170,27 +130,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\GNUGPL3.png" />
+    <Folder Include="FallBack\" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Logo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Side.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Thumbnail.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Logo.ico" />
-  </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
-  <Import Project="..\packages\Microsoft.Web.WebView2.1.0.774.44\build\Microsoft.Web.WebView2.targets" Condition="Exists('..\packages\Microsoft.Web.WebView2.1.0.774.44\build\Microsoft.Web.WebView2.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Web.WebView2.1.0.774.44\build\Microsoft.Web.WebView2.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Web.WebView2.1.0.774.44\build\Microsoft.Web.WebView2.targets'))" />
-  </Target>
 </Project>

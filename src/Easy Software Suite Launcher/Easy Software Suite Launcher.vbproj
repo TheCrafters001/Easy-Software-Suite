@@ -175,6 +175,10 @@
     <None Include="Resources\EasyChangelog_Logo.ico" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\EasyButler\EasyButler.vbproj">
+      <Project>{e9e652b6-b9e2-4c2e-87e6-cdb9006b56cf}</Project>
+      <Name>EasyButler</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EasyChangelog\EasyChangelog.vbproj">
       <Project>{195c1c3d-a173-438c-91d5-c1b90a468a62}</Project>
       <Name>EasyChangelog</Name>

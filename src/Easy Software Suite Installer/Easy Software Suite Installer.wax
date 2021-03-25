@@ -2,16 +2,22 @@
 <Configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <DeployedProjects>
     <string>Easy Software Suite Launcher\Easy Software Suite Launcher.vbproj</string>
+    <string>EasyButler\EasyButler.vbproj</string>
     <string>EasyChangelog\EasyChangelog.vbproj</string>
+    <string>EasyGit\EasyGit.vbproj</string>
     <string>EasyHTML\EasyHTML.vbproj</string>
+    <string>EasyHTML 2\EasyHTML 2.vbproj</string>
     <string>EasyNodeJS\EasyNodeJS.vbproj</string>
     <string>EasyPresskit\EasyPresskit.vbproj</string>
-    <string>EasyGit\EasyGit.vbproj</string>
   </DeployedProjects>
   <DirectoryMappings>
     <Item Key="" Value="INSTALLFOLDER" />
   </DirectoryMappings>
-  <FileMappings />
+  <FileMappings>
+    <Item Key="runtimes\win-x86\native\WebView2Loader.dll" Value="x86_WebView2Loader.dll" />
+    <Item Key="runtimes\win-x64\native\WebView2Loader.dll" Value="x64_WebView2Loader.dll" />
+    <Item Key="runtimes\win-arm64\native\WebView2Loader.dll" Value="arm64_WebView2Loader.dll" />
+  </FileMappings>
   <DeploySymbols>false</DeploySymbols>
   <DeployLocalizations>true</DeployLocalizations>
   <DeployExternalLocalizations>false</DeployExternalLocalizations>
