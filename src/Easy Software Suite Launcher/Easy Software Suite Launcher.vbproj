@@ -187,6 +187,10 @@
       <Project>{0b82128d-720d-45db-9942-0c6d4d50745c}</Project>
       <Name>EasyGit</Name>
     </ProjectReference>
+    <ProjectReference Include="..\EasyHTML 2\EasyHTML 2.vbproj">
+      <Project>{0c7faf01-02ca-44bf-bb64-c0442d587713}</Project>
+      <Name>EasyHTML 2</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EasyHTML\EasyHTML.vbproj">
       <Project>{7ab32baa-fb70-418c-a491-98146ec88376}</Project>
       <Name>EasyHTML</Name>
