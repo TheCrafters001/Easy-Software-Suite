@@ -72,16 +72,33 @@ Partial Class EasyHTML_Two
         Me.jsImport_btn = New EasyHTML_2.BonfireButton()
         Me.cssImport_lst = New System.Windows.Forms.ListBox()
         Me.jsImport_lst = New System.Windows.Forms.ListBox()
+        Me.siteAuthor_lbl = New EasyHTML_2.BonfireLabel()
+        Me.siteAuthor_txtbox = New System.Windows.Forms.TextBox()
+        Me.revisit_txtBox = New System.Windows.Forms.TextBox()
+        Me.revisit_lbl = New EasyHTML_2.BonfireLabel()
+        Me.keywords_lbl = New EasyHTML_2.BonfireLabel()
+        Me.keywords_txtBox = New System.Windows.Forms.TextBox()
+        Me.description_txtBox = New System.Windows.Forms.TextBox()
+        Me.title_txtBox = New System.Windows.Forms.TextBox()
+        Me.BonfireLabel1 = New EasyHTML_2.BonfireLabel()
+        Me.BonfireLabel2 = New EasyHTML_2.BonfireLabel()
+        Me.BonfireTabControl1 = New EasyHTML_2.BonfireTabControl()
+        Me.Pg_Editors_Body = New System.Windows.Forms.TabPage()
+        Me.Pg_Editors_Footer = New System.Windows.Forms.TabPage()
+        Me.Pg_Editors_Header = New System.Windows.Forms.TabPage()
         Me.Pgs_Main.SuspendLayout()
         Me.Pg_Details.SuspendLayout()
         Me.jsLibraries_grp.SuspendLayout()
         Me.cssLibraries_grp.SuspendLayout()
         Me.Misc_grp.SuspendLayout()
         Me.editorControls_grp.SuspendLayout()
+        Me.Pg_MetaTags.SuspendLayout()
+        Me.Pg_Editors.SuspendLayout()
         Me.JSContextMenu.SuspendLayout()
         Me.CSSContextMenu.SuspendLayout()
         Me.MainEditorContextMenu.SuspendLayout()
         Me.redirectMakerContextMenu.SuspendLayout()
+        Me.BonfireTabControl1.SuspendLayout()
         Me.SuspendLayout()
         '
         'Pgs_Main
@@ -391,6 +408,16 @@ Partial Class EasyHTML_Two
         'Pg_MetaTags
         '
         Me.Pg_MetaTags.BackColor = System.Drawing.Color.White
+        Me.Pg_MetaTags.Controls.Add(Me.BonfireLabel2)
+        Me.Pg_MetaTags.Controls.Add(Me.BonfireLabel1)
+        Me.Pg_MetaTags.Controls.Add(Me.description_txtBox)
+        Me.Pg_MetaTags.Controls.Add(Me.title_txtBox)
+        Me.Pg_MetaTags.Controls.Add(Me.keywords_lbl)
+        Me.Pg_MetaTags.Controls.Add(Me.keywords_txtBox)
+        Me.Pg_MetaTags.Controls.Add(Me.revisit_lbl)
+        Me.Pg_MetaTags.Controls.Add(Me.revisit_txtBox)
+        Me.Pg_MetaTags.Controls.Add(Me.siteAuthor_txtbox)
+        Me.Pg_MetaTags.Controls.Add(Me.siteAuthor_lbl)
         Me.Pg_MetaTags.Location = New System.Drawing.Point(4, 34)
         Me.Pg_MetaTags.Name = "Pg_MetaTags"
         Me.Pg_MetaTags.Size = New System.Drawing.Size(876, 592)
@@ -400,6 +427,7 @@ Partial Class EasyHTML_Two
         'Pg_Editors
         '
         Me.Pg_Editors.BackColor = System.Drawing.Color.White
+        Me.Pg_Editors.Controls.Add(Me.BonfireTabControl1)
         Me.Pg_Editors.Location = New System.Drawing.Point(4, 34)
         Me.Pg_Editors.Name = "Pg_Editors"
         Me.Pg_Editors.Padding = New System.Windows.Forms.Padding(3)
@@ -551,6 +579,151 @@ Partial Class EasyHTML_Two
         Me.jsImport_lst.Size = New System.Drawing.Size(207, 524)
         Me.jsImport_lst.TabIndex = 3
         '
+        'siteAuthor_lbl
+        '
+        Me.siteAuthor_lbl.AutoSize = True
+        Me.siteAuthor_lbl.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.siteAuthor_lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer))
+        Me.siteAuthor_lbl.Location = New System.Drawing.Point(8, 66)
+        Me.siteAuthor_lbl.Name = "siteAuthor_lbl"
+        Me.siteAuthor_lbl.Size = New System.Drawing.Size(71, 13)
+        Me.siteAuthor_lbl.TabIndex = 0
+        Me.siteAuthor_lbl.Text = "Site Author"
+        '
+        'siteAuthor_txtbox
+        '
+        Me.siteAuthor_txtbox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.siteAuthor_txtbox.Location = New System.Drawing.Point(85, 63)
+        Me.siteAuthor_txtbox.Name = "siteAuthor_txtbox"
+        Me.siteAuthor_txtbox.Size = New System.Drawing.Size(783, 22)
+        Me.siteAuthor_txtbox.TabIndex = 2
+        '
+        'revisit_txtBox
+        '
+        Me.revisit_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.revisit_txtBox.Location = New System.Drawing.Point(131, 91)
+        Me.revisit_txtBox.MaxLength = 1
+        Me.revisit_txtBox.Name = "revisit_txtBox"
+        Me.revisit_txtBox.Size = New System.Drawing.Size(737, 22)
+        Me.revisit_txtBox.TabIndex = 4
+        '
+        'revisit_lbl
+        '
+        Me.revisit_lbl.AutoSize = True
+        Me.revisit_lbl.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.revisit_lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer))
+        Me.revisit_lbl.Location = New System.Drawing.Point(8, 94)
+        Me.revisit_lbl.Name = "revisit_lbl"
+        Me.revisit_lbl.Size = New System.Drawing.Size(117, 13)
+        Me.revisit_lbl.TabIndex = 5
+        Me.revisit_lbl.Text = "Revisit after (days)"
+        '
+        'keywords_lbl
+        '
+        Me.keywords_lbl.AutoSize = True
+        Me.keywords_lbl.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.keywords_lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer))
+        Me.keywords_lbl.Location = New System.Drawing.Point(8, 122)
+        Me.keywords_lbl.Name = "keywords_lbl"
+        Me.keywords_lbl.Size = New System.Drawing.Size(63, 13)
+        Me.keywords_lbl.TabIndex = 7
+        Me.keywords_lbl.Text = "Keywords"
+        '
+        'keywords_txtBox
+        '
+        Me.keywords_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.keywords_txtBox.Location = New System.Drawing.Point(77, 119)
+        Me.keywords_txtBox.MaxLength = 1
+        Me.keywords_txtBox.Name = "keywords_txtBox"
+        Me.keywords_txtBox.Size = New System.Drawing.Size(791, 22)
+        Me.keywords_txtBox.TabIndex = 6
+        '
+        'description_txtBox
+        '
+        Me.description_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.description_txtBox.Location = New System.Drawing.Point(85, 35)
+        Me.description_txtBox.Name = "description_txtBox"
+        Me.description_txtBox.Size = New System.Drawing.Size(783, 22)
+        Me.description_txtBox.TabIndex = 13
+        '
+        'title_txtBox
+        '
+        Me.title_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.title_txtBox.Location = New System.Drawing.Point(45, 7)
+        Me.title_txtBox.Name = "title_txtBox"
+        Me.title_txtBox.Size = New System.Drawing.Size(823, 22)
+        Me.title_txtBox.TabIndex = 11
+        '
+        'BonfireLabel1
+        '
+        Me.BonfireLabel1.AutoSize = True
+        Me.BonfireLabel1.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.BonfireLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer))
+        Me.BonfireLabel1.Location = New System.Drawing.Point(8, 10)
+        Me.BonfireLabel1.Name = "BonfireLabel1"
+        Me.BonfireLabel1.Size = New System.Drawing.Size(31, 13)
+        Me.BonfireLabel1.TabIndex = 14
+        Me.BonfireLabel1.Text = "Title"
+        '
+        'BonfireLabel2
+        '
+        Me.BonfireLabel2.AutoSize = True
+        Me.BonfireLabel2.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.BonfireLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer))
+        Me.BonfireLabel2.Location = New System.Drawing.Point(8, 38)
+        Me.BonfireLabel2.Name = "BonfireLabel2"
+        Me.BonfireLabel2.Size = New System.Drawing.Size(71, 13)
+        Me.BonfireLabel2.TabIndex = 15
+        Me.BonfireLabel2.Text = "Description"
+        '
+        'BonfireTabControl1
+        '
+        Me.BonfireTabControl1.Controls.Add(Me.Pg_Editors_Body)
+        Me.BonfireTabControl1.Controls.Add(Me.Pg_Editors_Header)
+        Me.BonfireTabControl1.Controls.Add(Me.Pg_Editors_Footer)
+        Me.BonfireTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.BonfireTabControl1.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.BonfireTabControl1.ItemSize = New System.Drawing.Size(0, 30)
+        Me.BonfireTabControl1.Location = New System.Drawing.Point(3, 3)
+        Me.BonfireTabControl1.Name = "BonfireTabControl1"
+        Me.BonfireTabControl1.SelectedIndex = 0
+        Me.BonfireTabControl1.Size = New System.Drawing.Size(870, 586)
+        Me.BonfireTabControl1.TabIndex = 0
+        '
+        'Pg_Editors_Body
+        '
+        Me.Pg_Editors_Body.BackColor = System.Drawing.Color.White
+        Me.Pg_Editors_Body.Location = New System.Drawing.Point(4, 34)
+        Me.Pg_Editors_Body.Name = "Pg_Editors_Body"
+        Me.Pg_Editors_Body.Padding = New System.Windows.Forms.Padding(3)
+        Me.Pg_Editors_Body.Size = New System.Drawing.Size(862, 548)
+        Me.Pg_Editors_Body.TabIndex = 0
+        Me.Pg_Editors_Body.Text = "Body"
+        '
+        'Pg_Editors_Footer
+        '
+        Me.Pg_Editors_Footer.BackColor = System.Drawing.Color.White
+        Me.Pg_Editors_Footer.Location = New System.Drawing.Point(4, 34)
+        Me.Pg_Editors_Footer.Name = "Pg_Editors_Footer"
+        Me.Pg_Editors_Footer.Padding = New System.Windows.Forms.Padding(3)
+        Me.Pg_Editors_Footer.Size = New System.Drawing.Size(862, 548)
+        Me.Pg_Editors_Footer.TabIndex = 1
+        Me.Pg_Editors_Footer.Text = "Footer"
+        '
+        'Pg_Editors_Header
+        '
+        Me.Pg_Editors_Header.BackColor = System.Drawing.Color.White
+        Me.Pg_Editors_Header.Location = New System.Drawing.Point(4, 34)
+        Me.Pg_Editors_Header.Name = "Pg_Editors_Header"
+        Me.Pg_Editors_Header.Size = New System.Drawing.Size(862, 548)
+        Me.Pg_Editors_Header.TabIndex = 2
+        Me.Pg_Editors_Header.Text = "Header"
+        '
         'EasyHTML_Two
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -571,10 +744,14 @@ Partial Class EasyHTML_Two
         Me.cssLibraries_grp.PerformLayout()
         Me.Misc_grp.ResumeLayout(False)
         Me.editorControls_grp.ResumeLayout(False)
+        Me.Pg_MetaTags.ResumeLayout(False)
+        Me.Pg_MetaTags.PerformLayout()
+        Me.Pg_Editors.ResumeLayout(False)
         Me.JSContextMenu.ResumeLayout(False)
         Me.CSSContextMenu.ResumeLayout(False)
         Me.MainEditorContextMenu.ResumeLayout(False)
         Me.redirectMakerContextMenu.ResumeLayout(False)
+        Me.BonfireTabControl1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -628,4 +805,18 @@ Partial Class EasyHTML_Two
     Friend WithEvents jsImport_btn As BonfireButton
     Friend WithEvents jsImport_lst As ListBox
     Friend WithEvents cssImport_lst As ListBox
+    Friend WithEvents siteAuthor_lbl As BonfireLabel
+    Friend WithEvents siteAuthor_txtbox As TextBox
+    Friend WithEvents revisit_lbl As BonfireLabel
+    Friend WithEvents revisit_txtBox As TextBox
+    Friend WithEvents keywords_lbl As BonfireLabel
+    Friend WithEvents keywords_txtBox As TextBox
+    Friend WithEvents BonfireLabel1 As BonfireLabel
+    Friend WithEvents description_txtBox As TextBox
+    Friend WithEvents title_txtBox As TextBox
+    Friend WithEvents BonfireLabel2 As BonfireLabel
+    Friend WithEvents BonfireTabControl1 As BonfireTabControl
+    Friend WithEvents Pg_Editors_Body As TabPage
+    Friend WithEvents Pg_Editors_Footer As TabPage
+    Friend WithEvents Pg_Editors_Header As TabPage
 End Class
