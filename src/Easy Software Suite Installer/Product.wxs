@@ -39,7 +39,7 @@
         <Feature Id="Launcher" Title="Easy Software Suite Launcher" Level="1" Absent="disallow" Display="expand" Description="This is a required feature. This is the launcher for each component of the software suite." ConfigurableDirectory="INSTALLFOLDER">
             <ComponentGroupRef Id="LauncherComponents" />
             <ComponentRef Id="ApplicationShortcut" />
-            <Feature Id="EasyHTML" Title="EasyHTML" Level="3" Absent="allow" Description="EasyHTML is a free to use, easy-to-understand HTML Editor. It has Live Code Preview, and Exporting. You can save, and load, all your projects with ease, and you can easily update existing websites created with it! The Live Code Preview allows you to see what the website code looks like as you update it, and you can export that code with one click!">
+            <Feature Id="EasyHTML" Title="EasyHTML" Level="1000" Absent="allow" Description="[Outdated] EasyHTML is a free to use, easy-to-understand HTML Editor. It has Live Code Preview, and Exporting. You can save, and load, all your projects with ease, and you can easily update existing websites created with it! The Live Code Preview allows you to see what the website code looks like as you update it, and you can export that code with one click!">
                 <ComponentGroupRef Id="EasyHTML" />
                 <ComponentGroupRef Id="extraScripts" />
             </Feature>
