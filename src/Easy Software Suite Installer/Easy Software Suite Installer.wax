@@ -9,6 +9,7 @@
     <string>EasyHTML 2\EasyHTML 2.vbproj</string>
     <string>EasyNodeJS\EasyNodeJS.vbproj</string>
     <string>EasyPresskit\EasyPresskit.vbproj</string>
+    <string>ErrorLogger\ErrorLogger.vbproj</string>
   </DeployedProjects>
   <DirectoryMappings>
     <Item Key="" Value="INSTALLFOLDER" />

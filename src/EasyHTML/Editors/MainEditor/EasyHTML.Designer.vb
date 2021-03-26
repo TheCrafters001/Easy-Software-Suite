@@ -77,8 +77,6 @@ Partial Class EasyHTML
         Me.Btn_Export = New System.Windows.Forms.Button()
         Me.Code_Export_Code_Box = New System.Windows.Forms.RichTextBox()
         Me.Pg_Preview = New System.Windows.Forms.TabPage()
-        Me.builtInPreview_grp = New System.Windows.Forms.GroupBox()
-        Me.builtInPreview_btn = New System.Windows.Forms.Button()
         Me.preview_Python = New System.Windows.Forms.GroupBox()
         Me.pythonPreview_btn = New System.Windows.Forms.Button()
         Me.pythonPreviewBrowser_cmb = New System.Windows.Forms.ComboBox()
@@ -127,7 +125,6 @@ Partial Class EasyHTML
         Me.Pg_Meta.SuspendLayout()
         Me.Pg_Export.SuspendLayout()
         Me.Pg_Preview.SuspendLayout()
-        Me.builtInPreview_grp.SuspendLayout()
         Me.preview_Python.SuspendLayout()
         Me.previewNew_grp.SuspendLayout()
         Me.Pg_RedirectMaker.SuspendLayout()
@@ -503,6 +500,7 @@ Partial Class EasyHTML
         Me.CodeEditorBox.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.CodeEditorBox.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CodeEditorBox.DocumentPath = Nothing
+        Me.CodeEditorBox.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.CodeEditorBox.ForeColor = System.Drawing.Color.Black
         Me.CodeEditorBox.IsReplaceMode = False
         Me.CodeEditorBox.Location = New System.Drawing.Point(3, 18)
@@ -691,7 +689,6 @@ Partial Class EasyHTML
         'Pg_Preview
         '
         Me.Pg_Preview.BackColor = System.Drawing.Color.Gray
-        Me.Pg_Preview.Controls.Add(Me.builtInPreview_grp)
         Me.Pg_Preview.Controls.Add(Me.preview_Python)
         Me.Pg_Preview.Controls.Add(Me.previewNew_grp)
         Me.Pg_Preview.Controls.Add(Me.preview_lbl)
@@ -702,27 +699,6 @@ Partial Class EasyHTML
         Me.Pg_Preview.Size = New System.Drawing.Size(944, 600)
         Me.Pg_Preview.TabIndex = 8
         Me.Pg_Preview.Text = "Preview"
-        '
-        'builtInPreview_grp
-        '
-        Me.builtInPreview_grp.Controls.Add(Me.builtInPreview_btn)
-        Me.builtInPreview_grp.Location = New System.Drawing.Point(8, 252)
-        Me.builtInPreview_grp.Name = "builtInPreview_grp"
-        Me.builtInPreview_grp.Size = New System.Drawing.Size(928, 61)
-        Me.builtInPreview_grp.TabIndex = 4
-        Me.builtInPreview_grp.TabStop = False
-        Me.builtInPreview_grp.Text = "Built-in Preview [EXPERIMENTAL]"
-        '
-        'builtInPreview_btn
-        '
-        Me.builtInPreview_btn.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.builtInPreview_btn.ForeColor = System.Drawing.Color.Black
-        Me.builtInPreview_btn.Location = New System.Drawing.Point(3, 18)
-        Me.builtInPreview_btn.Name = "builtInPreview_btn"
-        Me.builtInPreview_btn.Size = New System.Drawing.Size(922, 40)
-        Me.builtInPreview_btn.TabIndex = 6
-        Me.builtInPreview_btn.Text = "Start Preview"
-        Me.builtInPreview_btn.UseVisualStyleBackColor = True
         '
         'preview_Python
         '
@@ -849,6 +825,7 @@ Partial Class EasyHTML
         Me.redirectMakerCodeBox.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.redirectMakerCodeBox.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.redirectMakerCodeBox.DocumentPath = Nothing
+        Me.redirectMakerCodeBox.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.redirectMakerCodeBox.ForeColor = System.Drawing.Color.Black
         Me.redirectMakerCodeBox.IsReplaceMode = False
         Me.redirectMakerCodeBox.Location = New System.Drawing.Point(285, 33)
@@ -1090,7 +1067,6 @@ Partial Class EasyHTML
         Me.Pg_Export.ResumeLayout(False)
         Me.Pg_Preview.ResumeLayout(False)
         Me.Pg_Preview.PerformLayout()
-        Me.builtInPreview_grp.ResumeLayout(False)
         Me.preview_Python.ResumeLayout(False)
         Me.preview_Python.PerformLayout()
         Me.previewNew_grp.ResumeLayout(False)
@@ -1189,8 +1165,6 @@ Partial Class EasyHTML
     Friend WithEvents pythonPreview_btn As Button
     Friend WithEvents pythonPreviewBrowser_cmb As ComboBox
     Friend WithEvents pythonPreview_lbl As Label
-    Friend WithEvents builtInPreview_grp As GroupBox
-    Friend WithEvents builtInPreview_btn As Button
     Friend WithEvents Pg_Editor As TabPage
     Friend WithEvents mainEditor_grp As GroupBox
     Friend WithEvents CodeEditorBox As FastColoredTextBoxNS.FastColoredTextBox

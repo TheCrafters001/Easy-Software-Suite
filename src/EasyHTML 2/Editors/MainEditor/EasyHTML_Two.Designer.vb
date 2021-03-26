@@ -22,9 +22,28 @@ Partial Class EasyHTML_Two
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EasyHTML_Two))
+        Me.JSContextMenu = New System.Windows.Forms.ContextMenuStrip()
+        Me.SaveJSLibrariesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadJSLibrariesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.CSSContextMenu = New System.Windows.Forms.ContextMenuStrip()
+        Me.SaveCSSLibrariesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadCSSLibrariesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MainEditorContextMenu = New System.Windows.Forms.ContextMenuStrip()
+        Me.SaveEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LoadEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.redirectMakerContextMenu = New System.Windows.Forms.ContextMenuStrip()
+        Me.SaveRedirectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Main_Timer = New System.Windows.Forms.Timer()
+        Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
+        Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
         Me.Pgs_Main = New EasyHTML_2.BonfireTabControl()
         Me.Pg_Details = New System.Windows.Forms.TabPage()
+        Me.ProjectMan_grp = New EasyHTML_2.BonfireGroupBox()
+        Me.loadWholeProject_btn = New EasyHTML_2.BonfireButton()
+        Me.saveWholeProject_btn = New EasyHTML_2.BonfireButton()
+        Me.ProMessage1 = New EasyHTML_2.ProMessage()
+        Me.ProjectManTitle_lbl = New EasyHTML_2.BonfireLabel()
         Me.jsLibraries_grp = New EasyHTML_2.BonfireGroupBox()
         Me.jsImport_lst = New System.Windows.Forms.ListBox()
         Me.jsImport_btn = New EasyHTML_2.BonfireButton()
@@ -42,19 +61,10 @@ Partial Class EasyHTML_Two
         Me.pageTitle_lbl = New EasyHTML_2.BonfireLabel()
         Me.Beta_Notice_ProMsg = New EasyHTML_2.ProMessage()
         Me.returnToLauncher_btn = New EasyHTML_2.ProBasicButton()
-        Me.editorControls_grp = New System.Windows.Forms.GroupBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.newProject_btn = New System.Windows.Forms.Button()
-        Me.loadCssLibs_btn = New System.Windows.Forms.Button()
-        Me.lbl_Tip1 = New System.Windows.Forms.Label()
-        Me.loadJsLibs_btn = New System.Windows.Forms.Button()
-        Me.loadEditorProj_btn = New System.Windows.Forms.Button()
         Me.pageTitle_txtBox = New System.Windows.Forms.TextBox()
         Me.Pg_MetaTags = New System.Windows.Forms.TabPage()
-        Me.BonfireLabel2 = New EasyHTML_2.BonfireLabel()
-        Me.BonfireLabel1 = New EasyHTML_2.BonfireLabel()
+        Me.description_lbl = New EasyHTML_2.BonfireLabel()
+        Me.title_lbl = New EasyHTML_2.BonfireLabel()
         Me.description_txtBox = New System.Windows.Forms.TextBox()
         Me.title_txtBox = New System.Windows.Forms.TextBox()
         Me.keywords_lbl = New EasyHTML_2.BonfireLabel()
@@ -66,40 +76,119 @@ Partial Class EasyHTML_Two
         Me.Pg_Editors = New System.Windows.Forms.TabPage()
         Me.BonfireTabControl1 = New EasyHTML_2.BonfireTabControl()
         Me.Pg_Editors_Body = New System.Windows.Forms.TabPage()
+        Me.bodyAddElement_btn = New EasyHTML_2.BonfireButton()
+        Me.bodyEditor_edt = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.Pg_Editors_Header = New System.Windows.Forms.TabPage()
+        Me.FastColoredTextBox1 = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.Pg_Editors_Footer = New System.Windows.Forms.TabPage()
+        Me.FastColoredTextBox2 = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.pg_Preview = New System.Windows.Forms.TabPage()
+        Me.PreviewAlert_alrt = New EasyHTML_2.ProMessage()
+        Me.previewPython_btn = New EasyHTML_2.ProDescriptiveButton()
+        Me.previewBrowser_btn = New EasyHTML_2.ProDescriptiveButton()
         Me.Pg_Export = New System.Windows.Forms.TabPage()
+        Me.export_btn = New EasyHTML_2.ProDescriptiveButton()
+        Me.exportPreview_btn = New EasyHTML_2.ProDescriptiveButton()
         Me.Pg_About = New System.Windows.Forms.TabPage()
+        Me.gnuGpl_pic = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.about_lbl = New EasyHTML_2.BonfireLabel()
+        Me.aboutHeader_lbl = New EasyHTML_2.BonfireLabelHeader()
         Me.Pg_ExtraStuff = New System.Windows.Forms.TabPage()
-        Me.JSContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.SaveJSLibrariesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoadJSLibrariesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CSSContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.SaveCSSLibrariesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoadCSSLibrariesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MainEditorContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.SaveEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.LoadEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.redirectMakerContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
-        Me.SaveRedirectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
-        Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.Pgs_Main.SuspendLayout()
-        Me.Pg_Details.SuspendLayout()
-        Me.jsLibraries_grp.SuspendLayout()
-        Me.cssLibraries_grp.SuspendLayout()
-        Me.Misc_grp.SuspendLayout()
-        Me.editorControls_grp.SuspendLayout()
-        Me.Pg_MetaTags.SuspendLayout()
-        Me.Pg_Editors.SuspendLayout()
-        Me.BonfireTabControl1.SuspendLayout()
         Me.JSContextMenu.SuspendLayout()
         Me.CSSContextMenu.SuspendLayout()
         Me.MainEditorContextMenu.SuspendLayout()
         Me.redirectMakerContextMenu.SuspendLayout()
+        Me.Pgs_Main.SuspendLayout()
+        Me.Pg_Details.SuspendLayout()
+        Me.ProjectMan_grp.SuspendLayout()
+        Me.jsLibraries_grp.SuspendLayout()
+        Me.cssLibraries_grp.SuspendLayout()
+        Me.Misc_grp.SuspendLayout()
+        Me.Pg_MetaTags.SuspendLayout()
+        Me.Pg_Editors.SuspendLayout()
+        Me.BonfireTabControl1.SuspendLayout()
+        Me.Pg_Editors_Body.SuspendLayout()
+        CType(Me.bodyEditor_edt, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Pg_Editors_Header.SuspendLayout()
+        CType(Me.FastColoredTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Pg_Editors_Footer.SuspendLayout()
+        CType(Me.FastColoredTextBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.pg_Preview.SuspendLayout()
+        Me.Pg_Export.SuspendLayout()
+        Me.Pg_About.SuspendLayout()
+        CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'JSContextMenu
+        '
+        Me.JSContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveJSLibrariesToolStripMenuItem, Me.LoadJSLibrariesToolStripMenuItem})
+        Me.JSContextMenu.Name = "JSContextMenu"
+        Me.JSContextMenu.Size = New System.Drawing.Size(161, 48)
+        '
+        'SaveJSLibrariesToolStripMenuItem
+        '
+        Me.SaveJSLibrariesToolStripMenuItem.Name = "SaveJSLibrariesToolStripMenuItem"
+        Me.SaveJSLibrariesToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.SaveJSLibrariesToolStripMenuItem.Text = "Save JS Libraries"
+        '
+        'LoadJSLibrariesToolStripMenuItem
+        '
+        Me.LoadJSLibrariesToolStripMenuItem.Name = "LoadJSLibrariesToolStripMenuItem"
+        Me.LoadJSLibrariesToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.LoadJSLibrariesToolStripMenuItem.Text = "Load JS Libraries"
+        '
+        'CSSContextMenu
+        '
+        Me.CSSContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveCSSLibrariesToolStripMenuItem1, Me.LoadCSSLibrariesToolStripMenuItem1})
+        Me.CSSContextMenu.Name = "CSSContextMenu"
+        Me.CSSContextMenu.Size = New System.Drawing.Size(171, 48)
+        '
+        'SaveCSSLibrariesToolStripMenuItem1
+        '
+        Me.SaveCSSLibrariesToolStripMenuItem1.Name = "SaveCSSLibrariesToolStripMenuItem1"
+        Me.SaveCSSLibrariesToolStripMenuItem1.Size = New System.Drawing.Size(170, 22)
+        Me.SaveCSSLibrariesToolStripMenuItem1.Text = "Save CSS Libraries"
+        '
+        'LoadCSSLibrariesToolStripMenuItem1
+        '
+        Me.LoadCSSLibrariesToolStripMenuItem1.Name = "LoadCSSLibrariesToolStripMenuItem1"
+        Me.LoadCSSLibrariesToolStripMenuItem1.Size = New System.Drawing.Size(170, 22)
+        Me.LoadCSSLibrariesToolStripMenuItem1.Text = "Load CSS Libraries"
+        '
+        'MainEditorContextMenu
+        '
+        Me.MainEditorContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveEditorProjectToolStripMenuItem, Me.LoadEditorProjectToolStripMenuItem})
+        Me.MainEditorContextMenu.Name = "MainEditorContextMenu"
+        Me.MainEditorContextMenu.Size = New System.Drawing.Size(175, 48)
+        '
+        'SaveEditorProjectToolStripMenuItem
+        '
+        Me.SaveEditorProjectToolStripMenuItem.Name = "SaveEditorProjectToolStripMenuItem"
+        Me.SaveEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.SaveEditorProjectToolStripMenuItem.Text = "Save Editor Project"
+        '
+        'LoadEditorProjectToolStripMenuItem
+        '
+        Me.LoadEditorProjectToolStripMenuItem.Name = "LoadEditorProjectToolStripMenuItem"
+        Me.LoadEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.LoadEditorProjectToolStripMenuItem.Text = "Load Editor Project"
+        '
+        'redirectMakerContextMenu
+        '
+        Me.redirectMakerContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveRedirectToolStripMenuItem})
+        Me.redirectMakerContextMenu.Name = "redirectMakerContextMenu"
+        Me.redirectMakerContextMenu.Size = New System.Drawing.Size(145, 26)
+        '
+        'SaveRedirectToolStripMenuItem
+        '
+        Me.SaveRedirectToolStripMenuItem.Name = "SaveRedirectToolStripMenuItem"
+        Me.SaveRedirectToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
+        Me.SaveRedirectToolStripMenuItem.Text = "Save Redirect"
+        '
+        'Main_Timer
+        '
         '
         'Pgs_Main
         '
@@ -122,13 +211,13 @@ Partial Class EasyHTML_Two
         'Pg_Details
         '
         Me.Pg_Details.BackColor = System.Drawing.Color.White
+        Me.Pg_Details.Controls.Add(Me.ProjectMan_grp)
         Me.Pg_Details.Controls.Add(Me.jsLibraries_grp)
         Me.Pg_Details.Controls.Add(Me.cssLibraries_grp)
         Me.Pg_Details.Controls.Add(Me.Misc_grp)
         Me.Pg_Details.Controls.Add(Me.pageTitle_lbl)
         Me.Pg_Details.Controls.Add(Me.Beta_Notice_ProMsg)
         Me.Pg_Details.Controls.Add(Me.returnToLauncher_btn)
-        Me.Pg_Details.Controls.Add(Me.editorControls_grp)
         Me.Pg_Details.Controls.Add(Me.pageTitle_txtBox)
         Me.Pg_Details.Location = New System.Drawing.Point(4, 34)
         Me.Pg_Details.Name = "Pg_Details"
@@ -136,6 +225,71 @@ Partial Class EasyHTML_Two
         Me.Pg_Details.Size = New System.Drawing.Size(876, 592)
         Me.Pg_Details.TabIndex = 0
         Me.Pg_Details.Text = "Details"
+        '
+        'ProjectMan_grp
+        '
+        Me.ProjectMan_grp.BackColor = System.Drawing.Color.FromArgb(CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer), CType(CType(250, Byte), Integer))
+        Me.ProjectMan_grp.Controls.Add(Me.loadWholeProject_btn)
+        Me.ProjectMan_grp.Controls.Add(Me.saveWholeProject_btn)
+        Me.ProjectMan_grp.Controls.Add(Me.ProMessage1)
+        Me.ProjectMan_grp.Controls.Add(Me.ProjectManTitle_lbl)
+        Me.ProjectMan_grp.Location = New System.Drawing.Point(660, 6)
+        Me.ProjectMan_grp.Name = "ProjectMan_grp"
+        Me.ProjectMan_grp.Size = New System.Drawing.Size(210, 578)
+        Me.ProjectMan_grp.TabIndex = 35
+        Me.ProjectMan_grp.Text = "BonfireGroupBox1"
+        '
+        'loadWholeProject_btn
+        '
+        Me.loadWholeProject_btn.ButtonStyle = EasyHTML_2.BonfireButton.Style.Light
+        Me.loadWholeProject_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.loadWholeProject_btn.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.loadWholeProject_btn.Image = Nothing
+        Me.loadWholeProject_btn.Location = New System.Drawing.Point(3, 50)
+        Me.loadWholeProject_btn.Name = "loadWholeProject_btn"
+        Me.loadWholeProject_btn.RoundedCorners = True
+        Me.loadWholeProject_btn.Size = New System.Drawing.Size(204, 26)
+        Me.loadWholeProject_btn.TabIndex = 6
+        Me.loadWholeProject_btn.Text = "Load Whole Project"
+        '
+        'saveWholeProject_btn
+        '
+        Me.saveWholeProject_btn.ButtonStyle = EasyHTML_2.BonfireButton.Style.Light
+        Me.saveWholeProject_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.saveWholeProject_btn.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.saveWholeProject_btn.Image = Nothing
+        Me.saveWholeProject_btn.Location = New System.Drawing.Point(3, 18)
+        Me.saveWholeProject_btn.Name = "saveWholeProject_btn"
+        Me.saveWholeProject_btn.RoundedCorners = True
+        Me.saveWholeProject_btn.Size = New System.Drawing.Size(204, 26)
+        Me.saveWholeProject_btn.TabIndex = 4
+        Me.saveWholeProject_btn.Text = "Save Whole Project"
+        '
+        'ProMessage1
+        '
+        Me.ProMessage1.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.ProMessage1.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ProMessage1.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.ProMessage1.Header = "Tip!"
+        Me.ProMessage1.HeaderFont = New System.Drawing.Font("Verdana", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.ProMessage1.Location = New System.Drawing.Point(0, 481)
+        Me.ProMessage1.Name = "ProMessage1"
+        Me.ProMessage1.Size = New System.Drawing.Size(210, 97)
+        Me.ProMessage1.SizeByText = False
+        Me.ProMessage1.TabIndex = 5
+        Me.ProMessage1.Text = "If you don't want to return to the details tab to save to project, right click on" &
+    " the editor you want to save!"
+        '
+        'ProjectManTitle_lbl
+        '
+        Me.ProjectManTitle_lbl.AutoSize = True
+        Me.ProjectManTitle_lbl.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.ProjectManTitle_lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer))
+        Me.ProjectManTitle_lbl.Location = New System.Drawing.Point(3, 2)
+        Me.ProjectManTitle_lbl.Name = "ProjectManTitle_lbl"
+        Me.ProjectManTitle_lbl.Size = New System.Drawing.Size(124, 13)
+        Me.ProjectManTitle_lbl.TabIndex = 4
+        Me.ProjectManTitle_lbl.Text = "Project Management"
         '
         'jsLibraries_grp
         '
@@ -151,6 +305,7 @@ Partial Class EasyHTML_Two
         '
         'jsImport_lst
         '
+        Me.jsImport_lst.ContextMenuStrip = Me.JSContextMenu
         Me.jsImport_lst.FormattingEnabled = True
         Me.jsImport_lst.Location = New System.Drawing.Point(3, 18)
         Me.jsImport_lst.Name = "jsImport_lst"
@@ -165,7 +320,7 @@ Partial Class EasyHTML_Two
         Me.jsImport_btn.Image = Nothing
         Me.jsImport_btn.Location = New System.Drawing.Point(3, 549)
         Me.jsImport_btn.Name = "jsImport_btn"
-        Me.jsImport_btn.RoundedCorners = False
+        Me.jsImport_btn.RoundedCorners = True
         Me.jsImport_btn.Size = New System.Drawing.Size(207, 26)
         Me.jsImport_btn.TabIndex = 2
         Me.jsImport_btn.Text = "Add JS Library"
@@ -195,6 +350,7 @@ Partial Class EasyHTML_Two
         '
         'cssImport_lst
         '
+        Me.cssImport_lst.ContextMenuStrip = Me.CSSContextMenu
         Me.cssImport_lst.FormattingEnabled = True
         Me.cssImport_lst.Location = New System.Drawing.Point(3, 18)
         Me.cssImport_lst.Name = "cssImport_lst"
@@ -209,7 +365,7 @@ Partial Class EasyHTML_Two
         Me.cssImport_btn.Image = Nothing
         Me.cssImport_btn.Location = New System.Drawing.Point(3, 549)
         Me.cssImport_btn.Name = "cssImport_btn"
-        Me.cssImport_btn.RoundedCorners = False
+        Me.cssImport_btn.RoundedCorners = True
         Me.cssImport_btn.Size = New System.Drawing.Size(207, 26)
         Me.cssImport_btn.TabIndex = 1
         Me.cssImport_btn.Text = "Add CSS Library"
@@ -327,118 +483,6 @@ Partial Class EasyHTML_Two
         Me.returnToLauncher_btn.Text = "Return to Launcher"
         Me.returnToLauncher_btn.TextAlignment = System.Windows.Forms.HorizontalAlignment.Center
         '
-        'editorControls_grp
-        '
-        Me.editorControls_grp.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.editorControls_grp.Controls.Add(Me.Button1)
-        Me.editorControls_grp.Controls.Add(Me.Button2)
-        Me.editorControls_grp.Controls.Add(Me.Button3)
-        Me.editorControls_grp.Controls.Add(Me.newProject_btn)
-        Me.editorControls_grp.Controls.Add(Me.loadCssLibs_btn)
-        Me.editorControls_grp.Controls.Add(Me.lbl_Tip1)
-        Me.editorControls_grp.Controls.Add(Me.loadJsLibs_btn)
-        Me.editorControls_grp.Controls.Add(Me.loadEditorProj_btn)
-        Me.editorControls_grp.Location = New System.Drawing.Point(660, 6)
-        Me.editorControls_grp.Name = "editorControls_grp"
-        Me.editorControls_grp.Size = New System.Drawing.Size(208, 578)
-        Me.editorControls_grp.TabIndex = 28
-        Me.editorControls_grp.TabStop = False
-        Me.editorControls_grp.Text = "Project Management"
-        '
-        'Button1
-        '
-        Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(6, 50)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(196, 23)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "Save CSS Libraries"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(6, 79)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(196, 23)
-        Me.Button2.TabIndex = 16
-        Me.Button2.Text = "Save JS Libraries"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'Button3
-        '
-        Me.Button3.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button3.ForeColor = System.Drawing.Color.Black
-        Me.Button3.Location = New System.Drawing.Point(6, 108)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(196, 23)
-        Me.Button3.TabIndex = 17
-        Me.Button3.Text = "Save Editor Project"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
-        'newProject_btn
-        '
-        Me.newProject_btn.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.newProject_btn.ForeColor = System.Drawing.Color.Black
-        Me.newProject_btn.Location = New System.Drawing.Point(6, 21)
-        Me.newProject_btn.Name = "newProject_btn"
-        Me.newProject_btn.Size = New System.Drawing.Size(196, 23)
-        Me.newProject_btn.TabIndex = 10
-        Me.newProject_btn.Text = "New Project"
-        Me.newProject_btn.UseVisualStyleBackColor = True
-        '
-        'loadCssLibs_btn
-        '
-        Me.loadCssLibs_btn.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.loadCssLibs_btn.ForeColor = System.Drawing.Color.Black
-        Me.loadCssLibs_btn.Location = New System.Drawing.Point(6, 137)
-        Me.loadCssLibs_btn.Name = "loadCssLibs_btn"
-        Me.loadCssLibs_btn.Size = New System.Drawing.Size(196, 23)
-        Me.loadCssLibs_btn.TabIndex = 11
-        Me.loadCssLibs_btn.Text = "Load CSS Libraries"
-        Me.loadCssLibs_btn.UseVisualStyleBackColor = True
-        '
-        'lbl_Tip1
-        '
-        Me.lbl_Tip1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.lbl_Tip1.Location = New System.Drawing.Point(3, 538)
-        Me.lbl_Tip1.Name = "lbl_Tip1"
-        Me.lbl_Tip1.Size = New System.Drawing.Size(202, 37)
-        Me.lbl_Tip1.TabIndex = 14
-        Me.lbl_Tip1.Text = "Right click on an editor to save that specific part"
-        '
-        'loadJsLibs_btn
-        '
-        Me.loadJsLibs_btn.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.loadJsLibs_btn.ForeColor = System.Drawing.Color.Black
-        Me.loadJsLibs_btn.Location = New System.Drawing.Point(6, 166)
-        Me.loadJsLibs_btn.Name = "loadJsLibs_btn"
-        Me.loadJsLibs_btn.Size = New System.Drawing.Size(196, 23)
-        Me.loadJsLibs_btn.TabIndex = 12
-        Me.loadJsLibs_btn.Text = "Load JS Libraries"
-        Me.loadJsLibs_btn.UseVisualStyleBackColor = True
-        '
-        'loadEditorProj_btn
-        '
-        Me.loadEditorProj_btn.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.loadEditorProj_btn.ForeColor = System.Drawing.Color.Black
-        Me.loadEditorProj_btn.Location = New System.Drawing.Point(6, 195)
-        Me.loadEditorProj_btn.Name = "loadEditorProj_btn"
-        Me.loadEditorProj_btn.Size = New System.Drawing.Size(196, 23)
-        Me.loadEditorProj_btn.TabIndex = 13
-        Me.loadEditorProj_btn.Text = "Load Editor Project"
-        Me.loadEditorProj_btn.UseVisualStyleBackColor = True
-        '
         'pageTitle_txtBox
         '
         Me.pageTitle_txtBox.Location = New System.Drawing.Point(6, 19)
@@ -450,8 +494,8 @@ Partial Class EasyHTML_Two
         'Pg_MetaTags
         '
         Me.Pg_MetaTags.BackColor = System.Drawing.Color.White
-        Me.Pg_MetaTags.Controls.Add(Me.BonfireLabel2)
-        Me.Pg_MetaTags.Controls.Add(Me.BonfireLabel1)
+        Me.Pg_MetaTags.Controls.Add(Me.description_lbl)
+        Me.Pg_MetaTags.Controls.Add(Me.title_lbl)
         Me.Pg_MetaTags.Controls.Add(Me.description_txtBox)
         Me.Pg_MetaTags.Controls.Add(Me.title_txtBox)
         Me.Pg_MetaTags.Controls.Add(Me.keywords_lbl)
@@ -466,33 +510,34 @@ Partial Class EasyHTML_Two
         Me.Pg_MetaTags.TabIndex = 2
         Me.Pg_MetaTags.Text = "Meta Tags"
         '
-        'BonfireLabel2
+        'description_lbl
         '
-        Me.BonfireLabel2.AutoSize = True
-        Me.BonfireLabel2.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.BonfireLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer))
-        Me.BonfireLabel2.Location = New System.Drawing.Point(8, 38)
-        Me.BonfireLabel2.Name = "BonfireLabel2"
-        Me.BonfireLabel2.Size = New System.Drawing.Size(71, 13)
-        Me.BonfireLabel2.TabIndex = 15
-        Me.BonfireLabel2.Text = "Description"
+        Me.description_lbl.AutoSize = True
+        Me.description_lbl.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.description_lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer))
+        Me.description_lbl.Location = New System.Drawing.Point(8, 38)
+        Me.description_lbl.Name = "description_lbl"
+        Me.description_lbl.Size = New System.Drawing.Size(71, 13)
+        Me.description_lbl.TabIndex = 15
+        Me.description_lbl.Text = "Description"
         '
-        'BonfireLabel1
+        'title_lbl
         '
-        Me.BonfireLabel1.AutoSize = True
-        Me.BonfireLabel1.Font = New System.Drawing.Font("Verdana", 8.0!)
-        Me.BonfireLabel1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer))
-        Me.BonfireLabel1.Location = New System.Drawing.Point(8, 10)
-        Me.BonfireLabel1.Name = "BonfireLabel1"
-        Me.BonfireLabel1.Size = New System.Drawing.Size(31, 13)
-        Me.BonfireLabel1.TabIndex = 14
-        Me.BonfireLabel1.Text = "Title"
+        Me.title_lbl.AutoSize = True
+        Me.title_lbl.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.title_lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer))
+        Me.title_lbl.Location = New System.Drawing.Point(8, 10)
+        Me.title_lbl.Name = "title_lbl"
+        Me.title_lbl.Size = New System.Drawing.Size(31, 13)
+        Me.title_lbl.TabIndex = 14
+        Me.title_lbl.Text = "Title"
         '
         'description_txtBox
         '
         Me.description_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.description_txtBox.Location = New System.Drawing.Point(85, 35)
+        Me.description_txtBox.MaxLength = 160
         Me.description_txtBox.Name = "description_txtBox"
         Me.description_txtBox.Size = New System.Drawing.Size(783, 22)
         Me.description_txtBox.TabIndex = 13
@@ -502,6 +547,7 @@ Partial Class EasyHTML_Two
         Me.title_txtBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.title_txtBox.Location = New System.Drawing.Point(45, 7)
+        Me.title_txtBox.MaxLength = 70
         Me.title_txtBox.Name = "title_txtBox"
         Me.title_txtBox.Size = New System.Drawing.Size(823, 22)
         Me.title_txtBox.TabIndex = 11
@@ -596,6 +642,8 @@ Partial Class EasyHTML_Two
         'Pg_Editors_Body
         '
         Me.Pg_Editors_Body.BackColor = System.Drawing.Color.White
+        Me.Pg_Editors_Body.Controls.Add(Me.bodyAddElement_btn)
+        Me.Pg_Editors_Body.Controls.Add(Me.bodyEditor_edt)
         Me.Pg_Editors_Body.Location = New System.Drawing.Point(4, 34)
         Me.Pg_Editors_Body.Name = "Pg_Editors_Body"
         Me.Pg_Editors_Body.Padding = New System.Windows.Forms.Padding(3)
@@ -603,18 +651,100 @@ Partial Class EasyHTML_Two
         Me.Pg_Editors_Body.TabIndex = 0
         Me.Pg_Editors_Body.Text = "Body"
         '
+        'bodyAddElement_btn
+        '
+        Me.bodyAddElement_btn.ButtonStyle = EasyHTML_2.BonfireButton.Style.Dark
+        Me.bodyAddElement_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.bodyAddElement_btn.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.bodyAddElement_btn.Image = Nothing
+        Me.bodyAddElement_btn.Location = New System.Drawing.Point(755, 516)
+        Me.bodyAddElement_btn.Name = "bodyAddElement_btn"
+        Me.bodyAddElement_btn.RoundedCorners = True
+        Me.bodyAddElement_btn.Size = New System.Drawing.Size(101, 26)
+        Me.bodyAddElement_btn.TabIndex = 1
+        Me.bodyAddElement_btn.Text = "Add Element"
+        '
+        'bodyEditor_edt
+        '
+        Me.bodyEditor_edt.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.bodyEditor_edt.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
+        Me.bodyEditor_edt.AutoIndentCharsPatterns = ""
+        Me.bodyEditor_edt.AutoScrollMinSize = New System.Drawing.Size(114, 14)
+        Me.bodyEditor_edt.BackBrush = Nothing
+        Me.bodyEditor_edt.CharHeight = 14
+        Me.bodyEditor_edt.CharWidth = 8
+        Me.bodyEditor_edt.CommentPrefix = Nothing
+        Me.bodyEditor_edt.CurrentPenSize = 3
+        Me.bodyEditor_edt.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.bodyEditor_edt.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.bodyEditor_edt.DocumentPath = Nothing
+        Me.bodyEditor_edt.Font = New System.Drawing.Font("Courier New", 9.75!)
+        Me.bodyEditor_edt.IsReplaceMode = False
+        Me.bodyEditor_edt.Language = FastColoredTextBoxNS.Language.HTML
+        Me.bodyEditor_edt.LeftBracket = Global.Microsoft.VisualBasic.ChrW(60)
+        Me.bodyEditor_edt.LeftBracket2 = Global.Microsoft.VisualBasic.ChrW(40)
+        Me.bodyEditor_edt.Location = New System.Drawing.Point(6, 6)
+        Me.bodyEditor_edt.Name = "bodyEditor_edt"
+        Me.bodyEditor_edt.Paddings = New System.Windows.Forms.Padding(0)
+        Me.bodyEditor_edt.RightBracket = Global.Microsoft.VisualBasic.ChrW(62)
+        Me.bodyEditor_edt.RightBracket2 = Global.Microsoft.VisualBasic.ChrW(41)
+        Me.bodyEditor_edt.SelectionChangedDelayedEnabled = False
+        Me.bodyEditor_edt.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.bodyEditor_edt.ServiceColors = Nothing
+        Me.bodyEditor_edt.Size = New System.Drawing.Size(850, 504)
+        Me.bodyEditor_edt.TabIndex = 0
+        Me.bodyEditor_edt.Text = "<p>Welcome</p>"
+        Me.bodyEditor_edt.Zoom = 100
+        '
         'Pg_Editors_Header
         '
         Me.Pg_Editors_Header.BackColor = System.Drawing.Color.White
+        Me.Pg_Editors_Header.Controls.Add(Me.FastColoredTextBox1)
         Me.Pg_Editors_Header.Location = New System.Drawing.Point(4, 34)
         Me.Pg_Editors_Header.Name = "Pg_Editors_Header"
         Me.Pg_Editors_Header.Size = New System.Drawing.Size(862, 548)
         Me.Pg_Editors_Header.TabIndex = 2
         Me.Pg_Editors_Header.Text = "Header"
         '
+        'FastColoredTextBox1
+        '
+        Me.FastColoredTextBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FastColoredTextBox1.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
+        Me.FastColoredTextBox1.AutoIndentCharsPatterns = ""
+        Me.FastColoredTextBox1.AutoScrollMinSize = New System.Drawing.Size(362, 14)
+        Me.FastColoredTextBox1.BackBrush = Nothing
+        Me.FastColoredTextBox1.CharHeight = 14
+        Me.FastColoredTextBox1.CharWidth = 8
+        Me.FastColoredTextBox1.CommentPrefix = Nothing
+        Me.FastColoredTextBox1.CurrentPenSize = 3
+        Me.FastColoredTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.FastColoredTextBox1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.FastColoredTextBox1.DocumentPath = Nothing
+        Me.FastColoredTextBox1.IsReplaceMode = False
+        Me.FastColoredTextBox1.Language = FastColoredTextBoxNS.Language.HTML
+        Me.FastColoredTextBox1.LeftBracket = Global.Microsoft.VisualBasic.ChrW(60)
+        Me.FastColoredTextBox1.LeftBracket2 = Global.Microsoft.VisualBasic.ChrW(40)
+        Me.FastColoredTextBox1.Location = New System.Drawing.Point(6, 6)
+        Me.FastColoredTextBox1.Name = "FastColoredTextBox1"
+        Me.FastColoredTextBox1.Paddings = New System.Windows.Forms.Padding(0)
+        Me.FastColoredTextBox1.RightBracket = Global.Microsoft.VisualBasic.ChrW(62)
+        Me.FastColoredTextBox1.RightBracket2 = Global.Microsoft.VisualBasic.ChrW(41)
+        Me.FastColoredTextBox1.SelectionChangedDelayedEnabled = False
+        Me.FastColoredTextBox1.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.FastColoredTextBox1.ServiceColors = Nothing
+        Me.FastColoredTextBox1.Size = New System.Drawing.Size(850, 536)
+        Me.FastColoredTextBox1.TabIndex = 1
+        Me.FastColoredTextBox1.Text = "<link rel=""stylesheet"" href=""/css/style.css"">"
+        Me.FastColoredTextBox1.Zoom = 100
+        '
         'Pg_Editors_Footer
         '
         Me.Pg_Editors_Footer.BackColor = System.Drawing.Color.White
+        Me.Pg_Editors_Footer.Controls.Add(Me.FastColoredTextBox2)
         Me.Pg_Editors_Footer.Location = New System.Drawing.Point(4, 34)
         Me.Pg_Editors_Footer.Name = "Pg_Editors_Footer"
         Me.Pg_Editors_Footer.Padding = New System.Windows.Forms.Padding(3)
@@ -622,32 +752,187 @@ Partial Class EasyHTML_Two
         Me.Pg_Editors_Footer.TabIndex = 1
         Me.Pg_Editors_Footer.Text = "Footer"
         '
+        'FastColoredTextBox2
+        '
+        Me.FastColoredTextBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.FastColoredTextBox2.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
+        Me.FastColoredTextBox2.AutoIndentCharsPatterns = ""
+        Me.FastColoredTextBox2.AutoScrollMinSize = New System.Drawing.Size(162, 14)
+        Me.FastColoredTextBox2.BackBrush = Nothing
+        Me.FastColoredTextBox2.CharHeight = 14
+        Me.FastColoredTextBox2.CharWidth = 8
+        Me.FastColoredTextBox2.CommentPrefix = Nothing
+        Me.FastColoredTextBox2.CurrentPenSize = 3
+        Me.FastColoredTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.FastColoredTextBox2.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.FastColoredTextBox2.DocumentPath = Nothing
+        Me.FastColoredTextBox2.IsReplaceMode = False
+        Me.FastColoredTextBox2.Language = FastColoredTextBoxNS.Language.HTML
+        Me.FastColoredTextBox2.LeftBracket = Global.Microsoft.VisualBasic.ChrW(60)
+        Me.FastColoredTextBox2.LeftBracket2 = Global.Microsoft.VisualBasic.ChrW(40)
+        Me.FastColoredTextBox2.Location = New System.Drawing.Point(6, 6)
+        Me.FastColoredTextBox2.Name = "FastColoredTextBox2"
+        Me.FastColoredTextBox2.Paddings = New System.Windows.Forms.Padding(0)
+        Me.FastColoredTextBox2.RightBracket = Global.Microsoft.VisualBasic.ChrW(62)
+        Me.FastColoredTextBox2.RightBracket2 = Global.Microsoft.VisualBasic.ChrW(41)
+        Me.FastColoredTextBox2.SelectionChangedDelayedEnabled = False
+        Me.FastColoredTextBox2.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.FastColoredTextBox2.ServiceColors = Nothing
+        Me.FastColoredTextBox2.Size = New System.Drawing.Size(850, 536)
+        Me.FastColoredTextBox2.TabIndex = 2
+        Me.FastColoredTextBox2.Text = "<!-- Footer Code -->"
+        Me.FastColoredTextBox2.Zoom = 100
+        '
         'pg_Preview
         '
         Me.pg_Preview.BackColor = System.Drawing.Color.White
+        Me.pg_Preview.Controls.Add(Me.PreviewAlert_alrt)
+        Me.pg_Preview.Controls.Add(Me.previewPython_btn)
+        Me.pg_Preview.Controls.Add(Me.previewBrowser_btn)
         Me.pg_Preview.Location = New System.Drawing.Point(4, 34)
         Me.pg_Preview.Name = "pg_Preview"
         Me.pg_Preview.Size = New System.Drawing.Size(876, 592)
         Me.pg_Preview.TabIndex = 3
         Me.pg_Preview.Text = "Preview"
         '
+        'PreviewAlert_alrt
+        '
+        Me.PreviewAlert_alrt.BackColor = System.Drawing.Color.LightSteelBlue
+        Me.PreviewAlert_alrt.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.PreviewAlert_alrt.Header = "Hello!"
+        Me.PreviewAlert_alrt.HeaderFont = New System.Drawing.Font("Verdana", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.PreviewAlert_alrt.Location = New System.Drawing.Point(8, 504)
+        Me.PreviewAlert_alrt.Name = "PreviewAlert_alrt"
+        Me.PreviewAlert_alrt.Size = New System.Drawing.Size(860, 80)
+        Me.PreviewAlert_alrt.SizeByText = False
+        Me.PreviewAlert_alrt.TabIndex = 2
+        Me.PreviewAlert_alrt.Text = "I know that there are only two options at the moment.. This is because these are " &
+    "the only two I could figure out how to run at the moment. I will add more when I" &
+    " can."
+        '
+        'previewPython_btn
+        '
+        Me.previewPython_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.previewPython_btn.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.previewPython_btn.Image = Nothing
+        Me.previewPython_btn.Location = New System.Drawing.Point(214, 3)
+        Me.previewPython_btn.Name = "previewPython_btn"
+        Me.previewPython_btn.Size = New System.Drawing.Size(200, 149)
+        Me.previewPython_btn.TabIndex = 1
+        Me.previewPython_btn.Text = "This will generate a simple HTML file, then will launch a Python HTTP.SERVER modu" &
+    "al to run a localhost server. Requires Python."
+        Me.previewPython_btn.Title = "Python Preview"
+        Me.previewPython_btn.TitleFont = New System.Drawing.Font("Verdana", 14.0!)
+        '
+        'previewBrowser_btn
+        '
+        Me.previewBrowser_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.previewBrowser_btn.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.previewBrowser_btn.Image = Nothing
+        Me.previewBrowser_btn.Location = New System.Drawing.Point(8, 3)
+        Me.previewBrowser_btn.Name = "previewBrowser_btn"
+        Me.previewBrowser_btn.Size = New System.Drawing.Size(200, 149)
+        Me.previewBrowser_btn.TabIndex = 0
+        Me.previewBrowser_btn.Text = "Generate a simple HTML file for you to preview your page with. This will open in " &
+    "your prefered browser. This file is placed in a temporary folder."
+        Me.previewBrowser_btn.Title = "Browser Preview"
+        Me.previewBrowser_btn.TitleFont = New System.Drawing.Font("Verdana", 14.0!)
+        '
         'Pg_Export
         '
         Me.Pg_Export.BackColor = System.Drawing.Color.White
+        Me.Pg_Export.Controls.Add(Me.export_btn)
+        Me.Pg_Export.Controls.Add(Me.exportPreview_btn)
         Me.Pg_Export.Location = New System.Drawing.Point(4, 34)
         Me.Pg_Export.Name = "Pg_Export"
         Me.Pg_Export.Size = New System.Drawing.Size(876, 592)
         Me.Pg_Export.TabIndex = 4
         Me.Pg_Export.Text = "Export"
         '
+        'export_btn
+        '
+        Me.export_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.export_btn.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.export_btn.Image = Nothing
+        Me.export_btn.Location = New System.Drawing.Point(268, 3)
+        Me.export_btn.Name = "export_btn"
+        Me.export_btn.Size = New System.Drawing.Size(200, 146)
+        Me.export_btn.TabIndex = 1
+        Me.export_btn.Text = "Just export the code."
+        Me.export_btn.Title = "Just Export"
+        Me.export_btn.TitleFont = New System.Drawing.Font("Verdana", 14.0!)
+        '
+        'exportPreview_btn
+        '
+        Me.exportPreview_btn.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.exportPreview_btn.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.exportPreview_btn.Image = Nothing
+        Me.exportPreview_btn.Location = New System.Drawing.Point(8, 3)
+        Me.exportPreview_btn.Name = "exportPreview_btn"
+        Me.exportPreview_btn.Size = New System.Drawing.Size(254, 146)
+        Me.exportPreview_btn.TabIndex = 0
+        Me.exportPreview_btn.Text = "Preview the code you have made, and then you can choose to export it or not!"
+        Me.exportPreview_btn.Title = "Preview Code & Export"
+        Me.exportPreview_btn.TitleFont = New System.Drawing.Font("Verdana", 14.0!)
+        '
         'Pg_About
         '
         Me.Pg_About.BackColor = System.Drawing.Color.White
+        Me.Pg_About.Controls.Add(Me.gnuGpl_pic)
+        Me.Pg_About.Controls.Add(Me.PictureBox1)
+        Me.Pg_About.Controls.Add(Me.about_lbl)
+        Me.Pg_About.Controls.Add(Me.aboutHeader_lbl)
         Me.Pg_About.Location = New System.Drawing.Point(4, 34)
         Me.Pg_About.Name = "Pg_About"
         Me.Pg_About.Size = New System.Drawing.Size(876, 592)
         Me.Pg_About.TabIndex = 5
         Me.Pg_About.Text = "About"
+        '
+        'gnuGpl_pic
+        '
+        Me.gnuGpl_pic.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.gnuGpl_pic.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.gnuGpl_pic.Image = Global.EasyHTML_2.My.Resources.Resources.GNUGPL3
+        Me.gnuGpl_pic.Location = New System.Drawing.Point(732, 516)
+        Me.gnuGpl_pic.Name = "gnuGpl_pic"
+        Me.gnuGpl_pic.Size = New System.Drawing.Size(136, 68)
+        Me.gnuGpl_pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.gnuGpl_pic.TabIndex = 6
+        Me.gnuGpl_pic.TabStop = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = Global.EasyHTML_2.My.Resources.Resources.EasyHTML2_logo
+        Me.PictureBox1.Location = New System.Drawing.Point(3, 409)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(183, 180)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.PictureBox1.TabIndex = 2
+        Me.PictureBox1.TabStop = False
+        '
+        'about_lbl
+        '
+        Me.about_lbl.Dock = System.Windows.Forms.DockStyle.Top
+        Me.about_lbl.Font = New System.Drawing.Font("Verdana", 8.0!)
+        Me.about_lbl.ForeColor = System.Drawing.Color.FromArgb(CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer), CType(CType(135, Byte), Integer))
+        Me.about_lbl.Location = New System.Drawing.Point(0, 41)
+        Me.about_lbl.Name = "about_lbl"
+        Me.about_lbl.Size = New System.Drawing.Size(876, 46)
+        Me.about_lbl.TabIndex = 1
+        Me.about_lbl.Text = resources.GetString("about_lbl.Text")
+        '
+        'aboutHeader_lbl
+        '
+        Me.aboutHeader_lbl.Dock = System.Windows.Forms.DockStyle.Top
+        Me.aboutHeader_lbl.Font = New System.Drawing.Font("Verdana", 10.0!, System.Drawing.FontStyle.Bold)
+        Me.aboutHeader_lbl.Location = New System.Drawing.Point(0, 0)
+        Me.aboutHeader_lbl.Name = "aboutHeader_lbl"
+        Me.aboutHeader_lbl.Size = New System.Drawing.Size(876, 41)
+        Me.aboutHeader_lbl.TabIndex = 0
+        Me.aboutHeader_lbl.Text = "EasyHTML 2"
+        Me.aboutHeader_lbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Pg_ExtraStuff
         '
@@ -657,72 +942,6 @@ Partial Class EasyHTML_Two
         Me.Pg_ExtraStuff.Size = New System.Drawing.Size(876, 592)
         Me.Pg_ExtraStuff.TabIndex = 6
         Me.Pg_ExtraStuff.Text = "Extra Fun Stuff"
-        '
-        'JSContextMenu
-        '
-        Me.JSContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveJSLibrariesToolStripMenuItem, Me.LoadJSLibrariesToolStripMenuItem})
-        Me.JSContextMenu.Name = "JSContextMenu"
-        Me.JSContextMenu.Size = New System.Drawing.Size(161, 48)
-        '
-        'SaveJSLibrariesToolStripMenuItem
-        '
-        Me.SaveJSLibrariesToolStripMenuItem.Name = "SaveJSLibrariesToolStripMenuItem"
-        Me.SaveJSLibrariesToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.SaveJSLibrariesToolStripMenuItem.Text = "Save JS Libraries"
-        '
-        'LoadJSLibrariesToolStripMenuItem
-        '
-        Me.LoadJSLibrariesToolStripMenuItem.Name = "LoadJSLibrariesToolStripMenuItem"
-        Me.LoadJSLibrariesToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
-        Me.LoadJSLibrariesToolStripMenuItem.Text = "Load JS Libraries"
-        '
-        'CSSContextMenu
-        '
-        Me.CSSContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveCSSLibrariesToolStripMenuItem1, Me.LoadCSSLibrariesToolStripMenuItem1})
-        Me.CSSContextMenu.Name = "CSSContextMenu"
-        Me.CSSContextMenu.Size = New System.Drawing.Size(171, 48)
-        '
-        'SaveCSSLibrariesToolStripMenuItem1
-        '
-        Me.SaveCSSLibrariesToolStripMenuItem1.Name = "SaveCSSLibrariesToolStripMenuItem1"
-        Me.SaveCSSLibrariesToolStripMenuItem1.Size = New System.Drawing.Size(170, 22)
-        Me.SaveCSSLibrariesToolStripMenuItem1.Text = "Save CSS Libraries"
-        '
-        'LoadCSSLibrariesToolStripMenuItem1
-        '
-        Me.LoadCSSLibrariesToolStripMenuItem1.Name = "LoadCSSLibrariesToolStripMenuItem1"
-        Me.LoadCSSLibrariesToolStripMenuItem1.Size = New System.Drawing.Size(170, 22)
-        Me.LoadCSSLibrariesToolStripMenuItem1.Text = "Load CSS Libraries"
-        '
-        'MainEditorContextMenu
-        '
-        Me.MainEditorContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveEditorProjectToolStripMenuItem, Me.LoadEditorProjectToolStripMenuItem})
-        Me.MainEditorContextMenu.Name = "MainEditorContextMenu"
-        Me.MainEditorContextMenu.Size = New System.Drawing.Size(175, 48)
-        '
-        'SaveEditorProjectToolStripMenuItem
-        '
-        Me.SaveEditorProjectToolStripMenuItem.Name = "SaveEditorProjectToolStripMenuItem"
-        Me.SaveEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
-        Me.SaveEditorProjectToolStripMenuItem.Text = "Save Editor Project"
-        '
-        'LoadEditorProjectToolStripMenuItem
-        '
-        Me.LoadEditorProjectToolStripMenuItem.Name = "LoadEditorProjectToolStripMenuItem"
-        Me.LoadEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
-        Me.LoadEditorProjectToolStripMenuItem.Text = "Load Editor Project"
-        '
-        'redirectMakerContextMenu
-        '
-        Me.redirectMakerContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveRedirectToolStripMenuItem})
-        Me.redirectMakerContextMenu.Name = "redirectMakerContextMenu"
-        Me.redirectMakerContextMenu.Size = New System.Drawing.Size(145, 26)
-        '
-        'SaveRedirectToolStripMenuItem
-        '
-        Me.SaveRedirectToolStripMenuItem.Name = "SaveRedirectToolStripMenuItem"
-        Me.SaveRedirectToolStripMenuItem.Size = New System.Drawing.Size(144, 22)
-        Me.SaveRedirectToolStripMenuItem.Text = "Save Redirect"
         '
         'EasyHTML_Two
         '
@@ -735,23 +954,36 @@ Partial Class EasyHTML_Two
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EasyHTML 2"
         Me.TransparencyKey = System.Drawing.Color.Fuchsia
+        Me.JSContextMenu.ResumeLayout(False)
+        Me.CSSContextMenu.ResumeLayout(False)
+        Me.MainEditorContextMenu.ResumeLayout(False)
+        Me.redirectMakerContextMenu.ResumeLayout(False)
         Me.Pgs_Main.ResumeLayout(False)
         Me.Pg_Details.ResumeLayout(False)
         Me.Pg_Details.PerformLayout()
+        Me.ProjectMan_grp.ResumeLayout(False)
+        Me.ProjectMan_grp.PerformLayout()
         Me.jsLibraries_grp.ResumeLayout(False)
         Me.jsLibraries_grp.PerformLayout()
         Me.cssLibraries_grp.ResumeLayout(False)
         Me.cssLibraries_grp.PerformLayout()
         Me.Misc_grp.ResumeLayout(False)
-        Me.editorControls_grp.ResumeLayout(False)
         Me.Pg_MetaTags.ResumeLayout(False)
         Me.Pg_MetaTags.PerformLayout()
         Me.Pg_Editors.ResumeLayout(False)
         Me.BonfireTabControl1.ResumeLayout(False)
-        Me.JSContextMenu.ResumeLayout(False)
-        Me.CSSContextMenu.ResumeLayout(False)
-        Me.MainEditorContextMenu.ResumeLayout(False)
-        Me.redirectMakerContextMenu.ResumeLayout(False)
+        Me.Pg_Editors_Body.ResumeLayout(False)
+        CType(Me.bodyEditor_edt, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Pg_Editors_Header.ResumeLayout(False)
+        CType(Me.FastColoredTextBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Pg_Editors_Footer.ResumeLayout(False)
+        CType(Me.FastColoredTextBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.pg_Preview.ResumeLayout(False)
+        Me.Pg_Export.ResumeLayout(False)
+        Me.Pg_About.ResumeLayout(False)
+        Me.Pg_About.PerformLayout()
+        CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -759,15 +991,6 @@ Partial Class EasyHTML_Two
     Friend WithEvents Pgs_Main As BonfireTabControl
     Friend WithEvents Pg_Details As TabPage
     Friend WithEvents Pg_Editors As TabPage
-    Friend WithEvents editorControls_grp As GroupBox
-    Friend WithEvents Button1 As Button
-    Friend WithEvents Button2 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents newProject_btn As Button
-    Friend WithEvents loadCssLibs_btn As Button
-    Friend WithEvents lbl_Tip1 As Label
-    Friend WithEvents loadJsLibs_btn As Button
-    Friend WithEvents loadEditorProj_btn As Button
     Friend WithEvents pageTitle_txtBox As TextBox
     Friend WithEvents Pg_MetaTags As TabPage
     Friend WithEvents pg_Preview As TabPage
@@ -798,7 +1021,7 @@ Partial Class EasyHTML_Two
     Friend WithEvents LoadEditorProjectToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents redirectMakerContextMenu As ContextMenuStrip
     Friend WithEvents SaveRedirectToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents Timer1 As Timer
+    Friend WithEvents Main_Timer As Timer
     Friend WithEvents SaveDialog As SaveFileDialog
     Friend WithEvents OpenDialog As OpenFileDialog
     Friend WithEvents cssImport_btn As BonfireButton
@@ -811,12 +1034,30 @@ Partial Class EasyHTML_Two
     Friend WithEvents revisit_txtBox As TextBox
     Friend WithEvents keywords_lbl As BonfireLabel
     Friend WithEvents keywords_txtBox As TextBox
-    Friend WithEvents BonfireLabel1 As BonfireLabel
+    Friend WithEvents title_lbl As BonfireLabel
     Friend WithEvents description_txtBox As TextBox
     Friend WithEvents title_txtBox As TextBox
-    Friend WithEvents BonfireLabel2 As BonfireLabel
+    Friend WithEvents description_lbl As BonfireLabel
     Friend WithEvents BonfireTabControl1 As BonfireTabControl
     Friend WithEvents Pg_Editors_Body As TabPage
     Friend WithEvents Pg_Editors_Footer As TabPage
     Friend WithEvents Pg_Editors_Header As TabPage
+    Friend WithEvents bodyEditor_edt As FastColoredTextBoxNS.FastColoredTextBox
+    Friend WithEvents FastColoredTextBox1 As FastColoredTextBoxNS.FastColoredTextBox
+    Friend WithEvents FastColoredTextBox2 As FastColoredTextBoxNS.FastColoredTextBox
+    Friend WithEvents previewBrowser_btn As ProDescriptiveButton
+    Friend WithEvents previewPython_btn As ProDescriptiveButton
+    Friend WithEvents PreviewAlert_alrt As ProMessage
+    Friend WithEvents ProjectMan_grp As BonfireGroupBox
+    Friend WithEvents ProjectManTitle_lbl As BonfireLabel
+    Friend WithEvents bodyAddElement_btn As BonfireButton
+    Friend WithEvents ProMessage1 As ProMessage
+    Friend WithEvents exportPreview_btn As ProDescriptiveButton
+    Friend WithEvents export_btn As ProDescriptiveButton
+    Friend WithEvents aboutHeader_lbl As BonfireLabelHeader
+    Friend WithEvents saveWholeProject_btn As BonfireButton
+    Friend WithEvents loadWholeProject_btn As BonfireButton
+    Friend WithEvents about_lbl As BonfireLabel
+    Friend WithEvents PictureBox1 As PictureBox
+    Friend WithEvents gnuGpl_pic As PictureBox
 End Class

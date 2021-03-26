@@ -466,25 +466,6 @@ Public Class EasyHTML
         Licenses.Show()
     End Sub
 
-    Private Sub builtInPreview_btn_Click(sender As Object, e As EventArgs) Handles builtInPreview_btn.Click
-        Dim path As String = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
-        path = IO.Path.Combine(path, "Temp\EasyHTML") ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
-        Try
-            Timer1.Stop()
-            'Create Preview File
-
-            IO.Directory.CreateDirectory(path) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
-            IO.File.WriteAllText(IO.Path.Combine(path, "Preview.html"), Code_Export_Code_Box.Text) ' Solution By Joel Coehoorn https://stackoverflow.com/a/64594585/7799766
-
-            'Launch Preview File
-            previewWindow.Show()
-            Timer1.Start()
-        Catch ex As Exception
-            MessageBox.Show(ex.ToString, "Error")
-            Timer1.Start()
-        End Try
-    End Sub
-
     Private Sub newUI_btn_Click(sender As Object, e As EventArgs) Handles newUI_btn.Click
 
     End Sub

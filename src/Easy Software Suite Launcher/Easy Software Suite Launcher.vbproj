@@ -203,6 +203,10 @@
       <Project>{26febb86-104f-4ef7-b387-4ae05808d214}</Project>
       <Name>EasyPresskit</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ErrorLogger\ErrorLogger.vbproj">
+      <Project>{8c8bff4b-9f5f-4007-ab4f-8e9de1099cd7}</Project>
+      <Name>ErrorLogger</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\EasyPresskit_logo.png" />

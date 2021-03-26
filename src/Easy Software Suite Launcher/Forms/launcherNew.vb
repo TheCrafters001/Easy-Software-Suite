@@ -24,7 +24,7 @@
         ElseIf appList_lst.SelectedItem = "EasyHTML" Then
             appInfo.Info("EasyHTML", "​EasyHTML is a free to use, easy-to-understand HTML Editor. It has Live Code Preview, and Exporting. You can save, and load, all your projects with ease, and you can easily update existing websites created with it! The Live Code Preview allows you to see what the website code looks like as you update it, and you can export that code with one click!", My.Resources.EasyHTML_Icon)
         ElseIf appList_lst.SelectedItem = "EasyHTML 2" Then
-            appInfo.Info("EasyHTML 2", "​EasyHTML 2 is a free to use, easy-to-understand HTML Editor. It has Live Code Preview, and Exporting. You can save, and load, all your projects with ease, and you can easily update existing websites created with it! The Live Code Preview allows you to see what the website code looks like as you update it, and you can export that code with one click!", My.Resources.EasyHTML_Icon)
+            appInfo.Info("EasyHTML 2", "​EasyHTML 2 is a free to use, easy-to-understand HTML Editor. It has Live Code Preview, and Exporting. You can save, and load, all your projects with ease, and you can easily update existing websites created with it! The Live Code Preview allows you to see what the website code looks like as you update it, and you can export that code with one click!", My.Resources.EasyHTML2_logo)
         ElseIf appList_lst.SelectedItem = "EasyNodeJS" Then
             appInfo.Info("EasyNodeJS", "EasyNodeJS allows you to create, and edit, NodeJS Projects. This project has been discontinued and depreciated.​", My.Resources.EasyNodeJS_Logo1)
         ElseIf appList_lst.SelectedItem = "EasyPresskit" Then

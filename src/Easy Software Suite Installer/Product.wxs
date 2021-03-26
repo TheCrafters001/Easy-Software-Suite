@@ -6,8 +6,8 @@
     <?define EasyPresskit_TargetDir=$(var.EasyPresskit.TargetDir)?>
     <?define Easy Software Suite Launcher_TargetDir=$(var.Easy Software Suite Launcher.TargetDir)?>
     <?define EasyGit_TargetDir=$(var.EasyGit.TargetDir)?>
-    <?define EasyButler_TargetDir=$(var.EasyButler.TargetDir)?><?define EasyHTML 2_TargetDir=$(var.EasyHTML 2.TargetDir)?>
-    <Product Id="*" Name="Easy Software Suite" Language="1033" Version="3.0.5.0" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
+    <?define EasyButler_TargetDir=$(var.EasyButler.TargetDir)?><?define EasyHTML 2_TargetDir=$(var.EasyHTML 2.TargetDir)?><?define ErrorLogger_TargetDir=$(var.ErrorLogger.TargetDir)?>
+    <Product Id="*" Name="Easy Software Suite" Language="1033" Version="3.0.6.0" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
         <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
         <!-- Define icons -->
         <Icon Id="EasySoftwareSuite.ico" SourceFile="$(var.ProjectDir)img\EasySoftwareSuite.ico" />
@@ -63,9 +63,6 @@
                 <ComponentGroupRef Id="EasyButler" />
                 <ComponentGroupRef Id="extraScripts" />
             </Feature>
-            <ComponentGroupRef Id="_x86_files" />
-            <ComponentGroupRef Id="_x64_files" />
-            <ComponentGroupRef Id="arm64_files" />
         </Feature>
     </Product>
     <!-- Folders & Icons -->
@@ -77,18 +74,7 @@
                         <Directory Id="ExtrasFolder" Name="Extra">
                             <Directory Id="ScriptsFolder" Name="Scripts" />
                         </Directory>
-                        <Directory Id="runtimes" Name="runtimes">
-                          <Directory Id="runtimes_win_arm64" Name="win-arm64">
-                            <Directory Id="runtimes_win_arm64_native" Name="native" />
-                          </Directory>
-                          <Directory Id="runtimes_win_x64" Name="win-x64">
-                            <Directory Id="runtimes_win_x64_native" Name="native" />
-                          </Directory>
-                          <Directory Id="runtimes_win_x86" Name="win-x86">
-                            <Directory Id="runtimes_win_x86_native" Name="native" />
-                          </Directory>
-                        </Directory>
-                    </Directory>
+					</Directory>
                 </Directory>
             </Directory>
             <Directory Id="ProgramMenuFolder">
@@ -109,22 +95,16 @@
     <!-- Components & Files -->
     <Fragment>
         <ComponentGroup Id="LauncherComponents" Directory="INSTALLFOLDER">
-            <!-- This contains the launcher components -->
-            <Component Id="FastColoredTextBox.dll" Guid="1e837474-1462-44aa-bcc5-22b3d69b7f01">
-                <File Id="FastColoredTextBox.dll" Name="FastColoredTextBox.dll" Source="$(var.EasyChangelog_TargetDir)FastColoredTextBox.dll" />
-            </Component>
-            <Component Id="Microsoft.Web.WebView2.Core.dll" Guid="2c3fb89c-ccc5-4673-9fd0-96f2d740e18e">
-                <File Id="Microsoft.Web.WebView2.Core.dll" Name="Microsoft.Web.WebView2.Core.dll" Source="$(var.Easy Software Suite Launcher_TargetDir)Microsoft.Web.WebView2.Core.dll" />
-            </Component>
-            <Component Id="Microsoft.Web.WebView2.WinForms.dll" Guid="c13ec61f-a043-4814-ba36-95cd75eee9cb">
-                <File Id="Microsoft.Web.WebView2.WinForms.dll" Name="Microsoft.Web.WebView2.WinForms.dll" Source="$(var.Easy Software Suite Launcher_TargetDir)Microsoft.Web.WebView2.WinForms.dll" />
-            </Component>
             <!-- Include the launcher itself -->
             <Component Id="Easy_Software_Suite_Launcher.exe" Guid="95795256-9b80-4251-83cf-cbc5b55d24af">
                 <File Id="Easy_Software_Suite_Launcher.exe" Name="Easy Software Suite Launcher.exe" Source="$(var.Easy Software Suite Launcher_TargetDir)Easy Software Suite Launcher.exe" />
             </Component>
             <Component Id="Easy_Software_Suite_Launcher.exe.config" Guid="f6a75e23-fb36-43a6-b592-562542035b87">
                 <File Id="Easy_Software_Suite_Launcher.exe.config" Name="Easy Software Suite Launcher.exe.config" Source="$(var.Easy Software Suite Launcher_TargetDir)Easy Software Suite Launcher.exe.config" />
+            </Component>
+			<!-- Error Logger. Required for all apps. -->
+            <Component Id="ErrorLogger.dll" Guid="b9c51ca3-7eed-41e8-9404-750154a30227">
+              <File Id="ErrorLogger.dll" Name="ErrorLogger.dll" Source="$(var.ErrorLogger_TargetDir)ErrorLogger.dll" />
             </Component>
         </ComponentGroup>
         <!-- EasyHTML -->
@@ -194,22 +174,6 @@
             </Component>
             <Component Id="EasyButler.exe" Guid="9c1d6353-b76d-4dae-a50f-e697b06fa335">
                 <File Id="EasyButler.exe" Name="EasyButler.exe" Source="$(var.EasyButler_TargetDir)EasyButler.exe" />
-            </Component>
-        </ComponentGroup>
-        <!-- WebViewLoader Files -->
-        <ComponentGroup Id="arm64_files" Directory="runtimes_win_arm64_native">
-            <Component Id="arm64_WebView2Loader.dll" Guid="60414e19-b66a-4a89-9d63-ef431875f8e4">
-                <File Id="arm64_WebView2Loader.dll" Name="WebView2Loader.dll" Source="$(var.EasyHTML_TargetDir)runtimes\win-arm64\native\WebView2Loader.dll" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="_x64_files" Directory="runtimes_win_x64_native">
-            <Component Id="x64_WebView2Loader.dll" Guid="422f05f9-ad2e-4cd2-bab2-d4e9b6d411c7">
-                <File Id="x64_WebView2Loader.dll" Name="WebView2Loader.dll" Source="$(var.EasyHTML_TargetDir)runtimes\win-x64\native\WebView2Loader.dll" />
-            </Component>
-        </ComponentGroup>
-        <ComponentGroup Id="_x86_files" Directory="runtimes_win_x86_native">
-            <Component Id="x86_WebView2Loader.dll" Guid="2fbfa95e-7293-4d13-99cb-323fdef808d9">
-                <File Id="x86_WebView2Loader.dll" Name="WebView2Loader.dll" Source="$(var.EasyHTML_TargetDir)runtimes\win-x64\native\WebView2Loader.dll" />
             </Component>
         </ComponentGroup>
     </Fragment>

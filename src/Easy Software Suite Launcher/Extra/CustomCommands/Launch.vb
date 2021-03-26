@@ -1,4 +1,5 @@
 ﻿Imports System.IO
+Imports ErrorLogger.Logger
 
 Public Class Launch
     Public Shared Sub Launch(ByVal name As String)
@@ -17,6 +18,7 @@ Public Class Launch
                 MessageBox.Show(ex.ToString, "Error")
             End Try
         ElseIf Not My.Computer.FileSystem.FileExists(".\" & name & ".exe") Then
+            Input("Non-fatal error: " & name & " cannot be found. Is it installed?")
             MessageBox.Show(name & " cannot be found. Is it installed?", "Cannot Open " & name, MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
