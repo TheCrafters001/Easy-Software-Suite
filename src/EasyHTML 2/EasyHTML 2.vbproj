@@ -87,6 +87,7 @@
       <DependentUpon>EasyHTML_Two.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Extra\CustomCommands\Generator\Generator.vb" />
     <Compile Include="Extra\Licenses.Designer.vb">
       <DependentUpon>Licenses.vb</DependentUpon>
     </Compile>

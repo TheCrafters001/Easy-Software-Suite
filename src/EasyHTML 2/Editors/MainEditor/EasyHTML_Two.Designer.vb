@@ -22,19 +22,20 @@ Partial Class EasyHTML_Two
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EasyHTML_Two))
-        Me.JSContextMenu = New System.Windows.Forms.ContextMenuStrip()
+        Me.JSContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SaveJSLibrariesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoadJSLibrariesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.CSSContextMenu = New System.Windows.Forms.ContextMenuStrip()
+        Me.CSSContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SaveCSSLibrariesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoadCSSLibrariesToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MainEditorContextMenu = New System.Windows.Forms.ContextMenuStrip()
+        Me.MainEditorContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SaveEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LoadEditorProjectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.redirectMakerContextMenu = New System.Windows.Forms.ContextMenuStrip()
+        Me.redirectMakerContextMenu = New System.Windows.Forms.ContextMenuStrip(Me.components)
         Me.SaveRedirectToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.Main_Timer = New System.Windows.Forms.Timer()
+        Me.Main_Timer = New System.Windows.Forms.Timer(Me.components)
         Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
         Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
         Me.Pgs_Main = New EasyHTML_2.BonfireTabControl()
@@ -79,9 +80,9 @@ Partial Class EasyHTML_Two
         Me.bodyAddElement_btn = New EasyHTML_2.BonfireButton()
         Me.bodyEditor_edt = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.Pg_Editors_Header = New System.Windows.Forms.TabPage()
-        Me.FastColoredTextBox1 = New FastColoredTextBoxNS.FastColoredTextBox()
+        Me.headerCodeBox_txt = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.Pg_Editors_Footer = New System.Windows.Forms.TabPage()
-        Me.FastColoredTextBox2 = New FastColoredTextBoxNS.FastColoredTextBox()
+        Me.footerCodeStuff_txt = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.pg_Preview = New System.Windows.Forms.TabPage()
         Me.PreviewAlert_alrt = New EasyHTML_2.ProMessage()
         Me.previewPython_btn = New EasyHTML_2.ProDescriptiveButton()
@@ -111,9 +112,9 @@ Partial Class EasyHTML_Two
         Me.Pg_Editors_Body.SuspendLayout()
         CType(Me.bodyEditor_edt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Pg_Editors_Header.SuspendLayout()
-        CType(Me.FastColoredTextBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.headerCodeBox_txt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Pg_Editors_Footer.SuspendLayout()
-        CType(Me.FastColoredTextBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.footerCodeStuff_txt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pg_Preview.SuspendLayout()
         Me.Pg_Export.SuspendLayout()
         Me.Pg_About.SuspendLayout()
@@ -272,9 +273,9 @@ Partial Class EasyHTML_Two
         Me.ProMessage1.Font = New System.Drawing.Font("Verdana", 8.0!)
         Me.ProMessage1.Header = "Tip!"
         Me.ProMessage1.HeaderFont = New System.Drawing.Font("Verdana", 10.0!, System.Drawing.FontStyle.Bold)
-        Me.ProMessage1.Location = New System.Drawing.Point(0, 481)
+        Me.ProMessage1.Location = New System.Drawing.Point(0, 476)
         Me.ProMessage1.Name = "ProMessage1"
-        Me.ProMessage1.Size = New System.Drawing.Size(210, 97)
+        Me.ProMessage1.Size = New System.Drawing.Size(210, 102)
         Me.ProMessage1.SizeByText = False
         Me.ProMessage1.TabIndex = 5
         Me.ProMessage1.Text = "If you don't want to return to the details tab to save to project, right click on" &
@@ -701,50 +702,50 @@ Partial Class EasyHTML_Two
         'Pg_Editors_Header
         '
         Me.Pg_Editors_Header.BackColor = System.Drawing.Color.White
-        Me.Pg_Editors_Header.Controls.Add(Me.FastColoredTextBox1)
+        Me.Pg_Editors_Header.Controls.Add(Me.headerCodeBox_txt)
         Me.Pg_Editors_Header.Location = New System.Drawing.Point(4, 34)
         Me.Pg_Editors_Header.Name = "Pg_Editors_Header"
         Me.Pg_Editors_Header.Size = New System.Drawing.Size(862, 548)
         Me.Pg_Editors_Header.TabIndex = 2
         Me.Pg_Editors_Header.Text = "Header"
         '
-        'FastColoredTextBox1
+        'headerCodeBox_txt
         '
-        Me.FastColoredTextBox1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.headerCodeBox_txt.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FastColoredTextBox1.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
-        Me.FastColoredTextBox1.AutoIndentCharsPatterns = ""
-        Me.FastColoredTextBox1.AutoScrollMinSize = New System.Drawing.Size(362, 14)
-        Me.FastColoredTextBox1.BackBrush = Nothing
-        Me.FastColoredTextBox1.CharHeight = 14
-        Me.FastColoredTextBox1.CharWidth = 8
-        Me.FastColoredTextBox1.CommentPrefix = Nothing
-        Me.FastColoredTextBox1.CurrentPenSize = 3
-        Me.FastColoredTextBox1.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.FastColoredTextBox1.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.FastColoredTextBox1.DocumentPath = Nothing
-        Me.FastColoredTextBox1.IsReplaceMode = False
-        Me.FastColoredTextBox1.Language = FastColoredTextBoxNS.Language.HTML
-        Me.FastColoredTextBox1.LeftBracket = Global.Microsoft.VisualBasic.ChrW(60)
-        Me.FastColoredTextBox1.LeftBracket2 = Global.Microsoft.VisualBasic.ChrW(40)
-        Me.FastColoredTextBox1.Location = New System.Drawing.Point(6, 6)
-        Me.FastColoredTextBox1.Name = "FastColoredTextBox1"
-        Me.FastColoredTextBox1.Paddings = New System.Windows.Forms.Padding(0)
-        Me.FastColoredTextBox1.RightBracket = Global.Microsoft.VisualBasic.ChrW(62)
-        Me.FastColoredTextBox1.RightBracket2 = Global.Microsoft.VisualBasic.ChrW(41)
-        Me.FastColoredTextBox1.SelectionChangedDelayedEnabled = False
-        Me.FastColoredTextBox1.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.FastColoredTextBox1.ServiceColors = Nothing
-        Me.FastColoredTextBox1.Size = New System.Drawing.Size(850, 536)
-        Me.FastColoredTextBox1.TabIndex = 1
-        Me.FastColoredTextBox1.Text = "<link rel=""stylesheet"" href=""/css/style.css"">"
-        Me.FastColoredTextBox1.Zoom = 100
+        Me.headerCodeBox_txt.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
+        Me.headerCodeBox_txt.AutoIndentCharsPatterns = ""
+        Me.headerCodeBox_txt.AutoScrollMinSize = New System.Drawing.Size(362, 14)
+        Me.headerCodeBox_txt.BackBrush = Nothing
+        Me.headerCodeBox_txt.CharHeight = 14
+        Me.headerCodeBox_txt.CharWidth = 8
+        Me.headerCodeBox_txt.CommentPrefix = Nothing
+        Me.headerCodeBox_txt.CurrentPenSize = 3
+        Me.headerCodeBox_txt.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.headerCodeBox_txt.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.headerCodeBox_txt.DocumentPath = Nothing
+        Me.headerCodeBox_txt.IsReplaceMode = False
+        Me.headerCodeBox_txt.Language = FastColoredTextBoxNS.Language.HTML
+        Me.headerCodeBox_txt.LeftBracket = Global.Microsoft.VisualBasic.ChrW(60)
+        Me.headerCodeBox_txt.LeftBracket2 = Global.Microsoft.VisualBasic.ChrW(40)
+        Me.headerCodeBox_txt.Location = New System.Drawing.Point(6, 6)
+        Me.headerCodeBox_txt.Name = "headerCodeBox_txt"
+        Me.headerCodeBox_txt.Paddings = New System.Windows.Forms.Padding(0)
+        Me.headerCodeBox_txt.RightBracket = Global.Microsoft.VisualBasic.ChrW(62)
+        Me.headerCodeBox_txt.RightBracket2 = Global.Microsoft.VisualBasic.ChrW(41)
+        Me.headerCodeBox_txt.SelectionChangedDelayedEnabled = False
+        Me.headerCodeBox_txt.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.headerCodeBox_txt.ServiceColors = Nothing
+        Me.headerCodeBox_txt.Size = New System.Drawing.Size(850, 536)
+        Me.headerCodeBox_txt.TabIndex = 1
+        Me.headerCodeBox_txt.Text = "<link rel=""stylesheet"" href=""/css/style.css"">"
+        Me.headerCodeBox_txt.Zoom = 100
         '
         'Pg_Editors_Footer
         '
         Me.Pg_Editors_Footer.BackColor = System.Drawing.Color.White
-        Me.Pg_Editors_Footer.Controls.Add(Me.FastColoredTextBox2)
+        Me.Pg_Editors_Footer.Controls.Add(Me.footerCodeStuff_txt)
         Me.Pg_Editors_Footer.Location = New System.Drawing.Point(4, 34)
         Me.Pg_Editors_Footer.Name = "Pg_Editors_Footer"
         Me.Pg_Editors_Footer.Padding = New System.Windows.Forms.Padding(3)
@@ -752,38 +753,38 @@ Partial Class EasyHTML_Two
         Me.Pg_Editors_Footer.TabIndex = 1
         Me.Pg_Editors_Footer.Text = "Footer"
         '
-        'FastColoredTextBox2
+        'footerCodeStuff_txt
         '
-        Me.FastColoredTextBox2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+        Me.footerCodeStuff_txt.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.FastColoredTextBox2.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
-        Me.FastColoredTextBox2.AutoIndentCharsPatterns = ""
-        Me.FastColoredTextBox2.AutoScrollMinSize = New System.Drawing.Size(162, 14)
-        Me.FastColoredTextBox2.BackBrush = Nothing
-        Me.FastColoredTextBox2.CharHeight = 14
-        Me.FastColoredTextBox2.CharWidth = 8
-        Me.FastColoredTextBox2.CommentPrefix = Nothing
-        Me.FastColoredTextBox2.CurrentPenSize = 3
-        Me.FastColoredTextBox2.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.FastColoredTextBox2.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.FastColoredTextBox2.DocumentPath = Nothing
-        Me.FastColoredTextBox2.IsReplaceMode = False
-        Me.FastColoredTextBox2.Language = FastColoredTextBoxNS.Language.HTML
-        Me.FastColoredTextBox2.LeftBracket = Global.Microsoft.VisualBasic.ChrW(60)
-        Me.FastColoredTextBox2.LeftBracket2 = Global.Microsoft.VisualBasic.ChrW(40)
-        Me.FastColoredTextBox2.Location = New System.Drawing.Point(6, 6)
-        Me.FastColoredTextBox2.Name = "FastColoredTextBox2"
-        Me.FastColoredTextBox2.Paddings = New System.Windows.Forms.Padding(0)
-        Me.FastColoredTextBox2.RightBracket = Global.Microsoft.VisualBasic.ChrW(62)
-        Me.FastColoredTextBox2.RightBracket2 = Global.Microsoft.VisualBasic.ChrW(41)
-        Me.FastColoredTextBox2.SelectionChangedDelayedEnabled = False
-        Me.FastColoredTextBox2.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.FastColoredTextBox2.ServiceColors = Nothing
-        Me.FastColoredTextBox2.Size = New System.Drawing.Size(850, 536)
-        Me.FastColoredTextBox2.TabIndex = 2
-        Me.FastColoredTextBox2.Text = "<!-- Footer Code -->"
-        Me.FastColoredTextBox2.Zoom = 100
+        Me.footerCodeStuff_txt.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
+        Me.footerCodeStuff_txt.AutoIndentCharsPatterns = ""
+        Me.footerCodeStuff_txt.AutoScrollMinSize = New System.Drawing.Size(162, 14)
+        Me.footerCodeStuff_txt.BackBrush = Nothing
+        Me.footerCodeStuff_txt.CharHeight = 14
+        Me.footerCodeStuff_txt.CharWidth = 8
+        Me.footerCodeStuff_txt.CommentPrefix = Nothing
+        Me.footerCodeStuff_txt.CurrentPenSize = 3
+        Me.footerCodeStuff_txt.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.footerCodeStuff_txt.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.footerCodeStuff_txt.DocumentPath = Nothing
+        Me.footerCodeStuff_txt.IsReplaceMode = False
+        Me.footerCodeStuff_txt.Language = FastColoredTextBoxNS.Language.HTML
+        Me.footerCodeStuff_txt.LeftBracket = Global.Microsoft.VisualBasic.ChrW(60)
+        Me.footerCodeStuff_txt.LeftBracket2 = Global.Microsoft.VisualBasic.ChrW(40)
+        Me.footerCodeStuff_txt.Location = New System.Drawing.Point(6, 6)
+        Me.footerCodeStuff_txt.Name = "footerCodeStuff_txt"
+        Me.footerCodeStuff_txt.Paddings = New System.Windows.Forms.Padding(0)
+        Me.footerCodeStuff_txt.RightBracket = Global.Microsoft.VisualBasic.ChrW(62)
+        Me.footerCodeStuff_txt.RightBracket2 = Global.Microsoft.VisualBasic.ChrW(41)
+        Me.footerCodeStuff_txt.SelectionChangedDelayedEnabled = False
+        Me.footerCodeStuff_txt.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.footerCodeStuff_txt.ServiceColors = Nothing
+        Me.footerCodeStuff_txt.Size = New System.Drawing.Size(850, 536)
+        Me.footerCodeStuff_txt.TabIndex = 2
+        Me.footerCodeStuff_txt.Text = "<!-- Footer Code -->"
+        Me.footerCodeStuff_txt.Zoom = 100
         '
         'pg_Preview
         '
@@ -975,9 +976,9 @@ Partial Class EasyHTML_Two
         Me.Pg_Editors_Body.ResumeLayout(False)
         CType(Me.bodyEditor_edt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Pg_Editors_Header.ResumeLayout(False)
-        CType(Me.FastColoredTextBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.headerCodeBox_txt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Pg_Editors_Footer.ResumeLayout(False)
-        CType(Me.FastColoredTextBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.footerCodeStuff_txt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pg_Preview.ResumeLayout(False)
         Me.Pg_Export.ResumeLayout(False)
         Me.Pg_About.ResumeLayout(False)
@@ -1043,8 +1044,8 @@ Partial Class EasyHTML_Two
     Friend WithEvents Pg_Editors_Footer As TabPage
     Friend WithEvents Pg_Editors_Header As TabPage
     Friend WithEvents bodyEditor_edt As FastColoredTextBoxNS.FastColoredTextBox
-    Friend WithEvents FastColoredTextBox1 As FastColoredTextBoxNS.FastColoredTextBox
-    Friend WithEvents FastColoredTextBox2 As FastColoredTextBoxNS.FastColoredTextBox
+    Friend WithEvents headerCodeBox_txt As FastColoredTextBoxNS.FastColoredTextBox
+    Friend WithEvents footerCodeStuff_txt As FastColoredTextBoxNS.FastColoredTextBox
     Friend WithEvents previewBrowser_btn As ProDescriptiveButton
     Friend WithEvents previewPython_btn As ProDescriptiveButton
     Friend WithEvents PreviewAlert_alrt As ProMessage

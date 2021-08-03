@@ -1,6 +1,10 @@
 ﻿Imports ErrorLogger.Logger
 
 Public Class EasyHTML_Two
+
+    'Create the output for the whole editor to hold.
+    Dim output As String = Generator.Generate()
+
     Private Sub EasyHTML_Two_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Start Timer
         Main_Timer.Start()
@@ -59,4 +63,28 @@ Public Class EasyHTML_Two
         Process.Start("https://www.gnu.org/licenses/gpl-3.0.en.html")
     End Sub
 #End Region
+
+#Region "Export Stuff"
+    Private Sub exportPreview_btn_Click(sender As Object, e As EventArgs) Handles exportPreview_btn.Click
+
+    End Sub
+
+    Private Sub export_btn_Click(sender As Object, e As EventArgs) Handles export_btn.Click
+        Try
+            output = "<html><head>" + headerCodeBox_txt.Text + "</head><body>" + bodyEditor_edt.Text + footerCodeStuff_txt.Text + "</body>"
+            ' Set Filter for HTML Files
+            SaveDialog.Filter = "HTML File (*.html; *.htm; *.hta; *.shtml; *.shtm)|*.html; *.htm; *.hta; *.shtml; *.shtm"
+            SaveDialog.Title = "Save HTML File"
+            SaveDialog.FileName = "CoolWebsite.html"
+            ' Show Dialog. If the result is OK, save file to FileName.
+            If (SaveDialog.ShowDialog = DialogResult.OK) Then
+                My.Computer.FileSystem.WriteAllText(SaveDialog.FileName, output, False)
+                MessageBox.Show("File Saved at: " & SaveDialog.FileName)
+            End If
+        Catch ex As Exception
+
+        End Try
+    End Sub
+#End Region
+
 End Class
