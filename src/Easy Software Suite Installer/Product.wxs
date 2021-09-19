@@ -7,7 +7,7 @@
     <?define Easy Software Suite Launcher_TargetDir=$(var.Easy Software Suite Launcher.TargetDir)?>
     <?define EasyGit_TargetDir=$(var.EasyGit.TargetDir)?>
     <?define EasyButler_TargetDir=$(var.EasyButler.TargetDir)?><?define EasyHTML 2_TargetDir=$(var.EasyHTML 2.TargetDir)?><?define ErrorLogger_TargetDir=$(var.ErrorLogger.TargetDir)?>
-    <Product Id="*" Name="Easy Software Suite" Language="1033" Version="3.0.6.0" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
+    <Product Id="*" Name="Easy Software Suite" Language="1033" Version="3.0.7.0" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
         <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
         <!-- Define icons -->
         <Icon Id="EasySoftwareSuite.ico" SourceFile="$(var.ProjectDir)img\EasySoftwareSuite.ico" />

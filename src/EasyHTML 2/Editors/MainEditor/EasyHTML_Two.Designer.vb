@@ -40,6 +40,7 @@ Partial Class EasyHTML_Two
         Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
         Me.Pgs_Main = New EasyHTML_2.BonfireTabControl()
         Me.Pg_Details = New System.Windows.Forms.TabPage()
+        Me.exportbox_txt = New System.Windows.Forms.TextBox()
         Me.ProjectMan_grp = New EasyHTML_2.BonfireGroupBox()
         Me.loadWholeProject_btn = New EasyHTML_2.BonfireButton()
         Me.saveWholeProject_btn = New EasyHTML_2.BonfireButton()
@@ -76,11 +77,11 @@ Partial Class EasyHTML_Two
         Me.siteAuthor_lbl = New EasyHTML_2.BonfireLabel()
         Me.Pg_Editors = New System.Windows.Forms.TabPage()
         Me.BonfireTabControl1 = New EasyHTML_2.BonfireTabControl()
+        Me.Pg_Editors_Header = New System.Windows.Forms.TabPage()
+        Me.headerCodeBox_txt = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.Pg_Editors_Body = New System.Windows.Forms.TabPage()
         Me.bodyAddElement_btn = New EasyHTML_2.BonfireButton()
         Me.bodyEditor_edt = New FastColoredTextBoxNS.FastColoredTextBox()
-        Me.Pg_Editors_Header = New System.Windows.Forms.TabPage()
-        Me.headerCodeBox_txt = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.Pg_Editors_Footer = New System.Windows.Forms.TabPage()
         Me.footerCodeStuff_txt = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.pg_Preview = New System.Windows.Forms.TabPage()
@@ -109,10 +110,10 @@ Partial Class EasyHTML_Two
         Me.Pg_MetaTags.SuspendLayout()
         Me.Pg_Editors.SuspendLayout()
         Me.BonfireTabControl1.SuspendLayout()
-        Me.Pg_Editors_Body.SuspendLayout()
-        CType(Me.bodyEditor_edt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Pg_Editors_Header.SuspendLayout()
         CType(Me.headerCodeBox_txt, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Pg_Editors_Body.SuspendLayout()
+        CType(Me.bodyEditor_edt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Pg_Editors_Footer.SuspendLayout()
         CType(Me.footerCodeStuff_txt, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.pg_Preview.SuspendLayout()
@@ -212,6 +213,7 @@ Partial Class EasyHTML_Two
         'Pg_Details
         '
         Me.Pg_Details.BackColor = System.Drawing.Color.White
+        Me.Pg_Details.Controls.Add(Me.exportbox_txt)
         Me.Pg_Details.Controls.Add(Me.ProjectMan_grp)
         Me.Pg_Details.Controls.Add(Me.jsLibraries_grp)
         Me.Pg_Details.Controls.Add(Me.cssLibraries_grp)
@@ -226,6 +228,14 @@ Partial Class EasyHTML_Two
         Me.Pg_Details.Size = New System.Drawing.Size(876, 592)
         Me.Pg_Details.TabIndex = 0
         Me.Pg_Details.Text = "Details"
+        '
+        'exportbox_txt
+        '
+        Me.exportbox_txt.Location = New System.Drawing.Point(6, 191)
+        Me.exportbox_txt.Name = "exportbox_txt"
+        Me.exportbox_txt.Size = New System.Drawing.Size(210, 22)
+        Me.exportbox_txt.TabIndex = 36
+        Me.exportbox_txt.Visible = False
         '
         'ProjectMan_grp
         '
@@ -628,8 +638,8 @@ Partial Class EasyHTML_Two
         '
         'BonfireTabControl1
         '
-        Me.BonfireTabControl1.Controls.Add(Me.Pg_Editors_Body)
         Me.BonfireTabControl1.Controls.Add(Me.Pg_Editors_Header)
+        Me.BonfireTabControl1.Controls.Add(Me.Pg_Editors_Body)
         Me.BonfireTabControl1.Controls.Add(Me.Pg_Editors_Footer)
         Me.BonfireTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.BonfireTabControl1.Font = New System.Drawing.Font("Verdana", 8.0!)
@@ -639,6 +649,50 @@ Partial Class EasyHTML_Two
         Me.BonfireTabControl1.SelectedIndex = 0
         Me.BonfireTabControl1.Size = New System.Drawing.Size(870, 586)
         Me.BonfireTabControl1.TabIndex = 0
+        '
+        'Pg_Editors_Header
+        '
+        Me.Pg_Editors_Header.BackColor = System.Drawing.Color.White
+        Me.Pg_Editors_Header.Controls.Add(Me.headerCodeBox_txt)
+        Me.Pg_Editors_Header.Location = New System.Drawing.Point(4, 34)
+        Me.Pg_Editors_Header.Name = "Pg_Editors_Header"
+        Me.Pg_Editors_Header.Size = New System.Drawing.Size(862, 548)
+        Me.Pg_Editors_Header.TabIndex = 2
+        Me.Pg_Editors_Header.Text = "Header"
+        '
+        'headerCodeBox_txt
+        '
+        Me.headerCodeBox_txt.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.headerCodeBox_txt.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
+        Me.headerCodeBox_txt.AutoIndentCharsPatterns = ""
+        Me.headerCodeBox_txt.AutoScrollMinSize = New System.Drawing.Size(362, 14)
+        Me.headerCodeBox_txt.BackBrush = Nothing
+        Me.headerCodeBox_txt.CharHeight = 14
+        Me.headerCodeBox_txt.CharWidth = 8
+        Me.headerCodeBox_txt.CommentPrefix = Nothing
+        Me.headerCodeBox_txt.CurrentPenSize = 3
+        Me.headerCodeBox_txt.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.headerCodeBox_txt.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.headerCodeBox_txt.DocumentPath = Nothing
+        Me.headerCodeBox_txt.Font = New System.Drawing.Font("Courier New", 9.75!)
+        Me.headerCodeBox_txt.IsReplaceMode = False
+        Me.headerCodeBox_txt.Language = FastColoredTextBoxNS.Language.HTML
+        Me.headerCodeBox_txt.LeftBracket = Global.Microsoft.VisualBasic.ChrW(60)
+        Me.headerCodeBox_txt.LeftBracket2 = Global.Microsoft.VisualBasic.ChrW(40)
+        Me.headerCodeBox_txt.Location = New System.Drawing.Point(6, 6)
+        Me.headerCodeBox_txt.Name = "headerCodeBox_txt"
+        Me.headerCodeBox_txt.Paddings = New System.Windows.Forms.Padding(0)
+        Me.headerCodeBox_txt.RightBracket = Global.Microsoft.VisualBasic.ChrW(62)
+        Me.headerCodeBox_txt.RightBracket2 = Global.Microsoft.VisualBasic.ChrW(41)
+        Me.headerCodeBox_txt.SelectionChangedDelayedEnabled = False
+        Me.headerCodeBox_txt.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.headerCodeBox_txt.ServiceColors = Nothing
+        Me.headerCodeBox_txt.Size = New System.Drawing.Size(850, 536)
+        Me.headerCodeBox_txt.TabIndex = 1
+        Me.headerCodeBox_txt.Text = "<link rel=""stylesheet"" href=""/css/style.css"">"
+        Me.headerCodeBox_txt.Zoom = 100
         '
         'Pg_Editors_Body
         '
@@ -681,7 +735,6 @@ Partial Class EasyHTML_Two
         Me.bodyEditor_edt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.bodyEditor_edt.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.bodyEditor_edt.DocumentPath = Nothing
-        Me.bodyEditor_edt.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.bodyEditor_edt.IsReplaceMode = False
         Me.bodyEditor_edt.Language = FastColoredTextBoxNS.Language.HTML
         Me.bodyEditor_edt.LeftBracket = Global.Microsoft.VisualBasic.ChrW(60)
@@ -698,49 +751,6 @@ Partial Class EasyHTML_Two
         Me.bodyEditor_edt.TabIndex = 0
         Me.bodyEditor_edt.Text = "<p>Welcome</p>"
         Me.bodyEditor_edt.Zoom = 100
-        '
-        'Pg_Editors_Header
-        '
-        Me.Pg_Editors_Header.BackColor = System.Drawing.Color.White
-        Me.Pg_Editors_Header.Controls.Add(Me.headerCodeBox_txt)
-        Me.Pg_Editors_Header.Location = New System.Drawing.Point(4, 34)
-        Me.Pg_Editors_Header.Name = "Pg_Editors_Header"
-        Me.Pg_Editors_Header.Size = New System.Drawing.Size(862, 548)
-        Me.Pg_Editors_Header.TabIndex = 2
-        Me.Pg_Editors_Header.Text = "Header"
-        '
-        'headerCodeBox_txt
-        '
-        Me.headerCodeBox_txt.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.headerCodeBox_txt.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
-        Me.headerCodeBox_txt.AutoIndentCharsPatterns = ""
-        Me.headerCodeBox_txt.AutoScrollMinSize = New System.Drawing.Size(362, 14)
-        Me.headerCodeBox_txt.BackBrush = Nothing
-        Me.headerCodeBox_txt.CharHeight = 14
-        Me.headerCodeBox_txt.CharWidth = 8
-        Me.headerCodeBox_txt.CommentPrefix = Nothing
-        Me.headerCodeBox_txt.CurrentPenSize = 3
-        Me.headerCodeBox_txt.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.headerCodeBox_txt.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.headerCodeBox_txt.DocumentPath = Nothing
-        Me.headerCodeBox_txt.IsReplaceMode = False
-        Me.headerCodeBox_txt.Language = FastColoredTextBoxNS.Language.HTML
-        Me.headerCodeBox_txt.LeftBracket = Global.Microsoft.VisualBasic.ChrW(60)
-        Me.headerCodeBox_txt.LeftBracket2 = Global.Microsoft.VisualBasic.ChrW(40)
-        Me.headerCodeBox_txt.Location = New System.Drawing.Point(6, 6)
-        Me.headerCodeBox_txt.Name = "headerCodeBox_txt"
-        Me.headerCodeBox_txt.Paddings = New System.Windows.Forms.Padding(0)
-        Me.headerCodeBox_txt.RightBracket = Global.Microsoft.VisualBasic.ChrW(62)
-        Me.headerCodeBox_txt.RightBracket2 = Global.Microsoft.VisualBasic.ChrW(41)
-        Me.headerCodeBox_txt.SelectionChangedDelayedEnabled = False
-        Me.headerCodeBox_txt.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.headerCodeBox_txt.ServiceColors = Nothing
-        Me.headerCodeBox_txt.Size = New System.Drawing.Size(850, 536)
-        Me.headerCodeBox_txt.TabIndex = 1
-        Me.headerCodeBox_txt.Text = "<link rel=""stylesheet"" href=""/css/style.css"">"
-        Me.headerCodeBox_txt.Zoom = 100
         '
         'Pg_Editors_Footer
         '
@@ -769,6 +779,7 @@ Partial Class EasyHTML_Two
         Me.footerCodeStuff_txt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.footerCodeStuff_txt.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.footerCodeStuff_txt.DocumentPath = Nothing
+        Me.footerCodeStuff_txt.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.footerCodeStuff_txt.IsReplaceMode = False
         Me.footerCodeStuff_txt.Language = FastColoredTextBoxNS.Language.HTML
         Me.footerCodeStuff_txt.LeftBracket = Global.Microsoft.VisualBasic.ChrW(60)
@@ -973,10 +984,10 @@ Partial Class EasyHTML_Two
         Me.Pg_MetaTags.PerformLayout()
         Me.Pg_Editors.ResumeLayout(False)
         Me.BonfireTabControl1.ResumeLayout(False)
-        Me.Pg_Editors_Body.ResumeLayout(False)
-        CType(Me.bodyEditor_edt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Pg_Editors_Header.ResumeLayout(False)
         CType(Me.headerCodeBox_txt, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Pg_Editors_Body.ResumeLayout(False)
+        CType(Me.bodyEditor_edt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Pg_Editors_Footer.ResumeLayout(False)
         CType(Me.footerCodeStuff_txt, System.ComponentModel.ISupportInitialize).EndInit()
         Me.pg_Preview.ResumeLayout(False)
@@ -1061,4 +1072,5 @@ Partial Class EasyHTML_Two
     Friend WithEvents about_lbl As BonfireLabel
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents gnuGpl_pic As PictureBox
+    Friend WithEvents exportbox_txt As TextBox
 End Class
