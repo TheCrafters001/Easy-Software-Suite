@@ -106,6 +106,10 @@
             <Component Id="ErrorLogger.dll" Guid="b9c51ca3-7eed-41e8-9404-750154a30227">
               <File Id="ErrorLogger.dll" Name="ErrorLogger.dll" Source="$(var.ErrorLogger_TargetDir)ErrorLogger.dll" />
             </Component>
+			<!-- Required Compnent for EasyHTML and EasyHTML 2 -->
+            <Component Id="FastColoredTextBox.dll" Guid="4724c549-c38b-4410-8c22-6635ef7583d4">
+              <File Id="FastColoredTextBox.dll" Name="FastColoredTextBox.dll" Source="$(var.Easy Software Suite Launcher_TargetDir)FastColoredTextBox.dll" />
+            </Component>
         </ComponentGroup>
         <!-- EasyHTML -->
         <ComponentGroup Id="EasyHTML" Directory="INSTALLFOLDER">
