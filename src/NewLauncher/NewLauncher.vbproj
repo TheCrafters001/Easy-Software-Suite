@@ -22,6 +22,7 @@
     <NeutralLanguage>en</NeutralLanguage>
     <AssemblyVersion>4.0.0.0</AssemblyVersion>
     <FileVersion>4.0.0.0</FileVersion>
+    <ApplicationIcon>EasySoftwareSuite.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
