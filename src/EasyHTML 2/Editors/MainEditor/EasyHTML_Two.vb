@@ -1,10 +1,13 @@
 ﻿Imports ErrorLogger.Logger
+Imports System.IO
 
 Public Class EasyHTML_Two
 
     Private Sub EasyHTML_Two_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Input("Starting EasyHTML 2...")
         'Start Timer
         Main_Timer.Start()
+        Input("Started EasyHTML 2 Main timer...")
         BonfireTabControl1.SelectedTab = Pg_Editors_Body
     End Sub
 
@@ -84,6 +87,28 @@ Public Class EasyHTML_Two
 
         End Try
     End Sub
+#End Region
+
+#Region "Preview"
+
+#Region "Browser Preview"
+    Private Sub previewBrowser_btn_Click(sender As Object, e As EventArgs) Handles previewBrowser_btn.Click
+        ' Generator Code
+        Generate()
+
+        ' Set Path to Temp
+        Dim path As String = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData)
+        path = IO.Path.Combine(path, "Temp\EasyHTML2")
+
+        ' Create Preview File
+        IO.Directory.CreateDirectory(path)
+        IO.File.WriteAllText(IO.Path.Combine(path, "preview.html"), exportbox_txt.Text)
+
+        ' Launch in Default Browser
+        Process.Start(IO.Path.Combine(path, "preview.html"))
+    End Sub
+#End Region
+
 #End Region
 
 #Region "Generator"

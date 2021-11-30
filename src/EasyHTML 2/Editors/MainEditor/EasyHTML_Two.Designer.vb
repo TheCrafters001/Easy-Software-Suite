@@ -848,7 +848,7 @@ Partial Class EasyHTML_Two
         Me.previewBrowser_btn.Size = New System.Drawing.Size(200, 149)
         Me.previewBrowser_btn.TabIndex = 0
         Me.previewBrowser_btn.Text = "Generate a simple HTML file for you to preview your page with. This will open in " &
-    "your prefered browser. This file is placed in a temporary folder."
+    "your default browser. This file is placed in a temporary folder."
         Me.previewBrowser_btn.Title = "Browser Preview"
         Me.previewBrowser_btn.TitleFont = New System.Drawing.Font("Verdana", 14.0!)
         '

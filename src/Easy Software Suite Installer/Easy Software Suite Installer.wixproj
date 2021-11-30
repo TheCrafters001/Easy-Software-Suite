@@ -61,7 +61,7 @@
     </ProjectReference>
     <ProjectReference Include="..\EasyButler\EasyButler.vbproj">
       <Name>EasyButler</Name>
-      <Project>{e9e652b6-b9e2-4c2e-87e6-cdb9006b56cf}</Project>
+      <Project>{f818d605-fe6e-41db-9513-cec645505945}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
@@ -70,6 +70,14 @@
     <ProjectReference Include="..\EasyChangelog\EasyChangelog.vbproj">
       <Name>EasyChangelog</Name>
       <Project>{195c1c3d-a173-438c-91d5-c1b90a468a62}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\EasyConsole\EasyConsole.vbproj">
+      <Name>EasyConsole</Name>
+      <Project>{965a7559-885c-412d-8908-37fa686a9e00}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
@@ -118,6 +126,14 @@
     <ProjectReference Include="..\ErrorLogger\ErrorLogger.vbproj">
       <Name>ErrorLogger</Name>
       <Project>{8c8bff4b-9f5f-4007-ab4f-8e9de1099cd7}</Project>
+      <Private>True</Private>
+      <DoNotHarvest>True</DoNotHarvest>
+      <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>
+      <RefTargetDir>INSTALLFOLDER</RefTargetDir>
+    </ProjectReference>
+    <ProjectReference Include="..\NewLauncher\NewLauncher.vbproj">
+      <Name>NewLauncher</Name>
+      <Project>{e6ff2b24-6909-44d2-8952-1d9cd6a4a8ca}</Project>
       <Private>True</Private>
       <DoNotHarvest>True</DoNotHarvest>
       <RefProjectOutputGroups>Binaries;Content;Satellites</RefProjectOutputGroups>

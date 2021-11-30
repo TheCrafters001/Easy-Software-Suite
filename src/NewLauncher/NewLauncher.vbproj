@@ -1,0 +1,81 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <StartupObject>Sub Main</StartupObject>
+    <UseWindowsForms>true</UseWindowsForms>
+    <MyType>WindowsForms</MyType>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <PackageLicenseFile>LICENSE.md</PackageLicenseFile>
+    <PackageId>Easy.Software.Suite.Launcher</PackageId>
+    <AssemblyName>Easy Software Suite Launcher</AssemblyName>
+    <RootNamespace>Easy_Software_Suite_Launcher</RootNamespace>
+    <Authors>TheCrafters001</Authors>
+    <Company>TheCrafters001</Company>
+    <Copyright>Copyright © TheCrafters001 2021</Copyright>
+    <PackageProjectUrl>https://github.com/thecrafters001/easy-software-suite</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/thecrafters001/easy-software-suite</RepositoryUrl>
+    <PackageIcon>EasySoftwareSuite.png</PackageIcon>
+    <PackageIconUrl />
+    <NeutralLanguage>en</NeutralLanguage>
+    <AssemblyVersion>4.0.0.0</AssemblyVersion>
+    <FileVersion>4.0.0.0</FileVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="My Project\Application.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Update="My Project\Resources.Designer.vb">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="..\..\LICENSE.md">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+    <None Include="..\Easy Software Suite Launcher\Resources\EasySoftwareSuite.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EasyButler\EasyButler.vbproj" />
+    <ProjectReference Include="..\EasyChangelog\EasyChangelog.vbproj" />
+    <ProjectReference Include="..\EasyConsole\EasyConsole.vbproj" />
+    <ProjectReference Include="..\EasyGit\EasyGit.vbproj" />
+    <ProjectReference Include="..\EasyHTML 2\EasyHTML 2.vbproj" />
+    <ProjectReference Include="..\EasyHTML\EasyHTML.vbproj" />
+    <ProjectReference Include="..\EasyNodeJS\EasyNodeJS.vbproj" />
+    <ProjectReference Include="..\EasyPresskit\EasyPresskit.vbproj" />
+    <ProjectReference Include="..\ErrorLogger\ErrorLogger.vbproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="My Project\Resources.resx">
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+</Project>

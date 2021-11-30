@@ -4,11 +4,17 @@
     <?define EasyHTML_TargetDir=$(var.EasyHTML.TargetDir)?>
     <?define EasyNodeJS_TargetDir=$(var.EasyNodeJS.TargetDir)?>
     <?define EasyPresskit_TargetDir=$(var.EasyPresskit.TargetDir)?>
-    <?define Easy Software Suite Launcher_TargetDir=$(var.Easy Software Suite Launcher.TargetDir)?>
     <?define EasyGit_TargetDir=$(var.EasyGit.TargetDir)?>
-    <?define EasyButler_TargetDir=$(var.EasyButler.TargetDir)?><?define EasyHTML 2_TargetDir=$(var.EasyHTML 2.TargetDir)?><?define ErrorLogger_TargetDir=$(var.ErrorLogger.TargetDir)?>
-    <Product Id="*" Name="Easy Software Suite" Language="1033" Version="3.0.7.0" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
+    <?define EasyButler_TargetDir=$(var.EasyButler.TargetDir)?>
+	<?define EasyHTML 2_TargetDir=$(var.EasyHTML 2.TargetDir)?>
+	<?define NewLauncher_TargetDir=$(var.NewLauncher.TargetDir)?>
+	<?define ErrorLogger_TargetDir=$(var.ErrorLogger.TargetDir)?>
+	<?define EasyConsole_TargetDir=$(var.EasyConsole.TargetDir)?>
+    <Product Id="*" Name="Easy Software Suite" Language="1033" Version="4.0.0.0" Manufacturer="TheCrafters001" UpgradeCode="466be0a6-4adc-4302-a126-ee54a308cf41">
         <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+		<!-- Define Link -->
+		<Property Id="ARPHELPLINK" Value="https://thecrafters001.github.io/software/"/>
+		<Property Id="ARPURLINFOABOUT" Value="https://thecrafters001.github.io/software/"/>
         <!-- Define icons -->
         <Icon Id="EasySoftwareSuite.ico" SourceFile="$(var.ProjectDir)img\EasySoftwareSuite.ico" />
         <Property Id="ARPPRODUCTICON" Value="EasySoftwareSuite.ico" />
@@ -39,30 +45,32 @@
         <Feature Id="Launcher" Title="Easy Software Suite Launcher" Level="1" Absent="disallow" Display="expand" Description="This is a required feature. This is the launcher for each component of the software suite." ConfigurableDirectory="INSTALLFOLDER">
             <ComponentGroupRef Id="LauncherComponents" />
             <ComponentRef Id="ApplicationShortcut" />
-            <Feature Id="EasyHTML" Title="EasyHTML" Level="1000" Absent="allow" Description="[Outdated] EasyHTML is a free to use, easy-to-understand HTML Editor. It has Live Code Preview, and Exporting. You can save, and load, all your projects with ease, and you can easily update existing websites created with it! The Live Code Preview allows you to see what the website code looks like as you update it, and you can export that code with one click!">
+            <Feature Id="EasyHTML" Title="EasyHTML" Level="1000" Absent="allow" Description="Select this component to install EasyHTML">
                 <ComponentGroupRef Id="EasyHTML" />
                 <ComponentGroupRef Id="extraScripts" />
             </Feature>
-			<Feature Id="EasyHTML_Two" Title="EasyHTML 2" Level="3" Absent="allow" Description="EasyHTML 2 is a free to use, easy-to-understand HTML Editor. It has Live Code Preview, and Exporting. You can save, and load, all your projects with ease, and you can easily update existing websites created with it! The Live Code Preview allows you to see what the website code looks like as you update it, and you can export that code with one click!">
+			<Feature Id="EasyHTML_Two" Title="EasyHTML 2" Level="1" Absent="allow" Description="Select this component to install EasyHTML 2">
                 <ComponentGroupRef Id="EasyHTML_Two" />
             </Feature>
-            <Feature Id="EasyNodeJS" Title="EasyNodeJS" Level="1000" Absent="allow" Description="[Experimental] EasyNodeJS is a free to use, open-source Node.JS Editor">
+            <Feature Id="EasyNodeJS" Title="EasyNodeJS" Level="0" Absent="allow" Description="Select this component to install EasyNodeJS">
                 <ComponentGroupRef Id="EasyNodeJS" />
             </Feature>
-            <Feature Id="EasyChangelog" Title="EasyChangelog" Level="3" Absent="allow" Description="EasyChangelog allows you to create changelogs, fast, easy, and free!">
+            <Feature Id="EasyChangelog" Title="EasyChangelog" Level="3" Absent="allow" Description="Select this component to install EasyChangeLog">
                 <ComponentGroupRef Id="EasyChangelog" />
             </Feature>
-            <Feature Id="EasyPresskit" Title="EasyPresskit" Level="1000" Absent="allow" Description="[Experimental] EasyPresskit is a free to use, open-source, fast way to create a static presskit page.">
+            <Feature Id="EasyPresskit" Title="EasyPresskit" Level="0" Absent="allow" Description="Select this component to install EasyPressKit">
                 <ComponentGroupRef Id="EasyPresskit" />
             </Feature>
-            <Feature Id="EasyGit" Title="EasyGit" Level="3" Absent="allow" Description="EasyGit allows you to push, and pull, changes to your GitHub repo">
+            <Feature Id="EasyGit" Title="EasyGit" Level="3" Absent="allow" Description="Select this component to install EasyGit">
                 <ComponentGroupRef Id="EasyGit" />
                 <ComponentGroupRef Id="extraScripts" />
             </Feature>
-            <Feature Id="EasyButler" Title="EasyButler" Level="3" Absent="allow" Description="Easy Butler; updating your games just got easier! This allows you to update your games on Itch.IO with ease!">
+            <Feature Id="EasyButler" Title="EasyButler" Level="1" Absent="allow" Description="Select this component to install EasyButler">
                 <ComponentGroupRef Id="EasyButler" />
-                <ComponentGroupRef Id="extraScripts" />
             </Feature>
+			<Feature Id="EasyConsole" Title="EasyConsole" Level="1" Absent="allow" Description="Select this component to install EasyConsole">
+				<ComponentGroupRef Id="EasyConsole" />
+			</Feature>
         </Feature>
     </Product>
     <!-- Folders & Icons -->
@@ -97,10 +105,13 @@
         <ComponentGroup Id="LauncherComponents" Directory="INSTALLFOLDER">
             <!-- Include the launcher itself -->
             <Component Id="Easy_Software_Suite_Launcher.exe" Guid="95795256-9b80-4251-83cf-cbc5b55d24af">
-                <File Id="Easy_Software_Suite_Launcher.exe" Name="Easy Software Suite Launcher.exe" Source="$(var.Easy Software Suite Launcher_TargetDir)Easy Software Suite Launcher.exe" />
+                <File Id="Easy_Software_Suite_Launcher.exe" Name="Easy Software Suite Launcher.exe" Source="$(var.NewLauncher_TargetDir)Easy Software Suite Launcher.exe" />
             </Component>
-            <Component Id="Easy_Software_Suite_Launcher.exe.config" Guid="f6a75e23-fb36-43a6-b592-562542035b87">
-                <File Id="Easy_Software_Suite_Launcher.exe.config" Name="Easy Software Suite Launcher.exe.config" Source="$(var.Easy Software Suite Launcher_TargetDir)Easy Software Suite Launcher.exe.config" />
+            <Component Id="Easy_Software_Suite_Launcher.dll" Guid="eef836c5-f056-41f6-9b45-74f746c3dfb8">
+                <File Id="Easy_Software_Suite_Launcher.dll" Name="Easy Software Suite Launcher.dll" Source="$(var.NewLauncher_TargetDir)Easy Software Suite Launcher.dll" />
+            </Component>
+			<Component Id="Easy_Software_Suite_Launcher.runtimeconfig.json" Guid="02c07036-1f97-4724-a7ef-b03329f5898f">
+                <File Id="Easy_Software_Suite_Launcher.runtimeconfig.json" Name="Easy Software Suite Launcher.runtimeconfig.json" Source="$(var.NewLauncher_TargetDir)Easy Software Suite Launcher.runtimeconfig.json" />
             </Component>
 			<!-- Error Logger. Required for all apps. -->
             <Component Id="ErrorLogger.dll" Guid="b9c51ca3-7eed-41e8-9404-750154a30227">
@@ -172,13 +183,28 @@
             </Component>
         </ComponentGroup>
         <!-- EasyButler -->
-        <ComponentGroup Id="EasyButler" Directory="INSTALLFOLDER">
-            <Component Id="EasyButler.exe.config" Guid="72cfec09-1acf-4661-a595-a08bc3f8a5bc">
-                <File Id="EasyButler.exe.config" Name="EasyButler.exe.config" Source="$(var.EasyButler_TargetDir)EasyButler.exe.config" />
-            </Component>
-            <Component Id="EasyButler.exe" Guid="9c1d6353-b76d-4dae-a50f-e697b06fa335">
-                <File Id="EasyButler.exe" Name="EasyButler.exe" Source="$(var.EasyButler_TargetDir)EasyButler.exe" />
-            </Component>
-        </ComponentGroup>
+		<ComponentGroup Id="EasyButler" Directory="INSTALLFOLDER">
+			<Component Id="EasyButler.dll" Guid="e2b63c8c-786c-4318-9c65-d84a9e90f78a">
+				<File Id="EasyButler.dll" Name="EasyButler.dll" Source="$(var.EasyButler_TargetDir)EasyButler.dll" />
+			</Component>
+			<Component Id="EasyButler.exe" Guid="9c1d6353-b76d-4dae-a50f-e697b06fa335">
+				<File Id="EasyButler.exe" Name="EasyButler.exe" Source="$(var.EasyButler_TargetDir)EasyButler.exe" />
+			</Component>
+			<Component Id="EasyButler.runtimeconfig.json" Guid="a513cd7c-6579-4bdc-a9ed-adbe38bed337">
+				<File Id="EasyButler.runtimeconfig.json" Name="EasyButler.runtimeconfig.json" Source="$(var.EasyButler_TargetDir)EasyButler.runtimeconfig.json" />
+			</Component>
+		</ComponentGroup>
+		<!-- EasyConsole -->
+		<ComponentGroup Id="EasyConsole" Directory="INSTALLFOLDER">
+			<Component Id="EasyConsole.dll" Guid="cc3d532b-504a-4fb4-a963-89ec383ca565">
+				<File Id="EasyConsole.dll" Name="EasyConsole.dll" Source="$(var.EasyConsole_TargetDir)EasyConsole.dll" />
+			</Component>
+			<Component Id="EasyConsole.exe" Guid="79e7c53e-1a33-4e53-949d-c88fe59b8955">
+				<File Id="EasyConsole.exe" Name="EasyConsole.exe" Source="$(var.EasyConsole_TargetDir)EasyConsole.exe" />
+			</Component>
+			<Component Id="EasyConsole.runtimeconfig.json" Guid="46b5b08b-c1bf-47d6-b887-291b625b88b0">
+				<File Id="EasyConsole.runtimeconfig.json" Name="EasyConsole.runtimeconfig.json" Source="$(var.EasyConsole_TargetDir)EasyConsole.runtimeconfig.json" />
+			</Component>
+		</ComponentGroup>
     </Fragment>
 </Wix>
