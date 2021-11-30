@@ -1,5 +1,4 @@
 ﻿Imports ErrorLogger.Logger
-Imports System.IO
 
 Public Class EasyHTML_Two
 
@@ -212,6 +211,16 @@ Public Class EasyHTML_Two
             & vbCrLf & "<body>" & vbCrLf & pageBody & vbCrLf & credits & vbCrLf & pageFooter & vbCrLf & jsImport.ToString & vbCrLf & "</body>" & vbCrLf & "</html>"
 
         exportbox_txt.Text = output
+    End Sub
+
+    Private Sub saveWholeProject_btn_Click(sender As Object, e As EventArgs) Handles saveWholeProject_btn.Click
+        ProjFolder.Description = "Select a folder to save to."
+        If (ProjFolder.ShowDialog = DialogResult.OK) Then
+            ' Save Body, Header and Footer
+            My.Computer.FileSystem.WriteAllText(ProjFolder.SelectedPath + "\body.ehtml", bodyEditor_edt.Text, False)
+            My.Computer.FileSystem.WriteAllText(ProjFolder.SelectedPath + "\header.ehtml", headerCodeBox_txt.Text, False)
+            My.Computer.FileSystem.WriteAllText(ProjFolder.SelectedPath + "\footer.ehtml", footerCodeStuff_txt.Text, False)
+        End If
     End Sub
 #End Region
 

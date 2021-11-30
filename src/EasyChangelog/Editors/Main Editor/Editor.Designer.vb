@@ -50,6 +50,9 @@ Partial Class Editor
         Me.Button1 = New System.Windows.Forms.Button()
         Me.HTMLEditorError = New System.Windows.Forms.TextBox()
         Me.Pg_Export = New System.Windows.Forms.TabPage()
+        Me.btn_Export = New System.Windows.Forms.Button()
+        Me.grp_HTMLExport = New System.Windows.Forms.GroupBox()
+        Me.export_html = New FastColoredTextBoxNS.FastColoredTextBox()
         Me.Pg_About = New System.Windows.Forms.TabPage()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.gnuGpl_pic = New System.Windows.Forms.PictureBox()
@@ -61,19 +64,18 @@ Partial Class Editor
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
         Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
-        Me.grp_HTMLExport = New System.Windows.Forms.GroupBox()
-        Me.btn_Export = New System.Windows.Forms.Button()
-        Me.export_html = New FastColoredTextBoxNS.FastColoredTextBox()
+        Me.verNumb_lbl = New System.Windows.Forms.Label()
+        Me.verNumb_txt = New System.Windows.Forms.TextBox()
         Me.Pgs_Main.SuspendLayout()
         Me.Pg_Main.SuspendLayout()
         Me.grp_MainEditor.SuspendLayout()
         Me.grp_Controls.SuspendLayout()
         Me.Pg_Export.SuspendLayout()
+        Me.grp_HTMLExport.SuspendLayout()
+        CType(Me.export_html, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Pg_About.SuspendLayout()
         CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.aboutImg_pic, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.grp_HTMLExport.SuspendLayout()
-        CType(Me.export_html, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Pgs_Main
@@ -242,6 +244,8 @@ Partial Class Editor
         '
         'grp_Controls
         '
+        Me.grp_Controls.Controls.Add(Me.verNumb_txt)
+        Me.grp_Controls.Controls.Add(Me.verNumb_lbl)
         Me.grp_Controls.Controls.Add(Me.btn_security)
         Me.grp_Controls.Controls.Add(Me.btn_fixed)
         Me.grp_Controls.Controls.Add(Me.btn_removed)
@@ -259,7 +263,7 @@ Partial Class Editor
         'btn_security
         '
         Me.btn_security.ForeColor = System.Drawing.Color.Black
-        Me.btn_security.Location = New System.Drawing.Point(9, 164)
+        Me.btn_security.Location = New System.Drawing.Point(9, 203)
         Me.btn_security.Name = "btn_security"
         Me.btn_security.Size = New System.Drawing.Size(193, 23)
         Me.btn_security.TabIndex = 6
@@ -269,7 +273,7 @@ Partial Class Editor
         'btn_fixed
         '
         Me.btn_fixed.ForeColor = System.Drawing.Color.Black
-        Me.btn_fixed.Location = New System.Drawing.Point(9, 135)
+        Me.btn_fixed.Location = New System.Drawing.Point(9, 174)
         Me.btn_fixed.Name = "btn_fixed"
         Me.btn_fixed.Size = New System.Drawing.Size(193, 23)
         Me.btn_fixed.TabIndex = 5
@@ -279,7 +283,7 @@ Partial Class Editor
         'btn_removed
         '
         Me.btn_removed.ForeColor = System.Drawing.Color.Black
-        Me.btn_removed.Location = New System.Drawing.Point(9, 106)
+        Me.btn_removed.Location = New System.Drawing.Point(9, 145)
         Me.btn_removed.Name = "btn_removed"
         Me.btn_removed.Size = New System.Drawing.Size(193, 23)
         Me.btn_removed.TabIndex = 4
@@ -289,7 +293,7 @@ Partial Class Editor
         'btn_deprecated
         '
         Me.btn_deprecated.ForeColor = System.Drawing.Color.Black
-        Me.btn_deprecated.Location = New System.Drawing.Point(9, 77)
+        Me.btn_deprecated.Location = New System.Drawing.Point(9, 116)
         Me.btn_deprecated.Name = "btn_deprecated"
         Me.btn_deprecated.Size = New System.Drawing.Size(193, 23)
         Me.btn_deprecated.TabIndex = 3
@@ -299,7 +303,7 @@ Partial Class Editor
         'btn_changed
         '
         Me.btn_changed.ForeColor = System.Drawing.Color.Black
-        Me.btn_changed.Location = New System.Drawing.Point(9, 48)
+        Me.btn_changed.Location = New System.Drawing.Point(9, 87)
         Me.btn_changed.Name = "btn_changed"
         Me.btn_changed.Size = New System.Drawing.Size(193, 23)
         Me.btn_changed.TabIndex = 2
@@ -309,7 +313,7 @@ Partial Class Editor
         'btn_added
         '
         Me.btn_added.ForeColor = System.Drawing.Color.Black
-        Me.btn_added.Location = New System.Drawing.Point(9, 19)
+        Me.btn_added.Location = New System.Drawing.Point(9, 58)
         Me.btn_added.Name = "btn_added"
         Me.btn_added.Size = New System.Drawing.Size(193, 23)
         Me.btn_added.TabIndex = 1
@@ -353,6 +357,59 @@ Partial Class Editor
         Me.Pg_Export.Size = New System.Drawing.Size(1241, 600)
         Me.Pg_Export.TabIndex = 2
         Me.Pg_Export.Text = "Export"
+        '
+        'btn_Export
+        '
+        Me.btn_Export.ForeColor = System.Drawing.Color.Black
+        Me.btn_Export.Location = New System.Drawing.Point(1155, 569)
+        Me.btn_Export.Name = "btn_Export"
+        Me.btn_Export.Size = New System.Drawing.Size(75, 23)
+        Me.btn_Export.TabIndex = 2
+        Me.btn_Export.Text = "Export"
+        Me.btn_Export.UseVisualStyleBackColor = True
+        '
+        'grp_HTMLExport
+        '
+        Me.grp_HTMLExport.Controls.Add(Me.export_html)
+        Me.grp_HTMLExport.Location = New System.Drawing.Point(8, 3)
+        Me.grp_HTMLExport.Name = "grp_HTMLExport"
+        Me.grp_HTMLExport.Size = New System.Drawing.Size(1225, 560)
+        Me.grp_HTMLExport.TabIndex = 1
+        Me.grp_HTMLExport.TabStop = False
+        Me.grp_HTMLExport.Text = "HTML"
+        '
+        'export_html
+        '
+        Me.export_html.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
+        Me.export_html.AutoIndentCharsPatterns = ""
+        Me.export_html.AutoScrollMinSize = New System.Drawing.Size(0, 14)
+        Me.export_html.BackBrush = Nothing
+        Me.export_html.CharHeight = 14
+        Me.export_html.CharWidth = 8
+        Me.export_html.CommentPrefix = Nothing
+        Me.export_html.CurrentPenSize = 3
+        Me.export_html.Cursor = System.Windows.Forms.Cursors.IBeam
+        Me.export_html.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
+        Me.export_html.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.export_html.DocumentPath = Nothing
+        Me.export_html.ForeColor = System.Drawing.Color.Black
+        Me.export_html.IsReplaceMode = False
+        Me.export_html.Language = FastColoredTextBoxNS.Language.HTML
+        Me.export_html.LeftBracket = Global.Microsoft.VisualBasic.ChrW(60)
+        Me.export_html.LeftBracket2 = Global.Microsoft.VisualBasic.ChrW(40)
+        Me.export_html.Location = New System.Drawing.Point(3, 16)
+        Me.export_html.Name = "export_html"
+        Me.export_html.Paddings = New System.Windows.Forms.Padding(0)
+        Me.export_html.RightBracket = Global.Microsoft.VisualBasic.ChrW(62)
+        Me.export_html.RightBracket2 = Global.Microsoft.VisualBasic.ChrW(41)
+        Me.export_html.SelectionChangedDelayedEnabled = False
+        Me.export_html.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.export_html.ServiceColors = CType(resources.GetObject("export_html.ServiceColors"), FastColoredTextBoxNS.ServiceColors)
+        Me.export_html.Size = New System.Drawing.Size(1219, 541)
+        Me.export_html.TabIndex = 0
+        Me.export_html.Text = "FastColoredTextBox1"
+        Me.export_html.WordWrap = True
+        Me.export_html.Zoom = 100
         '
         'Pg_About
         '
@@ -448,55 +505,22 @@ Partial Class Editor
         'Timer1
         '
         '
-        'grp_HTMLExport
+        'verNumb_lbl
         '
-        Me.grp_HTMLExport.Controls.Add(Me.export_html)
-        Me.grp_HTMLExport.Location = New System.Drawing.Point(8, 3)
-        Me.grp_HTMLExport.Name = "grp_HTMLExport"
-        Me.grp_HTMLExport.Size = New System.Drawing.Size(1225, 560)
-        Me.grp_HTMLExport.TabIndex = 1
-        Me.grp_HTMLExport.TabStop = False
-        Me.grp_HTMLExport.Text = "HTML"
+        Me.verNumb_lbl.AutoSize = True
+        Me.verNumb_lbl.Location = New System.Drawing.Point(6, 16)
+        Me.verNumb_lbl.Name = "verNumb_lbl"
+        Me.verNumb_lbl.Size = New System.Drawing.Size(82, 13)
+        Me.verNumb_lbl.TabIndex = 7
+        Me.verNumb_lbl.Text = "Version Number"
         '
-        'btn_Export
+        'verNumb_txt
         '
-        Me.btn_Export.ForeColor = System.Drawing.Color.Black
-        Me.btn_Export.Location = New System.Drawing.Point(1155, 569)
-        Me.btn_Export.Name = "btn_Export"
-        Me.btn_Export.Size = New System.Drawing.Size(75, 23)
-        Me.btn_Export.TabIndex = 2
-        Me.btn_Export.Text = "Export"
-        Me.btn_Export.UseVisualStyleBackColor = True
-        '
-        'export_html
-        '
-        Me.export_html.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
-        Me.export_html.AutoIndentCharsPatterns = "^\s*[\w\.]+(\s\w+)?\s*(?<range>=)\s*(?<range>[^;=]+);" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "^\s*(case|default)\s*[^:]*" &
-    "(?<range>:)\s*(?<range>[^;]+);"
-        Me.export_html.AutoScrollMinSize = New System.Drawing.Size(0, 14)
-        Me.export_html.BackBrush = Nothing
-        Me.export_html.CharHeight = 14
-        Me.export_html.CharWidth = 8
-        Me.export_html.CurrentPenSize = 3
-        Me.export_html.Cursor = System.Windows.Forms.Cursors.IBeam
-        Me.export_html.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
-        Me.export_html.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.export_html.DocumentPath = Nothing
-        Me.export_html.Font = New System.Drawing.Font("Courier New", 9.75!)
-        Me.export_html.ForeColor = System.Drawing.Color.Black
-        Me.export_html.IsReplaceMode = False
-        Me.export_html.Language = FastColoredTextBoxNS.Language.HTML
-        Me.export_html.Location = New System.Drawing.Point(3, 16)
-        Me.export_html.Name = "export_html"
-        Me.export_html.Paddings = New System.Windows.Forms.Padding(0)
-        Me.export_html.SelectionChangedDelayedEnabled = False
-        Me.export_html.SelectionColor = System.Drawing.Color.FromArgb(CType(CType(60, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.export_html.ServiceColors = CType(resources.GetObject("export_html.ServiceColors"), FastColoredTextBoxNS.ServiceColors)
-        Me.export_html.Size = New System.Drawing.Size(1219, 541)
-        Me.export_html.TabIndex = 0
-        Me.export_html.Text = "FastColoredTextBox1"
-        Me.export_html.WordWrap = True
-        Me.export_html.Zoom = 100
+        Me.verNumb_txt.Location = New System.Drawing.Point(6, 32)
+        Me.verNumb_txt.Name = "verNumb_txt"
+        Me.verNumb_txt.Size = New System.Drawing.Size(196, 20)
+        Me.verNumb_txt.TabIndex = 8
+        Me.verNumb_txt.Text = "4.0.2"
         '
         'Editor
         '
@@ -506,6 +530,7 @@ Partial Class Editor
         Me.ClientSize = New System.Drawing.Size(1249, 626)
         Me.Controls.Add(Me.Pgs_Main)
         Me.ForeColor = System.Drawing.Color.White
+        Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "Editor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EasyChangelog"
@@ -515,13 +540,14 @@ Partial Class Editor
         Me.grp_MainEditor.ResumeLayout(False)
         Me.grp_MainEditor.PerformLayout()
         Me.grp_Controls.ResumeLayout(False)
+        Me.grp_Controls.PerformLayout()
         Me.Pg_Export.ResumeLayout(False)
+        Me.grp_HTMLExport.ResumeLayout(False)
+        CType(Me.export_html, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Pg_About.ResumeLayout(False)
         Me.Pg_About.PerformLayout()
         CType(Me.gnuGpl_pic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.aboutImg_pic, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.grp_HTMLExport.ResumeLayout(False)
-        CType(Me.export_html, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -566,4 +592,6 @@ Partial Class Editor
     Friend WithEvents grp_HTMLExport As GroupBox
     Friend WithEvents btn_Export As Button
     Friend WithEvents export_html As FastColoredTextBoxNS.FastColoredTextBox
+    Friend WithEvents verNumb_lbl As Label
+    Friend WithEvents verNumb_txt As TextBox
 End Class

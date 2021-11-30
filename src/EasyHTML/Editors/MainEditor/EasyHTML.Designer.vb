@@ -490,7 +490,7 @@ Partial Class EasyHTML
         Me.CodeEditorBox.AutoCompleteBracketsList = New Char() {Global.Microsoft.VisualBasic.ChrW(40), Global.Microsoft.VisualBasic.ChrW(41), Global.Microsoft.VisualBasic.ChrW(123), Global.Microsoft.VisualBasic.ChrW(125), Global.Microsoft.VisualBasic.ChrW(91), Global.Microsoft.VisualBasic.ChrW(93), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(34), Global.Microsoft.VisualBasic.ChrW(39), Global.Microsoft.VisualBasic.ChrW(39)}
         Me.CodeEditorBox.AutoIndentCharsPatterns = "^\s*[\w\.]+(\s\w+)?\s*(?<range>=)\s*(?<range>[^;=]+);" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "^\s*(case|default)\s*[^:]*" &
     "(?<range>:)\s*(?<range>[^;]+);"
-        Me.CodeEditorBox.AutoScrollMinSize = New System.Drawing.Size(2, 14)
+        Me.CodeEditorBox.AutoScrollMinSize = New System.Drawing.Size(27, 14)
         Me.CodeEditorBox.BackBrush = Nothing
         Me.CodeEditorBox.CharHeight = 14
         Me.CodeEditorBox.CharWidth = 8
@@ -500,7 +500,6 @@ Partial Class EasyHTML
         Me.CodeEditorBox.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.CodeEditorBox.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CodeEditorBox.DocumentPath = Nothing
-        Me.CodeEditorBox.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.CodeEditorBox.ForeColor = System.Drawing.Color.Black
         Me.CodeEditorBox.IsReplaceMode = False
         Me.CodeEditorBox.Location = New System.Drawing.Point(3, 18)
@@ -517,18 +516,18 @@ Partial Class EasyHTML
         '
         Me.MainEditorContextMenu.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.SaveEditorProjectToolStripMenuItem, Me.LoadEditorProjectToolStripMenuItem})
         Me.MainEditorContextMenu.Name = "MainEditorContextMenu"
-        Me.MainEditorContextMenu.Size = New System.Drawing.Size(175, 48)
+        Me.MainEditorContextMenu.Size = New System.Drawing.Size(181, 70)
         '
         'SaveEditorProjectToolStripMenuItem
         '
         Me.SaveEditorProjectToolStripMenuItem.Name = "SaveEditorProjectToolStripMenuItem"
-        Me.SaveEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.SaveEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SaveEditorProjectToolStripMenuItem.Text = "Save Editor Project"
         '
         'LoadEditorProjectToolStripMenuItem
         '
         Me.LoadEditorProjectToolStripMenuItem.Name = "LoadEditorProjectToolStripMenuItem"
-        Me.LoadEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(174, 22)
+        Me.LoadEditorProjectToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.LoadEditorProjectToolStripMenuItem.Text = "Load Editor Project"
         '
         'Component_Box
@@ -825,7 +824,6 @@ Partial Class EasyHTML
         Me.redirectMakerCodeBox.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.redirectMakerCodeBox.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.redirectMakerCodeBox.DocumentPath = Nothing
-        Me.redirectMakerCodeBox.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.redirectMakerCodeBox.ForeColor = System.Drawing.Color.Black
         Me.redirectMakerCodeBox.IsReplaceMode = False
         Me.redirectMakerCodeBox.Location = New System.Drawing.Point(285, 33)

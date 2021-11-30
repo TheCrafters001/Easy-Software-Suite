@@ -1,6 +1,4 @@
-﻿Imports FastColoredTextBoxNS
-
-Public Class Editor
+﻿Public Class Editor
 #Region "Editor"
     Private Sub btn_added_Click(sender As Object, e As EventArgs) Handles btn_added.Click
         Try
@@ -140,12 +138,12 @@ Public Class Editor
                 security.AppendLine("<li>Security " + s + "</li>")
             Next
 #End Region
-            export_html.Text = "<h1>Table of Contents</h1> <ul><li><a href=""#added"">Added</a></li><li><a href=""#changed"">Changed</a></li><li><a href=""#deprecated"">Deprecated</a></li><li><a href=""#removed"">Removed</a></li><li><a href=""#fixed"">Fixed</a></li><li><a href=""#security"">Security</a></li></ul> <section id=""added""><br><br><h1>Added</h1><hr><ul>" + added.ToString _
+            export_html.Text = "<section id=""v" + verNumb_txt.Text + """><h1>Version " + verNumb_txt.Text + "</h1><br><h2>Table of Contents</h2> <ul><li><a href=""#added"">Added</a></li><li><a href=""#changed"">Changed</a></li><li><a href=""#deprecated"">Deprecated</a></li><li><a href=""#removed"">Removed</a></li><li><a href=""#fixed"">Fixed</a></li><li><a href=""#security"">Security</a></li></ul> <section id=""added""><br><br><h1>Added</h1><hr><ul>" + added.ToString _
                 + "</ul></section><br><section id=""changed""><h1>Changed</h1><hr><ul>" + changed.ToString + "</ul></section><br>" +
                 "<section id=""deprecated""><h1>Deprecated</h1><hr><ul>" + deprecated.ToString + "</ul></section><br>" +
                 "<section id=""removed""><h1>Removed</h1><hr><ul>" + removed.ToString + "</ul></section><br>" +
                 "<section id=""fixed""><h1>Fixed</h1><hr><ul>" + fixed.ToString + "</ul></section><br>" +
-                "<section id=""security""><h1>Security</h1><hr><ul>" + security.ToString + "</ul></section><br>"
+                "<section id=""security""><h1>Security</h1><hr><ul>" + security.ToString + "</ul></section><br><!--Created with EasyChangelog--></section>"
         Catch ex As Exception
             HTMLEditorError.Text = ex.ToString
             BugReport.Show()
@@ -184,7 +182,7 @@ Public Class Editor
             ' Set Filter for HTML Files
             SaveDialog.Filter = "HTML File (*.html; *.htm; *.hta; *.shtml; *.shtm)|*.html; *.htm; *.hta; *.shtml; *.shtm"
             SaveDialog.Title = "Save HTML File"
-            SaveDialog.FileName = "Changelog-version-.html"
+            SaveDialog.FileName = "Changelog-v" + verNumb_txt.Text + ".html"
             ' Show Dialog. If the result is OK, save file to FileName.
             If (SaveDialog.ShowDialog = DialogResult.OK) Then
                 My.Computer.FileSystem.WriteAllText(SaveDialog.FileName, export_html.Text, False)

@@ -111,7 +111,7 @@ Partial Class Form1
         '
         'app_logo_picbox
         '
-        Me.app_logo_picbox.Image = Global.Easy_Software_Suite_Launcher.My.Resources.Resources.EasySoftwareSuite1
+        Me.app_logo_picbox.Image = Global.Easy_Software_Suite_Launcher.My.Resources.Resources.EasySoftwareSuiteIconNew
         Me.app_logo_picbox.Location = New System.Drawing.Point(6, 22)
         Me.app_logo_picbox.Name = "app_logo_picbox"
         Me.app_logo_picbox.Size = New System.Drawing.Size(87, 84)

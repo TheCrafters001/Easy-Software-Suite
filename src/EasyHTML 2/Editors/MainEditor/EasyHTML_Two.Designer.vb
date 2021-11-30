@@ -38,6 +38,7 @@ Partial Class EasyHTML_Two
         Me.Main_Timer = New System.Windows.Forms.Timer(Me.components)
         Me.SaveDialog = New System.Windows.Forms.SaveFileDialog()
         Me.OpenDialog = New System.Windows.Forms.OpenFileDialog()
+        Me.ProjFolder = New System.Windows.Forms.FolderBrowserDialog()
         Me.Pgs_Main = New EasyHTML_2.BonfireTabControl()
         Me.Pg_Details = New System.Windows.Forms.TabPage()
         Me.exportbox_txt = New System.Windows.Forms.TextBox()
@@ -676,7 +677,6 @@ Partial Class EasyHTML_Two
         Me.headerCodeBox_txt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.headerCodeBox_txt.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.headerCodeBox_txt.DocumentPath = Nothing
-        Me.headerCodeBox_txt.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.headerCodeBox_txt.IsReplaceMode = False
         Me.headerCodeBox_txt.Language = FastColoredTextBoxNS.Language.HTML
         Me.headerCodeBox_txt.LeftBracket = Global.Microsoft.VisualBasic.ChrW(60)
@@ -735,6 +735,7 @@ Partial Class EasyHTML_Two
         Me.bodyEditor_edt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.bodyEditor_edt.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.bodyEditor_edt.DocumentPath = Nothing
+        Me.bodyEditor_edt.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.bodyEditor_edt.IsReplaceMode = False
         Me.bodyEditor_edt.Language = FastColoredTextBoxNS.Language.HTML
         Me.bodyEditor_edt.LeftBracket = Global.Microsoft.VisualBasic.ChrW(60)
@@ -779,7 +780,6 @@ Partial Class EasyHTML_Two
         Me.footerCodeStuff_txt.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.footerCodeStuff_txt.DisabledColor = System.Drawing.Color.FromArgb(CType(CType(100, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer), CType(CType(180, Byte), Integer))
         Me.footerCodeStuff_txt.DocumentPath = Nothing
-        Me.footerCodeStuff_txt.Font = New System.Drawing.Font("Courier New", 9.75!)
         Me.footerCodeStuff_txt.IsReplaceMode = False
         Me.footerCodeStuff_txt.Language = FastColoredTextBoxNS.Language.HTML
         Me.footerCodeStuff_txt.LeftBracket = Global.Microsoft.VisualBasic.ChrW(60)
@@ -1073,4 +1073,5 @@ Partial Class EasyHTML_Two
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents gnuGpl_pic As PictureBox
     Friend WithEvents exportbox_txt As TextBox
+    Friend WithEvents ProjFolder As FolderBrowserDialog
 End Class

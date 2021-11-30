@@ -1,18 +1,4 @@
-﻿Imports System
-Imports System.Collections.Generic
-Imports System.ComponentModel
-Imports System.Data
-Imports System.Drawing
-Imports System.Linq
-Imports System.Text
-Imports System.Threading.Tasks
-Imports System.Windows.Forms
-Imports System.Drawing.Drawing2D
-Imports System.Threading
-Imports System.Diagnostics
-Imports System.Text.RegularExpressions
-Imports System.IO
-Imports System.Runtime.Serialization.Formatters.Binary
+﻿Imports System.ComponentModel
 Imports FastColoredTextBoxNS
 
 Public Class EasyHTML
@@ -467,6 +453,20 @@ Public Class EasyHTML
     End Sub
 
     Private Sub newUI_btn_Click(sender As Object, e As EventArgs) Handles newUI_btn.Click
+        Try
+            Dim pHelp As New ProcessStartInfo
+            pHelp.FileName = ".\EasyHTML 2.exe"
+            pHelp.Arguments = ""
+            pHelp.UseShellExecute = True
+            pHelp.WindowStyle = ProcessWindowStyle.Normal
+            Dim proc As Process = Process.Start(pHelp)
+            Application.Exit()
+        Catch ex As Exception
+            MessageBox.Show(ex.ToString, "Error")
+        End Try
+    End Sub
+
+    Private Sub MainEditorContextMenu_Opening(sender As Object, e As CancelEventArgs) Handles MainEditorContextMenu.Opening
 
     End Sub
 #End Region

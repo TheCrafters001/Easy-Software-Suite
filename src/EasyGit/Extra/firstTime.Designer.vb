@@ -31,7 +31,7 @@ Partial Class firstTime
         Me.WebBrowser1.Location = New System.Drawing.Point(0, 0)
         Me.WebBrowser1.MinimumSize = New System.Drawing.Size(20, 20)
         Me.WebBrowser1.Name = "WebBrowser1"
-        Me.WebBrowser1.Size = New System.Drawing.Size(800, 450)
+        Me.WebBrowser1.Size = New System.Drawing.Size(863, 450)
         Me.WebBrowser1.TabIndex = 0
         Me.WebBrowser1.Url = New System.Uri("", System.UriKind.Relative)
         '
@@ -39,7 +39,7 @@ Partial Class firstTime
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.ClientSize = New System.Drawing.Size(863, 450)
         Me.Controls.Add(Me.WebBrowser1)
         Me.Name = "firstTime"
         Me.Text = "firstTime"
